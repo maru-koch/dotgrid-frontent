@@ -6,12 +6,10 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
-
 class Device(models.Model):
     hour = models.TimeField(auto_now_add=False, auto_now=False, validors =[MaxValueValidator(24), MinValueValidator(1)])
     date = models.DateField(auto_now_add=True)
     energy_consumption = models.IntegerField(default=0)
-
 
 class CustomUserManager(BaseUserManager):
     """
@@ -38,6 +36,7 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_admin", True)
+
         if extra_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have is_staff=True.")
 
@@ -47,7 +46,9 @@ class CustomUserManager(BaseUserManager):
     
 
 class CustomUser(AbstractUser):
-
+    """
+        extension of the default user model 
+    """
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
@@ -61,5 +62,4 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     
-    class Meta:
-        ordering = ["-created_at"]
+    
