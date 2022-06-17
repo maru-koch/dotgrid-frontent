@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import Profile
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('email','first_name','last_name','password')
@@ -7,5 +7,13 @@ class UserAdmin(admin.ModelAdmin):
     search_fields =('first_name', 'last_name','device','')
     list_per_page = 25
 
-admin.site.register(CustomUser, UserAdmin)
+    fieldsets = (
+        
+                ("Personal Info", {'fields':('email','first_name', 'last_name')}), 
+                ("Permission", {'fields':('is_staff','is_superuser')}), 
+                ("Additional Info", {'fields':('last_login',)}), 
+                )
+   
+
+admin.site.register(Profile, UserAdmin)
 

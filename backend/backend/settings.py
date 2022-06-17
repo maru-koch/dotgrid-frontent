@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 CUSTOM_APP = [
-    'api',
     'account',
+    'api',
 ]
 
 INSTALLED_APPS = [
@@ -48,9 +48,10 @@ INSTALLED_APPS = [
 
 ] + CUSTOM_APP
 
-AUTH_USER_MODEL = 'account.CustomUser'
+AUTH_USER_MODEL = 'account.Profile'
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -134,6 +136,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.AllowAny",
         "rest_framework.permissions.IsAuthenticated",
@@ -141,6 +144,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.TokenAuthentication",
     ),
+
 }
 
 # Email configuration

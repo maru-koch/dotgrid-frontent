@@ -1,17 +1,13 @@
 
 # Create your models here.
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 # Create your models here.
 
-class Device(models.Model):
-    hour = models.TimeField(auto_now_add=False, auto_now=False, validors =[MaxValueValidator(24), MinValueValidator(1)])
-    date = models.DateField(auto_now_add=True)
-    energy_consumption = models.IntegerField(default=0)
 
-class CustomUserManager(BaseUserManager):
+
+class ProfileManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
     for authentication instead of usernames.
@@ -35,7 +31,6 @@ class CustomUserManager(BaseUserManager):
         """
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_staff", True)
-        extra_fields.setdefault("is_admin", True)
 
         if extra_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have is_staff=True.")
@@ -45,21 +40,26 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
     
 
-class CustomUser(AbstractUser):
+class Profile(AbstractUser):
     """
         extension of the default user model 
     """
+  
+    email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
-    device = models.ForeignKey(Device, related_name="users")
+    password = models.CharField(max_length=255)
+    is_superuser = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
-    def __repr__(self):
-        return f"{self.first_name} {self.last_name}"
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS =['']
+    
+    objects = ProfileManager()
 
-    objects = CustomUserManager()
+    def __str__(self):
+        return self.email
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
+
     
     
