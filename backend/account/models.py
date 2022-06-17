@@ -37,14 +37,15 @@ class ProfileManager(BaseUserManager):
 
         if extra_fields.get("is_superuser") is not True:
             raise ValueError("Superuser must have is_superuser=True.")
-        return self.create_user(email, password, **extra_fields)
-    
 
+        user =self.create_user(email, password, **extra_fields)
+        return user
+    
 class Profile(AbstractUser):
     """
         extension of the default user model 
     """
-  
+    username = models.CharField(max_length=200, unique=False, blank=True, null=True, default=None)
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -53,12 +54,12 @@ class Profile(AbstractUser):
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS =['']
+    REQUIRED_FIELDS =['first_name', 'last_name']
     
     objects = ProfileManager()
 
     def __str__(self):
-        return self.email
+        return f"{self.first_name} {self.email}"
 
 
     
