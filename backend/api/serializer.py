@@ -26,7 +26,7 @@ class EnergyAnalyticSerializer(serializers.ModelSerializer):
     """ Serializer for the Energy Analytics Model """
     class Meta:
         model = EnergyAnalytics
-        fields =['device', 'duration']
+        fields =['device', 'duration', 'start', 'end']
     
 class EnergyConsumptionSerializer(serializers.ModelSerializer):
     """ Serializer for the Energy Consumption Model """

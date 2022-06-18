@@ -19,24 +19,28 @@ from .serializer import (
 
 #: Define View classes 
 class DevicesView(ListAPIView):
+    """ Get all devices """
     permission_classes =[permissions.AllowAny]
     authentication_classes = [TokenAuthentication]
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
 class RequestDevicesView(ListCreateAPIView):
+    """ Request for a device """
     permission_classes =[permissions.AllowAny]
     authentication_classes = [TokenAuthentication]
     serializer_class = RequestDeviceSerializer
     queryset = RequestDevice.objects.all()
 
 class RetrieveDeviceView(RetrieveAPIView):
+    """ Retrieve the details of a particular device"""
     permission_classes =[permissions.IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
 class EnergyConsumptionView(RetrieveAPIView):
+    """ Evaluate device(s) energy consumption"""
     permission_classes =[permissions.IsAuthenticated]
     authentication_classes = [TokenAuthentication]
     serializer_class = EnergyConsumptionSerializer

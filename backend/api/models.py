@@ -8,7 +8,6 @@ DEVICE_TYPES = [
     ("prepaid_meter", "Prepaid Meter")
 ]
 
-
 class DeviceModel(models.Model):
     """ A description of the device model """
     image = models.ImageField(upload_to='image', blank=True)
@@ -42,7 +41,7 @@ class RequestDevice(models.Model):
 
 class EnergyConsumption(models.Model):
     """ Energy consumption of each device """
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now=False)
     rate = models.FloatField(default=0.0)
     device = models.ForeignKey(Device, on_delete=models.CASCADE, related_name = "metrics")
@@ -56,11 +55,14 @@ Duration =(
 )
 
 class EnergyAnalytics(models.Model):
-    """ Extimates the average, maximum and minimum energy consumption per device """
+    """ 
+        Extimates the average, maximum and minimum 
+        energy consumption per device within a period of time - daily or weekly
+    """
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     duration = models.CharField(max_length=200, choices=Duration)
-    start = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    start = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    start = models.DateField(blank=True, null=True)
+    end = models.DateField(blank=True, null=True)
     average = models.IntegerField(default = 0)
     maximum = models.IntegerField(default = 0)
     minimum = models.IntegerField(default = 0)

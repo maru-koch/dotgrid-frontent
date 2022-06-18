@@ -19,11 +19,12 @@ class RequestDeviceAdmin(admin.ModelAdmin):
 
 class EnergyAnalyticsAdmin(admin.ModelAdmin):
 
-    list_display = ('device', 'average', 'maximum', 'minimum')
+    list_display = ('device', 'start', 'end', 'average', 'maximum', 'minimum')
     readonly_fields = ('average', 'maximum', 'minimum')
 
     fieldsets = (
         ('SELECT A DEVICE', {'fields':('device', 'duration')}), 
+        ('Duration', {'fields':('start', 'end')}), 
         ('METRICS', {'fields': ('average', 'minimum', 'maximum')}),
     )
 
