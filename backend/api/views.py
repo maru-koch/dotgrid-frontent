@@ -1,9 +1,10 @@
 
 #: import modules
+from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework import permissions
-from rest_framework.authentication import TokenAuthentication
+from rest_framework import authentication
 from rest_framework.response import Response
 from .models import Device, RequestDevice, EnergyAnalytics, EnergyConsumption
 from django.db.models import Q, Max, Avg, Min, Sum
@@ -39,12 +40,11 @@ class RetrieveDeviceView(RetrieveAPIView):
     queryset = Device.objects.all()
 
 
-class EnergyConsumptionView(ListAPIView):
+class EnergyConsumptionView(ListCreateAPIView):
     """ fetch the energy consumption for all devices"""
     serializer_class = EnergyConsumptionSerializer
-    lookup_field = "pk"
-   
-    def get_queryset(self, request, format=None):
+    
+    def get_queryset(self):
         queryset = EnergyConsumption.objects.all()
         return Response(queryset)
     
@@ -69,27 +69,35 @@ class EnergyAnalyticView(APIView):
         end = request.data['end']
 
         print(device, duration, start, end)
-
+      
         #: estimate daily or weekly energy consumption
         queryset = EnergyConsumption.objects.filter(device=device)
 
+        #  ESTIMATION OF AVERAGE, MINIMUM AND MAXIMUM
+
         if duration == 'daily':
             queryset = queryset.filter(date=start)
-            #: estimate average, minimum, and maximum
-            average =  queryset.aggregate(Avg('rate'))['rate__avg']
-            maximum =  queryset.aggregate(Max('rate'))['rate__max']
-            minimum =  queryset.aggregate(Min('rate'))['rate__min']
-            total =    queryset.aggregate(Sum('rate'))['rate__sum']
-            #: convert the query set to json
+
+        #: estimate average, minimum, and maximum
+            average = queryset.aggregate(Avg('rate'))['rate__avg']
+            maximum = queryset.aggregate(Max('rate'))['rate__max']
+            minimum = queryset.aggregate(Min('rate'))['rate__min']
+            total = queryset.aggregate(Sum('rate'))['rate__sum']
+        #: convert the query set to json
             serializer = EnergyConsumptionSerializer(queryset, many=True)
             return Response({
-            'data': serializer.data, 
-            'average': average,
-            'maximum':maximum,
-            'minimum':minimum,
-            'total':total,
+                'data': serializer.data,
+                'average': average,
+                'maximum': maximum,
+                'minimum': minimum,
+                'total': total,
             })
         elif duration == 'weekly':
+
+            """ 
+                Get a device energy consumption based on the specified
+                start and end date
+            """
             queryset = queryset.filter(date__range=[start, end])
             average = queryset.aggregate(Avg('rate'))['rate__avg']
             maximum = queryset.aggregate(Max('rate'))['rate__max']

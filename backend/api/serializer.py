@@ -1,5 +1,6 @@
 
 from symtable import Class
+from django.forms import DurationField
 from rest_framework import serializers, status
 from .models import Device, RequestDevice, EnergyConsumption, EnergyAnalytics
 from rest_framework.response import Response
@@ -22,15 +23,18 @@ class RequestDeviceSerializer(serializers.ModelSerializer):
         request = RequestDevice.objects.create(**validated_data)
         return request
 
-class EnergyAnalyticSerializer(serializers.ModelSerializer):
+class EnergyAnalyticSerializer(serializers.Serializer):
     """ Serializer for the Energy Analytics Model """
-    class Meta:
-        model = EnergyAnalytics
-        fields =['device', 'duration', 'start', 'end']
+    device = serializers.CharField()
+    duration = serializers.CharField()
+    start = serializers.DateField()
+    end = serializers.DateField()
     
 class EnergyConsumptionSerializer(serializers.ModelSerializer):
     """ Serializer for the Energy Consumption Model """
     class Meta:
         model = EnergyConsumption
-        fields =('id','date', 'time', 'rate', 'device')
+        fields =('id','date', 'hour', 'rate', 'device')
+
+        extra_kwargs = ({'hour': {'read_only': True}, 'device': {'read_only': True}})
     

@@ -46,7 +46,7 @@ class RequestDevice(models.Model):
 class EnergyConsumption(models.Model):
     """ Energy consumption of each device """
     date = models.DateField(auto_now_add=True)
-    time = models.TimeField(auto_now=False)
+    hour = models.TimeField(auto_now_add=True)
     rate = models.FloatField(default=0.0)
     device = models.ForeignKey(
         Device, on_delete=models.CASCADE, related_name="metrics")

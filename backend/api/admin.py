@@ -8,7 +8,7 @@ class DeviceAdmin(admin.ModelAdmin):
     list_per_page = 25
 
 class EnergyConsumptionAdmin(admin.ModelAdmin):
-    list_display = ('id','date', 'time', 'rate', 'device')
+    list_display = ('id','date', 'hour', 'rate', 'device')
     list_filter = ('date', 'device',)
     search_fields =('id', '')
 

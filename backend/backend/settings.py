@@ -139,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #------------------------------------
 #       REST FRAMEWORK CONFIGURATION
-#-----------------------------------
+#------------------------------------
 REST_FRAMEWORK = {
 
     "DEFAULT_PERMISSION_CLASSES": (
@@ -154,7 +154,7 @@ REST_FRAMEWORK = {
 }
 #------------------------------------
 #       ACCESS TOKEN LIFETIME
-#-----------------------------------
+#------------------------------------
 #: Extending the Access token lifetime
 
 SIMPLE_JWT = {
@@ -163,7 +163,7 @@ SIMPLE_JWT = {
 
 #------------------------------------
 #       EMAIL SMTP SETUP
-#-----------------------------------
+#------------------------------------
 # Email configuration
 EMAIL_BACKEND = config("EMAIL_BACKEND")
 EMAIL_HOST = config("EMAIL_HOST")
