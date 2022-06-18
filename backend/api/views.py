@@ -10,43 +10,47 @@ from django.db.models import Q, Max, Avg, Min, Sum
 from datetime import datetime, timedelta, date
 
 
+
 #: import serializers
 from .serializer import (
-    DeviceSerializer, 
-    RequestDeviceSerializer, 
+    DeviceSerializer,
+    RequestDeviceSerializer,
     EnergyConsumptionSerializer,
     EnergyAnalyticSerializer)
 
-#: Define View classes 
+#: Define View classes
+
+
 class DevicesView(ListAPIView):
     """ Get all devices """
-    permission_classes =[permissions.AllowAny]
-    authentication_classes = [TokenAuthentication]
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
+
 
 class RequestDevicesView(ListCreateAPIView):
     """ Request for a device """
-    permission_classes =[permissions.AllowAny]
-    authentication_classes = [TokenAuthentication]
     serializer_class = RequestDeviceSerializer
     queryset = RequestDevice.objects.all()
 
+
 class RetrieveDeviceView(RetrieveAPIView):
     """ Retrieve the details of a particular device"""
-    permission_classes =[permissions.IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
-class EnergyConsumptionView(RetrieveAPIView):
-    """ Evaluate device(s) energy consumption"""
-    permission_classes =[permissions.IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
+
+class EnergyConsumptionView(ListAPIView):
+    """ fetch the energy consumption for all devices"""
     serializer_class = EnergyConsumptionSerializer
-    query_set = EnergyConsumption.objects.all()
+    lookup_field = "pk"
+   
+    def get_queryset(self, request, format=None):
+        queryset = EnergyConsumption.objects.all()
+        return Response(queryset)
+    
 
 class EnergyAnalyticView(APIView):
+    """ Evaluate device(s) energy consumption"""
 
     """ 
         gets the energy consumption by average,
@@ -54,31 +58,50 @@ class EnergyAnalyticView(APIView):
         per day, weekly
 
     """
-
-    permission_classes =[permissions.AllowAny]
-    authentication_classes = [TokenAuthentication]
     serializer_class = EnergyAnalyticSerializer
-    authentication_classes = []
-
+    
     def post(self, request):
 
+        #: getting user's input
         device = request.data['device']
         duration = request.data['duration']
         start = request.data['start']
         end = request.data['end']
 
+        print(device, duration, start, end)
+
         #: estimate daily or weekly energy consumption
+        queryset = EnergyConsumption.objects.filter(device=device)
+
         if duration == 'daily':
-            energyConsumption = EnergyConsumption.objects.filter(device=device).values('id','rate')
+            queryset = queryset.filter(date=start)
+            #: estimate average, minimum, and maximum
+            average =  queryset.aggregate(Avg('rate'))['rate__avg']
+            maximum =  queryset.aggregate(Max('rate'))['rate__max']
+            minimum =  queryset.aggregate(Min('rate'))['rate__min']
+            total =    queryset.aggregate(Sum('rate'))['rate__sum']
+            #: convert the query set to json
+            serializer = EnergyConsumptionSerializer(queryset, many=True)
+            return Response({
+            'data': serializer.data, 
+            'average': average,
+            'maximum':maximum,
+            'minimum':minimum,
+            'total':total,
+            })
+        elif duration == 'weekly':
+            queryset = queryset.filter(date__range=[start, end])
+            average = queryset.aggregate(Avg('rate'))['rate__avg']
+            maximum = queryset.aggregate(Max('rate'))['rate__max']
+            minimum = queryset.aggregate(Min('rate'))['rate__min']
+            total = queryset.aggregate(Sum('rate'))['rate__sum']
+            serializer = EnergyConsumptionSerializer(queryset, many=True)
+            return Response({
+                'data': serializer.data,
+                'average': average,
+                'maximum': maximum,
+                'minimum': minimum,
+                'total': total,
+            })
         else:
-            energyConsumption = EnergyConsumption.objects.filter(device=device).values('id','rate')
-
-        #: average, minimum, maximum
-        average = energyConsumption.aggregate(Avg('rate'))['rate__avg']
-        maximum = energyConsumption.aggregate(Max('rate'))['rate__max']
-        minimum = energyConsumption.aggregate(Min('rate'))['rate__min']
-        total = energyConsumption.aggregate(Sum('rate'))['rate__sum']
-    
-        return Response({'device': device, 'duration':duration, 'average':average, 'maximum':maximum, 'minimum': minimum, 'sum': total})
-
-
+            return Response({'error': 'No data for the specified period'})

@@ -46,6 +46,7 @@ class Profile(AbstractUser):
         extension of the default user model 
     """
     id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=50, unique=False, null=True, blank=True)
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -53,7 +54,7 @@ class Profile(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS =['first_name', 'last_name']
     
     objects = ProfileManager()

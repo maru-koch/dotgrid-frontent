@@ -11,6 +11,7 @@ from .serializer import RegisterSerializer
 
 class RegisterationView(CreateAPIView):
     serializer_class = RegisterSerializer
+    permission_classes =[permissions.AllowAny,]
     authentication_classes = []
     permission_classes = [permissions.AllowAny]
 

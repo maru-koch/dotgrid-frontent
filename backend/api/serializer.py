@@ -32,5 +32,5 @@ class EnergyConsumptionSerializer(serializers.ModelSerializer):
     """ Serializer for the Energy Consumption Model """
     class Meta:
         model = EnergyConsumption
-        fields =('id','date', 'hour', 'rate', 'device')
+        fields =('id','date', 'time', 'rate', 'device')
     

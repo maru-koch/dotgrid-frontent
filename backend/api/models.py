@@ -8,6 +8,7 @@ DEVICE_TYPES = [
     ("prepaid_meter", "Prepaid Meter")
 ]
 
+
 class DeviceModel(models.Model):
     """ A description of the device model """
     image = models.ImageField(upload_to='image', blank=True)
@@ -22,7 +23,8 @@ class DeviceModel(models.Model):
 class Device(models.Model):
     """ A description of the device."""
     model = models.ForeignKey(DeviceModel, on_delete=models.CASCADE)
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name ="devices")
+    user = models.ForeignKey(
+        Profile, on_delete=models.CASCADE, related_name="devices")
 
     def __str__(self):
         return f"{self.pk}"
@@ -30,8 +32,10 @@ class Device(models.Model):
 
 class RequestDevice(models.Model):
     """ User can request device """
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    model = models.ForeignKey(DeviceModel, on_delete=models.CASCADE, related_name = "requests")
+    user = models.ForeignKey(
+        Profile, on_delete=models.CASCADE, blank=True, null=True)
+    model = models.ForeignKey(
+        DeviceModel, on_delete=models.CASCADE, related_name="requests")
     date = models.DateField(default=timezone.now)
     is_assigned = models.BooleanField(default=False)
 
@@ -44,15 +48,18 @@ class EnergyConsumption(models.Model):
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now=False)
     rate = models.FloatField(default=0.0)
-    device = models.ForeignKey(Device, on_delete=models.CASCADE, related_name = "metrics")
-    
+    device = models.ForeignKey(
+        Device, on_delete=models.CASCADE, related_name="metrics")
+
     def __str__(self):
         return f"{self.rate}"
 
-Duration =(
+
+Duration = (
     ('daily', 'Daily'),
     ('weekly', 'Weekly'),
 )
+
 
 class EnergyAnalytics(models.Model):
     """ 
@@ -63,7 +70,6 @@ class EnergyAnalytics(models.Model):
     duration = models.CharField(max_length=200, choices=Duration)
     start = models.DateField(blank=True, null=True)
     end = models.DateField(blank=True, null=True)
-    average = models.IntegerField(default = 0)
-    maximum = models.IntegerField(default = 0)
-    minimum = models.IntegerField(default = 0)
-
+    average = models.FloatField(default=0)
+    maximum = models.FloatField(default=0)
+    minimum = models.FloatField(default=0)

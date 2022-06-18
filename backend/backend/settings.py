@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from decouple import config
 from pathlib import Path
+from datetime import timedelta
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -136,18 +137,33 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#------------------------------------
+#       REST FRAMEWORK CONFIGURATION
+#-----------------------------------
 REST_FRAMEWORK = {
 
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.AllowAny",
         "rest_framework.permissions.IsAuthenticated",
     ),
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 
 }
+#------------------------------------
+#       ACCESS TOKEN LIFETIME
+#-----------------------------------
+#: Extending the Access token lifetime
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=25),
+}
+
+#------------------------------------
+#       EMAIL SMTP SETUP
+#-----------------------------------
 # Email configuration
 EMAIL_BACKEND = config("EMAIL_BACKEND")
 EMAIL_HOST = config("EMAIL_HOST")
