@@ -1,0 +1,65 @@
+:root {
+  --normal: 0.4s ease all;
+}
+
+.RightSidebar-container {
+  background: var(--white);
+  background-color: #f7f7f7;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  padding: 2rem;
+  transition: var(--normal);
+  font-family: 'Circular Std', sans-serif;
+  overflow: auto;
+}
+.RightSidebar-form {
+  margin: 1.3rem auto;
+}
+
+.RightSidebar-container button {
+  cursor: pointer;
+  transition: var(--normal);
+}
+
+.RightSidebar-container button:hover {
+  transform: scale(1.05);
+}
+
+.RightSidebar-inactive {
+  transform: translateX(100%);
+}
+
+.RightSidebar-body {
+  margin: 1rem auto;
+}
+
+.RightSidebar-title {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.RightSidebar-title p {
+  text-align: center;
+  position: relative;
+}
+
+.RightSidebar-title i {
+  position: absolute;
+  z-index: 2;
+  transition: var(--normal);
+  cursor: pointer;
+}
+
+.RightSidebar-title i:hover {
+  transform: scale(1.33);
+}
+
+@media screen and (max-width: 600px) {
+  .RightSidebar-container {
+    width: 90%;
+  }
+}

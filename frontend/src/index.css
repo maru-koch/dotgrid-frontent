@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600;800&family=Open+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,400&display=swap');
+@import url('http://fonts.cdnfonts.com/css/circular-std');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Circular Std', sans-serif;
+}
+
+:root{
+  --primary-color: #E93F33;
+  --background-color: #F8F8F8;
+  --text-color: #262626;
+  --secondary-color: #468714;
+}

@@ -1,25 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from 'react';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { ROUTES } from 'constants/routes';
+import { AuthLayout } from 'layouts';
+import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+import {
+  OverviewPage,
+  PasswordResetFive,
+  PasswordResetFour,
+  PasswordResetOne,
+  PasswordResetThree,
+  PasswordResetTwo,
+  SignInPage,
+  SignUpPage,
+} from 'pages';
+
+
+const PrivateOutlet = () => {
+  const { isAuthorized: isAuth } = useSelector((state) => state.auth);
+  const location = useLocation();
+  if (!isAuth) {
+    return <Navigate to="/" state={{ from: location }} />;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Suspense fallback="loading...">
+        <Outlet />
+      </Suspense>
     </div>
   );
-}
+};
+
+// for auth routes - login, signup forget password ...
+const ProtectedOutlet = () => {
+  const { isAuthorized: isAuth } = useSelector((state) => state.auth);
+  return !isAuth ? (
+    <AuthLayout>
+      <Suspense fallback="loading...">
+        <Outlet />
+      </Suspense>
+    </AuthLayout>
+  ) : (
+    <Navigate to="/dashboard" />
+  );
+};
+
+
+
+const App = () => (
+  <>
+    <Routes>
+      <Route path="/" element={<ProtectedOutlet />}>
+        <Route index element={<SignInPage />} />
+        <Route path={ROUTES.signIn.path} element={<SignInPage />} />
+        <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
+      </Route>
+
+      <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
+        <Route path={ROUTES.overview.path} element={<OverviewPage />} />
+        <Route index element={<Navigate to={ROUTES.overview.path} />} />
+      </Route>
+    </Routes>
+    <ToastContainer
+      position="bottom-left"
+      autoClose={5000}
+      hideProgressBar
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
+  </>
+);
 
 export default App;
