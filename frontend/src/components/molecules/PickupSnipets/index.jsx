@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/extensions
-import { Button, Text } from 'components/elements';
+import { Button, Text } from '../../elements';
 
 import './style.css';
 

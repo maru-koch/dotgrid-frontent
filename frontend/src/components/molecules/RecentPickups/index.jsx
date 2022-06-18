@@ -1,4 +1,4 @@
-import { Text } from 'components/elements';
+import { Text } from '../../elements';
 import './style.css';
 import PropTypes from 'prop-types';
 

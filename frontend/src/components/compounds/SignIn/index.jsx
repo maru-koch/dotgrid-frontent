@@ -1,51 +1,55 @@
-import React from 'react';
-import { Text, Input, Button, Loader } from 'components';
+import React, {useState} from 'react';
+import { Text, Input, Button, Loader } from '../../elements';
 import { Link } from 'react-router-dom';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { AUTH_ACTIONS } from 'store/reducer/auth/authSlice';
-import { useFormik } from 'formik';
-import { VALIDATIONS } from 'constants/validations';
-import * as yup from 'yup';
+import { AUTH_ACTIONS } from '../../../store/reducer/auth/authSlice';
 
-const validationSchema = yup.object({
-  email: VALIDATIONS.email,
-  password: VALIDATIONS.password,
-});
-
+// ../store/reducer/auth/authSlice'
+const initialValues = {
+  'email':'',
+  'password':''
+}
 export const SignIn = () => {
+
+  const [formData, setFormData] = useState(initialValues)
+
   const { loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const { authUser } = AUTH_ACTIONS;
 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema,
-    onSubmit: (values) => {
-      dispatch(authUser(values));
-    },
-  });
+   
+    const onChangeHandler=(e)=>{
+      formData[e.target.name] = e.target.value;
+      setFormData(formData)
+    }
+    const onSubmitHandler = (e) => {
+      e.preventDefault();
+      const validated_data = new FormData();
+      validated_data.append('email', formData.email)
+      validated_data.append('email', formData.password)
+
+      dispatch(authUser(formData));
+    }
+
 
   return (
     <>
       <Loader open={loading} />
-      <form style={{ position: 'relative' }} onSubmit={formik.handleSubmit}>
+      <form style={{ position: 'relative' }} onSubmit={onSubmitHandler}>
         <div className="signin-wrapper-signin-title">
           <Text.Heading text="Sign In" size={24} weight={500} level={1} />
         </div>
         <div className="signin-wrapper-email">
           <Text.Heading text="Email Address" size={16} weight={450} level={3} />
-          <Input.FullRound name="email" type="email" placeholder="" onChange={formik.handleChange} />
-          <div>{formik.errors.email && formik.touched.email && formik.errors.email}</div>
+          <Input.FullRound name="email" type="email" placeholder="" onChange={onChangeHandler} />
+          
         </div>
         <div className="signin-wrapper-password">
           <Text.Heading text="Password" size={16} weight={450} level={3} />
-          <Input.FullRound name="password" type="password" placeholder="" onChange={formik.handleChange} />
-          <div>{formik.errors.password && formik.touched.password && formik.errors.password}</div>
+          <Input.FullRound name="password" type="password" placeholder="" onChange={onChangeHandler} />
+          
         </div>
         <div className="signin-wrapper-remember-me">
           <Text.RememberMe />

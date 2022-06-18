@@ -1,7 +1,7 @@
 import React from 'react';
-import { DashHeader, SideBar, Text, RecentPickups, Welcome } from 'components';
+import { DashHeader, SideBar, Text, Welcome } from '../../components';
 import './index.css';
-import { pickups } from 'components/molecules/RecentPickups/pickups';
+
 
 export const OverviewPage = () => (
   <div className="overview">
@@ -23,9 +23,7 @@ export const OverviewPage = () => (
         </div>
       </div>
       <div>
-        {pickups.map((item) => (
-          <RecentPickups {...item} key={item.id} />
-        ))}
+        {/* Charts */}
       </div>
     </div>
   </div>

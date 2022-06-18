@@ -1,14 +1,14 @@
 import React from 'react';
-import 'layouts/authLayout.css';
+import './authLayout.css';
 import PropTypes from 'prop-types';
-import { Text } from 'components';
+import { Text } from '../components/elements';
 import clsx from 'clsx';
 
 export const AuthLayout = ({ children, headerClassName, bodyClassName }) => (
   <>
     <header className={clsx('nav-header', headerClassName)}>
       <Text size={24} color="white">
-        Recycle Pay
+        Josla Electric
       </Text>
     </header>
     <div className={clsx('form-container', bodyClassName)}>

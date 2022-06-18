@@ -5,7 +5,7 @@ from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIV
 from rest_framework import permissions
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
-from .models import Device, EnergyAnalytics, RequestDevice, EnergyConsumption
+from .models import Device, RequestDevice, EnergyAnalytics, EnergyConsumption
 from django.db.models import Q, Max, Avg, Min, Sum
 from datetime import datetime, timedelta, date
 

@@ -6,8 +6,16 @@
   font-weight: 500;
 }
 
+.button-base:hover{
+  cursor: pointer;
+  outline: none;
+}
+.button-base:focus{
+  outline: none;
+}
 .button-base:active {
   transform: scale(0.98);
+  outline: none;
 }
 
 .primary {
@@ -28,8 +36,8 @@
 }
 
 .round-secondary {
-  border: 1px solid #04a40580;
-  color: var(--primary-main);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .stretch {

@@ -8,8 +8,8 @@ const colors = {
   'primary-main': 'var(--primary-main)',
   green: 'var(--primary-80)',
   black: 'var(--neutral-70)',
-  grey: 'var(--neutral-50)',
-  grey60: 'var(--neutral-60)',
+  grey: 'var(--dark-color)',
+  grey60: 'var(--background-color)',
   'secondary-80': 'var(--secondary-80)',
   white: '#ffffff',
 };

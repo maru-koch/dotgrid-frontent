@@ -10,7 +10,10 @@
 
 :root{
   --primary-color: #E93F33;
+  --accent-color: #de6259;
+  --accent-2-color: #f4e7e6;
   --background-color: #F8F8F8;
-  --text-color: #262626;
+  --panel-color:#EBF3FA;
+  --dark-color: #262626;
   --secondary-color: #468714;
 }

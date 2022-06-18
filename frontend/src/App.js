@@ -1,29 +1,25 @@
 import { Suspense } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-import { ROUTES } from 'constants/routes';
-import { AuthLayout } from 'layouts';
+import { ROUTES } from './constants/routes';
+import { AuthLayout } from './layout';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {
-  OverviewPage,
-  PasswordResetFive,
-  PasswordResetFour,
-  PasswordResetOne,
-  PasswordResetThree,
-  PasswordResetTwo,
-  SignInPage,
-  SignUpPage,
-} from 'pages';
+import { OverviewPage, SignInPage, SignUpPage} from './pages';
 
 
 const PrivateOutlet = () => {
+
+  // get isAuth value (boolean ) from state in auth reducer
+
   const { isAuthorized: isAuth } = useSelector((state) => state.auth);
   const location = useLocation();
-  if (!isAuth) {
-    return <Navigate to="/" state={{ from: location }} />;
-  }
+
+    if (!isAuth) {
+          return <Navigate to="/" state={{ from: location }} />;
+        }
+        
   return (
     <div>
       <Suspense fallback="loading...">
@@ -47,8 +43,6 @@ const ProtectedOutlet = () => {
   );
 };
 
-
-
 const App = () => (
   <>
     <Routes>
@@ -63,6 +57,7 @@ const App = () => (
         <Route index element={<Navigate to={ROUTES.overview.path} />} />
       </Route>
     </Routes>
+
     <ToastContainer
       position="bottom-left"
       autoClose={5000}

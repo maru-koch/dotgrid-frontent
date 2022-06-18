@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Input, Button } from 'components';
+import { Text, Input, Button } from '../../elements';
 import { Link } from 'react-router-dom';
 import './style.css';
 

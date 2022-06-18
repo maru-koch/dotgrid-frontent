@@ -3,13 +3,26 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 256px;
-  border-right: 1px solid #04a405;
+  border-right: 0.5px solid var(--accent-2-color);
+  position:static;
+  top: 0;
 }
 
 .logo {
-  padding-left: 10%;
-  padding-top: 10%;
-  padding-bottom: 20%;
+  display: grid;
+  place-items: center;
+ 
+}
+
+.logo__img{
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--primary-color);
 }
 
 .box {
@@ -19,15 +32,21 @@
   align-items: center;
   gap: 1rem;
   width: auto;
+ 
+}
+.box:hover{
+  background-color: var(--accent-2-color);
+  cursor: pointer;
+  border-left: 4px solid var(--primary-color);
 }
 
 .box1 {
-  background-image: linear-gradient(to right, #04a405 2%, #ebfeebe5 2%);
+  background-image: var(--accent-2-color);
   /* padding-left: 25px; */
 }
 
 .space {
-  margin: 8rem 0;
+  margin: 2rem 0;
 }
 
 .remove-btn-prop {
@@ -39,3 +58,63 @@
   padding-left: 5px;
   background-color: green;
 } */
+
+#breathing-logo {
+  -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
+  font-family: 'Lantinghei SC';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color: var(--accent-2-color)
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color: var(--accent-color)
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color: var(--primary-color)
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color: white;
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
