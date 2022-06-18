@@ -45,7 +45,7 @@ class Profile(AbstractUser):
     """
         extension of the default user model 
     """
-    username = models.CharField(max_length=200, unique=False, blank=True, null=True, default=None)
+    id = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

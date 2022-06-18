@@ -7,9 +7,9 @@ class DeviceAdmin(admin.ModelAdmin):
     search_fields =('id', '')
     list_per_page = 25
 
-class EnergyAdmin(admin.ModelAdmin):
+class EnergyConsumptionAdmin(admin.ModelAdmin):
     list_display = ('id','date', 'time', 'rate', 'device')
-    list_filter=('date', 'device',)
+    list_filter = ('date', 'device',)
     search_fields =('id', '')
 
 class RequestDeviceAdmin(admin.ModelAdmin):
@@ -26,7 +26,7 @@ class EnergyAnalyticsAdmin(admin.ModelAdmin):
         ('SELECT A DEVICE', {'fields':('device', 'duration')}), 
         ('METRICS', {'fields': ('average', 'minimum', 'maximum')}),
     )
-    
+
     list_filter = ('device',)
     search_fields =('device',)
 
@@ -34,4 +34,4 @@ admin.site.register(Device, DeviceAdmin)
 admin.site.register(RequestDevice, RequestDeviceAdmin)
 admin.site.register(DeviceModel)
 admin.site.register(EnergyAnalytics, EnergyAnalyticsAdmin)
-admin.site.register(EnergyConsumption, EnergyAdmin)
+admin.site.register(EnergyConsumption, EnergyConsumptionAdmin)
