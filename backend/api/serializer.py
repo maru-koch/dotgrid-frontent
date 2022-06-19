@@ -37,4 +37,8 @@ class EnergyConsumptionSerializer(serializers.ModelSerializer):
         fields =('id','date', 'hour', 'rate', 'device')
 
         extra_kwargs = ({'hour': {'read_only': True}, 'device': {'read_only': True}})
-    
+
+class GenerateDataSerializer(serializers.Serializer):
+    """ Serializer for the Energy Analytics Model """
+    device = serializers.IntegerField()
+    duration = serializers.IntegerField()
