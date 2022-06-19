@@ -1,10 +1,20 @@
 
-from symtable import Class
-from django.forms import DurationField
-from rest_framework import serializers, status
-from .models import Device, RequestDevice, EnergyConsumption, EnergyAnalytics
-from rest_framework.response import Response
+from rest_framework import serializers
 
+#: import models
+from .models import (
+    DeviceModel,
+    Device, 
+    RequestDevice, 
+    EnergyConsumption, 
+    EnergyAnalytics)
+
+class DeviceModelSerializer(serializers.ModelSerializer):
+    """ Serializer for the Device Model """
+    class Meta:
+        model = DeviceModel
+        fields = "__all__"
+        ordering = "-id"
 
 class DeviceSerializer(serializers.ModelSerializer):
     """ Serializer for the Device Model """
@@ -12,7 +22,7 @@ class DeviceSerializer(serializers.ModelSerializer):
         model = Device
         fields = "__all__"
         ordering = "-id"
-    
+
 class RequestDeviceSerializer(serializers.ModelSerializer):
     """ Serializer for the Request Device Model """
     class Meta:

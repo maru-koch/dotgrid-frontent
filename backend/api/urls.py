@@ -11,6 +11,7 @@ from .views import (
 
 urlpatterns = [
     path('device/', DevicesView.as_view(), name="devices"),
+    path('device/add-model', DevicesView.as_view(), name="models"),
     path('device/<pk>/', RetrieveDeviceView.as_view(), name="device"),
     path('device/request/<pk>', RequestDevicesView.as_view(), name="request"),
     path('device/energy/', EnergyConsumptionView.as_view(), name="energy"), 

@@ -1,42 +1,68 @@
 
-#: import modules
-from django.shortcuts import get_object_or_404
+#: import module
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView
-from rest_framework import permissions
-from rest_framework import authentication
 from rest_framework.response import Response
-from .models import Device, RequestDevice, EnergyAnalytics, EnergyConsumption
+from .models import Device, RequestDevice,EnergyConsumption, DeviceModel
 from django.db.models import Q, Max, Avg, Min, Sum
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta, date, time
 from .utils import DummyEnergyData
-
+from account.models import Profile
 
 #: import serializers
 from .serializer import (
     DeviceSerializer,
     RequestDeviceSerializer,
     EnergyConsumptionSerializer,
-    GenerateDataSerializer,
+    DeviceModelSerializer,
     EnergyAnalyticSerializer)
 
 #: Define View classes
 
-
-    #: Define View classes
 class GenerateDataView(APIView):
+    """ Generates dummy energy consumption data """
     def post(self, request, format = None):
-        day=request.data['day']
-        devices=request.data['devices']
-        data=DummyEnergyData.generate(day, devices)
-        serializer=GenerateDataSerializer(data = data)
-        return Response(serializer.data)
+        days = int(request.data['day'])
+        devices = int(request.data['devices'])
+
+        #: generate dummy energy consumption data
+        data=DummyEnergyData.generate(days, devices)
+        try:
+            for index, dataset in enumerate(data, start=1):
+                device = dataset[f'device_{index}']
+                rate_per_hour = device[f'day_{index}']
+                for day in range(days):   
+                    for hour, rate in rate_per_hour:
+                        d = date(2022, 6, day+1)
+                        t = time(hour, 0, 0)
+                        print(d, t)
+                        print(index, day, hour, rate)
+                        device = Device.objects.get(pk = index)
+                        energy =EnergyConsumption.objects.create(date = d, time = t, rate = rate, device = device)
+                        energy.save()
+        except:
+            return Response({'error':'Invalid data'})
+        finally:
+            return Response(data)
+            
+
+           
+class GetDeviceModelView(ListCreateAPIView):
+    serializer_class = DeviceModelSerializer
+    queryset = DeviceModel.objects.all()
 
 class DevicesView(ListAPIView):
-    """ Get all devices """
+    """ Assign device to a user """
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
+class AssignDeviceView(APIView):
+    def post(self, request, format=None):
+        user_id = request.data['user']
+        model_id = request.data['model']
+        model = DeviceModel.objects.get(pk = model_id)
+        user = Profile.objects.get(pk = user_id)
+        Device.objects.create(model=model, user=user)
 
 class RequestDevicesView(ListCreateAPIView):
     """ Request for a device """
