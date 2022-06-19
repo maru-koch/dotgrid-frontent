@@ -3,9 +3,11 @@
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework.response import Response
+from rest_framework import status
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Device, RequestDevice,EnergyConsumption, DeviceModel
 from django.db.models import Q, Max, Avg, Min, Sum
-from datetime import datetime, timedelta, date, time
+from datetime import date, time
 from .utils import DummyEnergyData
 from account.models import Profile
 
@@ -47,16 +49,17 @@ class GenerateDataView(APIView):
             
 
            
-class GetDeviceModelView(ListCreateAPIView):
+class DeviceModelView(ListCreateAPIView):
     serializer_class = DeviceModelSerializer
     queryset = DeviceModel.objects.all()
 
 class DevicesView(ListAPIView):
-    """ Assign device to a user """
+    """ Gets all devices """
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
 class AssignDeviceView(APIView):
+    """ Gets the model and a user and assigns the user to the model """
     def post(self, request, format=None):
         user_id = request.data['user']
         model_id = request.data['model']
@@ -70,11 +73,22 @@ class RequestDevicesView(ListCreateAPIView):
     queryset = RequestDevice.objects.all()
 
 
+class ApproveRequestDevicesView(APIView):
+    """ Request for a device """
+    def post(self, request):
+        try:
+            request_id = request.data['request_id']
+            request = RequestDevice.objects.get(pk = request_id)
+            request.is_assigned = True
+            request.save()
+            return Response({'message':'Request approved'}, status = status.HTTP_200_OK)
+        except ObjectDoesNotExist:
+            return Response({'error':'Request does not exist'})
+
 class RetrieveDeviceView(RetrieveAPIView):
     """ Retrieve the details of a particular device"""
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
-
 
 class EnergyConsumptionView(ListCreateAPIView):
     """ fetch the energy consumption for all devices"""
@@ -83,7 +97,6 @@ class EnergyConsumptionView(ListCreateAPIView):
     def get_queryset(self):
         queryset = EnergyConsumption.objects.all()
         return Response(queryset)
-    
 
 class EnergyAnalyticView(APIView):
     """ Evaluate device(s) energy consumption"""
