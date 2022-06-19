@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from .models import Device, RequestDevice, EnergyAnalytics, EnergyConsumption
 from django.db.models import Q, Max, Avg, Min, Sum
 from datetime import datetime, timedelta, date
-
+from .utils import DummyEnergyData
 
 
 #: import serializers
@@ -17,10 +17,20 @@ from .serializer import (
     DeviceSerializer,
     RequestDeviceSerializer,
     EnergyConsumptionSerializer,
+    GenerateDataSerializer,
     EnergyAnalyticSerializer)
 
 #: Define View classes
 
+
+    #: Define View classes
+class GenerateDataView(APIView):
+    def post(self, request, format = None):
+        day=request.data['day']
+        devices=request.data['devices']
+        data=DummyEnergyData.generate(day, devices)
+        serializer=GenerateDataSerializer(data = data)
+        return Response(serializer.data)
 
 class DevicesView(ListAPIView):
     """ Get all devices """
