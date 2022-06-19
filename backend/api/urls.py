@@ -5,7 +5,8 @@ from .views import (
     EnergyAnalyticView,
     RequestDevicesView,
     RetrieveDeviceView,
-    EnergyConsumptionView
+    EnergyConsumptionView, 
+    GenerateDataView
 )
 
 urlpatterns = [
@@ -13,6 +14,7 @@ urlpatterns = [
     path('device/<pk>/', RetrieveDeviceView.as_view(), name="device"),
     path('device/request/<pk>', RequestDevicesView.as_view(), name="request"),
     path('device/energy/', EnergyConsumptionView.as_view(), name="energy"), 
+    path('device/energy/generate', GenerateDataView.as_view(), name="generate"),
     path('device/analytics/all', EnergyAnalyticView.as_view(), name="analytics"),
 ]
 
