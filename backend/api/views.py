@@ -1,11 +1,13 @@
 
 #: import module
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.exceptions import ObjectDoesNotExist
-from .models import Device, RequestDevice,EnergyConsumption, DeviceModel
+
+from api.permissions import IsAdmin
+from .models import Device, RequestDevice, EnergyConsumption, DeviceModel
 from django.db.models import Q, Max, Avg, Min, Sum
 from datetime import date, time
 from .utils import DummyEnergyData
@@ -21,82 +23,100 @@ from .serializer import (
 
 #: Define View classes
 
+
 class GenerateDataView(APIView):
     """ Generates dummy energy consumption data """
-    def post(self, request, format = None):
+    #: only admins can assign device
+    authentication_classes = [IsAdmin]
+
+    def post(self, request, format=None):
         days = int(request.data['day'])
         devices = int(request.data['devices'])
 
         #: generate dummy energy consumption data
-        data=DummyEnergyData.generate(days, devices)
+        data = DummyEnergyData.generate(days, devices)
         try:
             for index, dataset in enumerate(data, start=1):
                 device = dataset[f'device_{index}']
                 rate_per_hour = device[f'day_{index}']
-                for day in range(days):   
+                for day in range(days):
                     for hour, rate in rate_per_hour:
                         d = date(2022, 6, day+1)
                         t = time(hour, 0, 0)
                         print(d, t)
                         print(index, day, hour, rate)
-                        device = Device.objects.get(pk = index)
-                        energy =EnergyConsumption.objects.create(date = d, time = t, rate = rate, device = device)
+                        device = Device.objects.get(pk=index)
+                        energy = EnergyConsumption.objects.create(
+                            date=d, time=t, rate=rate, device=device)
                         energy.save()
         except:
-            return Response({'error':'Invalid data'})
+            return Response({'error': 'Invalid data'})
         finally:
             return Response(data)
-            
 
-           
-class DeviceModelView(ListCreateAPIView):
+
+class DeviceModelView(CreateAPIView):
+    """ Add device model """
     serializer_class = DeviceModelSerializer
     queryset = DeviceModel.objects.all()
+
 
 class DevicesView(ListAPIView):
     """ Gets all devices """
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
+
 class AssignDeviceView(APIView):
     """ Gets the model and a user and assigns the user to the model """
+    #: only admins can assign device
+    authentication_classes = [IsAdmin]
+
     def post(self, request, format=None):
         user_id = request.data['user']
         model_id = request.data['model']
-        model = DeviceModel.objects.get(pk = model_id)
-        user = Profile.objects.get(pk = user_id)
+        model = DeviceModel.objects.get(pk=model_id)
+        user = Profile.objects.get(pk=user_id)
         Device.objects.create(model=model, user=user)
 
-class RequestDevicesView(ListCreateAPIView):
+
+class RequestDeviceView(ListCreateAPIView):
     """ Request for a device """
     serializer_class = RequestDeviceSerializer
     queryset = RequestDevice.objects.all()
 
 
-class ApproveRequestDevicesView(APIView):
+class ApproveRequestDeviceView(APIView):
     """ Request for a device """
+
+    #: only admins can approve device
+    permission_classes = [IsAdmin]
+
     def post(self, request):
         try:
             request_id = request.data['request_id']
-            request = RequestDevice.objects.get(pk = request_id)
+            request = RequestDevice.objects.get(pk=request_id)
             request.is_assigned = True
             request.save()
-            return Response({'message':'Request approved'}, status = status.HTTP_200_OK)
-        except ObjectDoesNotExist:
-            return Response({'error':'Request does not exist'})
+            return Response({'message': 'Request approved'}, status=status.HTTP_200_OK)
+        except:
+            return Response({'error': 'Request does not exist'})
+
 
 class RetrieveDeviceView(RetrieveAPIView):
     """ Retrieve the details of a particular device"""
     serializer_class = DeviceSerializer
     queryset = Device.objects.all()
 
+
 class EnergyConsumptionView(ListCreateAPIView):
     """ fetch the energy consumption for all devices"""
     serializer_class = EnergyConsumptionSerializer
-    
+
     def get_queryset(self):
         queryset = EnergyConsumption.objects.all()
         return Response(queryset)
+
 
 class EnergyAnalyticView(APIView):
     """ Evaluate device(s) energy consumption"""
@@ -108,7 +128,7 @@ class EnergyAnalyticView(APIView):
 
     """
     serializer_class = EnergyAnalyticSerializer
-    
+
     def post(self, request):
 
         #: getting user's input
@@ -118,7 +138,7 @@ class EnergyAnalyticView(APIView):
         end = request.data['end']
 
         print(device, duration, start, end)
-      
+
         #: estimate daily or weekly energy consumption
         queryset = EnergyConsumption.objects.filter(device=device)
 
