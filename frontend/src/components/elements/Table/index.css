@@ -1,10 +1,21 @@
 
 table td{
-    font-size: 10px;
+    font-size: .8rem;
+    padding: 10px;
 
 }
 
 table th{
-    border: 2px solid black;
+    border: 0px solid var(--accent-color);
     padding: 2px;
+    box-shadow: 2px 3px 1px rgba(0, 0, 0,0.5)
+}
+
+.selectDate__wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+table tbody{
+    background-color: var(--accent-2-color)
 }

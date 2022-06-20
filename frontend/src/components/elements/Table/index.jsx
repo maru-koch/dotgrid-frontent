@@ -5,20 +5,18 @@ import './index.css'
 
 const SelectDate=()=>{
     return(
-        <main className="wrapper">
-            <div>
-                <p>2022</p>
-            </div>
-            <div>
-                <div>
-                    <i className="fa fa-chevron-left"></i>
+        <div className="selectDate__container">
+            <div className="selectDate__wrapper">
+                <div className="wrapper">
+                    <p>2022</p>
+                    <p>June</p>
                 </div>
-                <p>June</p>
-                 <div>
-                    <i className="fa fa-chevron-right"></i>
+                <div className="wrapper">
+                    <p>Device</p>
+                    <p>1</p>
                 </div>
             </div>
-        </main>
+        </div>
     )
 }
 export const Table=({rate_per_hour})=>{
@@ -33,10 +31,10 @@ let arrData=Object.keys(data[1]["device_2"])
 
 
 return(
-    <main className ="container">
+    <main className="table__container">
         <SelectDate/>
-        <section className ="wrapper">
-           <table className="table" cellSpacing={10}>
+        <section className ="table__wrapper">
+           <table className="table" cellSpacing={2}>
             <thead>
                 <td></td>
                 {data_device[arrData[0]].map((item,index)=><th key={index}>{item[0]}</th>)}
