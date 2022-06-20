@@ -5,17 +5,19 @@ export const Interval=()=>{
     // shows estimated total, average, minimum, and maximum
 return(
     <>
-    <main>
+    <main className="wrapper">
          <section>
             <p>Interval</p>
         </section>
-         <section>
+         <section className="wrapper">
             <div>
                 <p>Start</p>
                 <input type="date"/>
             </div>
-                <p>End</p>
+            <div>
+                 <p>End</p>
                 <input type="date"/>
+            </div>
         </section>
     </main>
     </>

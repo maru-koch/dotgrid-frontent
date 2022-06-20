@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 
 export const Analytics =({children, style})=>{
     return (
-        <div className = "container">
-            <div className = "wrapper">
-                <section className = "right">
-                    <TotalPanel/>
-                    <Graph/>
-                </section>
-                <section className = "right">
-                    <MetricPanel/>
-                </section>
+        <div className = "con">
+            <div className = "con2">
+                <div className = "wrapper">
+                    <section className = "right">
+                        <TotalPanel/>
+                        <Graph/>
+                    </section>
+                    <section className = "right">
+                        <MetricPanel/>
+                    </section>
+                </div>
             </div>
         </div>
     )

@@ -7,13 +7,15 @@ export const TotalPanel=({total, start, end})=>{
 return(
     <>
     <main>
-         <section>
-            <Text text="TOTAL POWER CONSUMPTION"/>
-            <Interval start={start} end={end}/>
-        </section>
-         <section>
-            <Total total={total} />
-        </section>
+        <div className="wrapper">
+            <section>
+                <Text text="TOTAL POWER CONSUMPTION"/>
+                <Interval start={start} end={end}/>
+                </section>
+            <section>
+                <Total total={total} />
+            </section>
+        </div>
     </main>
     </>
 )

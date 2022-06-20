@@ -11,6 +11,8 @@ return(
         </section>
          <section>
             <Metrics />
+            <Metrics />
+            <Metrics />
         </section>
     </main>
     </>

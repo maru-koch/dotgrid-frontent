@@ -7,6 +7,7 @@ return(
     <>
     <main>
          <section>
+            <h2>Display Graph</h2>
         </section>
     </main>
     </>

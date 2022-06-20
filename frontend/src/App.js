@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { OverviewPage, SignInPage, SignUpPage} from './pages';
+import { OverviewPage, SignInPage, SignUpPage } from './pages';
+import { Analytics, DataTable} from './components'
 
 
 const PrivateOutlet = () => {
@@ -50,6 +51,8 @@ const App = () => (
         <Route index element={<SignInPage />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
+        <Route path= "/analytics"element={<Analytics />} />
+        <Route path= "/data"element={<DataTable/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>

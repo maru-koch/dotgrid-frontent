@@ -1,6 +1,6 @@
 .register-form {
-  padding: 56px;
-  background-color: #ebfeeb66;
+  padding: 50px;
+  background-color: var(--accent-2-color);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
