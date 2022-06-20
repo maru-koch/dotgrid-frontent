@@ -27,7 +27,7 @@ class RequestDeviceSerializer(serializers.ModelSerializer):
     """ Serializer for the Request Device Model """
     class Meta:
         model = RequestDevice
-        fields = ['model']
+        fields = ['model', ]
 
     def create(self, validated_data):
         request = RequestDevice.objects.create(**validated_data)
