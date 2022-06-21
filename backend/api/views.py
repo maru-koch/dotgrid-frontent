@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, 
 
 from api.permissions import IsAdmin
 from .models import Device, RequestDevice, EnergyConsumption, DeviceModel
@@ -142,42 +142,44 @@ class EnergyAnalyticView(APIView):
         queryset = EnergyConsumption.objects.filter(device=device)
 
         #  ESTIMATION OF AVERAGE, MINIMUM AND MAXIMUM
+        try:
+            if duration == 'daily':
+                queryset = queryset.filter(date=start)
 
-        if duration == 'daily':
-            queryset = queryset.filter(date=start)
+            #: estimate average, minimum, and maximum
+                average = queryset.aggregate(Avg('rate'))['rate__avg']
+                maximum = queryset.aggregate(Max('rate'))['rate__max']
+                minimum = queryset.aggregate(Min('rate'))['rate__min']
+                total = queryset.aggregate(Sum('rate'))['rate__sum']
+            #: convert the query set to json
+                serializer = EnergyConsumptionSerializer(queryset, many=True)
+                return Response({
+                    'data': serializer.data,
+                    'average': average,
+                    'maximum': maximum,
+                    'minimum': minimum,
+                    'total': total,
+                })
+            elif duration == 'weekly':
 
-        #: estimate average, minimum, and maximum
-            average = queryset.aggregate(Avg('rate'))['rate__avg']
-            maximum = queryset.aggregate(Max('rate'))['rate__max']
-            minimum = queryset.aggregate(Min('rate'))['rate__min']
-            total = queryset.aggregate(Sum('rate'))['rate__sum']
-        #: convert the query set to json
-            serializer = EnergyConsumptionSerializer(queryset, many=True)
-            return Response({
-                'data': serializer.data,
-                'average': average,
-                'maximum': maximum,
-                'minimum': minimum,
-                'total': total,
-            })
-        elif duration == 'weekly':
-
-            """ 
-                Get a device energy consumption based on the specified
-                start and end date
-            """
-            queryset = queryset.filter(date__range=[start, end])
-            average = queryset.aggregate(Avg('rate'))['rate__avg']
-            maximum = queryset.aggregate(Max('rate'))['rate__max']
-            minimum = queryset.aggregate(Min('rate'))['rate__min']
-            total = queryset.aggregate(Sum('rate'))['rate__sum']
-            serializer = EnergyConsumptionSerializer(queryset, many=True)
-            return Response({
-                'data': serializer.data,
-                'average': average,
-                'maximum': maximum,
-                'minimum': minimum,
-                'total': total,
-            })
-        else:
-            return Response({'error': 'No data for the specified period'})
+                """ 
+                    Get a device energy consumption based on the specified
+                    start and end date
+                """
+                queryset = queryset.filter(date__range=[start, end])
+                average = queryset.aggregate(Avg('rate'))['rate__avg']
+                maximum = queryset.aggregate(Max('rate'))['rate__max']
+                minimum = queryset.aggregate(Min('rate'))['rate__min']
+                total = queryset.aggregate(Sum('rate'))['rate__sum']
+                serializer = EnergyConsumptionSerializer(queryset, many=True)
+                return Response({
+                    'data': serializer.data,
+                    'average': average,
+                    'maximum': maximum,
+                    'minimum': minimum,
+                    'total': total,
+                })
+            else:
+                return Response({'error': 'No data for the specified period'})
+        except ObjectDoesNotExist:
+            return Response({'error': 'There is no device with the specified ID'})
