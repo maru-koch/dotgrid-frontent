@@ -5,6 +5,7 @@ import './index.css'
 
 export const Modal=({open, children})=>{
     if (!open) return null;
+    console.log(open)
     return ReactDom.createPortal(
     <main className="modal">
         {children}

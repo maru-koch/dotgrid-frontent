@@ -1,6 +1,6 @@
 import {Button, Text} from '../../elements'
 import {useState} from 'react'
-import {Modal} from '../../compounds'
+import {Modal, Analytics} from '../../compounds'
 
 import './export_csv.css'
 export const ExportCSV=()=>{
@@ -9,6 +9,9 @@ export const ExportCSV=()=>{
 
     // Show modal
     const [isOpen, setIsOpen] = useState(false)
+const openModal=()=>{
+    setIsOpen(isOpen)
+}
 
 return(
     <main className="export__container">
@@ -19,11 +22,13 @@ return(
                 </div>
             </div>
             <div>
-                <Button btnType="primary" onClick={()=> setIsOpen(true)}>
+                <Button btnType="primary" onClick={()=> openModal()}>
                     <Text size={14}>Visualize</Text>
                 </Button>
             </div>
-            <Modal open={isOpen} />
+            <Modal open={isOpen}>
+                <Analytics/>
+            </Modal>
         </section>
     </main>
 )
