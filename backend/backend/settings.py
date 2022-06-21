@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mongo',
+        'ENGINE': 'djongo',
         'NAME': 'josla_db',
         'CLIENT_ID': 'mongodb+srv://maru:maruchE@cluster0.bdugk.mongodb.net/backend?retryWrites=true&w=majority',
     }
