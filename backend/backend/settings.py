@@ -180,3 +180,10 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="dummy123")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
+#------------------------------------
+#       MEDIA UPLOAD SETUP
+#------------------------------------
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/image/'
