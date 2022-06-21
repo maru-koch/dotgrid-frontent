@@ -8,7 +8,7 @@ const authUser = createAsyncThunk(`${name}/login`, async (values) => {
   return res.data;
 });
 
-const initialState = { isAuthorized: false, loading: false, user: {} };
+const initialState = { isAuthorized: true, loading: false, user: {} };
 
 const authSlice = createSlice({
   name:'authReducer',

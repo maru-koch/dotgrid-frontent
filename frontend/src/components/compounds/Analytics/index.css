@@ -4,9 +4,14 @@
     margin:0 auto;
     height: 100%;
 }
-
+.analytics__wrapper{
+    width:100%;
+    padding:40px;
+    background-color:var(--background-color)
+}
 .analytics__outer_wrapper{
     max-width: 1000px;
+    background-color: white;
 }
 
 .analytics__inner_wrapper {

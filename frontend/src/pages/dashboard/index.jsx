@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashHeader, SideBar, Text, Welcome } from '../../components';
+import { DashHeader, SideBar, Text, Welcome, DataTable} from '../../components';
 import './index.css';
 
 
@@ -22,8 +22,8 @@ export const OverviewPage = () => (
           &nbsp;1769
         </div>
       </div>
-      <div>
-        {/* Charts */}
+      <div className="dashboard__datatable">
+        <DataTable/>
       </div>
     </div>
   </div>

@@ -28,3 +28,7 @@
 .overview-body {
   display: flex;
 }
+
+.dashboard__datatable{
+  overflow: scroll;
+}

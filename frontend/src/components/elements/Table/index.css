@@ -17,5 +17,9 @@ table th{
 }
 
 table tbody{
-    background-color: var(--accent-2-color)
+    background-color: rgb(255, 254, 254);
+    border: 1px solid var(--accent-2-color)
+}
+.table__wrapper{
+    overflow:scroll;
 }

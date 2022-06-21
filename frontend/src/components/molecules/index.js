@@ -1,5 +1,5 @@
 export * from './PickupSnipets';
-export * from './Chart';
+export * from './Graph';
 export * from './MetricPanel';
 export * from './TotalPanel';
 
