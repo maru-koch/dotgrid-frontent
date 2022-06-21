@@ -103,13 +103,10 @@ class ApproveRequestDeviceView(APIView):
     def post(self, request):
 
         request_id = request.data['request_id']
-        model = DeviceModel.objects.get(pk=request_id)
-        request = RequestDevice.objects.filter(model=model)[0]
+        request = RequestDevice.objects.get(pk = request_id)
         request.is_assigned = True
-        serializer = RequestDeviceSerializer(request)
-        if serializer.is_valid():
-            request.save()
-        return Response({'message': 'Request approved', 'data': serializer.data, 'is_assigned': request.is_assigned}, status=status.HTTP_200_OK)
+        request.save()
+        return Response({'message': 'Request approved', 'is_assigned': request.is_assigned}, status=status.HTTP_200_OK)
 
 
 class RetrieveDeviceView(RetrieveAPIView):
