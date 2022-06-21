@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.exceptions import ObjectDoesNotExist, 
+from django.core.exceptions import ObjectDoesNotExist
 
 from api.permissions import IsAdmin
 from .models import Device, RequestDevice, EnergyConsumption, DeviceModel
@@ -28,6 +28,7 @@ class GenerateDataView(APIView):
     """ Generates dummy energy consumption data """
     #: only admins can assign device
     permission_classes = [IsAdmin]
+
     def post(self, request, format=None):
         days = int(request.data['day'])
         devices = int(request.data['devices'])
@@ -43,14 +44,15 @@ class GenerateDataView(APIView):
                         d = date(2022, 6, day+1)
                         h = time(hour, 0, 0)
                         device = Device.objects.get(pk=index)
-                        energy = EnergyConsumption.objects.create(date=d, hour=h, rate=rate, device=device)
+                        energy = EnergyConsumption.objects.create(
+                            date=d, hour=h, rate=rate, device=device)
                         energy.save()
-                        return Response(energy)
-        
+                        return Response({'data': energy})
+
         except:
             return Response({'error': 'Invalid data'})
         finally:
-            return Response({'message':'data generated successfully', 'data':data}, status=status.HTTP_200_OK)
+            return Response({'message': 'data generated successfully', 'data': data}, status=status.HTTP_200_OK)
 
 
 class DeviceModelView(CreateAPIView):
@@ -69,24 +71,28 @@ class AssignDeviceView(APIView):
     """ Gets the model and a user and assigns the user to the model """
     #: only admins can assign device
     permission_classes = [IsAdmin]
+
     def post(self, request, format=None):
         user_id = request.data['user_id']
         model_id = request.data['model_id']
         model = DeviceModel.objects.get(pk=model_id)
         user = Profile.objects.get(pk=user_id)
-        device =Device.objects.create(model=model, user=user)
+        device = Device.objects.create(model=model, user=user)
         device.save()
-        return Response({'message':f'{model.type} successfully assigned to {user.first_name}'})
+        return Response({'message': f'{model.type} successfully assigned to {user.first_name}'})
+
 
 class RequestDeviceView(APIView):
     """ Request for a device """
+
     def post(self, request):
         user = request.user
         model_id = request.data['model']
         model = DeviceModel.objects.get(pk=model_id)
-        request = RequestDevice.objects.create(user = user, model=model)
+        request = RequestDevice.objects.create(user=user, model=model)
         serializer = RequestDeviceSerializer(request)
-        return Response({'message':'Request successful', 'data':serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({'message': 'Request successful', 'data': serializer.data}, status=status.HTTP_201_CREATED)
+
 
 class ApproveRequestDeviceView(APIView):
     """ Request for a device """
@@ -95,14 +101,15 @@ class ApproveRequestDeviceView(APIView):
     permission_classes = [IsAdmin]
 
     def post(self, request):
-      
+
         request_id = request.data['request_id']
         model = DeviceModel.objects.get(pk=request_id)
         request = RequestDevice.objects.filter(model=model)[0]
         request.is_assigned = True
         serializer = RequestDeviceSerializer(request)
-        return Response({'message': 'Request approved', 'data':serializer.data}, status=status.HTTP_200_OK)
-    
+        if serializer.is_valid():
+            request.save()
+        return Response({'message': 'Request approved', 'data': serializer.data, 'is_assigned': request.is_assigned}, status=status.HTTP_200_OK)
 
 
 class RetrieveDeviceView(RetrieveAPIView):
@@ -138,11 +145,11 @@ class EnergyAnalyticView(APIView):
         duration = request.data['duration']
         start = request.data['start']
         end = request.data['end']
-        device = Device.objects.get(pk=device_id)
-        queryset = EnergyConsumption.objects.filter(device=device)
 
         #  ESTIMATION OF AVERAGE, MINIMUM AND MAXIMUM
         try:
+            device = Device.objects.get(pk=device_id)
+            queryset = EnergyConsumption.objects.filter(device=device)
             if duration == 'daily':
                 queryset = queryset.filter(date=start)
 
