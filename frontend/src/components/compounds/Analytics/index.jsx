@@ -1,17 +1,17 @@
-import { TotalPanel, Graph, MetricPanel} from '../../molecules'
+import { TotalPanel, Graph, MetricPanel, Chart} from '../../molecules'
 import './index.css'
 import PropTypes from 'prop-types';
 
 export const Analytics =({children, style})=>{
     return (
-        <div className = "con">
-            <div className = "con2">
-                <div className = "wrapper">
-                    <section className = "right">
+        <div className = "analytics__container">
+            <div className = "analytics__outer_wrapper">
+                <div className = "analytics__inner_wrapper">
+                    <section className = "analytics__right">
                         <TotalPanel/>
-                        <Graph/>
+                        <Chart/>
                     </section>
-                    <section className = "right">
+                    <section className = "analytics__right">
                         <MetricPanel/>
                     </section>
                 </div>

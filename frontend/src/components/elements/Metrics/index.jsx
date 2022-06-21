@@ -6,12 +6,12 @@ export const Metrics=({num, title, subtitle})=>{
     // shows estimated total, average, minimum, and maximum
 return(
     <>
-    <main>
-         <section>
-            <div>
+    <main className="metric__container">
+         <section className="metric__wrapper">
+            <div className="metric__number">
                 <h2>{4.82}</h2>
             </div>
-            <div>
+            <div className="metri__title">
                 <p>{"AVERAGE"}</p>
             </div>
         </section>
