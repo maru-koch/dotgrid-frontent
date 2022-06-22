@@ -102,14 +102,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'josla_db',
-        'CLIENT_ID': 'mongodb+srv://maru:maruchE@cluster0.bdugk.mongodb.net/backend?retryWrites=true&w=majority',
+        'CLIENT': {
+            'host': 'localhost:27017',
+        }
     }
 }
 
-DATABASES['default'] = dj_database_url.config(
-    conn_max_age=600, ssl_require=True)
-    
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -151,33 +150,33 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#------------------------------------
+# ------------------------------------
 #       REST FRAMEWORK CONFIGURATION
-#------------------------------------
+# ------------------------------------
 REST_FRAMEWORK = {
 
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.AllowAny",
         "rest_framework.permissions.IsAuthenticated",
     ),
-    
+
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 
 }
-#------------------------------------
+# ------------------------------------
 #       ACCESS TOKEN LIFETIME
-#------------------------------------
+# ------------------------------------
 #: Extending the Access token lifetime
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=25),
 }
 
-#------------------------------------
+# ------------------------------------
 #       EMAIL SMTP SETUP
-#------------------------------------
+# ------------------------------------
 # Email configuration
 EMAIL_BACKEND = config("EMAIL_BACKEND")
 EMAIL_HOST = config("EMAIL_HOST")
@@ -188,21 +187,20 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 
-#------------------------------------
+# ------------------------------------
 #       MEDIA UPLOAD SETUP
-#------------------------------------
+# ------------------------------------
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/image/'
 
-#------------------------------------
+# ------------------------------------
 #       STATICFILE SETUP
-#------------------------------------
+# ------------------------------------
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'),)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#------------------------------------
+# ------------------------------------
 #       HEROKU SETUP
-#------------------------------------
+# ------------------------------------
 django_heroku.settings(locals())
-

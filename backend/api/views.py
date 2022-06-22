@@ -35,8 +35,11 @@ class GenerateDataView(APIView):
 
         #: generate dummy energy consumption data
         data = DummyEnergyData.generate(days, devices)
+
         try:
+            #: go through the generated data
             for index, dataset in enumerate(data, start=1):
+                #: get device ID
                 device = dataset[f'device_{index}']
                 rate_per_hour = device[f'day_{index}']
                 for day in range(days):
@@ -110,9 +113,17 @@ class ApproveRequestDeviceView(APIView):
 
 
 class RetrieveDeviceView(RetrieveAPIView):
+    
     """ Retrieve the details of a particular device"""
-    serializer_class = DeviceSerializer
-    queryset = Device.objects.all()
+
+    def get(self, request, format=None):
+        user_id = request.data['user_id']
+        user = Profile.objects.get(pk=user_id)
+        user_devices = Device.objects.filter(user__pk = user_id)
+        if user_devices is not None:
+            serializer = DeviceSerializer(user_devices)
+            return Response({'devices': serializer.data}, status=status.HTTP_200_OK)
+        return Response({'error':f'No device has been assigned to {user.first_name}'})
 
 
 class EnergyConsumptionView(ListCreateAPIView):
@@ -149,7 +160,6 @@ class EnergyAnalyticView(APIView):
             queryset = EnergyConsumption.objects.filter(device=device)
             if duration == 'daily':
                 queryset = queryset.filter(date=start)
-
             #: estimate average, minimum, and maximum
                 average = queryset.aggregate(Avg('rate'))['rate__avg']
                 maximum = queryset.aggregate(Max('rate'))['rate__max']
