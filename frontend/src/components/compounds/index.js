@@ -1,4 +1,5 @@
 export * from './DashHeader';
+export * from './DashCardHolder';
 export * from './RightSidebar';
 export * from './Analytics';
 export * from './DataTable';

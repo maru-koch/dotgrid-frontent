@@ -8,10 +8,15 @@ export const ExportCSV=()=>{
     // shows estimated total, average, minimum, and maximum
 
     // Show modal
-    const [isOpen, setIsOpen] = useState(false)
+const [isOpen, setIsOpen] = useState(false)
+
 const openModal=()=>{
-    setIsOpen(isOpen)
-}
+    setIsOpen(true);
+    console.log('exportCSV', isOpen)};
+
+const closeModal=()=>{
+    setIsOpen(false);
+    console.log('exportCSV', isOpen)};
 
 return(
     <main className="export__container">
@@ -26,10 +31,10 @@ return(
                     <Text size={14}>Visualize</Text>
                 </Button>
             </div>
-            <Modal open={isOpen}>
+            {/* <Modal open={isOpen} close={()=> closeModal()}>
                 <Analytics/>
-            </Modal>
+            </Modal> */}
         </section>
     </main>
-)
+    )
 }

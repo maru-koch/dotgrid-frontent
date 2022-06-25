@@ -1,20 +1,30 @@
 
 .analytics__container{
-    width:100vw;
+    width:800px;
     margin:0 auto;
     height: 100%;
+    cursor:crosshair;
+    border-radius: 5px;
+    background-color:#fff;
+    opacity: 1;
+    z-index:1,
 }
 .analytics__wrapper{
     width:100%;
-    padding:40px;
-    background-color:var(--background-color)
+    background-color:var(--background-color);
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: 1;
 }
 .analytics__outer_wrapper{
     max-width: 1000px;
     background-color: white;
+    opacity: 1;
 }
 
 .analytics__inner_wrapper {
     display: grid;
     grid-template-columns: 8fr 2fr;
+    background-color: #fff;
+    opacity: 1;
 }

@@ -1,15 +1,41 @@
-
-import {Analytics} from '../Analytics'
 import ReactDom from 'react-dom'
 import './index.css'
 
-export const Modal=({open, children})=>{
+const OVERLAY_STYLE ={
+    position: 'fixed',
+    left:0,
+    right:0,
+    bottom:0,
+    top: 0,
+    margin: '0 auto',
+    backgroundColor:'#000',
+    opacity:1,
+    zIndex: 1000
+}
+
+const MODAL_STYLE ={
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    margin: '0 auto',
+    backgroundColor:'#fff',
+    padding: '50px',
+    zIndex: 1000,
+     opacity:1,
+}
+
+export const Modal=({open, close, children})=>{
     if (!open) return null;
-    console.log(open)
+    console.log("modal",open)
     return ReactDom.createPortal(
-    <main className="modal">
-        {children}
-    </main>,
+    <>
+        <main className="modal" style ={OVERLAY_STYLE} onClick={close}>
+        <div style ={MODAL_STYLE} >
+            {children}
+        </div>
+        </main>
+    </>,
     document.getElementById('portal')
-)
+    )
 }

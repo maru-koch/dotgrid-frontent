@@ -11,6 +11,7 @@ import { ReactComponent as Account } from './images/accountdisc.svg';
 import { ReactComponent as Logout } from './images/logout.svg';
 import logo from './images/josla_logo.png';
 
+
 // '../store/reducer/auth/authSlice'
 const Num =({num})=>{
   return(
@@ -43,11 +44,12 @@ export const SideBar = () => {
              <img src={logo} alt="Josla Electric" />
         </div>
       </div>
-      <div className="box1 box">
+      
+      <div  className="box1 box">
         <Grid />
         <Text className="containerText">Admin</Text>
       </div>
-
+     
       <div className="box">
         <Wallet />
         <Text>Users</Text>

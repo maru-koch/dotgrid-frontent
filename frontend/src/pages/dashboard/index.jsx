@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashHeader, SideBar, Text, Welcome, DataTable} from '../../components';
+import { DashHeader, SideBar, Text, Welcome, DataTable, DashCardHolder} from '../../components';
 import './index.css';
 
 
@@ -15,6 +15,7 @@ export const OverviewPage = () => (
       <div className="welcome">
         <Welcome />
       </div>
+      <DashCardHolder/>
       <div className="head-text">
         <Text>Recent Pickups</Text>
         <div className="right-text">
