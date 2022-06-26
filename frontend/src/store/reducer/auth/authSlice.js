@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import api from '../../../api/routes/index';
+import {api, addAuthentication, removeAuthentication} from '../../../api/routes/index';
 const name = 'authentication';
 
 const authUser = createAsyncThunk(`${name}/login`, async (values) => {
@@ -7,7 +7,7 @@ const authUser = createAsyncThunk(`${name}/login`, async (values) => {
   return res.data;
 });
 
-const initialState = { isAuthorized: true, loading: false, user: {} };
+const initialState = { isAuthorized: false, loading: false, user: {} };
 
 const authSlice = createSlice({
   name:'authReducer',
@@ -38,6 +38,6 @@ const authSlice = createSlice({
   },
 });
 
-export const AUTH_ACTIONS = { ...authSlice.actions, authUser };
+export const AUTH_ACTIONS = { ...authSlice.actions, authUser};
 
 export default authSlice.reducer;

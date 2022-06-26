@@ -39,9 +39,9 @@
 
 .card {
     margin: 20px;
-    padding: 20px;
+    padding: 0 30px;
     width: 300px;
-    min-height: 200px;
+    min-height: 150px;
     display: grid;
     grid-template-rows: 20px 50px 1fr 50px;
     border-radius: 10px;
@@ -80,6 +80,10 @@
 .card__exit {
     grid-row: 1/2;
     justify-self: end;
+    position: absolute;
+    top:0;
+    right: 20px;
+
 }
 
 .card__icon {
@@ -88,11 +92,16 @@
 }
 
 .card__title {
-    grid-row: 3/4;
+    grid-row: 2/4;
     font-weight: 400;
     color: #ffffff;
 }
-
+.card__wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
 .card__apply {
     grid-row: 4/5;
     align-self: center;
@@ -101,8 +110,7 @@
 /* CARD BACKGROUNDS */
 
 .card-1 {
-    /* background: radial-gradient(#1fe4f5, #3fbafe);*/
-    background: radial-gradient(#fff, #fFF);
+ background: radial-gradient(#1fe4f5, #3fbafe);
 } 
 
 
@@ -110,11 +118,11 @@
     background: radial-gradient(#fbc1cc, #fa99b2);
 }
 
-.card-3 {
+.card-3v {
     background: radial-gradient(#76b2fe, #b69efe);
 }
 
-.card-4 {
+.card-3 {
     background: radial-gradient(#60efbc, #58d5c9);
 }
 

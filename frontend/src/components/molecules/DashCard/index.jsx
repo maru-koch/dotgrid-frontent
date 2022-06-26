@@ -1,14 +1,38 @@
 import './index.css'
-
-export const DashCard=({title, icon, metrics})=>{
+import PropTypes from 'prop-types'
+export const DashCard=({title, icon, id, metric})=>{
     return (
-        <div className="card card-1">
-            <div className="card__icon"><i class="fas fa-bolt"></i></div>
+        <div className={`card card-${id}`}>
             <p className="card__exit"><i class="fas fa-times"></i></p>
-            <h2 className="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+            <div className="card__wrapper">
+                <div className="card__icon">
+                    <i className={`fas ${icon}`}></i>
+                </div>
+                <div >
+                    <h2 className="card__title">{metric}</h2>
+                    <h2 className="card__title">{title}</h2>
+                </div>
+            </div>
             <p className="card__apply">
-            <a className="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-        </p>
+            <a className="card__link" href="#">stat <i class="fas fa-arrow-right"></i></a>
+            </p>
     </div>
     )
+}
+
+{/* <div className="card card-1">
+    <div className="card__icon"><i className={`fas ${icon}`}></i></div>
+    <p className="card__exit"><i class="fas fa-times"></i></p>
+    <h2 className="card__title">{metric}</h2>
+    <h2 className="card__title">{title}</h2>
+    <p className="card__apply">
+    <a className="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+    </p>
+</div> */}
+
+DashCard.propTypes={
+    icon:PropTypes.string,
+    title:PropTypes.string,
+    metric: PropTypes.number,
+    idx: PropTypes.number,
 }

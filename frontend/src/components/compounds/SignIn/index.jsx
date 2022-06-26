@@ -19,7 +19,6 @@ export const SignIn = () => {
 
   const { authUser } = AUTH_ACTIONS;
 
-   
     const onChangeHandler=(e)=>{
       formData[e.target.name] = e.target.value;
       setFormData(formData)
@@ -65,7 +64,7 @@ export const SignIn = () => {
         </div>
         <div className="signin-main-footer-text">
           <Text.Heading text="Don't have an account?" color="grey" size={14} weight={500} level={4} />
-          <Link to="/">
+          <Link to="/signup">
             <Text.Heading text="Sign Up" color="green" size={14} weight={500} level={4} />
           </Link>
         </div>
