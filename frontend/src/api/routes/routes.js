@@ -1,59 +1,87 @@
-import {api} from './index'
 
-export const setAuthorizationHeader = (token) => {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-  };
+import { dotGridRequest } from './index'
 
-export const signUp= async (formData)=>{
-    const res = await api.post('account/signup/')
+export const auth={
+
+// USER ROUTES
+signUp: (formData)=>{
+    const res = dotGridRequest.post('account/signup/', formData)
     return res.data
-}
+},
 
-export const login = async (formData)=>{
-    const res = await api.post('account/signup/')
+login: (formData)=>{
+    const res = dotGridRequest.post('account/login/', formData)
     return res.data
-}
+},
 
-export const addModel= async (formData)=>{
-    const res = await api.post('account/signup/')
+updateUser: (id)=>{
+    const res = dotGridRequest.post(`user/${id}`)
     return res.data
-}
+},
 
-export const requestDevice = async (formData)=>{
-    const res = await api.post('account/signup/')
+removeUser: (id)=>{
+    const res = dotGridRequest.post(`user/${id}`)
     return res.data
-}
+},
 
-export const assignDevice = async (formData)=>{
-    const res = await api.post('account/signup/')
+getAllUsers: ()=>{
+    const res = dotGridRequest.post('user/all/')
     return res.data
-}
+},
 
-export const generateData = async (formData)=>{
-    const res = await api.post('account/signup/')
+
+// DEVICE ROUTES
+addModel: (formData)=>{
+    const res = dotGridRequest.post('device/add-model', formData)
     return res.data
-}
+},
 
-export const analyzeData = async ({device, start, end, duration})=>{
-    const res = await api.post('/device/analytics/all')
+requestDevice: (formData)=>{
+    const res = dotGridRequest.post('device/request/device', formData)
     return res.data
-}
+},
 
-export const retrieveDevice = async ({id})=>{
+assignDevice: (formData)=>{
+    const res = dotGridRequest.post('account/signup/', formData)
+    return res.data
+},
+
+retrieveDevice: ({id})=>{
      try{
-        const res = await api.post(`/device/${id}`)
+        const res = dotGridRequest.post(`/device/${id}`)
         return res.data
     }catch(err){
         console.log(err)
     }
+},
+
+getAllDevices: ()=>{
+    try{
+        const res = dotGridRequest.post('/device/')
+        return res.data
+    }catch(err){
+        console.log(err)
+    }  
+  },
+  
+
+// DATA ROUTES
+generateData: (formData)=>{
+    const res = dotGridRequest.post('vice/energy/generate', formData)
+    return res.data
+},
+
+analyzeData: (formData)=>{
+    const res = dotGridRequest.post('device/energy/analyze', formData)
+    return res.data
+},
+
+clearData: (formData)=>{
+    const res = dotGridRequest.post('device/energy/clear', formData)
+    return res.data
+},
+
 }
 
-export const getAllDevices = async ()=>{
-    try{
-        const res = await api.post('/device/')
-        return res.data
-    }catch(err){
-        console.log(err)
-    }
-    
-}
+
+export default auth
