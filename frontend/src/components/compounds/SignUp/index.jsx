@@ -19,7 +19,7 @@ export const SignUp = () => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState(initialState)
   const [errors, setError] = useState({})
-  const { signUp } = AUTH_ACTIONS
+  const { signUpUser } = AUTH_ACTIONS
 
   const onChangeHandler=e=>{
     setFormData({...formData, [e.target.name]:e.target.value})
@@ -27,12 +27,14 @@ export const SignUp = () => {
 
   const onSubmitHandler=(e)=>{
       e.preventDefault();
-      const error = validate(formData)
-      if (error) {
-        toast.error(error)
-      }else{
-        dispatch(signUp(formData))
-      }
+      // const error = validate(formData)
+      console.log('Error')
+      // if (error) {
+      //   toast(error)
+      dispatch(signUpUser(formData))
+      // }else{
+      //   dispatch(signUpUser(formData))
+      // }
       
       
   }
@@ -47,7 +49,6 @@ export const SignUp = () => {
               <Input.HalfLeftRound 
                   name ="first_name" 
                   type="text" 
-                  value = {initialState.first_name} 
                   onChange={onChangeHandler}/>
             </div>
             <div className="signup-col-lastname">
@@ -55,7 +56,6 @@ export const SignUp = () => {
               <Input.HalfRightRound 
                   name ="last_name" 
                   type="text" 
-                  value = {initialState.last_name}  
                   onChange={onChangeHandler}/>
             </div>
           </div>
@@ -64,7 +64,6 @@ export const SignUp = () => {
             <Input.FullRound 
                   name ="email" 
                   type="email" 
-                  value = {initialState.email} 
                   onChange={onChangeHandler}/>
           </div>
 
@@ -73,7 +72,7 @@ export const SignUp = () => {
             <Input.FullRound name ="password" type="password" placeholder="" onChange={onChangeHandler}/>
           </div>
           <div className="signup-wrapper-button">
-            <Button.MainGreen text="Sign Up" />
+            <Button.MainGreen text="Sign Up" onClick={onSubmitHandler}/>
           </div>
           <div className="signup-wrapper-divider">
             <Text.Divider text="OR" />

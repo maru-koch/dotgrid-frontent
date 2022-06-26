@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import api from 'apis/routes';
+import api from '../../../api/routes/routes';
 
 // Name of reducer
 const name = 'auth';
@@ -20,6 +20,10 @@ const authSlice = createSlice({
   name,
   initialState,
   reducers: {
+    signUpUser:(state, action)=>{
+      console.log("REDUCER ACTION", action.payload)
+      api.signUp(action.payload)
+    },
     addDevice:()=>{},
     assignDevice:()=>{},
     removeDevice:()=>{},
