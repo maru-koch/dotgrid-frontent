@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Text, Input, Button } from '../../elements';
 import { Link } from 'react-router-dom';
+import validate from './validation'
+import { useDispatch} from 'react-redux'
+import { toast} from 'react-toastify';
+import { AUTH_ACTIONS } from '../../../store/reducer/auth/authSlice';
+
 import './style.css';
 
 
@@ -11,33 +16,61 @@ const initialState={
   password: '',
 }
 export const SignUp = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState(initialState)
+  const [errors, setError] = useState({})
+  const { signUp } = AUTH_ACTIONS
+
   const onChangeHandler=e=>{
-    setFormData(formData)
+    setFormData({...formData, [e.target.name]:e.target.value})
+  }
+
+  const onSubmitHandler=(e)=>{
+      e.preventDefault();
+      const error = validate(formData)
+      if (error) {
+        toast.error(error)
+      }else{
+        dispatch(signUp(formData))
+      }
+      
+      
   }
    return (
-        <div>
+        <form onSubmit={onSubmitHandler}>
           <div className="signup-wrapper-signup-title">
             <Text.Heading text="Sign Up" size={24} weight={500} level={1} />
           </div>
           <div className="signup-wrapper-name">
             <div className="signup-col-firstname">
               <Text.Heading text="First Name" size={16} weight={450} level={3} />
-              <Input.HalfLeftRound name ="first_name" type="text" placeholder="" />
+              <Input.HalfLeftRound 
+                  name ="first_name" 
+                  type="text" 
+                  value = {initialState.first_name} 
+                  onChange={onChangeHandler}/>
             </div>
             <div className="signup-col-lastname">
               <Text.Heading text="Last Name" size={16} weight={450} level={3} />
-              <Input.HalfRightRound name ="last_name" type="text" placeholder="" />
+              <Input.HalfRightRound 
+                  name ="last_name" 
+                  type="text" 
+                  value = {initialState.last_name}  
+                  onChange={onChangeHandler}/>
             </div>
           </div>
           <div className="signup-wrapper-email">
             <Text.Heading text="Email Address" size={16} weight={450} level={3} />
-            <Input.FullRound name ="email" type="email" placeholder="" />
+            <Input.FullRound 
+                  name ="email" 
+                  type="email" 
+                  value = {initialState.email} 
+                  onChange={onChangeHandler}/>
           </div>
 
           <div className="signup-wrapper-password">
             <Text.Heading text="Set a Password" size={16} weight={450} level={3} />
-            <Input.FullRound name ="password" type="password" placeholder="" />
+            <Input.FullRound name ="password" type="password" placeholder="" onChange={onChangeHandler}/>
           </div>
           <div className="signup-wrapper-button">
             <Button.MainGreen text="Sign Up" />
@@ -54,7 +87,7 @@ export const SignUp = () => {
               <Text.Heading text="Sign In" color="green" size={14} weight={500} level={4} />
             </Link>
           </div>
-        </div>
+        </form>
    )
 }
  
