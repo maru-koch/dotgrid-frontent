@@ -23,16 +23,13 @@ export const ROUTES = {
   assignDevice: {
     path: 'assign-device',
   },
-  overview: {
-    path: 'overview',
+  users: {
+    path: 'users',
   },
-  overview: {
-    path: 'overview',
+  removeUser: {
+    path: 'update-user',
   },
-  overview: {
-    path: 'overview',
-  },
-  overview: {
-    path: 'overview',
+  updateUser: {
+    path: 'remove-user',
   },
 };

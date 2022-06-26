@@ -1,43 +1,56 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import {api, addAuthentication, removeAuthentication} from '../../../api/routes/index';
-const name = 'authentication';
+import api from 'apis/routes';
 
-const authUser = createAsyncThunk(`${name}/login`, async (values) => {
+// Name of reducer
+const name = 'auth';
+
+const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
   const res = await api.auth.login(values);
+  return res.data;
+});
+
+const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
+  const res = await api.auth.logout();
   return res.data;
 });
 
 const initialState = { isAuthorized: false, loading: false, user: {} };
 
 const authSlice = createSlice({
-  name:'authReducer',
+  name,
   initialState,
-
   reducers: {
-    logoutUser: (state) => {
-      api.auth.logout();
-      state.isAuthorized = false;
-      state.loading = false;
-      state.user = {};
-    },
+    addDevice:()=>{},
+    assignDevice:()=>{},
+    removeDevice:()=>{},
+    generateData:()=>{},
+    analyzeData:()=>{},
+    removeUser:()=>{},
+    updateUser:()=>{},
+    getAllUsers:()=>{},
 
-    extraReducers: (builder) => {
+  },
+  extraReducers: (builder) => {
       builder
-        .addCase(authUser.fulfilled, (state, action) => {
+        .addCase(logInUser.fulfilled, (state, action) => {
           state.isAuthorized = true;
           state.loading = false;
           state.user = action.payload;
         })
-        .addCase(authUser.pending, (state) => {
+        .addCase(logInUser.pending, (state) => {
           state.loading = true;
         })
-        .addCase(authUser.rejected, (state) => {
+        .addCase(logInUser.rejected, (state) => {
           state.loading = false;
+        })
+        .addCase(logOutUser.fulfilled, (state) => {
+          state.isAuthorized = false;
+          state.loading = false;
+          state.user = {};
         });
     },
-  },
 });
 
-export const AUTH_ACTIONS = { ...authSlice.actions, authUser};
+export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser };
 
 export default authSlice.reducer;
