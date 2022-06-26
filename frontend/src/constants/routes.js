@@ -3,7 +3,7 @@ export const ROUTES = {
     path: 'signup',
   },
   signIn: {
-    path: 'login',
+    path: 'signin',
   },
   dashboard: {
     path: '/dashboard',

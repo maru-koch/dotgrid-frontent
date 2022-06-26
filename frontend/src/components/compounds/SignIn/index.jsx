@@ -17,19 +17,19 @@ export const SignIn = () => {
   const { loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const { authUser } = AUTH_ACTIONS;
+  const { logInUser } = AUTH_ACTIONS;
 
     const onChangeHandler=(e)=>{
-      formData[e.target.name] = e.target.value;
-      setFormData(formData)
+      setFormData({...formData, [e.target.name]:e.target.value })
     }
+
     const onSubmitHandler = (e) => {
       e.preventDefault();
       const validated_data = new FormData();
       validated_data.append('email', formData.email)
       validated_data.append('email', formData.password)
-
-      dispatch(authUser(formData));
+      dispatch(logInUser(formData));
+      console.log(formData)
     }
 
 
@@ -54,7 +54,7 @@ export const SignIn = () => {
           <Text.RememberMe />
         </div>
         <div className="signin-wrapper-button">
-          <Button type="submit" stretch text="Sign In" />
+          <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler} />
         </div>
         <div className="signin-wrapper-divider">
           <Text.Divider text="OR" />

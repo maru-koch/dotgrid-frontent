@@ -5,8 +5,9 @@ import api from '../../../api/routes/routes';
 const name = 'auth';
 
 const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
-  const res = await api.auth.login(values);
-  return res.data;
+  const res = await api.login(values);
+  console.log(res.status_code);
+  return res.data
 });
 
 const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
