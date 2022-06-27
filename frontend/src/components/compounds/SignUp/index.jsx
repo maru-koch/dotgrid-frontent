@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import validate from './validation'
 import { useDispatch} from 'react-redux'
 import { toast} from 'react-toastify';
-import { AUTH_ACTIONS } from '../../../store/reducer/auth/authSlice';
+import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 
 import './style.css';
 

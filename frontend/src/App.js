@@ -32,7 +32,7 @@ const PrivateOutlet = () => {
 
 // for auth routes - login, signup forget password ...
 const ProtectedOutlet = () => {
-  const { isAuthorized: isAuth } = useSelector((state) => state.auth);
+  const {isAuthorized: isAuth } = useSelector((state) => state.auth);
   return !isAuth ? (
     <AuthLayout>
       <Suspense fallback="loading...">

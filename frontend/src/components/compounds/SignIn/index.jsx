@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { Text, Input, Button, Loader } from '../../elements';
 import { Link } from 'react-router-dom';
-import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { AUTH_ACTIONS } from '../../../store/reducer/auth/authSlice';
+import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
+import { validate } from './validation'
+import './style.css';
 
 // ../store/reducer/auth/authSlice'
 const initialValues = {
@@ -13,6 +14,7 @@ const initialValues = {
 export const SignIn = () => {
 
   const [formData, setFormData] = useState(initialValues)
+  const [error, setError] = useState({})
 
   const { loading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -24,12 +26,16 @@ export const SignIn = () => {
     }
 
     const onSubmitHandler = (e) => {
+      
       e.preventDefault();
+      const error = validate(formData)
       const validated_data = new FormData();
       validated_data.append('email', formData.email)
       validated_data.append('email', formData.password)
-      dispatch(logInUser(formData));
-      console.log(formData)
+      const res = dispatch(logInUser(formData));
+      setError(error)
+      console.log(res)
+   
     }
 
 
@@ -43,12 +49,12 @@ export const SignIn = () => {
         <div className="signin-wrapper-email">
           <Text.Heading text="Email Address" size={16} weight={450} level={3} />
           <Input.FullRound name="email" type="email" placeholder="" onChange={onChangeHandler} />
-          
+          {error?<p className="error">{error.email}</p>:''}
         </div>
         <div className="signin-wrapper-password">
           <Text.Heading text="Password" size={16} weight={450} level={3} />
           <Input.FullRound name="password" type="password" placeholder="" onChange={onChangeHandler} />
-          
+          {error?<p className="error" >{error.password}</p>:''}
         </div>
         <div className="signin-wrapper-remember-me">
           <Text.RememberMe />

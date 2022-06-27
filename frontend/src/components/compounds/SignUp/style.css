@@ -71,3 +71,8 @@
 .signup-main-footer-text h4:nth-child(1) {
   margin-right: 5px;
 }
+.error {
+  color: rgb(248, 87, 87);
+  padding-top: 5px;
+  padding-left: 5px;
+}

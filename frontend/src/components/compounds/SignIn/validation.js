@@ -1,10 +1,6 @@
 
 export const validate=(values)=>{
     const errors = {};
-    if (!values.first_name){
-        errors.first_name ="First name cannot be empty"}
-    if (!values.last_name){
-        errors.last_name ="Last name cannot be empty"}
     if (!values.email){
         errors.email ="Email cannot be empty"
     }else if(!values.email.includes('@')){
@@ -17,3 +13,4 @@ export const validate=(values)=>{
     }
     return errors;
 }
+

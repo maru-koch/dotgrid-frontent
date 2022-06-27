@@ -6,13 +6,14 @@ const name = 'auth';
 
 const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
   const res = await api.login(values);
-  console.log(res.status_code);
-  return res.data
+  console.log(res.access)
+  return res.access
 });
 
 const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
-  const res = await api.auth.logout();
-  return res.data;
+  const res = await api.logout();
+  console.log("ushim",res)
+  return res;
 });
 
 const initialState = { isAuthorized: false, loading: false, user: {} };
@@ -41,9 +42,11 @@ const authSlice = createSlice({
           state.isAuthorized = true;
           state.loading = false;
           state.user = action.payload;
+          console.log('state--', state.user)
         })
         .addCase(logInUser.pending, (state) => {
           state.loading = true;
+          state.isAuthorized = false;
         })
         .addCase(logInUser.rejected, (state) => {
           state.loading = false;

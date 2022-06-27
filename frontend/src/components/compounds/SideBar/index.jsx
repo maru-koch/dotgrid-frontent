@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from '../../elements';
 import './index.css';
 import { useDispatch } from 'react-redux';
-import { AUTH_ACTIONS } from '../../../store/reducer/auth/authSlice';
+import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import { ReactComponent as Grid } from './images/grid.svg';
 import { ReactComponent as Wallet } from './images/wallet.svg';
 import { ReactComponent as Payment } from './images/payment.svg';
@@ -29,12 +29,12 @@ const Num =({num})=>{
 }
 
 export const SideBar = () => {
-  const { logoutUser } = AUTH_ACTIONS;
+  const { logOutUser } = AUTH_ACTIONS;
 
   const dispatch = useDispatch();
 
   const logout = () => {
-    dispatch(logoutUser());
+    dispatch(logOutUser());
   };
 
   return (
