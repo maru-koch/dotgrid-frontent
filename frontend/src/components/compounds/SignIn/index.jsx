@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import { validate } from './validation'
 import './style.css';
+import { toast } from 'react-toastify';
 
 // ../store/reducer/auth/authSlice'
 const initialValues = {
@@ -16,7 +17,7 @@ export const SignIn = () => {
   const [formData, setFormData] = useState(initialValues)
   const [error, setError] = useState({})
 
-  const { loading } = useSelector((state) => state.auth);
+  const { loading, isAuthorized: isAuth } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const { logInUser } = AUTH_ACTIONS;
@@ -26,16 +27,21 @@ export const SignIn = () => {
     }
 
     const onSubmitHandler = (e) => {
-      
       e.preventDefault();
-      const error = validate(formData)
-      const validated_data = new FormData();
-      validated_data.append('email', formData.email)
-      validated_data.append('email', formData.password)
-      const res = dispatch(logInUser(formData));
-      setError(error)
-      console.log(res)
-   
+      const errors = validate(formData)
+
+      // check if there is an error, if true, trigger a toast
+      // else dispatch logInUser action
+
+      if (errors){
+            setError(errors)
+        }else{
+          alert('logged')
+          const validated_data = new FormData();
+          validated_data.append('email', formData.email);
+          validated_data.append('email', formData.password);
+          dispatch(()=>logInUser(formData));
+        }
     }
 
 

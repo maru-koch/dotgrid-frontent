@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Text, Input, Button } from '../../elements';
 import { Link } from 'react-router-dom';
-import validate from './validation'
+import { validate } from './validation'
 import { useDispatch} from 'react-redux'
 import { toast} from 'react-toastify';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
-
 import './style.css';
 
 
@@ -17,8 +16,9 @@ const initialState={
 }
 export const SignUp = () => {
   const dispatch = useDispatch();
+
   const [formData, setFormData] = useState(initialState)
-  const [errors, setError] = useState({})
+  const [error, setError] = useState({})
   const { signUpUser } = AUTH_ACTIONS
 
   const onChangeHandler=e=>{
@@ -27,14 +27,14 @@ export const SignUp = () => {
 
   const onSubmitHandler=(e)=>{
       e.preventDefault();
-      // const error = validate(formData)
-      console.log('Error')
-      // if (error) {
-      //   toast(error)
-      dispatch(signUpUser(formData))
-      // }else{
-      //   dispatch(signUpUser(formData))
-      // }
+      const errors = validate(formData)
+      if (errors) {
+        setError(errors)
+      }else{
+         dispatch(signUpUser(formData))
+         toast.success('Successfully logged in')
+      }
+
       
       
   }
@@ -50,6 +50,7 @@ export const SignUp = () => {
                   name ="first_name" 
                   type="text" 
                   onChange={onChangeHandler}/>
+                  {error?<p className="error">{error.first_name}</p>:''}
             </div>
             <div className="signup-col-lastname">
               <Text.Heading text="Last Name" size={16} weight={450} level={3} />
@@ -57,6 +58,7 @@ export const SignUp = () => {
                   name ="last_name" 
                   type="text" 
                   onChange={onChangeHandler}/>
+                  {error?<p className="error">{error.last_name}</p>:''}
             </div>
           </div>
           <div className="signup-wrapper-email">
@@ -65,14 +67,22 @@ export const SignUp = () => {
                   name ="email" 
                   type="email" 
                   onChange={onChangeHandler}/>
+                  {error?<p className="error">{error.email}</p>:''}
           </div>
 
           <div className="signup-wrapper-password">
             <Text.Heading text="Set a Password" size={16} weight={450} level={3} />
-            <Input.FullRound name ="password" type="password" placeholder="" onChange={onChangeHandler}/>
+            <Input.FullRound 
+                  name ="password" 
+                  type="password" 
+                  placeholder="" 
+                  onChange={onChangeHandler}/>
+                  {error?<p className="error">{error.password}</p>:''}
           </div>
           <div className="signup-wrapper-button">
-            <Button.MainGreen text="Sign Up" onClick={onSubmitHandler}/>
+            <Button.MainGreen 
+                  text="Sign Up" 
+                  onClick={onSubmitHandler}/>
           </div>
           <div className="signup-wrapper-divider">
             <Text.Divider text="OR" />
