@@ -15,7 +15,7 @@ export const Total=({ total })=>{
 
 useEffect(()=>{
     changeColor()
-}, [])
+})
 
 return(
     <main className ="total__energy_container">

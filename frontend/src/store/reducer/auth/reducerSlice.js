@@ -12,6 +12,7 @@ const initialState = { isAuthorized: false, loading: false, user: {} };
 const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
   const res = await api.login(values)
   setAuthorizationHeader(res.data.access);
+  return res.data.user
 });
 
 // logout current user
@@ -45,8 +46,10 @@ const authSlice = createSlice({
       builder
         .addCase(logInUser.fulfilled, (state, action) => {
           state.isAuthorized = true;
-          state.loading = false;
+          state.loading = false; 
+          // whatever thing that's being returned from logInUser
           state.user = action.payload;
+
         })
         .addCase(logInUser.pending, (state) => {
           state.loading = true;

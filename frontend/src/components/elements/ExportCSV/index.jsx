@@ -31,9 +31,9 @@ return(
                     <Text size={14}>Visualize</Text>
                 </Button>
             </div>
-            {/* <Modal open={isOpen} close={()=> closeModal()}>
+            <Modal open={isOpen} close={()=> closeModal()}>
                 <Analytics/>
-            </Modal> */}
+            </Modal>
         </section>
     </main>
     )

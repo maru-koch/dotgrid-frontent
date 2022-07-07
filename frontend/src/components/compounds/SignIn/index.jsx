@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import { validate } from './validation'
 import './style.css';
-import { toast } from 'react-toastify';
+
 
 // ../store/reducer/auth/authSlice'
 const initialValues = {
@@ -17,9 +17,8 @@ export const SignIn = () => {
   const [formData, setFormData] = useState(initialValues)
   const [error, setError] = useState({})
 
-  const { loading, isAuthorized } = useSelector((state) => state.auth);
-  console.log(isAuthorized)
-
+  const { loading } = useSelector((state) => state.auth);
+  
   const dispatch = useDispatch();
 
   const { logInUser } = AUTH_ACTIONS;
@@ -44,7 +43,7 @@ export const SignIn = () => {
       validated_data.append('email', formData.email);
       validated_data.append('email', formData.password);
       dispatch(logInUser(formData));
-      console.log(isAuthorized)
+     
     }
 
 

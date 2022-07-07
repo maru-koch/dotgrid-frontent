@@ -17,5 +17,8 @@
 .export__csv p{
     text-decoration: underline;
     padding-left:5px;
+}
 
+.export__csv p:hover{
+    cursor:pointer;
 }
