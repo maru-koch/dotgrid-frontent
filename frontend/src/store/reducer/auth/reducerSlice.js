@@ -15,8 +15,7 @@ const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
 });
 
 // logout current user
-const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
-  await api.logout();
+export const logOutUser = createAsyncThunk(`${name}/logout`, async (x) => {
   removeAuthorizationHeader()
 });
 
@@ -36,6 +35,9 @@ const authSlice = createSlice({
     analyzeData:()=>{},
     removeUser:()=>{},
     updateUser:()=>{},
+    logInUser:()=>{
+      console.log('fakehit')
+    },
     getAllUsers:()=>{},
 
   },
@@ -61,6 +63,6 @@ const authSlice = createSlice({
     },
 });
 
-export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser };
+export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser};
 
 export default authSlice.reducer;

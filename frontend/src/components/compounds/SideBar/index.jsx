@@ -2,6 +2,7 @@ import React from 'react';
 import { Text } from '../../elements';
 import './index.css';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import { ReactComponent as Grid } from './images/grid.svg';
 import { ReactComponent as Wallet } from './images/wallet.svg';
@@ -29,12 +30,13 @@ const Num =({num})=>{
 }
 
 export const SideBar = () => {
-  const { logOutUser } = AUTH_ACTIONS;
 
+  const { logOutUser } = AUTH_ACTIONS
+  const state = useSelector(state=>state.auth)
   const dispatch = useDispatch();
 
   const logout = () => {
-    dispatch(logOutUser());
+    dispatch(logOutUser('patch'));
   };
 
   return (
@@ -69,7 +71,7 @@ export const SideBar = () => {
 
       <div className="space" />
 
-      <button type="button" className="box remove-btn-prop" onClick={logout}>
+      <button type="button" className="box remove-btn-prop" onClick={()=>logout()}>
         <Text>Log Out</Text>
         <Logout className="log" />
       </button>
