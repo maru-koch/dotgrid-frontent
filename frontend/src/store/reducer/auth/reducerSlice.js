@@ -16,7 +16,7 @@ const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
   return res;
 });
 
-const initialState = { isAuthorized: false, loading: false, user: {} };
+const initialState = { isAuthorized: true, loading: false, user: {} };
 
 const authSlice = createSlice({
   name: name,

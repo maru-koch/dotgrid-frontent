@@ -18,12 +18,14 @@ export const SignIn = () => {
   const [error, setError] = useState({})
 
   const { loading, isAuthorized: isAuth } = useSelector((state) => state.auth);
+
   const dispatch = useDispatch();
 
   const { logInUser } = AUTH_ACTIONS;
 
     const onChangeHandler=(e)=>{
       setFormData({...formData, [e.target.name]:e.target.value })
+      
     }
 
     const onSubmitHandler = (e) => {
@@ -32,16 +34,15 @@ export const SignIn = () => {
 
       // check if there is an error, if true, trigger a toast
       // else dispatch logInUser action
-
+      
       if (errors){
             setError(errors)
-        }else{
-          alert('logged')
-          const validated_data = new FormData();
-          validated_data.append('email', formData.email);
-          validated_data.append('email', formData.password);
-          dispatch(()=>logInUser(formData));
         }
+        
+      const validated_data = new FormData();
+      validated_data.append('email', formData.email);
+      validated_data.append('email', formData.password);
+      dispatch(logInUser(formData));
     }
 
 
