@@ -17,7 +17,8 @@ export const SignIn = () => {
   const [formData, setFormData] = useState(initialValues)
   const [error, setError] = useState({})
 
-  const { loading, isAuthorized: isAuth } = useSelector((state) => state.auth);
+  const { loading, isAuthorized } = useSelector((state) => state.auth);
+  console.log(isAuthorized)
 
   const dispatch = useDispatch();
 
@@ -43,6 +44,7 @@ export const SignIn = () => {
       validated_data.append('email', formData.email);
       validated_data.append('email', formData.password);
       dispatch(logInUser(formData));
+      console.log(isAuthorized)
     }
 
 

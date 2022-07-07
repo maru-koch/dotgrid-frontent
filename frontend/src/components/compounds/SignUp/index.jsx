@@ -23,6 +23,7 @@ export const SignUp = () => {
 
   const onChangeHandler=e=>{
     setFormData({...formData, [e.target.name]:e.target.value})
+
   }
 
   const onSubmitHandler=(e)=>{
@@ -30,10 +31,10 @@ export const SignUp = () => {
       const errors = validate(formData)
       if (errors) {
         setError(errors)
-      }else{
+      }
          dispatch(signUpUser(formData))
          toast.success('Successfully logged in')
-      }
+      
 
       
       

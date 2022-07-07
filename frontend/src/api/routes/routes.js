@@ -11,7 +11,7 @@ signUp: (formData)=>{
 
 login: (formData)=>{
     const res = dotGridRequest.post('account/login/', formData)
-    return res.data
+    return res
 },
 
 updateUser: (id)=>{

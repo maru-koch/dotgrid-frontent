@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
-
 export const createClient = (options) => {
   const client = axios.create({
     baseURL: options?.baseUrl ?? process.env.REACT_APP_BASE_URL,

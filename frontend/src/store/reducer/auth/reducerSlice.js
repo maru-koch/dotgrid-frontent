@@ -1,22 +1,25 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { setAuthorizationHeader, removeAuthorizationHeader } from "../../../api/routes/index"
+
 import api from '../../../api/routes/routes';
 
 // Name of reducer
 const name = 'auth';
+const initialState = { isAuthorized: false, loading: false, user: {} };
 
+// logs in the user
+// the url here is reduntant; code works fine without it.
 const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
-  const res = await api.login(values);
-  console.log(res.access)
-  return res.access
+  const res = await api.login(values)
+  setAuthorizationHeader(res.data.access);
 });
 
+// logout current user
 const logOutUser = createAsyncThunk(`${name}/logout`, async () => {
-  const res = await api.logout();
-  console.log("ushim",res)
-  return res;
+  await api.logout();
+  removeAuthorizationHeader()
 });
 
-const initialState = { isAuthorized: true, loading: false, user: {} };
 
 const authSlice = createSlice({
   name: name,
@@ -42,7 +45,6 @@ const authSlice = createSlice({
           state.isAuthorized = true;
           state.loading = false;
           state.user = action.payload;
-          console.log('state--', state.user)
         })
         .addCase(logInUser.pending, (state) => {
           state.loading = true;
