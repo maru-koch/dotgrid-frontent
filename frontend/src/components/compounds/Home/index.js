@@ -1,3 +1,3 @@
 export * from './EnergySharing'
-export * from './Header'
+export * from './HeaderDisplay/headerDisplay'
 export * from './SmartMetering'

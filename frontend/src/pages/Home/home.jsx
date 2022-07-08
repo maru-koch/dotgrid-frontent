@@ -1,4 +1,4 @@
-import {HeaderDisplay, Services, EnergyAnalytics, Partners, Footer} from '../../components/compounds/Home'
+import {HeaderDisplay, Services, EnergyAnalytics, Partners } from '../../components/compounds/Home'
 import { PageLayout } from '../../layout'
 
 export const Home=()=>{
