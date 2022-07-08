@@ -1,5 +1,5 @@
 import SectionWrapper from "../../elements/Section/section-wrapper"
-import Section from "../../elements/Section"
+import Section from "../../elements/Section/section"
 import CopyRight from './FooterComponents/copyRight'
 import SocialMedia from './FooterComponents/socialMedia'
 import AddressCard from './FooterComponents/addressCard'

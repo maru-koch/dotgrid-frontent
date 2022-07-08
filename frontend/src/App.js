@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { OverviewPage, SignInPage, SignUpPage } from './pages';
+import { OverviewPage, SignInPage, SignUpPage, Home} from './pages';
 import { Analytics, DataTable} from './components'
 
 
@@ -47,8 +47,8 @@ const ProtectedOutlet = () => {
 const App = () => (
   <>
     <Routes>
-      <Route path="/" element={<ProtectedOutlet />}>
-        <Route index element={<SignInPage />} />
+      <Route path="/" element={<ProtectedOutlet/>}>
+        <Route index element={<Home />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
         <Route path= "/analytics"element={<Analytics />} />

@@ -1,20 +1,19 @@
 
 import React from 'react';
-import './authLayout.css';
 import PropTypes from 'prop-types';
 import { Header } from '../components/compounds/Header';
 import { Footer } from '../components/compounds/Footer';
+import './pageLayout.css'
 
-import clsx from 'clsx';
 
 export const PageLayout = ({ children, bodyClassName }) => (
-  <>
-   <Header/>
-    <div className={clsx('form-container', bodyClassName)}>
-      <main className="nav-content">{children}</main>
-    </div>
-    <Footer/>
-  </>
+  <div className ="layout">
+      <Header/>
+          <div className="layout__container">
+              <main className="layout__main">{children}</main>
+          </div>
+      <Footer/>
+  </div>
 );
 
 PageLayout.propTypes = {

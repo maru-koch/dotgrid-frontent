@@ -5,10 +5,11 @@ export const Home=()=>{
     // home page
     return(
         <PageLayout>
-            <HeaderDisplay/>
+            <h1>Home Page</h1>
+            {/* <HeaderDisplay/>
             <Services/>
             <EnergyAnalytics/>
-            <Partners/>
+            <Partners/> */}
         </PageLayout>
     )
 }
