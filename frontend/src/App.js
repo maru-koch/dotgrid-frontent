@@ -13,7 +13,6 @@ import { Analytics, DataTable} from './components'
 const PrivateOutlet = () => {
 
   // get isAuth value (boolean ) from state in auth reducer
-
   const { isAuthorized: isAuth } = useSelector((state) => state.auth);
   const location = useLocation();
 
