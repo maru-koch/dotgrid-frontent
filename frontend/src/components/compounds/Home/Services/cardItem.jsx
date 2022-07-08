@@ -1,12 +1,12 @@
-import Card from '../../../elements/Card'
-import classes from './how.module.css'
+import {Card} from '../../../elements/Card'
+import classes from './cardItem.module.css'
 
 
 export const CardItem = props =>{
     return (
         <Card style ={classes.card}>
             <div>
-                
+                <i className={props.icon}></i>
             </div>
             <div className ={classes.info_holder}>
                 <h3>{props.title}</h3>

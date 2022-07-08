@@ -13,7 +13,7 @@ export const HeaderDisplay=()=>{
                 <div className={classes.header__container}>
                     <div className={classes.header__panel}>
                         <div>
-                            <h2>Solar Energy Management</h2>
+                            <h2>Mini-grid Management</h2>
                             <p>Smart Metering, Energy Analytics, and P2P Energy Sharing</p>
                             <button>Get Started</button>
                         </div>

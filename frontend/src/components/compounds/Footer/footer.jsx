@@ -1,4 +1,4 @@
-import SectionWrapper from "../../elements/Section/section-wrapper"
+import { SectionWrapper } from "../../elements/Section/section-wrapper"
 import Section from "../../elements/Section/section"
 import CopyRight from './FooterComponents/copyRight'
 import SocialMedia from './FooterComponents/socialMedia'

@@ -6,14 +6,15 @@
   margin: 0;
   padding: 0;
   font-family: 'Circular Std', sans-serif;
+  background-color: var(--background-color);
 }
 
 :root{
-  --primary-color: #E93F33;
+  --primary-color: #F29C33;
   --accent-color: #de6259;
   --accent-2-color: #f4e7e6;
   --background-color: #F8F8F8;
   --panel-color:#EBF3FA;
   --dark-color: #262626;
-  --secondary-color: #468714;
+  --secondary-color:#104883;
 }

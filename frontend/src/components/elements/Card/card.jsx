@@ -1,5 +1,5 @@
 
-import './index.css'
+import './card.css'
 
 import PropTypes from 'prop-types';
 export const Card =({children, style})=>{

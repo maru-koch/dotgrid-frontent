@@ -21,14 +21,17 @@ const NavLink = (props)=>{
     return (
         <Navbar collapseOnSelect expand="lg" className ={`${classes.header}`}>
             <Navbar.Brand href="/">
-                {/* "fa fa-cutlery" */}
-                <h1>Foodly</h1>
+              {/* <i class="fa-solid fa-sun-bright"></i> */}
+                <h1>Dotgrid</h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                     <Nav className="nav">
                         <Nav className = "navLinks">
-                            <Nav.Link className = {classes.link}  href = '/products'><p>Menu</p></Nav.Link>
+                            <Nav.Link className = {classes.link}  href = '/products'><p>Home</p></Nav.Link>
+                            <Nav.Link className = {classes.link}  href = '/products'><p>Home</p></Nav.Link>
+                            <Nav.Link className = {classes.link}  href = '/products'><p>Services</p></Nav.Link>
+                            <Nav.Link className = {classes.link}  href = '/products'><p>Contact</p></Nav.Link>
                             <Nav>
                                 <Nav.Link className = {classes.link}  href = "/"><p>Log in</p></Nav.Link>
                                 <Nav.Link className = {classes.link}  href = "/"><p>Sign up</p></Nav.Link>
