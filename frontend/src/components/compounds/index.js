@@ -4,6 +4,8 @@ export * from './RightSidebar';
 export * from './Analytics';
 export * from './DataTable';
 export * from './Modal';
+export * from './Home';
+
 
 export { SignUp } from './SignUp';
 export { SignIn } from './SignIn';

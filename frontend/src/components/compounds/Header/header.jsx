@@ -1,13 +1,11 @@
-import Nav from './nav'
-import classes from './navHeader.module.css'
+import Nav from './HeaderComponents/nav'
+import classes from './header.module.css'
 
 // Used in App component
-
 import {Fragment} from 'react'
-const NavHeader = (props)=>{
+export const Header = (props)=>{
     return <Fragment class = {classes.header}>
         <Nav showModal = {props.showModal}/>
     </Fragment>
 }
 
-export default NavHeader

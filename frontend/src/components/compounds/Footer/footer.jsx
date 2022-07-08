@@ -1,16 +1,16 @@
-import SectionWrapper from "../../UI/section-wrapper"
-import Section from '../../UI/section'
-import CopyRight from './copyRight'
-import SocialMedia from './socialMedia'
-import AddressCard from './addressCard'
-import MenuCard from './menuCard'
-import NavCard from './navCard'
+import SectionWrapper from "../../elements/Section/section-wrapper"
+import Section from "../../elements/Section"
+import CopyRight from './FooterComponents/copyRight'
+import SocialMedia from './FooterComponents/socialMedia'
+import AddressCard from './FooterComponents/addressCard'
+import MenuCard from './FooterComponents/menuCard'
+import NavCard from './FooterComponents/navCard'
 
 import classes from './footer.module.css'
 import './footer.css'
 
 
-const Footer =()=>{
+export const Footer =()=>{
     return (
         <Section style ={classes.footer}>
             <div className = {classes.box}>
@@ -28,4 +28,3 @@ const Footer =()=>{
     )
 }
 
-export default Footer

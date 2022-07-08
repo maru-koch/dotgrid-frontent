@@ -1,10 +1,10 @@
 import HeaderCartButton from './headerCartButton'
 import HeaderOrderButton from './headerOrderButton'
 import {Nav, Navbar} from "react-bootstrap";
-import classes from './navHeader.module.css'
+import classes from '../header.module.css'
 import './nav.css'
 import {useState} from 'react'
-import './nav.css'
+
 
 
 

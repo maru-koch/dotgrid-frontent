@@ -2,7 +2,8 @@
 import React from 'react';
 import './authLayout.css';
 import PropTypes from 'prop-types';
-import { Header, Footer } from '../components/compounds';
+import { Header } from '../components/compounds/Header';
+import { Footer } from '../components/compounds/Footer';
 
 import clsx from 'clsx';
 

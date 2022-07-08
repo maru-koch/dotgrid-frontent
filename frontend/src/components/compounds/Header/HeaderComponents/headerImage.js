@@ -1,7 +1,7 @@
 import headerImage from '../../../assets/moi_moi_rice.jpeg'
 import classes from './headerImage.module.css'
-import Search from './search/search'
-import HeaderInfo from './headerInfo/headerInfo'
+import Search from '../search/search'
+import HeaderInfo from '../headerInfo/headerInfo'
 
 
 const HeaderImage = () =>{
