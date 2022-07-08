@@ -1,8 +1,8 @@
-import Card from '../../UI/card'
+import Card from '../../../elements/Card'
 import classes from './how.module.css'
 
 
-const How = props =>{
+export const CardItem = props =>{
     return (
         <Card style ={classes.card}>
             <div>
@@ -18,5 +18,3 @@ const How = props =>{
         </Card>
     )
 }
-
-export default How

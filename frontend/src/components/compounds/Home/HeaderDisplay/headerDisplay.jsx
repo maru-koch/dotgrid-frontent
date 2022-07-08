@@ -1,5 +1,5 @@
 import classes from './headerDisplay.module.css'
-import land_lord from '../../assets/images/land_lord.png'
+import solar_image from '../../../../assets/images/solar_home.png'
 
 export const HeaderDisplay=()=>{
     return (
@@ -19,7 +19,7 @@ export const HeaderDisplay=()=>{
                         </div>
                     </div>
                     <div className={classes.header__panel}>
-                        <img className={classes.header__img} src = {land_lord} height = "100p%" width="100%"alt ="property_owner"/>
+                        <img className={classes.header__img} src = {solar_image} height = "100p%" width="100%"alt ="property_owner"/>
                     </div>
                 </div>
             </div>
