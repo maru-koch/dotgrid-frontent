@@ -21,7 +21,7 @@ export const OffGrid=()=>{
                     <div className = {classes.card}>
                         <div className = {classes.cardWrapper}>
                             <h2>Energy Access and Monitoring</h2>
-                            <p>
+                            <p className={classes.word}>
                                 We enable communities, Estates, 
                                 businesses access Stable and reliable energy.
                                 Our Model provides a framework that enables our customers

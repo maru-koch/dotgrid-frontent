@@ -12,7 +12,7 @@ const steps = [
 export const Services =()=>{
     return(
         <section>
-            <SectionHeader title ="Exclusive Properties" subtitle ="Your dream home is a finger tip away"/>
+            <SectionHeader title ="What We do" subtitle ="We make Solar Energy accessible and cheap"/>
             <SectionContainer>
                 <SectionWrapper style = {classes.wrapper}>
                     {steps.map(step =>

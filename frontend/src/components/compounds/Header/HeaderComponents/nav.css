@@ -1,38 +1,47 @@
-
+.navHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 40px;
+    align-items: center;
+    background-color: #fff;
+}
+.rightNav{
+    width: 100%;
+}
 .nav{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: black;
+    width: 100%;
+
 }
 
-.header h1{
-    padding-left: 20%;
-}
 
-.nav p{
-    color: #fff;
-    font-size: 1rem;
-    font-family: Poppins;
-    font-weight: 200;
-}
-
-.navLinks{
+.rightNav .nav .navLinks {
     justify-self: center;
     margin-right:0%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: var(--color)
 }
 
-
-.links {
-    padding: 0px 20px;
-    color: var(--color)
+.rightNav .nav .navLinks .link {
+    color: var(--text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 300;
 }
 
+.navAuth{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+}
 
+.navAuth .link{
+    padding: 0 10px;
+}
 
 @media(max-width:1000px){
     .nav {

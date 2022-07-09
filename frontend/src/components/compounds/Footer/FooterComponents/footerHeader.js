@@ -2,7 +2,7 @@
 const FooterHeader =()=>{
     return (
     <div className="footerHeader">
-        <h1>Foodly</h1>
+        <h1>Dotgrid</h1>
     </div>)
 }
 

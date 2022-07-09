@@ -1,7 +1,7 @@
 
 
 import { SectionHeader, Section, SectionWrapper } from '../../../elements/Sections'
-import classes from './offGrid.module.css'
+import classes from '../OffGrid/offGrid.module.css'
 import image from '../../../../assets/images/mini-grid.png'
 
 
@@ -16,7 +16,7 @@ export const OffGrid2=()=>{
                     <div className = {classes.card}>
                         <div className = {classes.cardWrapper}>
                             <h2>Mini-Grid Utility Services</h2>
-                            <p>
+                            <p className = {classes.word}>
                                 Dotgrid offers robust tools and services for 
                                 implementing profitable off-grid utility projects. 
                                 We act as lead developer or work in partnership with 

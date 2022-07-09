@@ -21,11 +21,12 @@
 .cardWrapper{
     padding: 60px;
 }
-.cardWrapper p{
+
+.word{
+    color: rgb(84, 84, 84);
+    font-weight: 300;
     font-size: 1rem;
     font-family: Poppins;
-    font-weight: 300;
-    color: rgb(192, 190, 190)
 }
 
 .cardWrapper h2{
@@ -37,10 +38,6 @@
 }
 
 
-
-.card p{
-    color: var(--word);
-}
 .right {
     width: 600px;
 }
