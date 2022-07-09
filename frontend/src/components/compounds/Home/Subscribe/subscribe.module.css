@@ -1,6 +1,6 @@
 .section{
     background-color: var(--accent-3-color);
-    padding-bottom: 100px;
+    padding: 100px;
 }
 
 .section h2{
@@ -10,7 +10,7 @@
 .section h4{
     color: var(--word-light);
 }
-.container{
+.subscribe__container{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -18,30 +18,37 @@
    padding-top: 20px;
 }
 
-.sub{
+.subscribe__wrapper{
     display: grid;
-    grid-template-columns: 8fr 4fr;
+    grid-template-columns: 8fr 2fr;
     place-content: center;
-    width: 50%;
-    height: 50px;
-    position: relative;
+    width: 500px;
+    height: 40px;
     background-color:var(--color);
     border-radius: 5px;
-    border: 1px solid var(--accent-3-color)
+    border: 1px solid var(--accent-3-color);
+    border-radius: 5px
 }
-.sub input{
-    padding: 20px;
-    color: var(--word-dark)
-
+.subscribe__wrapper input{
+    padding: 15px;
+    color: var(--text-color);
+    font-family: Poppins;
+    border: 1px solid rgb(210, 210, 210);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-.sub button{
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border: 0;
-    padding: 0 30px;
-    background-color: var(--main-color);
+.subscribe__wrapper input:focus{
+    outline: none;
+}
+
+.subscribe__wrapper button{
+    background-color: #EA4F33;
+    border: none;
     color: #fff
+}
+
+.subscribe__wrapper button:focus {
+    outline: none;
+    cursor: pointer;
 }
