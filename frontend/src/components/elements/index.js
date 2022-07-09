@@ -11,5 +11,5 @@ export * from './Table';
 export * from './Text';
 export * from './Metrics';
 export * from './ExportCSV';
-export * from './Section'
+export * from './Sections'
 export * from './Card'

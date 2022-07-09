@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
   font-family: 'Circular Std', sans-serif;
+ 
+}
+body{
   background-color: var(--background-color);
 }
 
@@ -16,5 +19,6 @@
   --background-color: #F8F8F8;
   --panel-color:#EBF3FA;
   --dark-color: #262626;
+  --text-color:grey;;
   --secondary-color:#104883;
 }

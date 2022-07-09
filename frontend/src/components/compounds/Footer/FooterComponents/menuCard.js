@@ -2,12 +2,13 @@
 const MenuCard =()=>{
     return (
     <div className="footerCard">
-        <h2>Menu</h2>
+        <h2>Our Services</h2>
         <ul>
-            <li>Swallow</li>
-            <li>Soup</li>
-            <li>Assorted</li>
-            <li>Others</li>
+            <li>Solar Panel Installation</li>
+            <li>Energy Loan</li>
+            <li>Solar Analytics</li>
+            <li>Smart Metering</li>
+            <li>Solar Projects Design and Costing</li>
         </ul>
     </div>
     )

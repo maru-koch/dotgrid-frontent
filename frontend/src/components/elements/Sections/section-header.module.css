@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px;
 }
 
 .sectionHeader h2{
@@ -19,7 +20,6 @@
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--subtitle-color);
-    color: #62C371;
     font-family: Poppins;
     font-weight: 200;
     margin: 0;

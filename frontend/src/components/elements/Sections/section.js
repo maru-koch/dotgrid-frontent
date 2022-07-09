@@ -1,5 +1,6 @@
 import './section.css'
-const Section = props =>{
+
+export const Section = props =>{
     return (
     <section className = {`${props.style} section`}>
         {props.children}
@@ -7,4 +8,3 @@ const Section = props =>{
     )
 }
 
-export default Section

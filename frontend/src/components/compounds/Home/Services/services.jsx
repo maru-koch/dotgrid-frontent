@@ -1,5 +1,5 @@
 
-import {SectionContainer, SectionHeader, SectionWrapper} from '../../../elements/Section'
+import {SectionContainer, SectionHeader, SectionWrapper} from '../../../elements/Sections'
 import classes from './services.module.css'
 import { CardItem } from './cardItem'
 

@@ -2,12 +2,12 @@
 const NavCard =()=>{
     return (
     <div className="footerCard">
-        <h2>Top Vendors</h2>
+        <h2>Company</h2>
         <ul>
-            <li>Rafi Meals</li>
-            <li>Belleful</li>
-            <li>Anni Native Cuisines</li>
-            <li>Apollo Inn</li>
+            <li>About us</li>
+            <li>Careers</li>
+            <li>Contact Us</li>
+            <li>Our Story</li>
         </ul>
     </div>
     )
