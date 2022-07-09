@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { setAuthorizationHeader, removeAuthorizationHeader } from "../../../api/routes/index"
-
+import {toast} from 'react-toastify'
 import api from '../../../api/routes/routes';
 
 // Name of reducer
@@ -20,6 +20,10 @@ export const logOutUser = createAsyncThunk(`${name}/logout`, async (x) => {
   removeAuthorizationHeader()
 });
 
+export const subscribe = createAsyncThunk(`${name}/subscribe`, async (email)=>{
+    const res = api.subscribe(email)
+    return res
+});
 
 const authSlice = createSlice({
   name: name,
@@ -30,6 +34,7 @@ const authSlice = createSlice({
       api.signUp(action.payload)
     },
     addDevice:()=>{},
+    
     assignDevice:()=>{},
     removeDevice:()=>{},
     generateData:()=>{},
@@ -62,10 +67,20 @@ const authSlice = createSlice({
           state.isAuthorized = false;
           state.loading = false;
           state.user = {};
+        })
+        // Handling email subscribtion response
+        .addCase(subscribe.fulfilled, (state, action)=>{
+          toast.success(action.payload)
+        })
+        .addCase(subscribe.pending, (state, action)=>{
+          toast.warning(action.payload)
+        })
+        .addCase(subscribe.rejected, (state, action)=>{
+          toast.error(action.payload)
         });
     },
 });
 
-export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser};
+export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser, subscribe};
 
 export default authSlice.reducer;

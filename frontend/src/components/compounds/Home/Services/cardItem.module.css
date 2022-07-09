@@ -10,7 +10,7 @@
 
 .card i{
     font-size: 5rem;
-    color: black;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -23,6 +23,7 @@
     font-size: 1.22rem;
     font-family: Poppins;
     margin: 0;
+    padding: 5px;
 }
 
 .info_holder p{

@@ -14,6 +14,11 @@ login: (formData)=>{
     return res
 },
 
+subscribe: (formData)=>{
+    const res = dotGridRequest.post('account/subscribe/', formData)
+    return res.data
+},
+
 updateUser: (id)=>{
     const res = dotGridRequest.post(`user/${id}`)
     return res.data
@@ -80,6 +85,8 @@ clearData: (formData)=>{
     const res = dotGridRequest.post('device/energy/clear', formData)
     return res.data
 },
+
+
 
 }
 
