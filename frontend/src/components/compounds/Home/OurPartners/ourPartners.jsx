@@ -1,20 +1,80 @@
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Section, SectionHeader} from '../../../elements/Sections'
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import {SectionHeader} from '../../../elements/Sections'
+import imgs from '../../../../assets/images/oolu_logo.png'
+import solynta from '../../../../assets/images/solynta_logo.png'
 
-export const Slider = ()=>{
-    return (
-        <Section>
-            <SectionHeader title = "Our Partners" subtitle = "Powering the green revolution"/>
-            <Swiper>
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-            </Swiper>
-        </Section>
-        
-        
-    )
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./ourPartners.css";
+
+// import required modules
+import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
+
+export const OurPartners=() =>{
+    SwiperCore.use([Autoplay, Navigation])
+  return (
+    <main className="swiper__container">
+      <SectionHeader title="Our Parntners" subtitle="Powering the green revolution"/>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        slidesPerGroup={2}
+        loop={true}
+        autoplay={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation, Autoplay]}
+        className="swiper"
+      >
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {imgs} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {solynta} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {imgs} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {solynta} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {imgs} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {solynta} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {imgs} alt=""/>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className="swiper__img">
+                <img src = {solynta} alt=""/>
+            </div>
+        </SwiperSlide>
+      </Swiper>
+    </main>
+  );
 }
