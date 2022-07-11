@@ -11,7 +11,7 @@ const steps = [
 
 export const Services =()=>{
     return(
-        <section>
+        <section className={classes.section}>
             <SectionHeader title ="What We do" subtitle ="We make Solar Energy accessible and cheap"/>
             <SectionContainer>
                 <SectionWrapper style = {classes.wrapper}>

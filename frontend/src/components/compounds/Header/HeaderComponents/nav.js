@@ -27,13 +27,14 @@ const NavLink = (props)=>{
             <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                     <Nav className="nav">
                         <Nav className = "navLinks">
-                            <Nav.Link className = "link"  href = "#"><p>Home</p></Nav.Link>
-                            <Nav.Link className =  "link"  href = "#"><p>Home</p></Nav.Link>
-                            <Nav.Link className = "link"  href = "#"><p>Services</p></Nav.Link>
-                            <Nav.Link className = "link"  href = "#"><p>Contact</p></Nav.Link>
+                            <Nav.Link className = "link"  href = "#"><p>HOME</p></Nav.Link>
+                            <Nav.Link className =  "link"  href = "#"><p>TECHNOLOGIES</p></Nav.Link>
+                            <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
+                             <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
+                            <Nav.Link className = "link"  href = "#"><p>CONTACT</p></Nav.Link>
                             <Nav className ="navAuth">
-                                <Nav.Link className = "link"  href = "/"><p>Log in</p></Nav.Link>
-                                <Nav.Link className = "link"  href = "/"><p>Sign up</p></Nav.Link>
+                                <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
+                                <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
                             </Nav>
                         </Nav>
                     </Nav>     

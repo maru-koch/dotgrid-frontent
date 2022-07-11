@@ -29,6 +29,9 @@
     cursor: pointer;
 }
 
+.icons i{
+    color: var(--text-color);
+}
 
 .icons:focus{
     color: var(--btn-border-color);

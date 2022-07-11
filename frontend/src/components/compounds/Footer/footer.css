@@ -33,7 +33,7 @@
     line-height: 1.8rem;
     font-family: Poppins;
     cursor: pointer;
-    color: var(--word-light);
+    color: var(--word-color);
     font-weight: 300;
 
 }

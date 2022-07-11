@@ -6,7 +6,7 @@
     width: 100%;
 }
 .logo{
-    color: var(--accent-2-color);
+    color: var(--primary-color);
     list-style: none;
     text-decoration: none;
     margin-left: 40px;
@@ -31,8 +31,27 @@
 }
 
 .rightNav .nav .navLinks .link {
-    color: rgb(217, 217, 217);
+    color: var(--nav-color);
     padding: 10px 20px;
+    font-size: 1rem;
+    font-family: Poppins;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 200;
+}
+
+.rightNav .nav .navLinks .link:hover {
+    color: var(--primary-color);
+    /* border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color); */
+    /* border: 2px solid var(--primary-color); */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: Poppins;
     text-decoration: none;
     list-style: none;
     font-weight: 200;
