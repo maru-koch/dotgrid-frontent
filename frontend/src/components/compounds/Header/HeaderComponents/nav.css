@@ -3,7 +3,13 @@
     justify-content: space-between;
     padding: 5px 40px;
     align-items: center;
-    background-color: #fff;
+    width: 100%;
+}
+.logo{
+    color: var(--accent-2-color);
+    list-style: none;
+    text-decoration: none;
+    margin-left: 40px;
 }
 .rightNav{
     width: 100%;
@@ -13,7 +19,6 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-
 }
 
 
@@ -26,11 +31,11 @@
 }
 
 .rightNav .nav .navLinks .link {
-    color: var(--text-color);
+    color: rgb(217, 217, 217);
     padding: 10px 20px;
     text-decoration: none;
     list-style: none;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 .navAuth{

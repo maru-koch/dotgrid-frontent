@@ -3,14 +3,27 @@
     width: 100vw;
     height: 600px;
     overflow: hidden;
+    z-index: -1;
+    background-size: cover;
+    
 }
 
+.header__section::before{
+    content: "";
+ 
+    height: 100%;
+    width: 100%;
+    top:0;
+    bottom:0;
+    z-index: 1;
+    position: absolute;
+}
 .header__wrapper{
     width: 100vw;
     position: absolute;
     height: 100%;
     z-index: -1;
-    background-color: var(--background-color);
+
 }
 
 .header__wrapper .wave{
@@ -51,9 +64,13 @@
     height: 100%;
     object-fit: cover;
     background-size: cover;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     display: grid;
     place-items: center;
 }
+
 
 .header__panel h2{
     font-size: 2.5rem;
@@ -66,11 +83,11 @@
 
 .header__panel p{
     font-size: 1.2rem;
-    color: #62C371;
+    color: var(--word-color);
     font-family: Poppins;
     margin: 0;
     padding: 0;
-    font-weight: 600;
+    font-weight: 200;
 }
 
 .header__panel button{
@@ -80,8 +97,8 @@
     border: 0;
     outline: 0;
     font-family: "Poppins";
-    background-image: var(--gradient);
-    color: var(--main-2-color);
+    background-color: #2e83d8;
+    color: white;
     font-size: 1.2rem;
     font-family: Poppins;
     font-weight: 200;

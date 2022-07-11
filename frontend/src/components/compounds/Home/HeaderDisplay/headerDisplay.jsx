@@ -14,12 +14,14 @@ export const HeaderDisplay=()=>{
                     <div className={classes.header__panel}>
                         <div>
                             <h2>Mini-grid Management</h2>
-                            <p>Smart Metering, Energy Analytics, and P2P Energy Sharing</p>
+                            <p>Smart Metering and Energy Analytics</p>
                             <button>Get Started</button>
                         </div>
                     </div>
                     <div className={classes.header__panel}>
-                        <img className={classes.header__img} src = {solar_image} height = "100p%" width="100%"alt ="property_owner"/>
+                        <div className={classes.header__right}>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

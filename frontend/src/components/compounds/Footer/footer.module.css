@@ -3,6 +3,7 @@
 
 .footer{
     background-color: var(--footer-color);
+   
 }
 
 .footerHeader{
@@ -72,6 +73,7 @@
     margin: 0px;
     background-color: transparent;
 }
+
 
 @media(max-width:1000px){
     .wrapper {

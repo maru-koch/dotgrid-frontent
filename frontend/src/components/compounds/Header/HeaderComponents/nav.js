@@ -19,7 +19,7 @@ const NavLink = (props)=>{
 
     return (
         <Navbar collapseOnSelect expand="lg" className ="navHeader">
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/" className ="logo">
               {/* <i class="fa-solid fa-sun-bright"></i> */}
                 <h1>Dotgrid</h1>
             </Navbar.Brand>

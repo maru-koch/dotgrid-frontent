@@ -13,12 +13,21 @@ body{
 }
 
 :root{
-  --primary-color: #F29C33;
+  --primary-color: #EC6640;
   --accent-color: #de6259;
+  --accent-2-color: #EC6333;
   --accent-2-color: #f4e7e6;
   --background-color: #F8F8F8;
   --panel-color:#EBF3FA;
-  --dark-color: #262626;
+  --word-color: #424242;
   --text-color:grey;;
   --secondary-color:#104883;
+  --main-color: #211551;
+  --main-2-color:#462576;
+  --yellow-color:#F6BB33;
+  --header:#DEE3F7;
+  --background-x: #F7F7FF;
+  --primary-x: #4C3FCF;
+  --secondary-x: #B480ED;
+  --tertiary-x: #70E0CD;
 }
