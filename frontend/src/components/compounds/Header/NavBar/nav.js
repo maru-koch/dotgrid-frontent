@@ -1,18 +1,23 @@
-import {Dropdown} from '../DropDown'
+import {DropDown} from '../DropDown'
 import {Nav, Navbar} from "react-bootstrap";
 import './nav.css'
 import {useState} from 'react'
 
 
 
-
+const items = [ 
+                {id:1, metric :200, title:'Smart Metering', icon:"fa-computer"},
+                {id:2, metric :200, title:'Smart Metering', icon:"fa-computer"},
+                {id:3, metric :200, title:'Smart Metering', icon:"fa-computer"}
+                ]
+                
 // Used in Header component
 // comprises of the title, the Navigation links, and the order or purchase button
 
 const NavLink = (props)=>{
     const [showDropDown, setShowDropDown] = useState(false)
 
-    const showDropDown =()=>{
+    const dropDown = ()=>{
         setShowDropDown(true)
     }
 
@@ -27,7 +32,7 @@ const NavLink = (props)=>{
                 <Nav className="nav">
                     <Nav className = "navLinks">
                         <Nav.Link className = "link"  href = "#"><p>HOME</p></Nav.Link>
-                        <Nav.Link className =  "link" onMouseEnter={showDropDown()} href = "#"><p>TECHNOLOGIES</p></Nav.Link>
+                        <Nav.Link className =  "link" onMouseEnter={dropDown()} href = "#"><p>TECHNOLOGIES</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
                             <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>CONTACT</p></Nav.Link>
@@ -38,7 +43,7 @@ const NavLink = (props)=>{
                     </Nav>
                 </Nav>     
             </Navbar.Collapse>
-            {showDropDown? <DropDown/>:''}
+            {showDropDown? <DropDown items ={items}/>:''}
         </Navbar>
     )
 }
