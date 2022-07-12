@@ -1,4 +1,4 @@
-import Nav from './HeaderComponents/nav'
+import Nav from './NavBar/nav'
 import classes from './header.module.css'
 
 // Used in App component

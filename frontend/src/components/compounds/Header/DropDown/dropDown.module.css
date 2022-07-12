@@ -4,3 +4,20 @@
 
 /* DROP DOWN DROP DOWN */
 
+/* WEB */
+
+.dropdown__container{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.dropdown__wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown_item__container{
+    
+}
