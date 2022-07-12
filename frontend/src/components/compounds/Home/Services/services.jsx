@@ -15,8 +15,8 @@ export const Services =()=>{
             <SectionHeader title ="What We do" subtitle ="We make Solar Energy accessible and cheap"/>
             <SectionContainer>
                 <SectionWrapper style = {classes.wrapper}>
-                    {steps.map(step =>
-                        <CardItem icon = {step.icon} title = {step.title} desc = {step.desc} btn = {step.text}/>
+                    {steps.map((step, idx)=>
+                        <CardItem key={idx} icon = {step.icon} title = {step.title} desc = {step.desc} btn = {step.text}/>
                     )}
                 </SectionWrapper>
             </SectionContainer>

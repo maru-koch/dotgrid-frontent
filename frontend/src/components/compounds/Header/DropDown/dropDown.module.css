@@ -10,6 +10,9 @@
     padding: 20px;
     border-radius: 5px;
     background-color: #fff;
+    position:absolute;
+    top: 50px;
+    width: calc(var(200)*0.8)
 }
 
 .dropdown__wrapper{
@@ -17,7 +20,18 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: red;
 }
+
 .dropdown_item__container{
-    
+    background-color:greenyellow;
+    cursor: pointer;
+    width: 200px;
+   
+}
+
+.dropdown_item__wrapper {
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: row;
 }

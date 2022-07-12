@@ -4,11 +4,11 @@ import classes from './socialMedia.module.css'
 
 const SocialMedia = ()=>{
     return (
-        <div class ={classes.container}>
-            <div class = {classes.wrapper}>
-                <Link to = "" class = {classes.icons}><i  className = "fab fa-facebook" ></i></Link>
-                <Link to = "" class = {classes.icons}><i  className = "fab fa-twitter"></i></Link>
-                <Link to = "" class = {classes.icons}><i  className = "fab fa-instagram"></i></Link>
+        <div className ={classes.container}>
+            <div className = {classes.wrapper}>
+                <Link to = "" className = {classes.icons}><i  className = "fab fa-facebook" ></i></Link>
+                <Link to = "" className = {classes.icons}><i  className = "fab fa-twitter"></i></Link>
+                <Link to = "" className = {classes.icons}><i  className = "fab fa-instagram"></i></Link>
             </div>
         </div>
     )

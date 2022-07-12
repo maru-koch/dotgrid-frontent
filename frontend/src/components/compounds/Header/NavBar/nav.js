@@ -1,7 +1,7 @@
 import {DropDown} from '../DropDown'
 import {Nav, Navbar} from "react-bootstrap";
 import './nav.css'
-import {useState} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 
 
@@ -16,11 +16,9 @@ const items = [
 
 const NavLink = (props)=>{
     const [showDropDown, setShowDropDown] = useState(false)
-
-    const dropDown = ()=>{
-        setShowDropDown(true)
+    const close=()=>{
+        setShowDropDown(false)
     }
-
     return (
         <Navbar collapseOnSelect expand="lg" className ="navHeader">
             <Navbar.Brand href="/" className ="logo">
@@ -32,7 +30,10 @@ const NavLink = (props)=>{
                 <Nav className="nav">
                     <Nav className = "navLinks">
                         <Nav.Link className = "link"  href = "#"><p>HOME</p></Nav.Link>
-                        <Nav.Link className =  "link" onMouseEnter={dropDown()} href = "#"><p>TECHNOLOGIES</p></Nav.Link>
+                        <Nav.Link 
+                            className =  "link" 
+                            onMouseEnter={()=>setShowDropDown(true)}
+                            href = "#"><p>TECHNOLOGIES</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
                             <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>CONTACT</p></Nav.Link>
@@ -43,7 +44,7 @@ const NavLink = (props)=>{
                     </Nav>
                 </Nav>     
             </Navbar.Collapse>
-            {showDropDown? <DropDown items ={items}/>:''}
+            {showDropDown && <DropDown items ={items} closeDropDown={close}/>}
         </Navbar>
     )
 }
