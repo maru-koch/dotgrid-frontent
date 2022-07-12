@@ -21,7 +21,6 @@ const DropDownItem=({icon, title, description, closeDropDown})=>{
     )
 }
 
-
 export const  DropDown=(items)=>{
 
     // Go through the items, and output a drop down item for each
@@ -29,22 +28,31 @@ export const  DropDown=(items)=>{
     return (
         <main className={classes.dropdown__container} onMouseLeave={()=>items.closeDropDown()}>
             <section className={classes.dropdown__wrapper}>
-                {items.forEach((item,idx)=>
-                    <DropDownItem 
-                        key ={idx} 
-                        id = {idx}
-                        icon = {item.icon}
-                        title = {item.title}
-                        description = {item.desc}
-                    />)}  
-                {/* <DropDownItem 
+                
+                <DropDownItem 
                         key ={1} 
                         id = {1}
-                        icon = {"fa-computer"}
-                        title = {"Energy Analytics"}
-                        description = {"coming soon"}
+                        icon = {"fa-weight-scale"}
+                        title = {"Smart metering"}
+                        description = {"View your energy consumption in real-time via mobile, desktop or web"}
                         closeDropDown = {items.closeDropDown}
-                    /> */}
+                    />
+                <DropDownItem 
+                        key ={1} 
+                        id = {1}
+                        icon = {"fa-chart-line"}
+                        title = {"Energy Analytics"}
+                        description = {"Estimate and optimize the rate of your energy consumption"}
+                        closeDropDown = {items.closeDropDown}
+                    />
+                <DropDownItem 
+                        key ={1} 
+                        id = {1}
+                        icon = {"fa-gift"}
+                        title = {"Energy Sharing"}
+                        description = {"Gift a neigbour energy today. It is as simple as sharing the sunshine."}
+                        closeDropDown = {items.closeDropDown}
+                    />
             </section>
         </main>
     )

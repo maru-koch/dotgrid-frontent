@@ -1,6 +1,7 @@
 .section{
     background-color: var(--background-2-color);
-    padding: 100px;
+    padding-bottom: 100px;
+    padding-top:20px;
 }
 
 .section h2{
