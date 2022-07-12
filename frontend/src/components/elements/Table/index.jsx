@@ -26,7 +26,7 @@ export const Table=({rate_per_hour})=>{
     const [row, setRow] = useState([])
     const [column, setColumn] = useState([])
 
-
+// Retrieve the data for the specified device
 let arrData=Object.keys(data[1]["device_2"])
 
 
