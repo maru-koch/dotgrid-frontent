@@ -10,7 +10,7 @@ const CheckBox =({heading})=>{
     )
 }
 
-const ContactForm =()=>{
+export const ContactForm =()=>{
     return (
     <div class ={classes.formContainer}>
         <h4>Get in Touch</h4>
@@ -36,4 +36,3 @@ const ContactForm =()=>{
     )
 }
 
-export default ContactForm
