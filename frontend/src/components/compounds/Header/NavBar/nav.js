@@ -36,7 +36,7 @@ const NavLink = (props)=>{
                             href = "#"><p>TECHNOLOGIES</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
                             <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
-                        <Nav.Link className = "link"  href = "#"><p>CONTACT</p></Nav.Link>
+                        <Nav.Link className = "link"  href = "/contact"><p>CONTACT</p></Nav.Link>
                         <Nav className ="navAuth">
                             <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
                             <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
