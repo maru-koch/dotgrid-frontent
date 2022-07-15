@@ -15,7 +15,7 @@ export const ROUTES = {
     path: 'analyze-data',
   },
   generateData: {
-    path: 'generate-data',
+    path: 'data',
   },
   addModel: {
     path: 'add-model',
@@ -31,5 +31,11 @@ export const ROUTES = {
   },
   updateUser: {
     path: 'remove-user',
+  },
+  analytics: {
+    path: 'analytics',
+  },
+  contact: {
+    path: 'contact',
   },
 };

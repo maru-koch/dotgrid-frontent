@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'
+
 import { useState, useEffect } from 'react'
+
 import './index.css'
 export const Total=({ total })=>{
   // Display total energy consumption on the analytics panel
@@ -21,7 +22,7 @@ return(
     <main className ="total__energy_container">
         <section className ="total__energy_wrapper">
             <div className="total__energy_total">
-                <h2>{3.33}</h2>
+                <h2>{total}</h2>
             </div>
             <div>
                 <div>
@@ -37,6 +38,3 @@ return(
 )
 }
 
-Total.propTypes = {
-    total: PropTypes.number,
-}

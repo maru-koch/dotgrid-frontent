@@ -8,7 +8,7 @@ const OVERLAY_STYLE ={
     bottom:0,
     top: 0,
     margin: '0 auto',
-    backgroundColor:'#000',
+    backgroundColor:'rgba(0,0,0,0.5)',
     opacity:1,
     zIndex: 1000
 }
