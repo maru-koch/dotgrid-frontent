@@ -1,5 +1,5 @@
 
-import {SectionWrapper} from '../../components'
+import {SectionWrapper} from '../../components/elements/Sections'
 import ContactImage from '../../components/compounds/Contact/contactImage'
 import ContactForm from '../../components/compounds/Contact/contactForm'
 import classes from './contact.module.css'
