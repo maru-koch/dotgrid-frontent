@@ -1,21 +1,20 @@
 
-import classes from './contactImage.module.css';
+import classes from './contactInfo.module.css';
 
-const ContactImage =()=>{
+export const ContactInfo =()=>{
     return (
     <div class ={classes.contact__container}>
         <div class ={classes.contact__wrapper}>
             <div>
                 <i className = "fa fa-location"></i>
-                <img src = {''} alt = "chef's pic"/>
+                <p>Location</p>
             </div>
              <div>
                 <i className = "fa fa-phone"></i>
-                <img src = {''} alt = "chef's pic"/>
+                <p>+2349012693884</p>
             </div>
         </div>
     </div>
     )
 }
 
-export default ContactImage

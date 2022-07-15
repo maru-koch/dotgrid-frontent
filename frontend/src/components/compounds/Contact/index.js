@@ -1,1 +1,2 @@
-export * from '../../../pages/Contact/contact'
+export * from './contactForm'
+export * from './contactInfo'
