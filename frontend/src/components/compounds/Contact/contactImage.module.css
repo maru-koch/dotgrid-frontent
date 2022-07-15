@@ -1,27 +1,24 @@
 
 .container{
     position: relative;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 100%;
 
 }
 
-.backdrop{
+/* .backdrop{
     background-image: linear-gradient(90deg, #f3ecef 0%, #fbecf2 90%); 
     background-color: var(--btn-border-color);
     position: absolute;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
     left: -10px;
     top: -10px;
-
-    border-radius: 50%;
     width: 500px;
     height: 500px;
-}
-
+} */
+/* 
 .imgHolder{
     height: 600px;
     width: 600px;
@@ -29,7 +26,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-}
+} */
 .container img{
     object-fit: cover;
     height: 100%;

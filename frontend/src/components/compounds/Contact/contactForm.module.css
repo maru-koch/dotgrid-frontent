@@ -1,24 +1,30 @@
 .formContainer{
     width: 600px;
-    padding: 5px;
-    margin-right: 200px;
+    height: 100%;
+    margin-right: 100px;
     display: flex;
+    padding: 30px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color:#fff;
+    border-radius: 20px;
+    border: 1px solid var(--header-color);
+    box-shadow: 0.2px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .formContainer h4{
     font-size: 1.6rem;
     font-weight: 400;
     font-family: Poppins;
+    color:var(--primary-color)
 }
 
 .formContainer input, textarea {
     width: 100%;
-    border: 1px solid var(--btn-border-color);
+    border: 2px solid var(--header-color);
     padding: 10px;
-    background-color: var(--color);
+    background-color: #fff;
     margin: 20px 0;
     border-radius: 10px;
     font-size: 1rem;
@@ -34,8 +40,34 @@
 
 .formContainer input:focus, textarea:focus{
     outline:none;
-    border: 1px solid var(--accent-2-color);
+    border: 1px solid var(--primary-color);
     background-color: #fff
+}
+
+.form__checkbox__container{
+    padding: 10px;
+}
+.form__checkbox__wrapper{
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+}
+.checkbox__container{
+    width: 100%;
+    align-items: center;
+}
+
+.checkbox__wrapper{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    align-items: center;
+    justify-content: center
+
+}
+.checkbox__wrapper p{
+    color: var(--text-color);
+    font-family: Poppins;
+    font-weight: 300;
 }
 
 .btnHolder{
@@ -47,15 +79,16 @@
 
 .btnHolder button{
     font-size: 1rem;
-    border: 1px solid var(--btn-border-color);
-    background-color: var(--body);
-    color: var(--word);
+    border: 1px solid var(--header-color);
+    background-color: var(--primary-color);
+    color: var(--background-color);
     border-radius: 10px;
     padding: 15px 20px;
     width: 100%;
 }
 
 .btnHolder button:hover{
-    background-color: var(--header-color);
-    color: var(--color);
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    cursor: pointer;
 }
