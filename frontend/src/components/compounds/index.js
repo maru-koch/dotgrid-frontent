@@ -5,6 +5,7 @@ export * from './Analytics';
 export * from './DataTable';
 export * from './Modal';
 export * from './Home';
+export * from './Contact';
 
 
 export { SignUp } from './SignUp';
