@@ -1,7 +1,8 @@
 import {DropDown} from '../DropDown'
 import {Nav, Navbar} from "react-bootstrap";
 import './nav.css'
-import {useState, useEffect, useRef} from 'react'
+import {useState} from 'react'
+import logo from '../../../../assets/images/dotgrid_logo.png'
 
 
 
@@ -22,8 +23,7 @@ const NavLink = (props)=>{
     return (
         <Navbar collapseOnSelect expand="lg" className ="navHeader">
             <Navbar.Brand href="/" className ="logo">
-              {/* <i class="fa-solid fa-sun-bright"></i> */}
-                <h1>Dotgrid</h1>
+                <img src={logo} alt="logo"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">

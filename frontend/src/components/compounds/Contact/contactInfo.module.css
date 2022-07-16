@@ -6,12 +6,13 @@
     height: 200px;
     width:50%;
     border-radius: 10px;
+    top: 20px;
 }
 .contact__wrapper{
     display: flex;
     gap: 10px;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--header-color);
     padding: 40px;
     border-radius: 20px;
     border: 1px solid var(--header-color)
@@ -24,7 +25,7 @@
 
 .contact__box p{
     font-size: 1.2rem;
-    color:var(--text-color);
+    color:var(--word-color);
     font-family: Poppins;
     font-weight:200;
 }
