@@ -1,5 +1,7 @@
+import React from 'react'
 import {DropDown} from '../DropDown'
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './nav.css'
 import {useState} from 'react'
 import logo from '../../../../assets/images/dotgrid_logo.png'
@@ -15,7 +17,7 @@ const items = [
 // Used in Header component
 // comprises of the title, the Navigation links, and the order or purchase button
 
-const NavLink = (props)=>{
+export default function NavLink(props){
     const [showDropDown, setShowDropDown] = useState(false)
     const close=()=>{
         setShowDropDown(false)
@@ -35,7 +37,7 @@ const NavLink = (props)=>{
                             onMouseEnter={()=>setShowDropDown(true)}
                             href = "#"><p>TECHNOLOGIES</p></Nav.Link>
                         <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
-                            <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
+                        <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
                         <Nav.Link className = "link"  href = "/contact"><p>CONTACT</p></Nav.Link>
                         <Nav className ="navAuth">
                             <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
@@ -49,4 +51,3 @@ const NavLink = (props)=>{
     )
 }
 
-export default NavLink

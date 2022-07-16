@@ -4,9 +4,9 @@ import classes from './services.module.css'
 import { CardItem } from './cardItem'
 
 const steps = [
-        {icon: "fas fa-solar-panel", title: 'Installation', desc :'Choose location of your choice and find the best listed properties in that area', text: "Search Homes"},
-        {icon: 'fas fa-weight-scale', title: 'Smart Metering', desc :'Browse Shops, Event centers, houses, and rooms from our large rental network', text: "See Your Options"},
-        {icon: 'fas fa-chart-line', title: 'Solar Analytics', desc :'Sell your Property effortlessly without hassles. Explore brokers for a juicy deal', text: "Find Rentals"},      
+        {icon: "fas fa-solar-panel", title: 'Installation', desc :'Order and get your Solar panel installed by our energy professionals', text: "Learn More"},
+        {icon: 'fas fa-weight-scale', title: 'Smart Metering', desc :'Monitor your energy consumption in real-time via mobile app or web', text: "Learn More"},
+        {icon: 'fas fa-chart-line', title: 'Solar Analytics', desc :'With our AI power analytics, track your Energy consumption patterns', text: "Learn More"},      
 ]
 
 export const Services =()=>{

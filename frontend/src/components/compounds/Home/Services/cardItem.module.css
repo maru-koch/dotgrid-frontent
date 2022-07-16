@@ -39,22 +39,25 @@
    justify-content: center;
    align-items: center;
    width: 100%;
-   padding: 30px;
+   padding: 10px 0;
 }
 
 .btn_holder button {
     background-color: #fff;
     padding: 10px 50px;
-    border: 2px solid var(--subtitle-color);
     border-radius: 10px;
     font-size: .9rem;
     font-family: Poppins;
     cursor: pointer;
+    border:0;
 }
 
 .btn_holder button:hover {
-    background-image: var(--gradient);
     outline: none;
-    color: var(--background-2-color);
-    border: 0;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn_holder button:active {
+    outline: none;
 }
