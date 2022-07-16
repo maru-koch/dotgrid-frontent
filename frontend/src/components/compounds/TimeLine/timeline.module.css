@@ -1,0 +1,19 @@
+
+.timeline__container{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin: 40px 0;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.timeline__container::after{
+    position: absolute;
+    top:0;
+    content:'';
+    width: 4px;
+    background-color: var(--accent-color);
+    height: 100%;
+}

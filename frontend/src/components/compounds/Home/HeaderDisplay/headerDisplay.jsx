@@ -1,7 +1,9 @@
 import classes from './headerDisplay.module.css'
 import solar_image from '../../../../assets/images/header.png'
+import { useNavigate, Link } from 'react-router-dom'
 
 export const HeaderDisplay=()=>{
+    const navigate = useNavigate()
     return (
         <section className ={classes.header__section}>
             <div className ={classes.header__wrapper}>
@@ -15,7 +17,9 @@ export const HeaderDisplay=()=>{
                         <div>
                             <h2>Mini-grid Management</h2>
                             <p>Smart Metering and Energy Analytics</p>
-                            <button>Get Started</button>
+                            <Link to="/get-started">
+                                <button className={classes.btn}>Get Started</button>
+                            </Link>
                         </div>
                     </div>
                     <div className={classes.header__panel}>

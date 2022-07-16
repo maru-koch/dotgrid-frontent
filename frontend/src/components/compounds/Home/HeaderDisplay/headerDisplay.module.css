@@ -90,7 +90,7 @@
     font-weight: 200;
 }
 
-.header__panel button{
+.header__panel .btn{
     width: 100%;
     padding:20px;
     border-radius: 20px;
@@ -103,6 +103,7 @@
     font-family: Poppins;
     font-weight: 200;
     margin: 40px 0;
+    cursor: pointer;
 
 }
 

@@ -1,7 +1,7 @@
 
 import {SectionWrapper, SectionHeader} from '../../components/elements/Sections'
 import {ContactForm, TimeLine} from '../../components/compounds'
-import classes from '../Contact/contact.module.css'
+// import classes from '../Contact/contact.module.css'
 import { PageLayout } from '../../layout'
 
 const PAGEHEADER_STYLE={

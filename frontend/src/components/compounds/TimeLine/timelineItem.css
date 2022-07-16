@@ -1,0 +1,11 @@
+.timelineItem__container{
+    display:flex;
+    justify-content:flex-end;
+    background-color:#fff;
+    padding-left: 30px;
+    margin: 10px 0;
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+
+}

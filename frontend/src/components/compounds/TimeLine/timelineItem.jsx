@@ -1,3 +1,6 @@
+
+import './timelineItem.css'
+
 export const TimeLineItem=({data, id})=>{
     return (
         <div className="timelineItem__container">

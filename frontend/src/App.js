@@ -53,7 +53,7 @@ const App = () => (
         <Route path= "/analytics"element={<Analytics />} />
         <Route path= "/data"element={<DataTable/>} />
         <Route path= "/contact"element={<Contact/>} />
-        <Route path= "/contact"element={<GetStarted/>} />
+        <Route path= "/get-started"element={<GetStarted/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
