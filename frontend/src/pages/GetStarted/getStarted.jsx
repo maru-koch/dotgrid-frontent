@@ -1,6 +1,6 @@
 
 import {SectionWrapper, SectionHeader} from '../../components/elements/Sections'
-import {ContactForm, TimeLine} from '../../components/compounds'
+import {StarterImage, TimeLine} from '../../components/compounds'
 // import classes from '../Contact/contact.module.css'
 import { PageLayout } from '../../layout'
 
@@ -19,7 +19,7 @@ export const GetStarted =()=>{
         <SectionHeader title="Get Started" subtitle="Begin your journey to clean energy" style={PAGEHEADER_STYLE}/>
         <SectionWrapper style = {wrapper}>
             <TimeLine/>
-            <ContactForm/>
+            <StarterImage/>
         </SectionWrapper>
     </PageLayout>)
 }
