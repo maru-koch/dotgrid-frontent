@@ -16,7 +16,7 @@ const wrapper={
 export const GetStarted =()=>{
     return (
     <PageLayout>
-        <SectionHeader title="Get Started" subtitle="We'd love to hear from you" style={PAGEHEADER_STYLE}/>
+        <SectionHeader title="Get Started" subtitle="Begin your journey to clean energy" style={PAGEHEADER_STYLE}/>
         <SectionWrapper style = {wrapper}>
             <TimeLine/>
             <ContactForm/>

@@ -4,14 +4,13 @@
     padding-left: 30px;
     margin: 10px 30px;
     max-width: 80%;
-    width:700px;
+    width:80%;
     border-radius: 20px;
     padding: 20px;
-
 }
 
 .timelineItem__wrapper{
-    width: 80%;
+    width: 100%;
     background-color: #fff;
     position:relative;
     border: 1px solid var(--header-color);
