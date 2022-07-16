@@ -1,4 +1,4 @@
-export const timeLindData =[
+export const timeLineData =[
     {
         title: 'Solar Installation',
         description: `Order and get your Solar panelled installed by our energy expert. Do not money? Do not worry. You can get your complete solar PVL compact fully funded through our <a href='${loan}'>Energy Loan Scheme</a>`,
