@@ -6,6 +6,7 @@ export * from './DataTable';
 export * from './Modal';
 export * from './Home';
 export * from './Contact';
+export * from './TimeLine';
 
 
 export { SignUp } from './SignUp';

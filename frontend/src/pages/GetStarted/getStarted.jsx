@@ -13,7 +13,7 @@ const wrapper={
     position: 'relative',
 }
 
-export const Contact =()=>{
+export const GetStarted =()=>{
     return (
     <PageLayout>
         <SectionHeader title="Get Started" subtitle="We'd love to hear from you" style={PAGEHEADER_STYLE}/>

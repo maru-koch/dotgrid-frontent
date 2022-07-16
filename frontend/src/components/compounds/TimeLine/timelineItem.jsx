@@ -1,4 +1,4 @@
-export const TimelineItem=({data})=>{
+export const TimeLineItem=({data, id})=>{
     return (
         <div className="timelineItem__container">
             <div className="timelineItem__wrapper">
@@ -7,7 +7,7 @@ export const TimelineItem=({data})=>{
                 <div>
                     <a href={data.url}>Learn More</a>
                 </div>
-                <span className="timelineItem__circle">{data.id}</span>
+                <span className="timelineItem__circle">{id}</span>
             </div>
         </div>
     )

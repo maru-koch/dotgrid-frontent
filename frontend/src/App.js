@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { OverviewPage, SignInPage, SignUpPage, Home, Contact} from './pages';
+import { OverviewPage, SignInPage, SignUpPage, Home, Contact, GetStarted} from './pages';
 import { Analytics, DataTable} from './components'
 
 
@@ -53,6 +53,7 @@ const App = () => (
         <Route path= "/analytics"element={<Analytics />} />
         <Route path= "/data"element={<DataTable/>} />
         <Route path= "/contact"element={<Contact/>} />
+        <Route path= "/contact"element={<GetStarted/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
