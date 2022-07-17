@@ -4,8 +4,10 @@ import classes from './section-image.module.css';
 import {Button} from '../../elements'
 
 export const SectionImage=({btn, btnText, image})=>{
-    // Displace image and text on a page
-    // only displays btn if btn is true
+
+    // Displays image and button on a page
+    // only displays the button if btn is true
+
     return(
         <div className ={classes.starter__container}>
             <div className ={classes.starter__wrapper}>
