@@ -1,5 +1,5 @@
 
-import {SectionWrapper, SectionHeader} from '../../components/elements/Sections'
+import {Section,SectionWrapper, SectionHeader} from '../../components/elements/Sections'
 import {ContactForm} from '../../components/compounds/Contact'
 import classes from './contact.module.css'
 import { PageLayout } from '../../layout'
@@ -17,8 +17,8 @@ export const Contact =()=>{
     return (
     <PageLayout>
         <SectionHeader title="Contact Us" subtitle="We'd love to hear from you" style={PAGEHEADER_STYLE}/>
-        <SectionWrapper style = {wrapper}>
+        <Section>
             <ContactForm/>
-        </SectionWrapper>
+        </Section>
     </PageLayout>)
 }

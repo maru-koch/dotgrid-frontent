@@ -1,0 +1,9 @@
+.section__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__wrapper{
+    margin: 50px;
+}
