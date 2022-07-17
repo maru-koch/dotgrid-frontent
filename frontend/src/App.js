@@ -6,8 +6,20 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { OverviewPage, SignInPage, SignUpPage, Home, Contact, GetStarted} from './pages';
+// WEB PAGES
+import { 
+        OverviewPage, 
+        SignInPage, 
+        SignUpPage, 
+        Home, Contact, 
+        GetStarted, 
+        SolarInstallation
+        }
+
+ from './pages';
+
 import { Analytics, DataTable} from './components'
+
 
 
 const PrivateOutlet = () => {
@@ -52,8 +64,9 @@ const App = () => (
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
         <Route path= "/analytics"element={<Analytics />} />
         <Route path= "/data"element={<DataTable/>} />
-        <Route path= "/contact"element={<Contact/>} />
-        <Route path= "/get-started"element={<GetStarted/>} />
+        <Route path= {ROUTES.contact.path}element={<Contact/>} />
+        <Route path= {ROUTES.getStarted.path}element={<GetStarted/>} />
+        <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>

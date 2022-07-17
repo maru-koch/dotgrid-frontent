@@ -38,4 +38,10 @@ export const ROUTES = {
   contact: {
     path: 'contact',
   },
+  solarInstallation: {
+    path: 'solar-installation',
+  },
+  getStarted: {
+    path: 'get-started',
+  },
 };

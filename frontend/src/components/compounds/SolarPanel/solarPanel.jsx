@@ -1,6 +1,6 @@
 import { SolarProjects } from '../../molecules'
 import { SectionText, Section, SectionWrapper, SectionImage } from '../../elements'
-import solar_panel from '../../../assets/images/solar_starter_pack.png'
+import solar_panel from '../../../assets/images/dotgrid_solar_panel.png'
 
 const word ={
     title:'Section Title',
