@@ -4,4 +4,5 @@ export * from './MetricPanel';
 export * from './TotalPanel';
 
 export { Welcome } from './Welcome';
-export { RecentPickups } from './RecentPickups';
+export { SolarProjects } from './SolarProjects';
+

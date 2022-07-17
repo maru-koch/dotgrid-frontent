@@ -1,5 +1,5 @@
 import { Section, SectionWrapper, SectionHeader } from '../../elements'
-import {SolarProject} from './SolarProject'
+import { SolarProject } from './SolarProject'
 
 export const SolarProjects=({projects})=>{
     return(
