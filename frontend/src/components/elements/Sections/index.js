@@ -1,6 +1,7 @@
-export * from './Section/section';
-export * from './SectionContainer/section-container';
-export * from './SectionWrapper/section-wrapper';
-export * from './SectionHeader/section-header';
-export * from './Card/card';
+export * from './Section';
+export * from './SectionText';
+export * from './SectionContainer';
+export * from './SectionWrapper';
+export * from './SectionHeader';
+export * from './Card';
 
