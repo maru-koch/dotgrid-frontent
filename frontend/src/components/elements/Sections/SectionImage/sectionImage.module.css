@@ -1,0 +1,10 @@
+
+.starter__container{
+    height: 100vh;
+    width: 50vw;
+}
+.starter__btn_wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
