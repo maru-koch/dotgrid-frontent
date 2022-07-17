@@ -8,13 +8,12 @@ const word ={
     button_text: 'Order Solar PV Panel'
 }
 
-export const SolarInstallation=()=>{
+export const SolarPanel=()=>{
     return(
-        <Section>
-            <SectionWrapper>
-                <SectionImage image={solar_panel}/>
-                <SectionText title ={word.title} description ={word.desc}/>
-            </SectionWrapper>
-        </Section>
+    
+        <SectionWrapper>
+            <SectionImage image={solar_panel}/>
+            <SectionText title ={word.title} description ={word.desc}/>
+        </SectionWrapper>
     )
 }

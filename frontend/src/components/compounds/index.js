@@ -13,5 +13,5 @@ export { SignUp } from './SignUp';
 export { SignIn } from './SignIn';
 export { SideBar } from './SideBar';
 export { StarterImage } from './StarterImage';
-export { SolarInstallation } from './SolarInstallation';
+export { SolarPanel } from './SolarPanel';
 
