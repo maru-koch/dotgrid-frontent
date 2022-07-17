@@ -5,7 +5,7 @@ import  classes from './section-text.module.css'
 export const SectionText = ({btn, style, title, description, btnText})=>{
     return (
     <div className={classes.container}>
-        <div>
+        <div className={classes.container}>
             <div className = {`${classes.sectionHeader} ${style}`}>
                 <h2>{title}</h2>
                 <p>{description}</p>

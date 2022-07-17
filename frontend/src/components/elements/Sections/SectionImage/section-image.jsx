@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 import classes from './section-image.module.css';
-import {Button} from '../../elements'
+import { Button } from '../../../elements'
 
 export const SectionImage=({btn, btnText, image})=>{
 

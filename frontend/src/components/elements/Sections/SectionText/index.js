@@ -1,1 +1,1 @@
-export * from './setion-text'
+export * from './section-text'

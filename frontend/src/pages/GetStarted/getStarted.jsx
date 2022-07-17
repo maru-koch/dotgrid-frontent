@@ -1,6 +1,6 @@
 
-import {SectionWrapper, SectionHeader} from '../../components/elements/Sections'
-import {SectionImage, TimeLine} from '../../components/compounds'
+import {SectionWrapper, SectionHeader, SectionImage} from '../../components/elements/Sections'
+import {TimeLine} from '../../components/compounds'
 // import classes from '../Contact/contact.module.css'
 import solar_pack from '../../assets/images/solar_starter_pack.png';
 import { PageLayout } from '../../layout'
