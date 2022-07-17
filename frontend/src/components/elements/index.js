@@ -13,3 +13,4 @@ export * from './Metrics';
 export * from './ExportCSV';
 export * from './Sections'
 export * from './Card'
+export * from './Logo'

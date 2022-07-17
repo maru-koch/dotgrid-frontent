@@ -1,3 +1,5 @@
+import { ContactInfo } from "../../Contact"
+import { Logo } from '../../../elements'
 
 const AddressCard =()=>{
 
@@ -5,15 +7,10 @@ const AddressCard =()=>{
 
     return (
     <div className="footerCard">
-        <h1 className = 'footerHeading'>Foodly</h1>
-        <p><span>Open: </span>Monday to Sunday: 8am - 10pm</p>
-        <ul>
-            <li>Contact</li>
-            <li>About Us</li>
-            <li>Terms and Conditions</li>
-            <li>Privacy Policy</li>
-            <li>FAQ</li>
-        </ul>
+        <div>
+            <Logo/>
+        </div>
+        <ContactInfo/>
     </div>
     )
 }
