@@ -1,7 +1,7 @@
 import React from 'react'
 import {DropDown} from '../DropDown'
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import './nav.css'
 import {useState} from 'react'
 import logo from '../../../../assets/images/dotgrid_logo.png'
