@@ -1,7 +1,8 @@
 
 import {SectionWrapper, SectionHeader} from '../../components/elements/Sections'
-import {StarterImage, TimeLine} from '../../components/compounds'
+import {SectionImage, TimeLine} from '../../components/compounds'
 // import classes from '../Contact/contact.module.css'
+import solar_pack from '../../assets/images/solar_starter_pack.png';
 import { PageLayout } from '../../layout'
 
 const PAGEHEADER_STYLE={
@@ -19,7 +20,7 @@ export const GetStarted =()=>{
         <SectionHeader title="Get Started" subtitle="Begin your journey to clean energy" style={PAGEHEADER_STYLE}/>
         <SectionWrapper style = {wrapper}>
             <TimeLine/>
-            <StarterImage/>
+            <SectionImage btn={true} btnText = "Get Solar Pack" image={solar_pack}/>
         </SectionWrapper>
     </PageLayout>)
 }

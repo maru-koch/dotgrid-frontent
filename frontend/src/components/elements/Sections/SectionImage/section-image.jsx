@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import classes from './section-image.module.css';
 import {Button} from '../../elements'
 
-export const SectionImage=({btn, image})=>{
+export const SectionImage=({btn, btnText, image})=>{
+    // Displace image and text on a page
+    // only displays btn if btn is true
     return(
         <div className ={classes.starter__container}>
             <div className ={classes.starter__wrapper}>
                 <img src={image} alt="Starter pack"/>
                 <div className ={classes.starter__btn_wrapper}>
-                     {btn && <Button text ="Get Solar Pack" />}
+                     { btn && <Button text = { btnText } /> }
                 </div>
             </div>
         </div>
@@ -18,5 +20,6 @@ export const SectionImage=({btn, image})=>{
 
 SectionImage.propTypes = {
     btn: PropTypes.bool.isRequired,
+    btnText: PropTypes.string,
     image: PropTypes.string
 }
