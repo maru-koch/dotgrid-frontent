@@ -8,7 +8,7 @@ const AddressCard =()=>{
     return (
     <div className="footerCard">
         <div>
-            <Logo/>
+            <Logo height={'50px'} width={'100px'}/>
         </div>
         <ContactInfo/>
     </div>

@@ -1,12 +1,14 @@
 import logo from '../../../assets/images/dotgrid_logo.png'
-import classes from './logo'
+import classes from './logo.module.css'
 
-export const Logo=({height, width})=>{
+export const Logo=({style})=>{
+
     // display the logo
+
     return (
         <div className={classes.logo__container}>
-            <div className={classes.logo__wrapper}>
-                <img src={logo} alt="logo" heigth={height} width={width}/>
+            <div className={`${classes.logo__wrapper} ${style}`}>
+                <img src={logo} alt="logo"/>
             </div>
         </div>
     )

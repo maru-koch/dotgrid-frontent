@@ -1,10 +1,18 @@
 .logo__container{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    z-index: 10;
 }
 
 .logo__wrapper{
     display: flex;
     justify-content:center;
     align-items:center;
+    height:100px;
+    width: 300px;
 }
+.logo__wrapper img{
+    object-fit: cover;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    }
