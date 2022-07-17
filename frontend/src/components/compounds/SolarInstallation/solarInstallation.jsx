@@ -1,5 +1,5 @@
 import { SolarProjects } from '../../molecules'
-import { SectionText, Section, SectionWrapper } from '../../compounds'
+import { SectionText, Section, SectionWrapper, SectionImage } from '../../compounds'
 import solar_panel from '../../../assets/images/solar_panel.png'
 
 const word ={
@@ -12,7 +12,7 @@ export const SolarInstallation=()=>{
     return(
         <Section>
             <SectionWrapper>
-                <Image image={solar_panel}/>
+                <SectionImage image={solar_panel}/>
                 <SectionText title ={word.title} description ={word.desc}/>
             </SectionWrapper>
             <SolarProjects/>
