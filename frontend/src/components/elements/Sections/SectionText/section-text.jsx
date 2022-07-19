@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types'
-import { Button } from '../..'
+import { Button } from '../../../elements'
 import  classes from './section-text.module.css'
 
 export const SectionText = ({btn, style, title, description, btnText})=>{
     return (
-    <div className={classes.container}>
-        <div className={classes.container}>
-            <div className = {`${classes.sectionHeader} ${style}`}>
+    <div className={`${classes.sectionText__container} ${style}`}>
+        <div className={classes.sectionText__wrapper}>
+            <div className = {classes.sectionText__content}>
                 <h2>{title}</h2>
                 <p>{description}</p>
+                <div>
+                    {btn && <Button text={btnText}/>}
+                </div>
             </div>
             {/* Show button if only btn is true */}
-            <div>
-                {btn && <Button text={btnText}/>}
-            </div>
+          
         </div>
     </div>
     )
