@@ -1,4 +1,4 @@
-import './index.css'
+import './interval.css'
 
 export const Interval=({start, end})=>{
     // Displays the energy consumption for a device

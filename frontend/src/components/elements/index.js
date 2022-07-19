@@ -5,11 +5,11 @@ export * from './InputDropdown';
 export * from './Loader';
 export * from './RadioButton';
 export * from './SearchBar/searchBar';
-export * from './Interval';
+export * from './Interval/interval';
 export * from './Total/total';
 export * from './Table/table';
 export * from './Text';
-export * from './Metrics';
+export * from './Metrics/metrics';
 export * from './ExportCSV';
 export * from './Sections'
 export * from './Card'

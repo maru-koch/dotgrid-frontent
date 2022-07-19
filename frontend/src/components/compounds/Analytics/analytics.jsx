@@ -1,5 +1,5 @@
 import { TotalPanel, Graph, MetricPanel} from '../../molecules'
-import './index.css'
+import './analytics.css'
 import PropTypes from 'prop-types';
 
 export const Analytics =({children, style})=>{

@@ -1,5 +1,5 @@
 import ReactDom from 'react-dom'
-import './index.css'
+import './modal.css'
 
 const OVERLAY_STYLE ={
     position: 'fixed',
