@@ -16,7 +16,11 @@ export const SolarPanel=()=>{
     return(
         <SectionWrapper>
             <SectionImage image={solar_panel}/>
-            <SectionText title ={word.title} description ={word.desc}/>
+            <SectionText 
+                title ={word.title} 
+                description ={word.desc}
+                btn={true}
+                btnText="Order Solar PV"/>
         </SectionWrapper>
     )
 }
