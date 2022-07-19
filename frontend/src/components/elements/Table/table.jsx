@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { data } from './data'
-import './index.css'
+import './table.css'
 
 const SelectDate=()=>{
     return(
@@ -22,9 +22,6 @@ const SelectDate=()=>{
 export const Table=({rate_per_hour})=>{
   // Display total energy consumption on the nalytics panel
     const data_device = data[0]['device_1']
-    const [header, setHeader] = useState([])
-    const [row, setRow] = useState([])
-    const [column, setColumn] = useState([])
 
 // Retrieve the data for the specified device
 let arrData=Object.keys(data[1]["device_2"])

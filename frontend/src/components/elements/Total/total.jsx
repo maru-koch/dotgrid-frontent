@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react'
 
-import './index.css'
+import './total.css'
 export const Total=({ total })=>{
   // Display total energy consumption on the analytics panel
 

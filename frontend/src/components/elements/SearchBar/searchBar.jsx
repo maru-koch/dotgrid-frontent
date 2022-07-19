@@ -1,4 +1,4 @@
-import './style.css';
+import './searchBar.css';
 
 export const SearchBar = () => (
   <div className="search-holder">
