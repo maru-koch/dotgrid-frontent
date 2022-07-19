@@ -4,7 +4,11 @@ import solar_panel from '../../../assets/images/dotgrid_solar_panel.png'
 
 const word ={
     title:'Section Title',
-    description: '',
+    description: `
+                We are on a mission to empower home and business owners across Africa
+                maximize their potentials. Epileptic power supply has hampered the growth of
+                so many businesses and has made families grope in the dark. We are here to change that narative.
+                Our vission is to make clean energy and power accessible by all.`,
     button_text: 'Order Solar PV Panel'
 }
 
