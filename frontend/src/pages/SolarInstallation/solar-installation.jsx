@@ -16,6 +16,6 @@ export const SolarInstallation =()=>{
     <PageLayout>
         <SectionHeader title="Solar Installation" subtitle="Get your PV panel Installed by Our Experts" style={PAGEHEADER_STYLE}/>
         <SolarPanel/>
-        {/* <SolarProjects/> */}
+        <SolarProjects/>
     </PageLayout>)
 }
