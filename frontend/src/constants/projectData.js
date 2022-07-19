@@ -1,7 +1,7 @@
-    import Image1 from '../assets/images/solar_panel_1.jpg'
+    import Image1 from '../assets/images/solar_panel_2.jpg'
     import Image2 from '../assets/images/solar_panel_2.jpg'
-    import Image3 from '../assets/images/solar_panel_3.jpg'
-    import Image4 from '../assets/images/solar_panel_4.jpg'
+    import Image3 from '../assets/images/solar_panel_2.jpg'
+    import Image4 from '../assets/images/solar_panel_2.jpg'
     
     export const projects =[
         {
