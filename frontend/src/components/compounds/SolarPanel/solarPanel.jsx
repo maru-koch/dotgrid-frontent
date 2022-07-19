@@ -3,8 +3,8 @@ import { SectionText, SectionWrapper, SectionImage } from '../../elements'
 import solar_panel from '../../../assets/images/dotgrid_solar_panel.png'
 
 const word ={
-    title:'Section Title',
-    description: `
+    title:'Get Your Solar PV',
+    desc: `
                 We are on a mission to empower home and business owners across Africa
                 maximize their potentials. Epileptic power supply has hampered the growth of
                 so many businesses and has made families grope in the dark. We are here to change that narative.
