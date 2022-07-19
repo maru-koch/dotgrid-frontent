@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Button } from '../../../elements'
+import { Button } from '../..'
 import  classes from './section-text.module.css'
 
 export const SectionText = ({btn, style, title, description, btnText})=>{
