@@ -1,5 +1,5 @@
-import { SolarProjects } from '../../molecules'
-import { SectionText, Section, SectionWrapper, SectionImage } from '../../elements'
+
+import { SectionText, SectionWrapper, SectionImage } from '../../elements'
 import solar_panel from '../../../assets/images/dotgrid_solar_panel.png'
 
 const word ={
@@ -10,7 +10,6 @@ const word ={
 
 export const SolarPanel=()=>{
     return(
-    
         <SectionWrapper>
             <SectionImage image={solar_panel}/>
             <SectionText title ={word.title} description ={word.desc}/>
