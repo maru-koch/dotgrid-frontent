@@ -1,11 +1,7 @@
 import { Section, SectionWrapper, SectionHeader } from '../../elements'
-// import { SolarProject } from './SolarProject'
+import { SolarProject } from './SolarProject'
 import {projects } from '../../../constants/projectData'
-const SolarProject=({title})=>{
-    return (
-        <h1>ushime</h1>
-    )
-}
+
 export const SolarProjects=()=>{
     return(
         <Section>
