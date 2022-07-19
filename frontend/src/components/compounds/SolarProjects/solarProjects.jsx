@@ -9,10 +9,10 @@ export const SolarProjects=()=>{
             <SectionWrapper>
                 {projects.map((project, idx)=>(
                 <SolarProject 
-                    key ={idx}
-                    image={project.image} 
-                    title={project.title}
-                    description={project.description}
+                    // key ={idx}
+                    // image={project.image} 
+                    // title={project.title}
+                    // description={project.description}
                 />))}
             </SectionWrapper>
         </Section>
