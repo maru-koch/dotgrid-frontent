@@ -1,8 +1,8 @@
 import './section-wrapper.css'
 import PropTypes from 'prop-types'
-export const SectionWrapper = ({children, style}) =>{
+export const SectionWrapper = ({children, bg}) =>{
     return (
-    <section className = {`sectionWrapper ${style}`}>
+    <section className = {`sectionWrapper`} style={bg}>
         {children}
     </section>
     )
@@ -10,5 +10,5 @@ export const SectionWrapper = ({children, style}) =>{
 
 SectionWrapper.propTypes = {
     children: PropTypes.node,
-    style: PropTypes.string
+    bg: PropTypes.string
 }

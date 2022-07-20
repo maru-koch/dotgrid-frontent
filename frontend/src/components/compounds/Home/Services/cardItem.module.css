@@ -5,7 +5,7 @@
     height: 50%;
     place-items: center;
     grid-template-rows: 4fr 3fr 3fr;
-    /* background-color: var(--main-color); */
+    cursor: pointer;
 }
 
 .card i{
