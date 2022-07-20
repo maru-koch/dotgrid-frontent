@@ -7,7 +7,7 @@ const SECTION_WRAPPER = {
     backgroundColor: '#000'
 }
 
-export const SolarAnalytics = ()=>{
+export const SolarAnalytic = ()=>{
     return(
         <Section>
             <SectionHeader title="Our Portforlio" subtitle ="The projects we have executed"/>
