@@ -1,3 +1,12 @@
+.signin__container{
+  background-color: red;
+}
+
+.signin__wrapper{
+  background-color: green;
+  margin: 20px;
+  width: 400px;
+}
 .signin-wrapper-signin-title {
   display: flex;
   flex-direction: row;
