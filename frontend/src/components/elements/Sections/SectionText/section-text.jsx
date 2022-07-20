@@ -9,7 +9,7 @@ export const SectionText = ({btn, style, title, description, btnText})=>{
             <div className = {classes.sectionText__content}>
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <div>
+                <div className={classes.btn__container}>
                     {btn && <Button text={btnText}/>}
                 </div>
             </div>

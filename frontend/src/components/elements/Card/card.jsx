@@ -4,7 +4,7 @@ import './card.css'
 import PropTypes from 'prop-types';
 export const Card =({children, style})=>{
     return (
-        <div className = {`card ${style}`}>
+        <div className = {`genericCard ${style}`}>
             {children}
         </div>
     )

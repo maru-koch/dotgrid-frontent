@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import './index.css'
+import './metrics.css'
 
 export const Metrics=({num, title, subtitle})=>{
     // Displays the energy consumption for a device
