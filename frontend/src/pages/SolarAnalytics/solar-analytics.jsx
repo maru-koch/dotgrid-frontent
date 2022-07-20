@@ -15,6 +15,6 @@ export const SolarAnalytics =()=>{
     return (
     <PageLayout>
         <SectionHeader title="Solar Analytics" subtitle="Track Your Energy Consumption and Save Cost" style={PAGEHEADER_STYLE}/>
-        <SolarAnalytics/>
+        <SolarAnalytic/>
     </PageLayout>)
 }

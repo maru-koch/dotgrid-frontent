@@ -41,6 +41,9 @@ export const ROUTES = {
   solarInstallation: {
     path: 'solar-installation',
   },
+  solarAnalytics: {
+    path: 'solar-analytics',
+  },
   getStarted: {
     path: 'get-started',
   },

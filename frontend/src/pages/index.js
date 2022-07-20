@@ -5,3 +5,4 @@ export { Home } from './Home';
 export { Contact } from './Contact';
 export { GetStarted } from './GetStarted';
 export { SolarInstallation } from './SolarInstallation'
+export { SolarAnalytics } from './SolarAnalytics'

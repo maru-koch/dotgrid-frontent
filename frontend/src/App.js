@@ -13,10 +13,12 @@ import {
         SignUpPage, 
         Home, Contact, 
         GetStarted, 
-        SolarInstallation
+        SolarInstallation,
+        SolarAnalytics,
         }
 
  from './pages';
+ 
 
 import { Analytics, DataTable} from './components'
 
@@ -67,6 +69,8 @@ const App = () => (
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
+        <Route path= {'/solar-analytics'} element={<SolarAnalytics/>} />
+
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>

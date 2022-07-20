@@ -1,13 +1,19 @@
 
 import classes from './dropDown.module.css'
-import { DashCard } from '../../../molecules/DashCard'
+import { useNavigate } from 'react-router-dom'
 
-const DropDownItem=({icon, title, description, closeDropDown})=>{
+const DropDownItem=({icon, title, description, closeDropDown, url})=>{
+    const navigate = useNavigate()
 
-    // Displays each menu sub Item
+    
+    const dropDownAction=()=>{
+        // close dropdown when clicked
+        closeDropDown(true)
+        navigate(url)
+    }
 
     return (
-        <main className={classes.dropdown_item__container} onClick={()=>closeDropDown(true)}>
+        <main className={classes.dropdown_item__container} onClick={()=>dropDownAction()}>
             <div className={classes.dropdown_item__wrapper}>
                 <section className={classes.dropdown_item__section_left}>
                     <i className={`fa ${icon}`}></i>
@@ -41,6 +47,7 @@ export const  DropDown=(items)=>{
                         key ={1} 
                         id = {1}
                         icon = {"fa-chart-line"}
+                        url = "/solar-navigate"
                         title = {"Energy Analytics"}
                         description = {"Estimate and optimize the rate of your energy consumption"}
                         closeDropDown = {items.closeDropDown}

@@ -1,10 +1,10 @@
 import './section.css'
 
-export const Section = props =>{
+export const Section = ({children, bg}) =>{
     return (
-    <section className = {`${props.style} section__container`}>
+    <section className = {`section__container`} style={bg}>
         <section className = "section__wrapper">
-            {props.children}
+            {children}
         </section>
     </section>
     )

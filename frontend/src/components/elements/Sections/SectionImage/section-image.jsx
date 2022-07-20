@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classes from './section-image.module.css';
 import { Button } from '../../../elements'
 
-export const SectionImage=({btn, btnText, image})=>{
+export const SectionImage=({btn, btnText, image, height, width, style})=>{
 
     // Displays image and button on a page
     // only displays the button if btn is true
@@ -11,7 +11,7 @@ export const SectionImage=({btn, btnText, image})=>{
     return(
         <div className ={classes.starter__container}>
             <div className ={classes.starter__wrapper}>
-                <img src={image} alt="Starter pack"/>
+                <img src={image} alt="Starter pack" height ={height} width={width} style={style}/>
                 <div className ={classes.starter__btn_wrapper}>
                      { btn && <Button text = { btnText } /> }
                 </div>
@@ -23,5 +23,8 @@ export const SectionImage=({btn, btnText, image})=>{
 SectionImage.propTypes = {
     btn: PropTypes.bool.isRequired,
     btnText: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.string,
+    height: PropTypes.number,
+    width: PropTypes.number,
+    style: PropTypes.string
 }

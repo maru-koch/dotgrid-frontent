@@ -1,1 +1,1 @@
-export { SolarInstallation } from './solar-analytics'
+export { SolarAnalytics } from './solar-analytics'
