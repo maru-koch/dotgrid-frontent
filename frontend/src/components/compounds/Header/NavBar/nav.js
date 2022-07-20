@@ -40,8 +40,8 @@ export default function NavLink(props){
                         <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
                         <Nav.Link className = "link"  href = "/contact"><p>CONTACT</p></Nav.Link>
                         <Nav className ="navAuth">
-                            <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
-                            <Nav.Link className = "link"  href = "/"><p></p></Nav.Link>
+                            <Nav.Link className = "link"  href = "/">Login</Nav.Link>
+                            <Nav.Link className = "link"  href = "/">Sign Up</Nav.Link>
                         </Nav>
                     </Nav>
                 </Nav>     
