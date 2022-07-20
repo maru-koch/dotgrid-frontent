@@ -6,11 +6,11 @@ const MenuCard =()=>{
     <div className="footerCard">
         <h2>Our Services</h2>
         <ul>
-            <li>Solar Panel Installation</li>
-            <li>Energy Loan</li>
+            <li onClick={()=>navigate('/solar-installation')}>Solar Panel Installation</li>
+            <li onClick={()=>navigate('/energy-loan')}>Energy Loan</li>
             <li onClick={()=>navigate('/solar-analytics')}>Solar Analytics</li>
-            <li>Smart Metering</li>
-            <li>Solar Projects Design and Costing</li>
+            <li onClick={()=>navigate('/smart-metering')}>Smart Metering</li>
+            <li onClick={()=>navigate('/project-design')}>Solar Projects Design and Costing</li>
         </ul>
     </div>
     )
