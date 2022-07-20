@@ -38,17 +38,12 @@
 
 }
 
-.footerCard .rafi{
-    text-align: left;
+.footerCard ul li:hover{
+    background-color: var(--primary-color);
 }
 
-.footerCard .tel{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    font-family: Roboto;
-    letter-spacing: 2px;
+.footerCard ul li:focus {
+    background-color: var(--secondary-color);
 }
 
 .box{

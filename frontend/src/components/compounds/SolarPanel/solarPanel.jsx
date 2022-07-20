@@ -15,7 +15,7 @@ const word ={
 
 export const SolarPanel=()=>{
     return(
-        <SectionWrapper bg ={{backgroundColor:'#fff'}}>
+        <SectionWrapper>
             <SectionImage image={solar_panel}/>
             <SectionText 
                 title ={word.title} 
