@@ -47,7 +47,7 @@ export const  DropDown=(items)=>{
                         key ={1} 
                         id = {1}
                         icon = {"fa-chart-line"}
-                        url = "/solar-navigate"
+                        url = "/solar-analytics"
                         title = {"Energy Analytics"}
                         description = {"Estimate and optimize the rate of your energy consumption"}
                         closeDropDown = {items.closeDropDown}
