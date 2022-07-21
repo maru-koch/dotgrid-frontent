@@ -2,6 +2,7 @@
 import { SectionHeader } from '../../components/elements/Sections'
 import {SolarAnalytic } from '../../components/compounds'
 import { PageLayout } from '../../layout'
+import { HowItWorks } from '../../components/compounds/HowItWorks/HowItWorks'
 
 
 const PAGEHEADER_STYLE={
@@ -16,5 +17,6 @@ export const SolarAnalytics =()=>{
     <PageLayout>
         <SectionHeader title="Solar Analytics" subtitle="Track Your Energy Consumption and Save Cost" style={PAGEHEADER_STYLE}/>
         <SolarAnalytic/>
+        <HowItWorks/>
     </PageLayout>)
 }

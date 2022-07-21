@@ -1,0 +1,75 @@
+
+.card{
+    width: 20vw;
+    display:grid;
+    height: 50%;
+    place-items: center;
+    grid-template-rows: 4fr 3fr;
+    cursor: pointer;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card i{
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.card .circle{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.info_holder{
+    text-align: center;
+}
+
+.info_holder h3{
+    font-size: 1.22rem;
+    font-family: Poppins;
+    margin: 0;
+    padding: 5px;
+}
+
+.info_holder p{
+    font-family: Poppins;
+    font-weight: 300;
+    color:var(--text-color);
+    margin:0;
+}
+
+
+
+.btn_holder{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding: 10px 0;
+}
+
+.btn_holder button {
+    background-color: #fff;
+    padding: 10px 50px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-family: Poppins;
+    cursor: pointer;
+    border:0;
+}
+
+.btn_holder button:hover {
+    outline: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn_holder button:active {
+    outline: none;
+}

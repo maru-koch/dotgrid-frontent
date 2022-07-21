@@ -10,7 +10,7 @@ const MenuCard =()=>{
             <ul>
                 <li onClick={()=>navigate('/solar-installation')}>Solar Panel Installation</li>
                 <li>Energy Loan</li>
-                <li>Solar Analytics</li>
+                <li onClick={()=>navigate('/solar-analytics')}>Solar Analytics</li>
                 <li>Smart Metering</li>
                 <li>Solar Projects Design and Costing</li>
             </ul>
