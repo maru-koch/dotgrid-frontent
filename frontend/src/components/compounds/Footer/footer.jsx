@@ -6,13 +6,11 @@ import MenuCard from './FooterComponents/menuCard'
 import NavCard from './FooterComponents/navCard'
 
 import classes from './footer.module.css'
-import './footer.css'
-
 
 export const Footer =()=>{
     return (
         <Section style ={classes.footer}>
-            <div className = {classes.box}>
+            <div className = {classes.footer__container}>
                 <SectionWrapper style ={classes.wrapper}>
                     <AddressCard/>
                     <div className = {classes.footerLinks}>
