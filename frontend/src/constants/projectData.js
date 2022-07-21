@@ -4,6 +4,8 @@
     import Image4 from '../assets/images/solar_panel_2.jpg'
     
     export const projects =[
+        
+        // data for the projects components in the solar-installation page
         {
             title: "Mini Grid",
             image: Image1,

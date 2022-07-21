@@ -1,4 +1,5 @@
 export const howItWorksData =[
+    // data for the How it works components for the solar-analytics page
     {
         icon: "fa fa-phone",
         description: "Request a demo"
