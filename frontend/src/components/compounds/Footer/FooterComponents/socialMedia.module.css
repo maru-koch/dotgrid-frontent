@@ -34,13 +34,13 @@
 }
 
 .icons:focus{
-    color: var(--btn-border-color);
-    background-color: var(--color)
+    color: var(--secondary-color);
+    background-color: var(--background-color)
 }
 
 .icons:hover{
-    color: var(--accent-2-color);
+    color: var(--primary-color);
     transform: Scale(1.05);
-    background-color: var(--accent-1-color);
+    background-color: var(--background-color);
     transition: transform 0.6s ease-in-out;
 }
