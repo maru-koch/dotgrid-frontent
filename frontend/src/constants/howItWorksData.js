@@ -1,22 +1,19 @@
-export const timeLineData =[
+export const howItWorksData =[
     {
-        icon: 'fa fa-request',
-        description: "Request a demo",
-        url: 'http://localhost:3000/solar-installation'
+        icon: "fa fa-phone",
+        description: "Request a demo"
     },
     {
-        icon: 'fa fa-request',
-        description: "Get Your Custom Solution",
-        url: ''
+        icon: "fa fa-bolt",
+        description: "Get Your Custom Solution"
     },
     {
-        icon: 'fa fa-request',
-        description: "System Configuration and Automation",
-        url: ''
+        icon: 'fa fa-trophy',
+        description: "System Configuration"
     },
     {
-        icon: 'fa fa-user-headset',
-        description: "After-sales Support",
+        icon: "fa fa-user",
+        description: "After-sales Support"
     }
       
 ]

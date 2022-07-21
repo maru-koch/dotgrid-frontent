@@ -4,17 +4,28 @@
     display:grid;
     height: 50%;
     place-items: center;
-    grid-template-rows: 4fr 3fr 3fr;
+    grid-template-rows: 4fr 3fr;
     cursor: pointer;
+    padding: 20px;
+    margin: 20px;
 }
 
 .card i{
-    font-size: 5rem;
-    color: var(--primary-color);
+    font-size: 3rem;
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
-
+.card .circle{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
 .info_holder{
     text-align: center;
 }
@@ -28,7 +39,8 @@
 
 .info_holder p{
     font-family: Poppins;
-    font-weight: 200;
+    font-weight: 300;
+    color:var(--text-color);
     margin:0;
 }
 

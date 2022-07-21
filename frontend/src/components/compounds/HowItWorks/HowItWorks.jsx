@@ -1,6 +1,6 @@
 import { Section, SectionWrapper, SectionHeader } from '../../elements'
 import { CardItem } from './HowCard'
-import { howItWorksData } from '../../../constants/projectData'
+import { howItWorksData } from '../../../constants/howItWorksData'
 
 
 const SECTION_WRAPPER={
@@ -16,7 +16,7 @@ export const HowItWorks=()=>{
                 <CardItem 
                     key ={idx}
                     icon={step.icon} 
-                    description={step.description}
+                    desc={step.description}
                 />))}
             </SectionWrapper>
         </Section>
