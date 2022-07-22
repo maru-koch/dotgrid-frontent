@@ -11,6 +11,7 @@ const NavCard =()=>{
                 <li>About us</li>
                 <li>Careers</li>
                 <li onClick={()=>navigate('/contact')}>Contact Us</li>
+                <li>Blog</li>
                 <li>Our Story</li>
             </ul>
         </div>

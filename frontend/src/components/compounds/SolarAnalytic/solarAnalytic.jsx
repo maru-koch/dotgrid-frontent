@@ -9,7 +9,7 @@ const SECTION_WRAPPER = {
 
 export const SolarAnalytic = ()=>{
     return(
-        <Section bg={{ backgroundColor:'#fff'}}>
+        <Section style={{ backgroundColor:'#fff'}}>
             <SectionImage image = {solar_analytics} height ="100%" width="100%" style={{width: '100%'}}/>
         </Section>
     )
