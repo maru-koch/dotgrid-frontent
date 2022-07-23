@@ -1,5 +1,6 @@
 export { SignUpPage } from './Auth';
 export { ConfirmEmailPage } from './ConfirmEmail'
+export { VerifyEmailPage } from './VerifyEmail'
 export { SignInPage } from './Auth';
 export { OverviewPage } from './dashboard';
 export { Home } from './Home';

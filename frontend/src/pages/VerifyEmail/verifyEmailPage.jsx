@@ -5,7 +5,8 @@ import { VerifyEmail } from '../../components'
 export const VerifyEmailPage =()=>{
     return (
     <Section>
-        <VerifyEmail/>
+        <h1>Verify</h1>
+        {/* <VerifyEmail/> */}
     </Section>
     )
 }
