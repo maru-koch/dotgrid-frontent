@@ -33,8 +33,15 @@ const authSlice = createSlice({
       console.log("REDUCER ACTION", action.payload)
       api.signUp(action.payload)
     },
-    addDevice:()=>{},
+
+    verifyEmail:(state, action)=>{
+      // verify the user email address
+      const enconded_email = action.payload
+      api.verifyEmail(enconded_email)
+      console.log(enconded_email)
+    },
     
+    addDevice:()=>{},
     assignDevice:()=>{},
     removeDevice:()=>{},
     generateData:()=>{},

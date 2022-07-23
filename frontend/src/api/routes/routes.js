@@ -9,6 +9,11 @@ signUp: (formData)=>{
     return res.data
 },
 
+verifyEmail: (encoded_email)=>{
+    const res = dotGridRequest.post(`account/verify/${encoded_email}`)
+    return res.data
+},
+
 login: (formData)=>{
     const res = dotGridRequest.post('account/login/', formData)
     return res
