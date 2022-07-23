@@ -15,13 +15,13 @@ import {
         GetStarted, 
         SolarInstallation,
         SolarAnalytics,
+        ConfirmEmail
         }
 
  from './pages';
  
 
 import { Analytics, DataTable} from './components'
-import { ConfirmEmail } from './components/compounds/ConfirmEmail/confirmEmail';
 
 
 
