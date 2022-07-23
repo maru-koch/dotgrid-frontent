@@ -21,6 +21,7 @@ import {
  
 
 import { Analytics, DataTable} from './components'
+import { ConfirmEmail } from './components/compounds/ConfirmEmail/confirmEmail';
 
 
 
@@ -67,8 +68,8 @@ const App = () => (
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
-        <Route path= {'/solar-analytics'} element={<SolarAnalytics/>} />
-
+        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmail/>} />
+        <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>

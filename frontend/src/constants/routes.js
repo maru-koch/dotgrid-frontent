@@ -2,6 +2,9 @@ export const ROUTES = {
   signUp: {
     path: 'signup',
   },
+  confirmEmail: {
+    path: 'confirm-email',
+  },
   signIn: {
     path: 'signin',
   },
