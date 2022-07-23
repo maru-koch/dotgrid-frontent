@@ -1,10 +1,11 @@
 
-import {Section} from '../../components/elements/Sections'
-import {ConfirmEmail} from '../../components/compounds'
+import { Section } from '../../components'
+import { ConfirmEmail } from '../../components'
 
-export const Contact =()=>{
+export const ConfirmEmailPage =()=>{
     return (
     <Section>
         <ConfirmEmail/>
-    </Section>)
+    </Section>
+    )
 }

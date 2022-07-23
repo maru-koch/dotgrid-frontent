@@ -15,7 +15,7 @@ import {
         GetStarted, 
         SolarInstallation,
         SolarAnalytics,
-        ConfirmEmail
+        ConfirmEmailPage,
         }
 
  from './pages';
@@ -65,10 +65,11 @@ const App = () => (
         <Route index element={<Home />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
+        <Route path="/verify/:id" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
-        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmail/>} />
+        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage/>} />
         <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics/>} />
       </Route>
 
