@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Text, Input, Button } from '../../elements';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { validate } from './validation'
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { toast} from 'react-toastify';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import './style.css';
-
 
 const initialState={
   email:'',
@@ -14,19 +13,29 @@ const initialState={
   last_name: '',
   password: '',
 }
+
 export const SignUp = () => {
+
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState(initialState)
   const [error, setError] = useState({})
   const { signUpUser } = AUTH_ACTIONS
 
+  const { registered } = useSelector(state => state.auth)
+
+  // Take user to the confirm-email page if registration is successful
+  if (registered){
+    return <Navigate to="/confirm-email"/>
+  }
+  
   const onChangeHandler=e=>{
     setFormData({...formData, [e.target.name]:e.target.value})
 
   }
 
   const onSubmitHandler=(e)=>{
+    console.log("sign", registered)
       e.preventDefault();
       const errors = validate(formData)
       if (errors) {
@@ -34,10 +43,6 @@ export const SignUp = () => {
       }
          dispatch(signUpUser(formData))
          toast.success('Successfully logged in')
-      
-
-      
-      
   }
    return (
         <form onSubmit={onSubmitHandler}>
@@ -68,7 +73,8 @@ export const SignUp = () => {
                   name ="email" 
                   type="email" 
                   onChange={onChangeHandler}/>
-                  {error?<p className="error">{error.email}</p>:''}
+                  {/* If error, return an error message. if registration failed, return email already exist */}
+                  {error?<p className="error">{error.email}</p>: !registered && <p className="error">Email already exists</p>}
           </div>
 
           <div className="signup-wrapper-password">

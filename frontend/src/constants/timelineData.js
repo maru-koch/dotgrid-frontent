@@ -1,4 +1,5 @@
 export const timeLineData =[
+    // Data for the timeline component in the get-started page
     {
         title: 'Solar Installation',
         description: `Order and get your Solar panels installed by our energy experts. Do not have money? Do not worry. You can get your complete solar PV compact fully funded through our Energy Loan Scheme`,

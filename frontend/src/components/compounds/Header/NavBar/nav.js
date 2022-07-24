@@ -1,6 +1,6 @@
 import React from 'react'
 import {DropDown} from '../DropDown'
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Nav, Navbar } from "react-bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import './nav.css'
 import {useState} from 'react'
@@ -18,6 +18,8 @@ const items = [
 // comprises of the title, the Navigation links, and the order or purchase button
 
 export default function NavLink(props){
+
+    // show drop down if true
     const [showDropDown, setShowDropDown] = useState(false)
     const close=()=>{
         setShowDropDown(false)
@@ -46,7 +48,9 @@ export default function NavLink(props){
                     </Nav>
                 </Nav>     
             </Navbar.Collapse>
+        
             {showDropDown && <DropDown items ={items} closeDropDown={close}/>}
+
         </Navbar>
     )
 }

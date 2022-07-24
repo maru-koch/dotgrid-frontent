@@ -5,7 +5,13 @@ import api from '../../../api/routes/routes';
 
 // Name of reducer
 const name = 'auth';
-const initialState = { isAuthorized: false, loading: false, user: {} };
+const initialState = { registered: null, isAuthorized: false, loading: false, user: {} };
+
+const signUpUser = createAsyncThunk(`${name}/signUp`, async (values) => {
+  const res = await api.signUp(values)
+  return res.data
+});
+
 
 // logs in the user
 // the url here is reduntant; code works fine without it.
@@ -13,7 +19,7 @@ const logInUser = createAsyncThunk(`${name}/login`, async (values) => {
   const res = await api.login(values)
   setAuthorizationHeader(res.data.access);
   return res.data.user
-});
+})
 
 // logout current user
 export const logOutUser = createAsyncThunk(`${name}/logout`, async (x) => {
@@ -29,10 +35,15 @@ const authSlice = createSlice({
   name: name,
   initialState,
   reducers: {
-    signUpUser:(state, action)=>{
-      console.log("REDUCER ACTION", action.payload)
-      api.signUp(action.payload)
-    },
+    // signUpUser: async (state, action)=>{
+    //   const res = await api.signUp(action.payload)
+    //   // if registration is successful, make registered equal to true
+
+    //   if (res.status === 200){
+    //     state.registered = true
+       
+    //   }
+    // },
 
     verifyEmail:(state, action)=>{
       // verify the user email address
@@ -56,12 +67,23 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
       builder
+        .addCase(signUpUser.fulfilled, (state, action)=>{
+          state.registered = true;
+          console.log(state.registered)
+        })
+        .addCase(signUpUser.pending, (state, action)=>{
+          console.log('pending', action.payload)
+          console.log(state.registered)
+        })
+        .addCase(signUpUser.rejected, (state, action)=>{
+          state.registered = false
+          console.log(state.registered)
+        })
         .addCase(logInUser.fulfilled, (state, action) => {
           state.isAuthorized = true;
           state.loading = false; 
           // whatever thing that's being returned from logInUser
           state.user = action.payload;
-
         })
         .addCase(logInUser.pending, (state) => {
           state.loading = true;
@@ -70,6 +92,7 @@ const authSlice = createSlice({
         .addCase(logInUser.rejected, (state) => {
           state.loading = false;
         })
+  
         .addCase(logOutUser.fulfilled, (state) => {
           state.isAuthorized = false;
           state.loading = false;
@@ -88,6 +111,6 @@ const authSlice = createSlice({
     },
 });
 
-export const AUTH_ACTIONS = { ...authSlice.actions, logInUser, logOutUser, subscribe};
+export const AUTH_ACTIONS = { ...authSlice.actions, signUpUser, logInUser, logOutUser, subscribe};
 
 export default authSlice.reducer;

@@ -3,6 +3,7 @@ import classes from './dropDown.module.css'
 import { useNavigate } from 'react-router-dom'
 
 const DropDownItem=({icon, title, description, closeDropDown, url})=>{
+    // menu drop down component
     const navigate = useNavigate()
 
     

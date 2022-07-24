@@ -4,14 +4,24 @@ import { dotGridRequest } from './index'
 export const auth={
 
 // USER ROUTES
-signUp: (formData)=>{
-    const res = dotGridRequest.post('account/signup/', formData)
-    return res.data
+signUp: async (formData)=>{
+    try{
+        const res = await dotGridRequest.post('account/signup/', formData)
+        return res.data
+    }catch(err){
+        console.log(err)
+    }
 },
 
-verifyEmail: (encoded_email)=>{
-    const res = dotGridRequest.post(`account/verify/${encoded_email}`)
-    return res.data
+verifyEmail: async (encoded_email)=>{
+    try{
+        const res = await dotGridRequest.post(`account/verify/${encoded_email}`)
+        return res.data
+    }
+    catch(error){
+        return error
+    }
+    
 },
 
 login: (formData)=>{
