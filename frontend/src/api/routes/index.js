@@ -39,14 +39,6 @@ export const createClient = (options) => {
         }
       }
 
-      if (!options || !options.disableActionsOnError) {
-        // const originalRequest = error.config;
-        // if (error.response?.status === 401 && originalRequest.url !== 'ENDPOINT_AUTH') {
-        //
-        // }
-        toast.error(message);
-      }
-
       // await store.dispatch(logout());
 
       // notifications.notifyError(message, {

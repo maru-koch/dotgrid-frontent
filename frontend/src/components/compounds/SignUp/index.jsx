@@ -4,6 +4,8 @@ import { Link, Navigate } from 'react-router-dom';
 import { validate } from './validation'
 import { useDispatch, useSelector} from 'react-redux'
 import { toast} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import './style.css';
 
@@ -17,33 +19,42 @@ const initialState={
 export const SignUp = () => {
 
   const dispatch = useDispatch();
-
   const [formData, setFormData] = useState(initialState)
   const [error, setError] = useState({})
   const { signUpUser } = AUTH_ACTIONS
-
+  
   const { registered } = useSelector(state => state.auth)
 
-  // Take user to the confirm-email page if registration is successful
+  // Take user to the confirm-email page if registration is successfu
   if (registered){
     return <Navigate to="/confirm-email"/>
   }
-  
+
+    const notify =()=>{
+    if (registered){
+      toast.success('Successfully registered')
+    }else if(registered === false){
+      toast.warning('Email already exist')
+    }else{
+      toast.error("Registration failed. check your internet connection")
+    }}
+   
   const onChangeHandler=e=>{
     setFormData({...formData, [e.target.name]:e.target.value})
-
   }
 
   const onSubmitHandler=(e)=>{
-    console.log("sign", registered)
+      notify()
       e.preventDefault();
+
+      // validate form data
       const errors = validate(formData)
       if (errors) {
         setError(errors)
       }
-         dispatch(signUpUser(formData))
-         toast.success('Successfully logged in')
+      dispatch(signUpUser(formData)) 
   }
+
    return (
         <form onSubmit={onSubmitHandler}>
           <div className="signup-wrapper-signup-title">
@@ -74,7 +85,7 @@ export const SignUp = () => {
                   type="email" 
                   onChange={onChangeHandler}/>
                   {/* If error, return an error message. if registration failed, return email already exist */}
-                  {error?<p className="error">{error.email}</p>: !registered && <p className="error">Email already exists</p>}
+                  {error?<p className="error">{error.email}</p> : <p className="error">Email already exists</p>}
           </div>
 
           <div className="signup-wrapper-password">
@@ -105,6 +116,18 @@ export const SignUp = () => {
           </div>
         </form>
    )
+
 }
- 
+
+<ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
 
