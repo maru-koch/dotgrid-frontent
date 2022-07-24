@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '../../elements';
 import { ReactComponent as Loading } from './loading.svg';
 import classes from './confirmEmail.module.css'
 
