@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text } from '../../elements';
 import { ReactComponent as Loading } from './loading.svg';
-import classes from './confirmEmail.modules.css'
-
+import classes from './confirmEmail.module.css'
 
 
 export const ConfirmEmail = () => {
@@ -13,7 +12,7 @@ export const ConfirmEmail = () => {
   return (
     <div className ={classes.confirm__container}>
       <div className ={classes.confirm__wrapper}>
-          <Text size={24}>
+          <Text size={22}>
               Hi there, We’ve sent an email to you. Kindly click the link in the email to activate your account.
           </Text>
           <Loading />

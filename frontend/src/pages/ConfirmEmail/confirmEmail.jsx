@@ -1,6 +1,6 @@
 
 import { Section } from '../../components'
-import { ConfirmEmail, VerifyEmail } from '../../components'
+import { ConfirmEmail } from '../../components'
 
 export const ConfirmEmailPage =()=>{
     return (

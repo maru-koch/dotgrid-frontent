@@ -9,7 +9,6 @@ export * from './Contact';
 export * from './TimeLine';
 export * from './SolarProjects/solarProjects'
 
-
 export { SignUp } from './SignUp';
 export { SignIn } from './SignIn/signin';
 export { SideBar } from './SideBar';

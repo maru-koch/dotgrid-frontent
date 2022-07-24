@@ -1,0 +1,16 @@
+
+
+.confirm__container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: black;
+    width:100vw;
+    height:100vh;
+}
+
+.confirm__wrapper{
+    max-width: 600px;
+    height: 400px;
+    background-color: red;
+}
