@@ -12,9 +12,9 @@ export const ConfirmEmail = () => {
   return (
     <div className ={classes.confirm__container}>
       <div className ={classes.confirm__wrapper}>
-          <Text size={22}>
-              Hi there, We’ve sent an email to you. Kindly click the link in the email to activate your account.
-          </Text>
+          <p>
+              We’ve sent an email to you. Kindly click the link in the email to activate your account.
+          </p>
           <Loading />
       </div>
   </div>
