@@ -2,6 +2,12 @@ export const ROUTES = {
   signUp: {
     path: 'signup',
   },
+  confirmEmail: {
+    path: 'confirm-email',
+  },
+  verifyEmail: {
+    path: 'api/account/verify/:encoded-email',
+  },
   signIn: {
     path: 'signin',
   },

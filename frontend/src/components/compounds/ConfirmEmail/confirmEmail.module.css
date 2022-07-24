@@ -1,0 +1,20 @@
+
+
+.confirm__container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+}
+
+.confirm__wrapper{
+    max-width: 600px;
+    height: 400px;
+}
+
+.confirm__wrapper p{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.2rem;
+}

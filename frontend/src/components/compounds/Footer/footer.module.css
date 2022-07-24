@@ -1,9 +1,7 @@
 
 /* FOOTER */
-
 .footer{
-    background-color: var(--header-color);
-    
+    background-color: var(--header-color);  
 }
 
 .footer__container {
@@ -12,7 +10,6 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    background-color: transparent;
 }
 
 .footer__wrapper {
@@ -61,16 +58,6 @@
     color: var(--secondary-color)
 }
 
-.footerCard__container .tel {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    font-family: Roboto;
-    letter-spacing: 2px;
-    color: var(--accent-3-color)
-}
-
 
 /* FOOTER CARD */
 .footerCard h2{
@@ -95,16 +82,6 @@
 
 
 
-.footerCard .tel{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    font-family: Roboto;
-    letter-spacing: 2px;
-}
-
-
 .footerLinks{
     display: flex;
     justify-content: space-between;
@@ -112,11 +89,6 @@
     width: 50%;
 }
 
-.wrapper {
-    padding: 50px 0px;
-    margin: 0px;
-    background-color: transparent;
-}
 
 /* CONTACT */
 

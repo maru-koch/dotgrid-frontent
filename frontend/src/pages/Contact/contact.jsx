@@ -1,16 +1,12 @@
 
-import {Section,SectionWrapper, SectionHeader} from '../../components/elements/Sections'
+import {Section,SectionHeader} from '../../components/elements/Sections'
 import {ContactForm} from '../../components/compounds/Contact'
-import classes from './contact.module.css'
 import { PageLayout } from '../../layout'
 
 const PAGEHEADER_STYLE={
     padding: '20px',
     marginTop: '20px',
     backgroundColor: '#333'
-}
-const wrapper={
-    position: 'relative',
 }
 
 export const Contact =()=>{

@@ -15,6 +15,7 @@ import {
         GetStarted, 
         SolarInstallation,
         SolarAnalytics,
+        ConfirmEmailPage,
         }
 
  from './pages';
@@ -64,17 +65,18 @@ const App = () => (
         <Route index element={<Home />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
-        <Route path= {ROUTES.analytics.path} element={<Analytics />} />
-        <Route path= {ROUTES.generateData.path} element={<DataTable/>} />
+        <Route path="/verify/:encoded_email" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
-        <Route path= {'/solar-analytics'} element={<SolarAnalytics/>} />
-
+        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage/>} />
+        <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics/>} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
         <Route path={ROUTES.overview.path} element={<OverviewPage />} />
+        <Route path= {ROUTES.generateData.path} element={<DataTable/>} />
+        <Route path= {ROUTES.analytics.path} element={<Analytics />} />
         <Route index element={<Navigate to={ROUTES.overview.path} />} />
       </Route>
     </Routes>

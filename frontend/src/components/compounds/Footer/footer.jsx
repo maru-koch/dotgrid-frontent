@@ -11,7 +11,7 @@ import classes from './footer.module.css'
 
 export const Footer =()=>{
     return (
-        <Section style ={classes.footer}>
+        <Section style = {{ backgroundColor:"#DEE3F7"}}>
             <div className = {classes.footer__container}>
                 <SectionWrapper style ={classes.footer__wrapper}>
                     <AddressCard/>
