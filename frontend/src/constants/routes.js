@@ -5,6 +5,9 @@ export const ROUTES = {
   confirmEmail: {
     path: 'confirm-email',
   },
+  verifyEmail: {
+    path: 'api/account/verify/:encoded-email',
+  },
   signIn: {
     path: 'signin',
   },

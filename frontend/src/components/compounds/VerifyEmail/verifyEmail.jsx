@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text } from '../../elements';
-import { Link } from 'react-router-dom'
 import classes from './verifyEmail.modules.css'
 
 
@@ -15,7 +14,7 @@ export const VerifyEmail = () => {
       <div className ={classes.confirm__wrapper}>
           <h1>ACCOUNT ACTIVATED</h1>
           <Text size={24}>
-              Your Account is successfully activate. Continue to <a href="/login">log in</a>
+              Your Account is successfully activate. Continue to <a href="/signin">log in</a>
           </Text>
       </div>
   </div>
