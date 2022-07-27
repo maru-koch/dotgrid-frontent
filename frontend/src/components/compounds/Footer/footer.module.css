@@ -1,13 +1,15 @@
 
 /* FOOTER */
 .footer{
-    background-color: var(--header-color);  
+    /* background-color: var(--header-color);  */
+    margin-top: 50px; 
 }
 
 .footer__container {
-    padding-top: 40px;
+    padding-top: 50px;
     width: 100%;
     display: flex;
+    margin-top: 50px;
     align-items: center;
     justify-content: left;
 }

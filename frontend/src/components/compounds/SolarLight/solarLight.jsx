@@ -1,41 +1,40 @@
 
 import { Section, SectionWrapper, SectionImage, SectionHeader } from '../../elements'
-import solar_bulb from '../../../assets/images/solar_bulb.jpeg'
+import solar_farm from '../../../assets/images/solar_farm.jpg'
 
 
-export const SolarLight=()=>{
+export const SolarLight =()=>{
     return(
         <Section>
-            <SectionHeader title = "Uninterrupted Energy" subtitle="No addictional cost, No bill, no stress"/>
-            <SectionWrapper bg={{position:"relative"}} >
+            {/* <SectionHeader title = "Uninterrupted Energy" subtitle="No addictional cost, No bill, no stress"/> */}
+            <SectionWrapper bg={{display:'flex', justifyContent: 'center', alignItems: 'center', padding:'50px'}} >
                 <div style ={{
                     position: 'absolute', 
-                    width: '500px', 
+                    width: '700px', 
                     height: '400px',
                     zIndex:1000,
-                    left:'10%', 
                     fontSize: '1.6rem',
-                    padding: '30px',
+                    padding: '50px',
                     display: 'flex',
                     textAlign: 'center',
-                    color: '#fff',
+                    color:'#fff',
                     borderRadius:'20px',
                     boxShadow: '2px 2px 4px rgba(0,0,0,0.6)',
                     justifyContent: 'center', 
                     alignItems: 'center',
                     fontFamily:'Poppins',
-                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    backgroundColor: 'rgba(0,0,0,0.7)',
                     
                     }}>
                     <p>
                         Enjoy 24/7 power supply without the extra cost of buying fuel, 
-                        or the stress of enduring long queue at the petro station, non 
-                        the noise pollution associated with mechanical electricity generators</p>
+                        the stress of enduring long queue at the patrol station, or 
+                        the noise pollution.</p>
                 </div>
                 <SectionImage 
-                    image={solar_bulb} 
-                    bg={{width: '100%', height: 'auto'}} 
-                    containerStyle={{width:'100vw'}}
+                    image={solar_farm} 
+                    imageStyle={{width: '100%', height: 600, position:'sticky', backgroundSize: 'cover'}} 
+                    containerStyle={{width:'100%', height:600}}
                     wrapperStyle={{width:'100%',  position:'relative'}}/>
             </SectionWrapper>
         </Section>

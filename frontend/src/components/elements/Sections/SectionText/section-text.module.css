@@ -13,7 +13,7 @@
     height: 400px;
     width: 400px;
     font-family: Poppins;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1rem;
 }
 
@@ -41,7 +41,7 @@
     font-weight: 400;
     color: var(--subtitle-color);
     font-family: Poppins;
-    font-weight: 200;
+    font-weight: 300;
     margin: 0;
     padding: 0;
 }
