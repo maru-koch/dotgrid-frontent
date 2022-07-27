@@ -1,5 +1,7 @@
 import ReactDom from 'react-dom'
 import './modal.css'
+import PropTypes from 'prop-types'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 const OVERLAY_STYLE ={
     position: 'fixed',
@@ -19,7 +21,6 @@ const MODAL_STYLE ={
     left: '50%',
     transform: 'translate(-50%, -50%)',
     margin: '0 auto',
-    backgroundColor:'#fff',
     padding: '50px',
     zIndex: 1000,
      opacity:1,
@@ -38,4 +39,10 @@ export const Modal=({open, close, children})=>{
     </>,
     document.getElementById('portal')
     )
+}
+
+Modal.propType={
+    open:PropTypes.bool,
+    close:PropTypes.string,
+    children: PropTypes.node
 }

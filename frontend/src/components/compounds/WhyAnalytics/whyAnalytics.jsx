@@ -1,7 +1,8 @@
-
+import {useState} from 'react'
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
 import analytics_phone from '../../../assets/images/analytics_phone.png'
 import analytics_computer from '../../../assets/images/analytics_computer.png'
+import {RequestDemoForm, Modal} from '../../compounds'
 
 const word =[{
     title:'Energy Automation',
@@ -24,6 +25,15 @@ const word =[{
 ]
 
 export const WhyAnalytics =()=>{
+    const [open, setOpen] = useState(true)
+
+    const openModal=()=>{
+        setOpen(true)
+    }
+    const closeModal=()=>{
+        setOpen(false)
+    }
+
     return(
         <Section>
             <SectionHeader title = "Why Dotgrid Analytics?" subtitle = ""/>
@@ -38,6 +48,7 @@ export const WhyAnalytics =()=>{
                     title ={word[0].title} 
                     description ={word[0].desc}
                     btn={true}
+                    openModal={openModal}
                     btnText="Request Demo"/>
             </SectionWrapper>
          <SectionWrapper bg ={{backgroundColor:"#e6f3f8"}}>
@@ -46,6 +57,7 @@ export const WhyAnalytics =()=>{
                 title ={word[1].title} 
                 description ={word[1].desc}
                 btn={true}
+                openModal={openModal}
                 btnText="Request Demo"/>
 
             <SectionImage 
@@ -54,8 +66,10 @@ export const WhyAnalytics =()=>{
                 width={'50%'}
                 wrapperStyle={{height:700, width: 500}}
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
-
         </SectionWrapper>
+        <Modal open = {open}>
+            <RequestDemoForm/>
+        </Modal>
         </Section>
        
     )
