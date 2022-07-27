@@ -1,5 +1,5 @@
 
-import { Section, SectionWrapper, SectionImage, SectionHeader } from '../../elements'
+import { Section, SectionWrapper, SectionImage } from '../../elements'
 import solar_farm from '../../../assets/images/solar_farm.jpg'
 
 

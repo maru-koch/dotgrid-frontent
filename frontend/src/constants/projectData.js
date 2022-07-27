@@ -1,12 +1,13 @@
-    import Image1 from '../assets/images/solar_panel_2.jpg'
-    import Image2 from '../assets/images/solar_panel_2.jpg'
+    import Image1 from '../assets/images/solar_panel_1.jpg'
+    import Image2 from '../assets/images/solar_panel_3.jpg'
     import Image3 from '../assets/images/solar_panel_2.jpg'
-    import Image4 from '../assets/images/solar_panel_2.jpg'
+    import Image4 from '../assets/images/solar_panel_4.jpg'
     
     export const projects =[
         
         // data for the projects components in the solar-installation page
         {
+            id:1,
             title: "Mini Grid",
             image: Image1,
             url: "#",
@@ -15,7 +16,7 @@
             city: "port Harcourt"
 
         }, 
-        {
+        {   id:2,
             title: "PV Panel",
             image: Image2,
             url: "#",
@@ -24,6 +25,7 @@
             city: "Abuja"
         },
         {
+            id:3,
             title: "Smart metering",
             image: Image3,
             url: "#",
@@ -32,6 +34,7 @@
             city: "Lagos"
         },
         {
+            id:4,
             title: "PV Installation",
             image: Image4,
             url: "#",

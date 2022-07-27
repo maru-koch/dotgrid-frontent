@@ -18,5 +18,6 @@ export { SolarPanel } from './SolarPanel';
 export { ConfirmEmail } from './ConfirmEmail'
 export { VerifyEmail } from './VerifyEmail'
 export { SolarLight } from './SolarLight'
+export { whyAnalytics } from './WhyAnalytics'
 
 

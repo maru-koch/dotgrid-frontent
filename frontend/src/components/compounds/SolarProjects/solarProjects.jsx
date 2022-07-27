@@ -1,6 +1,6 @@
 import { Section, SectionWrapper, SectionHeader } from '../../elements'
 import { SolarProject } from './SolarProject'
-import {projects } from '../../../constants/projectData'
+import { projects } from '../../../constants/projectData'
 
 const SECTION_WRAPPER={
     gap:'5px',
