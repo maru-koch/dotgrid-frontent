@@ -1,6 +1,6 @@
 
 import { SectionHeader } from '../../components/elements/Sections'
-import {SolarPanel, SolarProjects} from '../../components/compounds'
+import {SolarPanel, SolarLight, SolarProjects} from '../../components/compounds'
 import { PageLayout } from '../../layout'
 
 
@@ -16,6 +16,7 @@ export const SolarInstallation =()=>{
     <PageLayout>
         <SectionHeader title="Solar Installation" subtitle="Get your PV panel Installed by Our Experts" style={PAGEHEADER_STYLE}/>
         <SolarPanel/>
+        <SolarLight/>
         <SolarProjects/>
     </PageLayout>)
 }
