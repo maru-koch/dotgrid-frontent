@@ -1,16 +1,16 @@
 
 export const validate=(values)=>{
-    const errors = true;
+    const errors = {email:false, firstName:false, lastName:false};
     if (!values.email){
-        errors.email ="Email cannot be empty"
+        errors.email = true
     }else if(!values.email.includes('@')){
-        errors.email="Invalid email address"
+        errors.email=true
     }
     if (!values.firstName){
-        errors.firstName ="Your first Name is required"
+        errors.firstName =true
     }
     if (!values.lastName){
-        errors.firstName ="Your Last Name is required"
+        errors.firstName =true
     }
     return errors;
 }

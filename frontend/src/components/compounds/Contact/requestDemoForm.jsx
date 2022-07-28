@@ -14,15 +14,16 @@ const CheckBox =({heading})=>{
     )
 }
 
-const Input =({label, type, placeholder, name, onChangeHandler})=>{
+const Input =({label, type, placeholder, name, onChangeHandler, error})=>{
     return ( 
         <div className={classes.input__container}>
             <label>{label}</label>
-            <input 
+            <input
+                className={error.name? classes.err:classes.input} 
                 type ={type} 
                 placeholder={placeholder} 
                 name={name} 
-                onChange={()=>onChangeHandler()}/>
+                onChange={onChangeHandler}/>
         </div>
     )
 }
@@ -43,6 +44,7 @@ export const RequestDemoForm =({close})=>{
     const dispatch = useDispatch();
     // const { logInUser } = AUTH_ACTIONS;
 
+
     const onChangeHandler=(e)=>{
       setFormData({...formData, [e.target.name]:e.target.value })
       
@@ -50,13 +52,14 @@ export const RequestDemoForm =({close})=>{
 
     const onSubmitHandler = (e) => {
       e.preventDefault();
-      const errors = validate(formData)
-
-      // check if there is an error, if true, trigger a toast
+    
+      // on form submision, check if there is an error
       // else dispatch logInUser action
-      
+      const errors = validate(formData)
+        
       if (errors){
             setError(errors)
+            alert(errors.email, errors.firstName)
         }
         
       const validated_data = new FormData();
@@ -65,6 +68,7 @@ export const RequestDemoForm =({close})=>{
       validated_data.append('lastName', formData.lastNameName);
       validated_data.append('phoneNumber', formData.phoneNumber);
     //   dispatch(logInUser(formData));
+        console.log(validated_data);
      
     }
     return (
@@ -76,14 +80,14 @@ export const RequestDemoForm =({close})=>{
         </div>
         <h2>Request Demo</h2>
         <p className = {classes.subtitle}>Get started with a free trial</p>
-        <form>
+        <form onSubmit={onSubmitHandler}>
             <div className={classes.form__input__container}>
-                <Input label ="First Name" type="text" placeholder = "first name" name="firstName" onChangeHandler={onChangeHandler}/>
-                <Input label ="Last Name" type="text" placeholder = "last name" name="lastName" onChangeHandler={onChangeHandler}/>
+                <Input label ="First Name" type="text" placeholder = "first name" name="firstName" onChangeHandler={onChangeHandler} error={error}/>
+                <Input label ="Last Name" type="text" placeholder = "last name" name="lastName" onChangeHandler={onChangeHandler} error={error}/>
             </div>
             <div className={classes.form__input__container}>
-                <Input label ="email" type="email" placeholder = "email address" name="email" onChangeHandler={onChangeHandler}/>
-                <Input label ="Phone Number" type="text" placeholder = "first name" name="phoneNumber" onChangeHandler={onChangeHandler}/>
+                <Input label ="email" type="email" placeholder = "email address" name="email" onChangeHandler={onChangeHandler} error={error}/>
+                <Input label ="Phone Number" type="text" placeholder = "first name" name="phoneNumber" onChangeHandler={onChangeHandler} error={error}/>
             </div>
             <div className={classes.form__checkbox__container}>
                 <p className={classes.checkbox__title}>What kind of Inverter do you have?*</p>
@@ -104,7 +108,7 @@ export const RequestDemoForm =({close})=>{
                 </div>
             </div>
              <div class = {classes.btnHolder}>
-                <button onClick={()=>close()}>Request Demon</button>
+                <button type="submit" onClick={()=>onSubmitHandler} >Request Demon</button>
             </div>
         </form>
        

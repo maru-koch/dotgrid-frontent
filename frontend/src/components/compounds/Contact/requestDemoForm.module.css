@@ -62,8 +62,9 @@
     cursor: pointer;
 }
 .closeFormPanel__icon:hover{
-    transform: rotate(20deg);
+    transform: rotate(90deg);
     background-color: var(--primary-color);
+    transition: .5s ease-out;
     color: white;
 }
 .closeFormPanel i{
@@ -146,4 +147,9 @@
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     cursor: pointer;
+}
+/* indicates error in input */
+.error {
+    border: 2px solid rgb(248, 87, 87);
+    color: red;
 }
