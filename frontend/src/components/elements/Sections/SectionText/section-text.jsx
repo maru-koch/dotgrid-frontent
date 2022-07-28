@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Button } from '../../../elements'
 import  classes from './section-text.module.css'
 
-export const SectionText = ({btn, style, title, description, btnText})=>{
+export const SectionText = ({btn, style, title, description, btnText, openModal})=>{
     return (
     <div className={`${classes.sectionText__container} ${style}`}>
         <div className={classes.sectionText__wrapper}>
@@ -10,7 +10,7 @@ export const SectionText = ({btn, style, title, description, btnText})=>{
                 <h2>{title}</h2>
                 <p>{description}</p>
                 <div className={classes.btn__container}>
-                    {btn && <Button text={btnText}/>}
+                    {btn && <Button text={btnText} onClick={()=>openModal()}/>}
                 </div>
             </div>
             {/* Show button if only btn is true */}

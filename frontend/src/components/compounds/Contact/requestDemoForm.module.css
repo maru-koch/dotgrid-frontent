@@ -43,6 +43,33 @@
     border: 1px solid var(--primary-color);
     background-color: #fff
 }
+
+.closeFormPanel{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.closeFormPanel__icon {
+    background-color: var(--header-color);
+    width: 30px;
+    color: var(--word-color);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.closeFormPanel__icon:hover{
+    transform: rotate(20deg);
+    background-color: var(--primary-color);
+    color: white;
+}
+.closeFormPanel i{
+    font-size: 1rem;
+
+}
 .form__input__container{
     display:flex;
     flex-direction: row;

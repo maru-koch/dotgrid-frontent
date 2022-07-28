@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
 import analytics_phone from '../../../assets/images/analytics_phone.png'
 import analytics_computer from '../../../assets/images/analytics_computer.png'
-import {RequestDemoForm, Modal} from '../../compounds'
+import {RequestDemoForm, Modal, Loader } from '../../compounds'
 
 const word =[{
     title:'Energy Automation',
@@ -25,13 +25,19 @@ const word =[{
 ]
 
 export const WhyAnalytics =()=>{
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
+    const [msgSent, setMsgSent] = useState(false)
+    const [delivered, setDelivered] = useState(false)
 
     const openModal=()=>{
         setOpen(true)
     }
     const closeModal=()=>{
         setOpen(false)
+    }
+
+    const sendMsg = ()=>{
+        setMsgSent(true)
     }
 
     return(
@@ -67,8 +73,8 @@ export const WhyAnalytics =()=>{
                 wrapperStyle={{height:700, width: 500}}
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
         </SectionWrapper>
-        <Modal open = {open}>
-            <RequestDemoForm/>
+        <Modal open = {open} >
+            <RequestDemoForm close = {closeModal}/>
         </Modal>
         </Section>
        
