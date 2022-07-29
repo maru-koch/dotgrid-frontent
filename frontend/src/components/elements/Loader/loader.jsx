@@ -1,16 +1,20 @@
 import React from 'react';
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import './style.css';
+import classes from './style.module.css';
+import {ReactComponent as Loading} from './loading.svg'
 
-export const Loader = ({ absolute, open }) => {
-  if (open) {
-    return <div className={clsx('loader', { 'not-fixed': absolute, fixed: !absolute })}>Loading...</div>;
+export const Loader = ({ absolute, open, text}) => {
+    return (
+    <div className={classes.loader__container}>
+        <Loading/>
+        <p>{text}</p>
+    </div>
+    );
   }
-  return null;
-};
+
 
 Loader.propTypes = {
   open: PropTypes.bool,
+  text: PropTypes.string,
   absolute: PropTypes.bool,
 };
