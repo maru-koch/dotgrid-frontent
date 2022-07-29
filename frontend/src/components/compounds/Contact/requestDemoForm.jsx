@@ -17,7 +17,8 @@ const CheckBox =({heading})=>{
 const Input =({label, type, placeholder, name, onChangeHandler, error})=>{
     return ( 
         <div className={classes.input__container}>
-            <label style={error? {color:'red'} : {color:'green'}}>{label}</label>
+            {/* if the initial value is empty, show grey; if there is error, show red else show green. */}
+            <label style={error==='' ? {color:'grey'} :(error)? {color:'red'} : {color:'green'}}>{label}</label>
             <input
                 className={error.name? classes.err:classes.input} 
                 type ={type} 
@@ -38,7 +39,7 @@ const initialValues = {
 }
 
 
-export const RequestDemoForm =({close})=>{
+export const RequestDemoForm =({close, requestDemo})=>{
     const [formData, setFormData] = useState(initialValues)
     const [errors, setError] = useState(initialValues)
     const dispatch = useDispatch();
@@ -74,6 +75,7 @@ export const RequestDemoForm =({close})=>{
     return (
     <div class ={classes.formContainer}>
         <div class ={classes.closeFormPanel}>
+            {/* close requestDemoForm */}
             <div class ={classes.closeFormPanel__icon}>
                 <i className = "fa fa-times" onClick={()=>close()}></i>
             </div>
@@ -108,10 +110,9 @@ export const RequestDemoForm =({close})=>{
                 </div>
             </div>
              <div class = {classes.btnHolder}>
-                <button type="submit" onClick={()=>onSubmitHandler} >Request Demon</button>
+                <button type="submit" onClick={()=>requestDemo()} >Request Demon</button>
             </div>
         </form>
-       
     </div>
     )
 }

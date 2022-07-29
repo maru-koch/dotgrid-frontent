@@ -19,5 +19,6 @@ export { ConfirmEmail } from './ConfirmEmail'
 export { VerifyEmail } from './VerifyEmail'
 export { SolarLight } from './SolarLight'
 export { WhyAnalytics } from './WhyAnalytics'
+export {PopUp } from './PopUp'
 
 

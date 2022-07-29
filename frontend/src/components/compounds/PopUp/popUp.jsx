@@ -8,7 +8,7 @@ export const PopUp=({title, content, btnText, action})=>{
                 <div className="pop__title">
                     <h2>{title}</h2>
                 </div>
-                <p>{content}</p>
+                <p className="pop__content">{content}</p>
                 <div className="pop__button">
                     <button onClick={()=>action()}>{btnText}</button>
                 </div>

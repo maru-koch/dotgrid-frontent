@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
 import analytics_phone from '../../../assets/images/analytics_phone.png'
 import analytics_computer from '../../../assets/images/analytics_computer.png'
-import {RequestDemoForm, Modal, Loader } from '../../compounds'
+import {RequestDemoForm, Modal, Loader, PopUp } from '../../compounds'
 
 const word =[{
     title:'Energy Automation',
@@ -27,7 +27,7 @@ const word =[{
 export const WhyAnalytics =()=>{
     const [open, setOpen] = useState(false)
     const [msgSent, setMsgSent] = useState(false)
-    const [delivered, setDelivered] = useState(false)
+    const [requestDemo, setRequestDemo] = useState(false)
 
     const openModal=()=>{
         setOpen(true)
@@ -74,7 +74,17 @@ export const WhyAnalytics =()=>{
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
         </SectionWrapper>
         <Modal open = {open} >
-            <RequestDemoForm close = {closeModal}/>
+            {
+                requestDemo? 
+                <PopUp 
+                    title="Message Sent" 
+                    content="We have received your message. You will contacted by our representative within 7 working days"
+                    btnTitle="ok"
+                />
+                    :
+                <RequestDemoForm requestDemo = {setRequestDemo}/>
+            }
+            
         </Modal>
         </Section>
        
