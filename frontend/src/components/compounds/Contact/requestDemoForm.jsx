@@ -17,7 +17,7 @@ const CheckBox =({heading})=>{
 const Input =({label, type, placeholder, name, onChangeHandler, error})=>{
     return ( 
         <div className={classes.input__container}>
-            <label>{label}</label>
+            <label style={error? {color:'red'} : {color:'green'}}>{label}</label>
             <input
                 className={error.name? classes.err:classes.input} 
                 type ={type} 
@@ -40,7 +40,7 @@ const initialValues = {
 
 export const RequestDemoForm =({close})=>{
     const [formData, setFormData] = useState(initialValues)
-    const [error, setError] = useState({})
+    const [errors, setError] = useState(initialValues)
     const dispatch = useDispatch();
     // const { logInUser } = AUTH_ACTIONS;
 
@@ -55,11 +55,11 @@ export const RequestDemoForm =({close})=>{
     
       // on form submision, check if there is an error
       // else dispatch logInUser action
+
       const errors = validate(formData)
-        
+    
       if (errors){
             setError(errors)
-            alert(errors.email, errors.firstName)
         }
         
       const validated_data = new FormData();
@@ -82,12 +82,12 @@ export const RequestDemoForm =({close})=>{
         <p className = {classes.subtitle}>Get started with a free trial</p>
         <form onSubmit={onSubmitHandler}>
             <div className={classes.form__input__container}>
-                <Input label ="First Name" type="text" placeholder = "first name" name="firstName" onChangeHandler={onChangeHandler} error={error}/>
-                <Input label ="Last Name" type="text" placeholder = "last name" name="lastName" onChangeHandler={onChangeHandler} error={error}/>
+                <Input label ="First Name" type="text" placeholder = "first name" name="firstName" onChangeHandler={onChangeHandler} error={errors.firstName}/>
+                <Input label ="Last Name" type="text" placeholder = "last name" name="lastName" onChangeHandler={onChangeHandler} error={errors.lastName}/>
             </div>
             <div className={classes.form__input__container}>
-                <Input label ="email" type="email" placeholder = "email address" name="email" onChangeHandler={onChangeHandler} error={error}/>
-                <Input label ="Phone Number" type="text" placeholder = "first name" name="phoneNumber" onChangeHandler={onChangeHandler} error={error}/>
+                <Input label ="email" type="email" placeholder = "email address" name="email" onChangeHandler={onChangeHandler} error={errors.email}/>
+                <Input label ="Phone Number" type="text" placeholder = "first name" name="phoneNumber" onChangeHandler={onChangeHandler} error={errors.phoneNumber}/>
             </div>
             <div className={classes.form__checkbox__container}>
                 <p className={classes.checkbox__title}>What kind of Inverter do you have?*</p>

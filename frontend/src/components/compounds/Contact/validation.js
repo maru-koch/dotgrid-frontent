@@ -1,6 +1,6 @@
 
 export const validate=(values)=>{
-    const errors = {email:false, firstName:false, lastName:false};
+    const errors = {email:false, firstName:false, lastName:false, phoneNumber:false};
     if (!values.email){
         errors.email = true
     }else if(!values.email.includes('@')){
@@ -11,6 +11,9 @@ export const validate=(values)=>{
     }
     if (!values.lastName){
         errors.firstName =true
+    }
+     if (!values.phoneNumber){
+        errors.phoneNumber =true
     }
     return errors;
 }
