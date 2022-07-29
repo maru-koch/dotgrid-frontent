@@ -24,6 +24,11 @@ export const SolarAnalytics =()=>{
     }
     const closeModal=()=>{
         setOpen(false)
+        setRequestDemo(false)
+    }
+
+    const demoRequest =()=>{
+         setRequestDemo(true)
     }
 
     const sendMsg = ()=>{
@@ -46,7 +51,7 @@ export const SolarAnalytics =()=>{
                     action={closeModal}
                 />
                     :
-                <RequestDemoForm close={closeModal} requestDemo = {setRequestDemo}/>
+                <RequestDemoForm close={closeModal} requestDemo = {demoRequest}/>
             }
             
         </Modal>

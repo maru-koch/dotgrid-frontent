@@ -1,15 +1,17 @@
  
 import PropTypes from 'prop-types'
 import {Button} from '../../elements'
+import classes from './popUp.module.css'
+
 export const PopUp=({title, content, btnText, action})=>{
     return (
-        <div className="pop__container">
-            <div className="pop__wrapper">
-                <div className="pop__title">
+        <div className={classes.pop__container}>
+            <div className={classes.pop__wrapper}>
+                <div className={classes.pop__title}>
                     <h2>{title}</h2>
                 </div>
-                <p className="pop__content">{content}</p>
-                <div className="pop__button">
+                <p className={classes.pop__content}>{content}</p>
+                <div className={classes.pop__btn}>
                     <Button text= {btnText} onClick={()=>action()}/>
                 </div>
             </div>

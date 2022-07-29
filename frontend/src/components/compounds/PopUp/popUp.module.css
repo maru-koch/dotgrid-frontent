@@ -1,25 +1,41 @@
 
 .pop__container{
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     border-radius: 10px;
     background-color: #fff;
+    position: relative;
 }
 
 .pop__wrapper{
-    display: flex;
-    justify-items: center;
+   
 }
 
 .pop__title{
-    height: 100px;
-    width: 100%;
+    background-color: var(--header-color)
 }
+
 .pop__title h2{
     color:var(--primary-color);
+    text-align: center;
+    padding: 10px;
 }
 .pop__content{
     text-align: center;
-    font-size: .9rem;
+    font-size: 1rem;
+    font-family: Poppins;
+    padding: 20px;
+    font-weight: 300;
 
+}
+
+.pop__btn{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:50px;
+    position:absolute;
+    bottom:20px;
+    right:0;
+    left:0;
 }
