@@ -57,20 +57,25 @@ export const RequestDemoForm =({close, requestDemo})=>{
       // on form submision, check if there is an error
       // else dispatch logInUser action
 
-      const errors = validate(formData)
-    
-      if (errors){
-            setError(errors)
+    const errorResponse = validate(formData)
+    console.log(errorResponse)
+    setError(errorResponse)
+
+     if(!errorResponse.firstName  && !errorResponse.email && !errorResponse.lastName){
+            console.log('demon requested')
+            requestDemo(true)
+            const validated_data = new FormData();
+            validated_data.append('email', formData.email);
+            validated_data.append('firstName', formData.firstName);
+            validated_data.append('lastName', formData.lastNameName);
+            validated_data.append('phoneNumber', formData.phoneNumber);
+             //   dispatch(logInUser(formData));
+
         }
-        
-      const validated_data = new FormData();
-      validated_data.append('email', formData.email);
-      validated_data.append('firstName', formData.firstName);
-      validated_data.append('lastName', formData.lastNameName);
-      validated_data.append('phoneNumber', formData.phoneNumber);
-    //   dispatch(logInUser(formData));
-        console.log(validated_data);
-     
+
+      
+      console.log('error occured')
+      
     }
     return (
     <div class ={classes.formContainer}>
@@ -110,7 +115,7 @@ export const RequestDemoForm =({close, requestDemo})=>{
                 </div>
             </div>
              <div class = {classes.btnHolder}>
-                <button type="submit" onClick={()=>requestDemo(true)} >Request Demon</button>
+                <button type="submit" onClick={()=>onSubmitHandler} >Request Demon</button>
             </div>
         </form>
     </div>

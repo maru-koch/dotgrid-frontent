@@ -147,9 +147,15 @@
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     cursor: pointer;
+    outline: none;
 }
 /* indicates error in input */
 .error {
     border: 2px solid rgb(248, 87, 87);
     color: red;
+}
+
+.btnHolder button:active{
+    transform: scale(.99);
+    outline:none;
 }

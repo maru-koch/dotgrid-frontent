@@ -5,6 +5,7 @@
     border-radius: 10px;
     background-color: #fff;
     position: relative;
+    transition: 1s ease-in;
 }
 
 .pop__wrapper{

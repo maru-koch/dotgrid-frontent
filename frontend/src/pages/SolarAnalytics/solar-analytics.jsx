@@ -1,9 +1,9 @@
 import {useState} from 'react'
 import { SectionHeader } from '../../components/elements/Sections'
-import { SolarAnalytic, WhyAnalytics } from '../../components/compounds'
+import { SolarAnalytic, WhyAnalytics, Loader, RequestDemoForm, Modal, PopUp } from '../../components'
 import { PageLayout } from '../../layout'
 import { HowItWorks } from '../../components/compounds/HowItWorks/HowItWorks'
-import {RequestDemoForm, Modal, Loader, PopUp } from '../../components'
+
 
 
 
@@ -15,6 +15,11 @@ const PAGEHEADER_STYLE={
 
 
 export const SolarAnalytics =()=>{
+
+    // Shows the requestDemoForm when no request is made
+    // when a valid request is made by the user, it shows the loader
+    // when the request is successfully sent, it shows the Pop-up
+
     const [open, setOpen] = useState(false)
     const [msgSent, setMsgSent] = useState(false)
     const [requestDemo, setRequestDemo] = useState(false)
@@ -27,12 +32,12 @@ export const SolarAnalytics =()=>{
         setRequestDemo(false)
     }
 
-    const demoRequest =()=>{
+    const requestDemoHandler =()=>{
+         console.log('Demo requested')
          setRequestDemo(true)
-    }
-
-    const sendMsg = ()=>{
-        setMsgSent(true)
+         setTimeout(()=>{
+            setMsgSent(true)
+         }, 5000)
     }
 
     return (
@@ -43,17 +48,19 @@ export const SolarAnalytics =()=>{
         <HowItWorks/>
         <Modal open = {open} >
             {
-                requestDemo? 
+            msgSent?
                 <PopUp 
                     title="Message Sent" 
                     content="We have received your message. You will be contacted by our representative within 7 working days"
                     btnText="ok"
                     action={closeModal}
                 />
+                :
+            requestDemo? 
+                <Loader text ="...sending"/>
                     :
-                <RequestDemoForm close={closeModal} requestDemo = {demoRequest}/>
+                <RequestDemoForm close={closeModal} requestDemo = {requestDemoHandler}/>
             }
-            
         </Modal>
     </PageLayout>)
 }
