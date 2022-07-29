@@ -1,6 +1,6 @@
-
+ 
 import PropTypes from 'prop-types'
-
+import {Button} from '../../elements'
 export const PopUp=({title, content, btnText, action})=>{
     return (
         <div className="pop__container">
@@ -10,7 +10,7 @@ export const PopUp=({title, content, btnText, action})=>{
                 </div>
                 <p className="pop__content">{content}</p>
                 <div className="pop__button">
-                    <button onClick={()=>action()}>{btnText}</button>
+                    <Button text= {btnText} onClick={()=>action()}/>
                 </div>
             </div>
         </div>

@@ -1,8 +1,7 @@
-import {useState} from 'react'
+
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
 import analytics_phone from '../../../assets/images/analytics_phone.png'
 import analytics_computer from '../../../assets/images/analytics_computer.png'
-import {RequestDemoForm, Modal, Loader, PopUp } from '../../compounds'
 
 const word =[{
     title:'Energy Automation',
@@ -24,22 +23,7 @@ const word =[{
 }
 ]
 
-export const WhyAnalytics =()=>{
-    const [open, setOpen] = useState(false)
-    const [msgSent, setMsgSent] = useState(false)
-    const [requestDemo, setRequestDemo] = useState(false)
-
-    const openModal=()=>{
-        setOpen(true)
-    }
-    const closeModal=()=>{
-        setOpen(false)
-    }
-
-    const sendMsg = ()=>{
-        setMsgSent(true)
-    }
-
+export const WhyAnalytics =({openModal})=>{
     return(
         <Section>
             <SectionHeader title = "Why Dotgrid Analytics?" subtitle = ""/>
@@ -54,7 +38,7 @@ export const WhyAnalytics =()=>{
                     title ={word[0].title} 
                     description ={word[0].desc}
                     btn={true}
-                    openModal={openModal}
+                    openModal={()=>openModal()}
                     btnText="Request Demo"/>
             </SectionWrapper>
          <SectionWrapper bg ={{backgroundColor:"#e6f3f8"}}>
@@ -63,7 +47,7 @@ export const WhyAnalytics =()=>{
                 title ={word[1].title} 
                 description ={word[1].desc}
                 btn={true}
-                openModal={openModal}
+                openModal={()=>openModal()}
                 btnText="Request Demo"/>
 
             <SectionImage 
@@ -73,19 +57,6 @@ export const WhyAnalytics =()=>{
                 wrapperStyle={{height:700, width: 500}}
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
         </SectionWrapper>
-        <Modal open = {open} >
-            {
-                requestDemo? 
-                <PopUp 
-                    title="Message Sent" 
-                    content="We have received your message. You will contacted by our representative within 7 working days"
-                    btnTitle="ok"
-                />
-                    :
-                <RequestDemoForm requestDemo = {setRequestDemo}/>
-            }
-            
-        </Modal>
         </Section>
        
     )

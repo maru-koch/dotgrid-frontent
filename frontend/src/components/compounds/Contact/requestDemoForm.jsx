@@ -110,7 +110,7 @@ export const RequestDemoForm =({close, requestDemo})=>{
                 </div>
             </div>
              <div class = {classes.btnHolder}>
-                <button type="submit" onClick={()=>requestDemo()} >Request Demon</button>
+                <button type="submit" onClick={()=>requestDemo(true)} >Request Demon</button>
             </div>
         </form>
     </div>
