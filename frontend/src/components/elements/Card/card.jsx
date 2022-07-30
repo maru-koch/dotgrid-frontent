@@ -2,9 +2,9 @@
 import './card.css'
 
 import PropTypes from 'prop-types';
-export const Card =({children, style})=>{
+export const Card =({children, bg})=>{
     return (
-        <div className = {`genericCard ${style}`}>
+        <div className = {`genericCard`} style={bg}>
             {children}
         </div>
     )

@@ -1,0 +1,13 @@
+
+.priceModel__textWrapper{
+    border-bottom: 2px double var(--header-color);
+    border-top: 2px double var(--header-color);
+    width: 500px;
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 300;
+}
+

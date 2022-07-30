@@ -35,8 +35,18 @@ export const GoogleBtn = ({ text }) => (
   </div>
 );
 
+
+export const SelectPriceBtn = ({ text }) => (
+  <div className="wrapper-selectPrice-btn">
+    <Button type="submit" stretch btnType="selectButton" active>
+      <span className="btn-text">{text}</span>
+    </Button>
+  </div>
+);
+
 Button.MainGreen = MainGreen;
 Button.GoogleBtn = GoogleBtn;
+Button.SelectPriceBtn = SelectPriceBtn;
 
 Button.propTypes = {
   children: PropTypes.node,
@@ -56,3 +66,7 @@ MainGreen.propTypes = {
 GoogleBtn.propTypes = {
   text: PropTypes.string,
 };
+
+SelectPriceBtn.propTypes={
+  text: PropTypes.string,
+}

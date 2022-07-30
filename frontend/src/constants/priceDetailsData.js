@@ -18,7 +18,7 @@ export const priceDetailsData = {
             features: ['View Energy generated', 'Monitor energy consumption', 'upto 5 control devices', 'Energy sharing', 'Energy optimization', 'Control appliances remotely']
         }],
 
-        description: "Suitable for an Appartment or home use. Give you the autonomy to control your energy consumption and save cost"
+        description: "Suitable for an Appartment or home use. Gives you the autonomy to control your energy consumption and save cost"
     },
 
     enterprise:{
@@ -36,7 +36,7 @@ export const priceDetailsData = {
         {
             priceModel:'pro',
             price: '$ 1000 / year',
-            features: ['unlimited Users', 'Manage Clients Data', 'Reporting features', 'Export Data as CSV', 'Grid monitoring and Optimization']
+            features: ['unlimited Users', 'Manage Clients Data', 'Reporting features', 'Export Data as CSV', 'Grid monitoring', 'Energy Optimization']
         }],
 
         description: "For cities or Estates or mini-grid management. helps managers derive energy insight and make the best decisions base on patterns in energy generation and consumption"

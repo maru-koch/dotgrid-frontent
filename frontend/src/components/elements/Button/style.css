@@ -25,8 +25,23 @@
 }
 
 .secondary {
-  /* background-color: var(--primary-color); */
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.secondary:focus{
+  background-color: var(--primary-color);
   color: white;
+}
+.secondary:hover{
+  background-color: var(--primary-color);
+  color:white;
+}
+
+.secondary.active{
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .round {

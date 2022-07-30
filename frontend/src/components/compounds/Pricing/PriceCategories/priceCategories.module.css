@@ -1,0 +1,28 @@
+.priceCategory__container{
+    width: 300px;
+    min-height: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.priceCategory__container h2{
+   background-color: var(--primary-color);
+   width: 100%;
+   position:absolute;
+   top: 20px;
+   text-align: center;
+   color: white;
+   padding: 10px;
+}
+
+.priceCategory__container h4{
+    border-bottom: 1px solid var(--header-color);
+    width: 100%;
+    text-align: center;
+    color: var(--word-color);
+    padding: 10px;
+}
+
