@@ -1,5 +1,5 @@
 
-export const pricingDetailsData = [
+export const priceDetailsData = [
     {
         basic:{
             price: 'free',
