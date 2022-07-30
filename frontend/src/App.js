@@ -10,7 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { 
         OverviewPage, 
         SignInPage, 
-        SignUpPage, 
+        ForgotPasswordPage,
+        SignUpPage,
         Home, Contact, 
         GetStarted, 
         SolarInstallation,
@@ -66,6 +67,7 @@ const App = () => (
         <Route index element={<Home />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
+         <Route path= "/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/verify/:encoded_email" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />

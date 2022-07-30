@@ -34,10 +34,10 @@ export const Heading = ({ text, size, weight, level, children, color, ...props }
     text || children
   );
 
-export const Divider = ({ text, children, ...props }) => (
+export const Divider = ({ text, children, navigate}) => (
   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '15px' }}>
     <Hline />
-    <p style={{ fontSize: '16px', fontWeight: 450, lineHeight: '24px', color: '#025002' }} {...props}>
+    <p style={{ fontSize: '16px', fontWeight: 450, lineHeight: '24px', color: '#025002', cursor:'pointer'}} onClick={navigate}>
       {text || children}
     </p>
     <Hline />
@@ -59,7 +59,7 @@ export const RememberMe = ({ ...props }) => (
   >
     <input style={{ margin: '0 8px' }} type="checkbox" />
     <p style={{ marginRight: 'auto' }}>Remember me</p>
-    <p style={{ marginRight: '8px' }}>Forgot Password?</p>
+    <p style={{ marginRight: '8px', color:"#4C3FCF", cursor:"pointer" }}>Forgot Password?</p>
   </div>
 );
 

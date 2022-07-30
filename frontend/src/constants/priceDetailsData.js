@@ -5,17 +5,17 @@ export const priceDetailsData = {
         {   
             priceModel:'basic',
             price: 'free',
-            features: ['View Energy generated', '1 control device']
+            features: ['View Energy generated', 'monitor energy consumption','1 control device']
         },
         {   priceModel:'starter',
             price:  '$ 20 / year',
-            features: ['View Energy generated', 'automate energy consumptiion', '2 control devices']
+            features: ['View Energy generated', 'automate energy consumptiion', '2 control devices', 'smart notification']
         },
 
         {
             priceModel:'pro',
             price: '$ 100 / year',
-            features: ['View Energy generated', 'Monitor energy consumption', 'upto 5 control devices', 'Energy sharing', 'Energy optimization', 'Control appliances remotely']
+            features: ['Monitor energy consumption', 'upto 5 control devices', 'Energy sharing', 'Energy optimization', 'Control appliances remotely', 'smart notification']
         }],
 
         description: "Suitable for an Appartment or home use. Gives you the autonomy to control your energy consumption and save cost"

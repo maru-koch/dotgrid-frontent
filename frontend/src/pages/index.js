@@ -1,4 +1,5 @@
 export { SignUpPage } from './Auth';
+export { ForgotPasswordPage } from './Auth';
 export { ConfirmEmailPage } from './ConfirmEmail'
 export { VerifyEmailPage } from './VerifyEmail'
 export { SignInPage } from './Auth';

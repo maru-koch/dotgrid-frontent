@@ -10,7 +10,7 @@ export const Pricing =()=>{
     // Display categories based on the price model selected
     // categories is collection of all plans associated with the price model
 
-    const [ priceModel, setPriceModel ] = useState('enterprise')
+    const [ priceModel, setPriceModel ] = useState('individual')
 
     return (
     <main>
