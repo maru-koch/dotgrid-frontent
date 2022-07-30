@@ -6,8 +6,9 @@ const Category=({price, priceModel, features})=>{
     // Display a single plan and its features
 
     return (
-        <Card bg={{backgroundColor:'#fff', border:'2px solid #eee'}}>
-            <div className={classes.priceCategory__container}>
+        
+        <div className={classes.priceCategory__container}>
+            <div className={classes.priceCategory__wrapper}>
                 <h2>{priceModel}</h2>
                 <h4>{price}</h4>
                 <ul>
@@ -15,9 +16,12 @@ const Category=({price, priceModel, features})=>{
                         <li>{feature}</li>
                     )}
                 </ul>
-                <Button stretch text="Get Started"/>
+                <div className={classes.priceCategory__btn}>
+                    <Button stretch text="Get Started"/>
+                </div>
             </div>
-        </Card>
+        </div>
+   
     )
 }
 export const PriceCategories=({plans})=>{
