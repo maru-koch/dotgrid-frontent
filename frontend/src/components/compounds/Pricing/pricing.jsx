@@ -12,8 +12,8 @@ export const Pricing =()=>{
     const [priceModel, setPriceModel] = useState('individual')
     return (
     <main>
-        <SelectPriceModel priceModel = {priceModel} setPriceModel = {setPriceModel} description = {priceDetailsData[priceModel].description}/>
-        <PriceCategories priceModel = {priceModel} data = {priceDetailsData[priceModel]}/>
+        <SelectPriceModel setPriceModel = {setPriceModel} description = {priceDetailsData[priceModel].description}/>
+        <PriceCategories plans = {priceDetailsData[priceModel].plans}/>
     </main>
     )
 }
