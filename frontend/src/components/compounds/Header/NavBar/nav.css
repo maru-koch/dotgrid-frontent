@@ -70,6 +70,13 @@
     justify-content:center;
     align-items: center;
 }
+.rightNav .nav .navLinks .link.demo:active
+{
+    outline: none;
+}
+.rightNav .nav .navLinks .link.demo:focus{
+    outline:none;
+}
 
 .rightNav .nav .navLinks .link.login{
     border: 2px solid var(--primary-color);

@@ -44,7 +44,7 @@ export const Divider = ({ text, children, navigate}) => (
   </div>
 );
 
-export const RememberMe = ({ ...props }) => (
+export const RememberMe = ({ navigate }) => (
   <div
     style={{
       fontSize: 14,
@@ -55,11 +55,10 @@ export const RememberMe = ({ ...props }) => (
       justifyContent: 'flex-start',
       alignItems: 'center',
     }}
-    {...props}
   >
     <input style={{ margin: '0 8px' }} type="checkbox" />
     <p style={{ marginRight: 'auto' }}>Remember me</p>
-    <p style={{ marginRight: '8px', color:"#4C3FCF", cursor:"pointer" }}>Forgot Password?</p>
+    <p style={{ marginRight: '8px', color:"#4C3FCF", cursor:"pointer" }} onClick={navigate}>Forgot Password?</p>
   </div>
 );
 

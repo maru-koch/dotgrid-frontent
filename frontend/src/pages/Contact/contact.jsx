@@ -1,6 +1,6 @@
 
 import {Section,SectionHeader} from '../../components/elements/Sections'
-import {ContactForm} from '../../components/compounds/Contact'
+import {ContactForm} from '../../components/compounds/Forms'
 import { PageLayout } from '../../layout'
 
 const PAGEHEADER_STYLE={

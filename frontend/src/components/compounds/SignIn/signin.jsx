@@ -68,11 +68,13 @@ export const SignIn = () => {
                 <Input.FullRound name="password" type="password" placeholder="" onChange={onChangeHandler} />
                 {error?<p className="error" >{error.password}</p>:''}
             </div>
-            <div className="signin-wrapper-remember-me" onClick={()=>navigate('/forgot-password')}>
-                <Text.RememberMe />
+            <div className="signin-wrapper-remember-me" >
+                <Text.RememberMe navigate ={()=>navigate('/forgot-password')}/>
             </div>
             <div className="signin-wrapper-button">
-                <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler} />
+                <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler}>
+                  {<Loader hasText={false} height = "50px" width="50px"/>}
+                </Button>
             </div>
         </form>
         </div>

@@ -5,7 +5,7 @@ export * from './Analytics/analytics';
 export * from './DataTable';
 export * from './Modal/modal';
 export * from './Home';
-export * from './Contact';
+export * from './Forms';
 export * from './TimeLine';
 export * from './SolarProjects/solarProjects'
 export * from './SolarAnalytic/solarAnalytic'
@@ -21,6 +21,7 @@ export { VerifyEmail } from './VerifyEmail'
 export { SolarLight } from './SolarLight'
 export { WhyAnalytics } from './WhyAnalytics'
 export { Pricing } from './Pricing';
+export { ModalRequestDemo } from './ModalRequestDemo';
 export {PopUp } from './PopUp'
 
 

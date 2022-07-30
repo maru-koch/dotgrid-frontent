@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classes from './style.module.css';
 import {ReactComponent as Loading} from './loading.svg'
 
-export const Loader = ({ absolute, open, text}) => {
+export const Loader = ({open, text, hasText, height, width}) => {
     return (
-    <div className={classes.loader__container}>
+    <div className={classes.loader__container} style={{height:height, width:{width}}}>
         <Loading/>
-        <p>{text}</p>
+        {hasText? <p>{text}</p>:''}
     </div>
     );
   }
@@ -16,5 +16,7 @@ export const Loader = ({ absolute, open, text}) => {
 Loader.propTypes = {
   open: PropTypes.bool,
   text: PropTypes.string,
-  absolute: PropTypes.bool,
+  hasText: PropTypes.bool,
+  height: PropTypes.string,
+  width: PropTypes.string,
 };

@@ -57,7 +57,7 @@ export const SolarAnalytics =()=>{
                 />
                 :
             requestDemo? 
-                <Loader text ="...sending"/>
+                <Loader text ="...sending" hasText={true}/>
                     :
                 <RequestDemoForm close={closeModal} requestDemo = {requestDemoHandler}/>
             }

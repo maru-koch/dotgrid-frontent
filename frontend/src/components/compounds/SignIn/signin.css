@@ -1,5 +1,6 @@
 .signin__container{
   width: 400px;
+  transition: 0.5s ease-in-out;
 }
 
 .signin__wrapper{
