@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { Section, SectionWrapper, Text } from '../../elements'
+import {priceDetailsData} from '../../../constants'
 
 
 const ChoosePriceModel =({setPriceModel})=>{
@@ -17,19 +18,18 @@ const ChoosePriceModel =({setPriceModel})=>{
 }
 const PricingModel=({priceModel, setPriceModel})=>{
 
-    // Displace a test based on the selected model
+    // Displace description based on the selected model
 
     return (
         <main>
             <ChoosePriceModel setPriceModel = {setPriceModel}/>
-            {priceModel === "individual"?<Text />: <Text />}
-            <Text/>
+            <Text text={priceDetailsData[priceModel].description}/>
         </main>
     )
 }
 
 const PricingCategories=({priceModel, pricingDetails})=>{
-
+    return 
 }
 
 export const PriceCategory =()=>{
@@ -37,7 +37,7 @@ export const PriceCategory =()=>{
     return (
     <main>
         <PricingModel priceModel = {priceModel} setPriceModel = {setPriceModel}/>
-        <PricingCategories/>
+        <PricingCategories priceModel={priceModel}/>
     </main>
     )
 }
