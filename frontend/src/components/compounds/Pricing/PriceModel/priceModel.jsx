@@ -3,7 +3,7 @@ import { Section, SectionWrapper, Text } from '../../elements'
 import {priceDetailsData} from '../../../constants'
 
 
-const ChoosePriceModel =({setPriceModel})=>{
+const PriceModel =({setPriceModel})=>{
 
     // Selects price Model
 
@@ -16,28 +16,15 @@ const ChoosePriceModel =({setPriceModel})=>{
         </Section>
     )
 }
-const PricingModel=({priceModel, setPriceModel})=>{
+export const SelectPriceModel=({priceModel, setPriceModel})=>{
 
     // Displace description based on the selected model
 
     return (
         <main>
-            <ChoosePriceModel setPriceModel = {setPriceModel}/>
+            <PriceModel setPriceModel = {setPriceModel}/>
             <Text text={priceDetailsData[priceModel].description}/>
         </main>
     )
 }
 
-const PricingCategories=({priceModel, pricingDetails})=>{
-    return 
-}
-
-export const PriceCategory =()=>{
-    const [priceModel, setPriceModel] = useState('individual')
-    return (
-    <main>
-        <PricingModel priceModel = {priceModel} setPriceModel = {setPriceModel}/>
-        <PricingCategories priceModel={priceModel}/>
-    </main>
-    )
-}

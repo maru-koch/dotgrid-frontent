@@ -39,7 +39,7 @@ export const priceDetailsData = {
             features: ['unlimited Users', 'Manage Clients Data', 'Reporting features', 'Export Data as CSV', 'Grid monitoring and Optimization']
         }],
 
-        description: "Suitable for cities or Estates or mini-grid management. helps managers derive energy insight and make the best decisions base on patterns in energy generation and consumption"
+        description: "For cities or Estates or mini-grid management. helps managers derive energy insight and make the best decisions base on patterns in energy generation and consumption"
     },
 }
     
