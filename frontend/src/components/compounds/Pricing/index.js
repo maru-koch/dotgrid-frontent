@@ -1,1 +1,1 @@
-export * from './princingCategory';
+export * from './priceCategory';

@@ -32,7 +32,7 @@ const PricingCategories=({priceModel, pricingDetails})=>{
 
 }
 
-export const PricingCategory =()=>{
+export const PriceCategory =()=>{
     const [priceModel, setPriceModel] = useState('individual')
     return (
     <main>
