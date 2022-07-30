@@ -14,7 +14,7 @@ export const SolarProject =props=>{
     // displays image, location, description, and price
     // user can add to cart
 
-    <Card style = {classes.project__card}>
+    <div className = {classes.project__card}>
         <div className = {classes.project__container}>
             <div className ={classes.imgWrapper}>
                 <img src = {props.image} alt = {props.name}/>
@@ -29,6 +29,6 @@ export const SolarProject =props=>{
                 <button onClick={()=>navigate(`/listings/${1}`)}className={classes.city}>Project Details</button>
             </div>
         </div>
-    </Card>)
+    </div>)
 }
 
