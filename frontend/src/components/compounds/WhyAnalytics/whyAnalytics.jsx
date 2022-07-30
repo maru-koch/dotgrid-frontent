@@ -42,7 +42,6 @@ export const WhyAnalytics =({openModal})=>{
                     btnText="Request Demo"/>
             </SectionWrapper>
          <SectionWrapper bg ={{backgroundColor:"#e6f3f8"}}>
-
             <SectionText 
                 title ={word[1].title} 
                 description ={word[1].desc}

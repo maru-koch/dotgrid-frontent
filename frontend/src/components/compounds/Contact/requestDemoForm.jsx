@@ -1,6 +1,6 @@
 import classes from './requestDemoForm.module.css'
 import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+// import {useDispatch} from 'react-redux';
 import { validate } from './validation';
 
 const CheckBox =({heading})=>{
@@ -42,7 +42,7 @@ const initialValues = {
 export const RequestDemoForm =({close, requestDemo})=>{
     const [formData, setFormData] = useState(initialValues)
     const [errors, setError] = useState(initialValues)
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     // const { logInUser } = AUTH_ACTIONS;
 
 
@@ -115,7 +115,7 @@ export const RequestDemoForm =({close, requestDemo})=>{
                 </div>
             </div>
              <div class = {classes.btnHolder}>
-                <button type="submit" onClick={()=>onSubmitHandler} >Request Demon</button>
+                <button type="submit" onClick={()=>onSubmitHandler} >Request Demo</button>
             </div>
         </form>
     </div>

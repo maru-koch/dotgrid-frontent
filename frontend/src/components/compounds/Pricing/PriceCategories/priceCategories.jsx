@@ -1,4 +1,4 @@
-import { Section, SectionWrapper, Card } from '../../elements'
+import { SectionWrapper, Card } from '../../../elements'
 
 
 const Category=({price, plan, features})=>{

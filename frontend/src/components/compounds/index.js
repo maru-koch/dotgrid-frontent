@@ -19,6 +19,7 @@ export { ConfirmEmail } from './ConfirmEmail'
 export { VerifyEmail } from './VerifyEmail'
 export { SolarLight } from './SolarLight'
 export { WhyAnalytics } from './WhyAnalytics'
+export { Pricing } from './Pricing';
 export {PopUp } from './PopUp'
 
 

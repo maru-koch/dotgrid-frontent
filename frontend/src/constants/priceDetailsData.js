@@ -21,7 +21,7 @@ export const priceDetailsData = {
         description: "Suitable for an Appartment or home use. Give you the autonomy to control your energy consumption and save cost"
     },
 
-    enterprice:{
+    enterprise:{
         plans:[
         {   
             priceModel:'basic',

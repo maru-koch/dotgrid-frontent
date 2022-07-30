@@ -16,6 +16,7 @@ import {
         SolarInstallation,
         SolarAnalytics,
         ConfirmEmailPage,
+        PricingPage
         }
 
  from './pages';
@@ -68,9 +69,10 @@ const App = () => (
         <Route path="/verify/:encoded_email" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
-        <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation/>} />
-        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage/>} />
-        <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics/>} />
+        <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation />} />
+        <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage />} />
+        <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics />} />
+        <Route path= "/pricing" element = {<PricingPage />} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>

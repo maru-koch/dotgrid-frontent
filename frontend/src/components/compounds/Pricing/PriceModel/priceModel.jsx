@@ -1,7 +1,4 @@
-import {useState} from 'react'
-import { Section, SectionWrapper, Text } from '../../elements'
-import {priceDetailsData} from '../../../constants'
-
+import { Section, SectionWrapper, Text } from '../../../elements'
 
 const PriceModel =({setPriceModel})=>{
 

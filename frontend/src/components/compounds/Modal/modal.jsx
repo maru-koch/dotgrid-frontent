@@ -1,7 +1,7 @@
 import ReactDom from 'react-dom'
 import './modal.css'
 import PropTypes from 'prop-types'
-import { propTypes } from 'react-bootstrap/esm/Image'
+
 
 const OVERLAY_STYLE ={
     position: 'fixed',
