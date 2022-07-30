@@ -7,7 +7,7 @@ export const CardItem = ({icon, title, desc, btn, url}) =>{
     const navigate = useNavigate()
     
     return (
-        <Card style ={classes.card} onClick={()=>navigate(url)}>
+        <div className={classes.card} onClick={()=>navigate(url)}>
             <div>
                 <i className={icon}></i>
             </div>
@@ -18,6 +18,6 @@ export const CardItem = ({icon, title, desc, btn, url}) =>{
             <div className = {classes.btn_holder}>
                 <button>{btn}</button>
             </div>
-        </Card>
+        </div>
     )
 }

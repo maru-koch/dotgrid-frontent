@@ -1,11 +1,16 @@
 
 .card{
-    width: 20vw;
+    width: 300px;
     display:grid;
-    height: 50%;
+    height: 300px;
     place-items: center;
     grid-template-rows: 4fr 3fr 3fr;
     cursor: pointer;
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    
 }
 
 .card i{
@@ -30,6 +35,7 @@
     font-family: Poppins;
     font-weight: 200;
     margin:0;
+    padding: 20px;
 }
 
 
@@ -50,14 +56,22 @@
     font-family: Poppins;
     cursor: pointer;
     border:0;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn_holder button:hover {
     outline: none;
-    color: var(--primary-color);
+    color: white;
+    background-color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
 
 .btn_holder button:active {
     outline: none;
+}
+
+.btn_holder button:focus {
+    outline: none;
+    transform: scale(0.95)
 }

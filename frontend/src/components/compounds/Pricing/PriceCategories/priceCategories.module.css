@@ -22,10 +22,6 @@
     position: absolute;
 }
 
-.priceCategory__wrapper ul{
-    
-}
-
 .priceCategory__container h2{
    background-color: var(--primary-color);
    width: 100%;
