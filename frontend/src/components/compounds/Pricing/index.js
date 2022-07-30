@@ -1,1 +1,2 @@
-export * from './priceModel';
+export * from './pricing';
+

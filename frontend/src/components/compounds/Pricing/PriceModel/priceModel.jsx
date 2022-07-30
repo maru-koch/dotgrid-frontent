@@ -16,14 +16,14 @@ const PriceModel =({setPriceModel})=>{
         </Section>
     )
 }
-export const SelectPriceModel=({priceModel, setPriceModel})=>{
+export const SelectPriceModel=({description, setPriceModel})=>{
 
-    // Displace description based on the selected model
+    // Displays description based on the selected price model
 
     return (
         <main>
             <PriceModel setPriceModel = {setPriceModel}/>
-            <Text text={priceDetailsData[priceModel].description}/>
+            <Text text={description}/>
         </main>
     )
 }

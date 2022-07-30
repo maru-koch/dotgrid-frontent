@@ -17,7 +17,7 @@ const Category=({price, plan, features})=>{
         </Card>
     )
 }
-export const PriceCategories=({priceModel, plans})=>{
+export const PriceCategories=({plans})=>{
 
     // Display a single plan and its features
     
