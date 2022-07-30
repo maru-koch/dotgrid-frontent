@@ -34,31 +34,19 @@
     align-items: center;
 }
 
-.rightNav .nav .navLinks .link {
+.rightNav .nav .navLinks .link{
     color: var(--nav-color);
     padding: 10px 20px;
     font-size: 1rem;
     font-family: Poppins;
     text-decoration: none;
     list-style: none;
-    font-weight: 200;
+    font-weight: 300;
 }
 
-.rightNav .nav .navLinks .link:hover {
+.rightNav .nav .navLinks .link.nav:hover {
     color: var(--primary-color);
-    /* border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    border-left: 4px solid var(--primary-color);
-    border-right: 4px solid var(--primary-color); */
-    /* border: 2px solid var(--primary-color); */
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: Poppins;
-    text-decoration: none;
-    list-style: none;
-    font-weight: 200;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .navAuth{
@@ -67,10 +55,35 @@
     margin-left: 100px;
 }
 
-.navAuth .link{
-    padding: 0 10px;
+
+
+.rightNav .nav .navLinks .link.demo{
+    color: white;
+    background-color: var(--primary-color);
+    width: 170px;
+    padding: 15px 10px;
+    display:flex;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem;
+    justify-content:center;
+    align-items: center;
 }
 
+.rightNav .nav .navLinks .link.login{
+    border: 2px solid var(--primary-color);
+    width: 100px;
+    margin-left:20px;
+    padding: 5px 10px;
+    display: flex;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+}
 @media(max-width:1000px){
     .nav {
         text-align: left;

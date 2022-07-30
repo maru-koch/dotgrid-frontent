@@ -10,7 +10,7 @@ export const HeaderDisplay=()=>{
                 <div className={classes.header__panel}>
                     <div className={classes.header__panel_left}>
                         <h2>Mini-grid Management</h2>
-                        <p>Smart Metering and Energy Analytics</p>
+                        <p>Solar Energy Analytics and Automation</p>
                         <button className={classes.btn} onClick={()=>navigate('/get-started')}>Get Started</button>
                     </div>
                 </div>

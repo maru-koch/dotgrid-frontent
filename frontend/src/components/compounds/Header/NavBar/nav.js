@@ -33,17 +33,17 @@ export default function NavLink(props){
             <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                 <Nav className="nav">
                     <Nav className = "navLinks">
-                        <Nav.Link className = "link"  href = "/"><p>HOME</p></Nav.Link>
+                        <Nav.Link className = "link nav"  href = "/"><p>HOME</p></Nav.Link>
                         <Nav.Link 
                             className =  "link" 
                             onMouseEnter={()=>setShowDropDown(true)}
                             href = "#"><p>TECHNOLOGIES</p></Nav.Link>
-                        <Nav.Link className = "link"  href = "#"><p>SERVICES</p></Nav.Link>
-                        <Nav.Link className = "link"  href = "#"><p>ABOUT</p></Nav.Link>
-                        <Nav.Link className = "link"  href = "/contact"><p>CONTACT</p></Nav.Link>
+                        <Nav.Link className = "link nav"  href = "/pricing"><p>PRICING</p></Nav.Link>
+                        <Nav.Link className = "link nav"  href = "#"><p>ABOUT</p></Nav.Link>
+                        <Nav.Link className = "link nav"  href = "/contact"><p>CONTACT</p></Nav.Link>
                         <Nav className ="navAuth">
-                            <Nav.Link className = "link"  href = "/signin">Login</Nav.Link>
-                            <Nav.Link className = "link"  href = "/signup">Sign Up</Nav.Link>
+                            <Nav.Link className = "link demo"  href = "#">BOOK A DEMO</Nav.Link>
+                            <Nav.Link className = "link login"  href = "/signin">Log in</Nav.Link>
                         </Nav>
                     </Nav>
                 </Nav>     
