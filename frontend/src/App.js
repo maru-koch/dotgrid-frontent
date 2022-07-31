@@ -11,6 +11,7 @@ import {
         OverviewPage, 
         SignInPage, 
         ForgotPasswordPage,
+        ResetPasswordPage,
         SignUpPage,
         Home, Contact, 
         GetStarted, 
@@ -67,7 +68,8 @@ const App = () => (
         <Route index element={<Home />} />
         <Route path={ROUTES.signIn.path} element={<SignInPage />} />
         <Route path={ROUTES.signUp.path} element={<SignUpPage />} />
-         <Route path= "/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path= "/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path= "/reset-password" element={<ResetPasswordPage />} />
         <Route path="/verify/:encoded_email" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />

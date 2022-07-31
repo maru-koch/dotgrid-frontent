@@ -13,15 +13,16 @@ export * from './SolarAnalytic/solarAnalytic'
 export { SignUp } from './SignUp';
 export { SignIn } from './SignIn/signin';
 export { ForgotPassword } from './ForgotPassword';
+export { ResetPassword } from './ResetPassword';
 export { SideBar } from './SideBar';
 export { StarterImage } from './StarterImage';
 export { SolarPanel } from './SolarPanel';
-export { ConfirmEmail } from './ConfirmEmail'
-export { VerifyEmail } from './VerifyEmail'
-export { SolarLight } from './SolarLight'
-export { WhyAnalytics } from './WhyAnalytics'
+export { ConfirmEmail } from './ConfirmEmail';
+export { VerifyEmail } from './VerifyEmail';
+export { SolarLight } from './SolarLight';
+export { WhyAnalytics } from './WhyAnalytics';
 export { Pricing } from './Pricing';
 export { ModalRequestDemo } from './ModalRequestDemo';
-export {PopUp } from './PopUp'
+export {PopUp } from './PopUp';
 
 

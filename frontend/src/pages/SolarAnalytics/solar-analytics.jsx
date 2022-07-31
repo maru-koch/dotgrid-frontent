@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { SectionHeader } from '../../components/elements/Sections'
-import { SolarAnalytic, WhyAnalytics, Loader, RequestDemoForm, Modal, PopUp } from '../../components'
+import { SolarAnalytic, WhyAnalytics, ModalRequestDemo } from '../../components'
 import { PageLayout } from '../../layout'
 import { HowItWorks } from '../../components/compounds/HowItWorks/HowItWorks'
 
@@ -46,21 +46,13 @@ export const SolarAnalytics =()=>{
         <SolarAnalytic/>
         <WhyAnalytics  openModal ={openModal}/>
         <HowItWorks/>
-        <Modal open = {open} >
-            {
-            msgSent?
-                <PopUp 
-                    title="Message Sent" 
-                    content="We have received your message. You will be contacted by our representative within 7 working days"
-                    btnText="ok"
-                    action={closeModal}
-                />
-                :
-            requestDemo? 
-                <Loader text ="...sending" hasText={true}/>
-                    :
-                <RequestDemoForm close={closeModal} requestDemo = {requestDemoHandler}/>
-            }
-        </Modal>
+        <ModalRequestDemo
+            open={open}
+            msgSent={msgSent}
+            requestDemo={requestDemo}
+            requestDemoHandler={requestDemoHandler}
+            closeModal={closeModal}
+
+        />
     </PageLayout>)
 }
