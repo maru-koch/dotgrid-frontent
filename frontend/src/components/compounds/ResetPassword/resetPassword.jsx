@@ -3,8 +3,10 @@ import { Text, Input, Button, Loader, SectionImage } from '../../elements';
 import { useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
+import {Section, SectionWrapper} from '../../elements'
 import { validate } from './validation'
 import logo from '../../../assets/images/dotgrid_logo.png'
+
 import './resetPassword.css';
 
 
@@ -12,6 +14,17 @@ import './resetPassword.css';
 const initialValues = {
   'email':'',
   'password':''
+}
+
+const PasswordValidator=({valid, text, textColor})=>{
+  return (
+    <Section>
+      <SectionWrapper>
+        <i className ={valid? "fa fa-good" : "fa fa-hyphen"}></i>
+        <Text text={text} color={textColor}/>
+      </SectionWrapper>
+    </Section>
+  )
 }
 export const ResetPassword = () => {
 
@@ -71,7 +84,11 @@ export const ResetPassword = () => {
                 <Button type="submit" stretch text="Reset Password" onClick={onSubmitHandler} />
             </div>
              <div className="signin-wrapper-remember-me">
-                <Text text="login" navigate ={()=>navigate('/signin')}/>
+                <Text text="Ensure that:" />
+                <Text text="- more than 6 in length" size={12}/>
+                <Text text="- contains alphanumeric characters" size={12} />
+                <Text text="- contains atleast one special character *^%$#@" size={12}/>
+                <Text text="- contains atleast one capital letter" size={12} />
             </div>
         </form>
         </div>

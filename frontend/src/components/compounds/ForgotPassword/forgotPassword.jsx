@@ -44,6 +44,7 @@ export const ForgotPassword = () => {
         
       const validated_data = new FormData();
       validated_data.append('email', formData.email);
+      navigate('/reset-password')
       dispatch(logInUser(formData));
      
     }
