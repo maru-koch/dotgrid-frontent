@@ -62,9 +62,20 @@ export const RememberMe = ({ navigate }) => (
   </div>
 );
 
+
+export const Icon = ({isValid, text, unvalidated})=>{
+    <div>
+        <div>
+            <i className={unvalidated? "fa fa-hypen": isValid? "fa fa-good" : "fa fa-times"}></i>
+            <p>Nothing here</p>
+        </div>
+    </div>;
+};
+
 Text.Heading = Heading;
 Text.Divider = Divider;
 Text.RememberMe = RememberMe;
+Text.Icon = Icon;
 
 const basePropTypes = {
   weight: PropTypes.oneOf([400, 450, 500, 700]),
@@ -86,6 +97,12 @@ Heading.propTypes = {
 Divider.propTypes = {
   text: PropTypes.string,
   children: PropTypes.node,
+};
+
+Icon.propTypes = {
+  text: PropTypes.string,
+  isValid: PropTypes.bool,
+  unvalidated: PropTypes.bool,
 };
 
 RememberMe.propTypes = {};

@@ -72,9 +72,7 @@ export const SignIn = () => {
                 <Text.RememberMe navigate ={()=>navigate('/forgot-password')}/>
             </div>
             <div className="signin-wrapper-button">
-                <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler}>
-                  {<Loader hasText={false} height = "50px" width="50px"/>}
-                </Button>
+                <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler}/>
             </div>
         </form>
         </div>

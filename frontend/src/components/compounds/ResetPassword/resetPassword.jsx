@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, Input, Button, Loader, SectionImage } from '../../elements';
+import { IconText, Text, Input, Button, Loader, SectionImage } from '../../elements';
 import { useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
@@ -84,11 +84,8 @@ export const ResetPassword = () => {
                 <Button type="submit" stretch text="Reset Password" onClick={onSubmitHandler} />
             </div>
              <div className="signin-wrapper-remember-me">
-                <Text text="Ensure that:" />
-                <Text text="- more than 6 in length" size={12}/>
-                <Text text="- contains alphanumeric characters" size={12} />
-                <Text text="- contains atleast one special character *^%$#@" size={12}/>
-                <Text text="- contains atleast one capital letter" size={12} />
+                <Text text="Ensure that Password:" size={12}/>
+                <Text.Icon unvalidated={true} text="is more than 6 character" size={12}/>
             </div>
         </form>
         </div>
