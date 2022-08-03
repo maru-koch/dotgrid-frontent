@@ -3,7 +3,7 @@ import {DropDown} from '../DropDown'
 import {Nav, Navbar } from "react-bootstrap";
 import {ModalRequestDemo} from '../../ModalRequestDemo'
 import logo from '../../../../assets/images/dotgrid_logo.png'
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './nav.css'
 
 
