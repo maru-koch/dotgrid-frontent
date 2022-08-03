@@ -1,15 +1,15 @@
 
 import {SolarStat} from '../SolarStat'
 import { SectionHeader, Section, SectionWrapper } from '../../elements/Sections'
+import bg_img from '../../../assets/images/solar_farm.jpg'
 import classes from './solarStats.module.css'
 
 
 export const SolarStats=()=>{ 
     return (
-    <Section>
+    <Section bg = {{ backgroundImage: `url(${bg_img})`, backgroundSize:'cover',}}>
         <SectionHeader title = "" subtitle = ""/>
-        <div className="section__wrapper">
-            <SectionWrapper>
+            <SectionWrapper >
                 <div className ={classes.offGrid__container}>
                     <div>
                         <div className ={classes.right}>
@@ -31,8 +31,7 @@ export const SolarStats=()=>{
                         </div>
                     </div>
                 </div>
-        </SectionWrapper>
-        </div>
+            </SectionWrapper>
     </Section>)
 }
 

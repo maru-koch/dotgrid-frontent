@@ -1,5 +1,14 @@
+/* STATS  */
+.sectionWrapper{
+    background-image: url(../../../assets/images/solar_farm.jpg);
+    background-size: cover;
+}
 
+.sectionWrapper::after {
+    background-color: rgba(var(--primary-color), 0.5);
+}
 
+/*  */
 .offGrid__container{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
