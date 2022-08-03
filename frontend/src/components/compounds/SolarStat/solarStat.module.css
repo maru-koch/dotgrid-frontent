@@ -1,0 +1,17 @@
+.section{
+    background-image: url(../../../assets/images/solar_farm.jpg);
+    background-size: cover;
+}
+
+.section::after{
+    background-color: rgba(var(--primary-color), 0.5);
+}
+.solarStats__container{
+    padding: 10px;
+}
+.solarStats__wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
