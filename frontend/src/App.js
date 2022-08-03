@@ -13,7 +13,7 @@ import {
         ForgotPasswordPage,
         ResetPasswordPage,
         SignUpPage,
-        Home, Contact, 
+        Home, Contact, AboutPage,
         GetStarted, 
         SolarInstallation,
         SolarAnalytics,
@@ -72,6 +72,7 @@ const App = () => (
         <Route path= "/reset-password" element={<ResetPasswordPage />} />
         <Route path="/verify/:encoded_email" element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.contact.path} element={<Contact/>} />
+        <Route path= "/about" element={<AboutPage/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation />} />
         <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage />} />

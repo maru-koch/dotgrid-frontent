@@ -1,10 +1,10 @@
 
 import {SolarStat} from '../SolarStat'
 import { SectionHeader, Section, SectionWrapper } from '../../elements/Sections'
-import classes from './offGrid.module.css'
+import classes from './solarStats.module.css'
 
 
-export const OffGrid=()=>{ 
+export const SolarStats=()=>{ 
     return (
     <Section>
         <SectionHeader title = "" subtitle = ""/>
