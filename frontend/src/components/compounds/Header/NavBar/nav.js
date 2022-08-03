@@ -64,7 +64,7 @@ export default function NavLink(props){
                             onMouseEnter={()=>setShowDropDown(true)}
                             href = "#"><p>TECHNOLOGIES</p></Nav.Link>
                         <Nav.Link className = "link nav"  href = "/pricing"><p>PRICING</p></Nav.Link>
-                        <Nav.Link className = "link nav"  href = "#"><p>ABOUT</p></Nav.Link>
+                        <Nav.Link className = "link nav"  href = "/about"><p>ABOUT</p></Nav.Link>
                         <Nav.Link className = "link nav"  href = "/contact"><p>CONTACT</p></Nav.Link>
 
                         <Nav className ="navAuth">
