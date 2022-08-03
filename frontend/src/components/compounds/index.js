@@ -23,6 +23,7 @@ export { SolarLight } from './SolarLight';
 export { WhyAnalytics } from './WhyAnalytics';
 export { Pricing } from './Pricing';
 export { SolarStat } from './SolarStat';
+export { SolarStats } from './SolarStats';
 export { ModalRequestDemo } from './ModalRequestDemo';
 export {PopUp } from './PopUp';
 

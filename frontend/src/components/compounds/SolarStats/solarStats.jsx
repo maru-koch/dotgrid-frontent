@@ -1,6 +1,6 @@
 
-import {SolarStat} from '../../SolarStat'
-import { SectionHeader, Section, SectionWrapper } from '../../../elements/Sections'
+import {SolarStat} from '../SolarStat'
+import { SectionHeader, Section, SectionWrapper } from '../../elements/Sections'
 import classes from './offGrid.module.css'
 
 
