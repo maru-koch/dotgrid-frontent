@@ -19,12 +19,13 @@ export const SolarStats=()=>{
                     </div>
                     <div className = {classes.card}>
                         <div className = {classes.cardWrapper}>
-                            <h2>Energy Access and Monitoring</h2>
+                            <h2>Enterprise Mini-grid Solutions</h2>
                             <p className={classes.word}>
-                                We enable communities, Estates, 
-                                businesses access Stable and reliable energy.
-                                Our Model provides a framework that enables our customers
-                                have affordable energy at a minimal cost through a Pay-as-you plan.
+                                Dotgrid enable City, Estates, 
+                                and community  managers monitor and track energy consumption of building or appartments
+                                connected to their grids.<br/>
+                                Dotgrid provides a dedicated dashboard to manage energy data and provides insight for analysis and reporting
+                        .
                             </p>
                         </div>
                         <div className = {classes.btn_holder}>

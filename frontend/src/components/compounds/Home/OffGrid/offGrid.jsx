@@ -9,7 +9,7 @@ import image from '../../../../assets/images/off-grid.png'
 export const OffGrid=()=>{ 
     return (
     <Section>
-        <SectionHeader title = "" subtitle = ""/>
+        <SectionHeader title = "Why Use Dotgrid" subtitle = ""/>
         <div className="section__wrapper">
             <SectionWrapper>
                 <div className ={classes.offGrid__container}>

@@ -8,8 +8,8 @@ import { HowItWorks } from '../../components/compounds/HowItWorks/HowItWorks'
 
 
 const PAGEHEADER_STYLE={
-    padding: '20px',
-    marginTop: '20px',
+    padding: '0px',
+    marginTop: '0px',
     backgroundColor: '#333'
 }
 

@@ -12,8 +12,8 @@ const description =`
 `
 export const AboutAnalytics=()=>{
     return (
-        <Section>
-            <SectionText title ="Why Solar Analytics" description={description}/>
+        <Section bg={{width:'100%'}}>
+            <SectionText bg={{width: '100%'}}title ="Why Solar Analytics" description={description}/>
         </Section>
     )
 }

@@ -1,10 +1,10 @@
 
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
-import analytics_phone from '../../../assets/images/analytics_phone.png'
-import analytics_computer from '../../../assets/images/analytics_computer.png'
+import analytics_phone from '../../../assets/images/smart_home.png'
+import analytics_computer from '../../../assets/images/energy_optimization.png'
 
 const word =[{
-    title:'Energy Automation',
+    title:'Energy Optimization',
     desc: `
                 Automate your energy consumption by setting when you want 
                 your devices to turn on or off. You can remotely select 
@@ -13,7 +13,7 @@ const word =[{
 
     button_text: 'Order Solar PV Panel'
 },{
-    title:'Derive Insight',
+    title:'Smart Home',
     desc: `
                Monitor your energy consumption pattern by looking at 
                the visualization of your energy data. Our AI driven analytics will
@@ -52,8 +52,8 @@ export const WhyAnalytics =({openModal})=>{
             <SectionImage 
                 image={analytics_phone} 
                 height={'100%'} 
-                width={'50%'}
-                wrapperStyle={{height:700, width: 500}}
+                width={'70%'}
+                wrapperStyle={{height:500, width:'100%'}}
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
         </SectionWrapper>
         </Section>

@@ -9,7 +9,7 @@ const word ={
 export const PricingPage=()=>{
     return (
         <PageLayout>
-            <SectionHeader title = 'Pricing' subtitle = 'Select a suitable plan for your needs'/>
+            {/* <SectionHeader title = 'Pricing' subtitle = 'Select a suitable plan for your needs'/>
             <SectionWrapper bg ={{backgroundColor:"#ECECEC", height: 500}}>
                 <SectionText 
                     title ={word.title} 
@@ -23,7 +23,7 @@ export const PricingPage=()=>{
                     width={'50%'}
                     wrapperStyle={{height:400, width: '100%'}}
                     containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
-            </SectionWrapper>
+            </SectionWrapper> */}
             <Pricing/>
         </PageLayout>
     )
