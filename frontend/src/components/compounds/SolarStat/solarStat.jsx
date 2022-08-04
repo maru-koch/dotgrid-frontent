@@ -1,7 +1,6 @@
 
 import classes from './solarStat.module.css';
 import { statsData } from '../../../constants/statData'
-import { SectionWrapper, Section, SectionText } from '../../elements';
 
 
 const Stat =({icon, title, desc})=>{
