@@ -14,7 +14,7 @@ body{
 
 :root{
   --orange-color: #EC6640;
-  --accent-color: #de6259;
+  --accent-color: #F19753;
   --accent-2-color: #EC6333;
   --accent-2-color: #f4e7e6;
   --background-2-color:#e3ecff;
@@ -31,4 +31,5 @@ body{
   --primary-color: #4C3FCF;
   --secondary-color: #B480ED;
   --tertiary-color: #70E0CD;
+  --btn-gradient:linear-gradient(120deg,#4238af, #9c48f5);
 }

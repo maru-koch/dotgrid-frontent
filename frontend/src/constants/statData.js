@@ -1,8 +1,8 @@
 export const statsData =[
     {
-        icon:'fas fa-share-alt',
+        icon:'fas fa-stream',
         title: "Solar Analytics",
-        description:"Make cost saving energy decision"
+        description:"Get insight into your energy generation and consumption"
     },
     {
         icon:'fas fa-cogs',
@@ -10,14 +10,14 @@ export const statsData =[
         description:"Automate your energy consumption to save cost"
     },
     {
-        icon:'fas fa-share-alt',
+        icon:'far fa-compass',
         title: "Smart Metering",
-        description:"track your energy consumption in real time"
+        description:"track your energy usage in real time"
     },
     {
         icon:'fas fa-share-alt',
         title: "Energy sharing",
-        description:"Gift energy to your loved ones"
+        description:"Share love and energy with neighbors"
     }
 ]
 

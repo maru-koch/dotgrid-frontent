@@ -1,5 +1,5 @@
 import classes from './headerDisplay.module.css'
-import solar_image from '../../../../assets/images/header.png'
+import solar_image from '../../../../assets/images/solarAnalyticHeader.png'
 import { useNavigate, Link } from 'react-router-dom'
 
 export const HeaderDisplay=()=>{
@@ -9,8 +9,8 @@ export const HeaderDisplay=()=>{
             <div className ={classes.header__wrapper}>
                 <div className={classes.header__panel}>
                     <div className={classes.header__panel_left}>
-                        <h2>Mini-grid Management</h2>
-                        <p>Solar Energy Analytics and Automation</p>
+                        <h1>AI Powered</h1>
+                        <h2>Solar Analytics and Automation</h2>
                         <button className={classes.btn} onClick={()=>navigate('/get-started')}>Get Started</button>
                     </div>
                 </div>

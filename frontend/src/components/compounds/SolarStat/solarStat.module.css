@@ -26,7 +26,7 @@
     height: 250px;
     padding: 10px;
     border-radius:5px;
-    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.1); */
 }
 
 .stat__wrapper i{
@@ -39,6 +39,7 @@
     font-family: Poppins;
     font-size: 1.5rem;
     color: rgb(254, 150, 109);
+    font-weight: 600;
 }
 
 .stat__wrapper p{

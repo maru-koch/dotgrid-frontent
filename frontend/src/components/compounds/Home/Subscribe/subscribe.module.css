@@ -21,7 +21,7 @@
 
 .subscribe__wrapper{
     display: grid;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 8fr 4fr;
     place-content: center;
     width: 500px;
     height: 40px;
@@ -44,9 +44,10 @@
 }
 
 .subscribe__wrapper button{
-    background-color: #EA4F33;
+    background-color: var(--accent-color);
     border: none;
-    color: #fff
+    color: #fff;
+    border-top-right-radius: 5px
 }
 
 .subscribe__wrapper button:focus {

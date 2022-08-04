@@ -1,4 +1,5 @@
-import {HeaderDisplay, Services, OffGrid, OffGrid2, Subscribe, OurPartners} from '../../components/compounds/Home'
+import { SolarStats } from '../../components/compounds'
+import {HeaderDisplay, Services, Subscribe, OurPartners} from '../../components/compounds/Home'
 import { PageLayout } from '../../layout'
 
 export const Home=()=>{
@@ -7,8 +8,7 @@ export const Home=()=>{
         <PageLayout>
             <HeaderDisplay />
             <Services />
-            <OffGrid />
-            <OffGrid2 />
+            <SolarStats/>
             <Subscribe />
             <OurPartners /> 
         </PageLayout>

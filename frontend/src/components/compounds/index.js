@@ -11,6 +11,7 @@ export * from './SolarProjects/solarProjects'
 export * from './SolarAnalytic/solarAnalytic'
 
 export { SignUp } from './SignUp';
+export { AboutAnalytics } from './AboutAnalytics';
 export { SignIn } from './SignIn/signin';
 export { ForgotPassword } from './ForgotPassword';
 export { ResetPassword } from './ResetPassword';
