@@ -2,10 +2,25 @@
 .sectionWrapper{
     background-image: url(../../../assets/images/solar_farm.jpg);
     background-size: cover;
+    position: fixed;
+    z-index: 1000;
 }
 
-.sectionWrapper::after {
-    background-color: rgba(var(--primary-color), 0.5);
+.sectionWrapper::before{
+content: ""; 
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+opacity: 0.9;
+z-index: -1;
+/* mix-blend-mode:hard-light; */
+}
+
+.sectionWrapper > *{
+    
 }
 
 /*  */
@@ -32,9 +47,9 @@
 }
 
 .word{
-    color: rgb(84, 84, 84);
+    color: rgb(248, 248, 248);
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: Poppins;
 }
 
@@ -42,8 +57,10 @@
     font-size: 2rem;
     font-family: Poppins; 
     font-weight: 400;
-    color: grey;
+    color: white;
     padding: 20px 0;
+    font-weight: 400;
+    padding: 20px;
 }
 
 
@@ -66,9 +83,12 @@ img{
 .btn_holder button{
     padding: 15px 60px;
     border: 0;
-    background-color: grey;
+    background-color: rgb(254, 150, 109);;
     color:#fff;
+    font-size:1.2rem;
+    font-family: Poppins;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .btn_holder button:hover{

@@ -1,21 +1,21 @@
 export const statsData =[
     {
-        icon:'fa fa-chevron-left',
-        title: "AI Powered Analytics",
+        icon:'fas fa-share-alt',
+        title: "Solar Analytics",
         description:"Make cost saving energy decision"
     },
     {
-        icon:'fa fa-chevron-down',
-        title: "Energy Automation",
-        description:"Make cost saving energy decision"
+        icon:'fas fa-cogs',
+        title: "Automation",
+        description:"Automate your energy consumption to save cost"
     },
     {
-        icon:'fa fa-chevron-right',
+        icon:'fas fa-share-alt',
         title: "Smart Metering",
         description:"track your energy consumption in real time"
     },
     {
-        icon:'fa fa-chevron-up',
+        icon:'fas fa-share-alt',
         title: "Energy sharing",
         description:"Gift energy to your loved ones"
     }

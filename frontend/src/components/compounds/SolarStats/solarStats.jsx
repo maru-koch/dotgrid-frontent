@@ -5,9 +5,10 @@ import bg_img from '../../../assets/images/solar_farm.jpg'
 import classes from './solarStats.module.css'
 
 
+
 export const SolarStats=()=>{ 
     return (
-    <Section bg = {{ backgroundImage: `url(${bg_img})`, backgroundSize:'cover',}}>
+    <div className={classes.sectionWrapper}>
         <SectionHeader title = "" subtitle = ""/>
             <SectionWrapper >
                 <div className ={classes.offGrid__container}>
@@ -32,6 +33,6 @@ export const SolarStats=()=>{
                     </div>
                 </div>
             </SectionWrapper>
-    </Section>)
+    </div>)
 }
 
