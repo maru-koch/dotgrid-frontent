@@ -17,7 +17,7 @@ export const statsData =[
     {
         icon:'fas fa-share-alt',
         title: "Energy sharing",
-        description:"Share love and energy with neighbors"
+        description:"Transfer energy credit to anyone connected to the grid"
     }
 ]
 

@@ -1,7 +1,6 @@
 
 import {SolarStat} from '../SolarStat'
-import { SectionHeader, Section, SectionWrapper } from '../../elements/Sections'
-import bg_img from '../../../assets/images/solar_farm.jpg'
+import { SectionHeader, SectionWrapper } from '../../elements/Sections'
 import classes from './solarStats.module.css'
 
 
@@ -21,11 +20,10 @@ export const SolarStats=()=>{
                         <div className = {classes.cardWrapper}>
                             <h2>Enterprise Mini-grid Solutions</h2>
                             <p className={classes.word}>
-                                Dotgrid enable City, Estates, 
-                                and community  managers monitor and track energy consumption of building or appartments
+                                Dotgrid Analytics and automation enables City, Estates, 
+                                and community  managers to monitor and track energy consumption of building or appartments
                                 connected to their grids.<br/>
-                                Dotgrid provides a dedicated dashboard to manage energy data and provides insight for analysis and reporting
-                        .
+                                Dotgrid provides a dedicated dashboard to manage energy data and provides insight for analysis and reporting.
                             </p>
                         </div>
                         <div className = {classes.btn_holder}>
