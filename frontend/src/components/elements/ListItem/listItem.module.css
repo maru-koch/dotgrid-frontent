@@ -1,4 +1,5 @@
 .listItem__container{
+    width: 100%;
     display:grid;
     grid-template-columns: 2fr 8fr;
     place-items: center;

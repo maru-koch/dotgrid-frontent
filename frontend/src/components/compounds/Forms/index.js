@@ -1,4 +1,4 @@
 export * from './contactForm';
 export * from './contactInfo';
 export * from './requestDemoForm';
-export * from './priceForm';
+export {PriceForm} from './priceForm';

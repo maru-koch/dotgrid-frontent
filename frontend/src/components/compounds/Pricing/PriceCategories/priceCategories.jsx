@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import { PRICE_ACTIONS } from '../../../../store/reducer/price'
 
-const Category=({price, priceModel, features, openModal})=>{
+const Category=({price, priceModel, features, modelType, openModal})=>{
 
     // Display a single plan and its features
     // the updatePriceModel funtion updates the PriceForm with the price, 
@@ -16,14 +16,15 @@ const Category=({price, priceModel, features, openModal})=>{
         price:{price}, 
         priceModel:{priceModel}, 
         features:{features},
+        modelType:{modelType}
     })
 
     console.log('price category',payload)
 
-    // const updateModel=()=>{
-    //     dispatch(PRICE_ACTIONS.setPriceModel(payload))
-    //     openModal(true)
-    // }
+    const updateModel=()=>{
+        dispatch(PRICE_ACTIONS.setPriceModel({price:{price}, priceModel:{priceModel}, features:{features}, modelType:{modelType}}))
+        openModal(true)
+    }
 
     return (
         
@@ -37,14 +38,14 @@ const Category=({price, priceModel, features, openModal})=>{
                     )}
                 </ul>
                 <div className={classes.priceCategory__btn}>
-                    <Button stretch text="Get Started" onClick={()=> dispatch(PRICE_ACTIONS.setPriceModel(payload))}/>
+                    <Button stretch text="Get Started" onClick={()=> updateModel()}/>
                 </div>
             </div>
         </div>
    
     )
 }
-export const PriceCategories=({plans, openModal})=>{
+export const PriceCategories=({plans, modelType, openModal})=>{
 
     // Display a single plan and its features
     
@@ -52,7 +53,7 @@ export const PriceCategories=({plans, openModal})=>{
         <Section>
             <SectionWrapper bg={{gap:'20px'}}>
                 {plans.map((plan, idx)=>
-                    <Category key ={idx} price={plan.price} priceModel ={plan.priceModel} features = {plan.features} openModal={openModal}/>
+                    <Category key ={idx} price={plan.price} priceModel ={plan.priceModel} features = {plan.features} modelType ={modelType} openModal={openModal}/>
                 )}
             </SectionWrapper>
         </Section>

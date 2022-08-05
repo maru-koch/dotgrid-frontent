@@ -4,7 +4,8 @@ import {createSlice} from '@reduxjs/toolkit'
 const initialState =  {   
             priceModel:'',
             price: '',
-            features: []
+            features: [],
+            modelType:''
         }
 
 const priceSlice = createSlice({
@@ -16,6 +17,7 @@ const priceSlice = createSlice({
             state.priceModel = action.payload.priceModel
             state.price = action.payload.price
             state.features = action.payload.features
+            state.modelType = action.payload.modelType
             console.log('store', state)
             
         },

@@ -18,7 +18,7 @@ export const Pricing =({openModal})=>{
     <main>
         <SectionHeader title="Choose Plan"/>
         <SelectPriceModel setPriceModel = {setPriceModel} description = {priceDetailsData[priceModel].description}/>
-        <PriceCategories openModal ={openModal}  plans = {priceDetailsData[priceModel].plans}/>
+        <PriceCategories openModal ={openModal}  plans = {priceDetailsData[priceModel].plans} modelType ={priceModel}/>
     </main>
     )
 }

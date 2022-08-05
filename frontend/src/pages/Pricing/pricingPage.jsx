@@ -7,14 +7,16 @@ import {PageLayout} from '../../layout'
 const initialState =  {   
             priceModel:'',
             price: '',
-            features: []
+            features: [],
+            modelType:''
         }
 
 
 export const PricingPage=()=>{
 
-    const {price, priceModel, features} = useSelector(state => state.price)
+    const {price, priceModel, features, modelType} = useSelector(state => state.price)
 
+    console.log('modelType', modelType)
     const [open, setOpen] = useState(false)
     const [plan, setPlan] = useState(initialState)
 
@@ -27,14 +29,15 @@ export const PricingPage=()=>{
     }
 
     useEffect(()=>{
-        console.log('pricingpage',price)
         setPlan({   
-            priceModel: priceModel,
-            price: price,
-            features: features
+            priceModel: priceModel['priceModel'],
+            price: price['price'],
+            features: features['features'],
+            modelType: modelType['modelType'],
         })
-    },[price, priceModel, features])
+    },[price, priceModel, features, modelType])
 
+    console.log('plan', plan)
     return (
         <PageLayout>
             <Pricing openModal={openModal}/>
