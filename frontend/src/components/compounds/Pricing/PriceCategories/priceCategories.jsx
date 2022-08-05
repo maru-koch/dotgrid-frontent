@@ -1,7 +1,7 @@
-import {Section, SectionWrapper, Card, Button} from '../../../elements'
+import {Section, SectionWrapper, Button} from '../../../elements'
 import classes from './priceCategories.module.css'
 
-const Category=({price, priceModel, features})=>{
+const Category=({price, priceModel, features, updatePriceModel})=>{
 
     // Display a single plan and its features
 
@@ -17,7 +17,7 @@ const Category=({price, priceModel, features})=>{
                     )}
                 </ul>
                 <div className={classes.priceCategory__btn}>
-                    <Button stretch text="Get Started"/>
+                    <Button stretch text="Get Started" onClick={()=>updatePriceModel({priceModel: {priceModel}, price:{price}, features:{features}})}/>
                 </div>
             </div>
         </div>

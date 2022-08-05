@@ -1,4 +1,5 @@
 import classes from './contactForm.module.css'
+import { SubscribeForm } from './subscriptionForm'
 const CheckBox =({heading})=>{
     return(
         <div className={classes.checkbox__container}>
@@ -10,29 +11,25 @@ const CheckBox =({heading})=>{
     )
 }
 
+const CheckBoxOptions=()=>{
+    return (
+        <>
+            <p>I want to Inquire about:</p>
+            <div className={classes.form__checkbox__wrapper}>
+                <CheckBox heading="Solar Installation"/>
+                <CheckBox heading="Energy Loan"/>
+                <CheckBox heading="Smart Meter"/>
+                <CheckBox heading="Energy Monitoring and Analytics"/>
+            </div>
+        </>
+    )
+}
+
 export const ContactForm =()=>{
     return (
-    <div class ={classes.formContainer}>
-        <h4>Get in Touch</h4>
-        <form>
-            <input type = "text" placeholder = "Name"/>
-            <input type = "email" placeholder = "Email Address"/>
-            <textarea type = "text" placeholder = "Your Message to Us"></textarea>
-            <div className={classes.form__checkbox__container}>
-                <p>I want to Inquire about:</p>
-                <div className={classes.form__checkbox__wrapper}>
-                    <CheckBox heading="Solar Installation"/>
-                    <CheckBox heading="Energy Loan"/>
-                    <CheckBox heading="Smart Meter"/>
-                    <CheckBox heading="Energy Monitoring and Analytics"/>
-                </div>
-            </div>
-             <div class = {classes.btnHolder}>
-                <button>Send</button>
-            </div>
-        </form>
-       
-    </div>
+    <SubscribeForm title="Get In Touch" btnText="Send">
+        <CheckBoxOptions/>
+    </SubscribeForm>
     )
 }
 
