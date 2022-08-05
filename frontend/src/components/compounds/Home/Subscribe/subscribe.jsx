@@ -26,7 +26,7 @@ export const Subscribe=(props)=>{
     return (
     <Section>
         <SectionContainer style ={classes.section}>
-            <SectionHeader title ="Subscribe to News Letter" subtitle = "Be the first to Know about Important Events in the Solar Energy Industry"/>
+            <SectionHeader title ="Subscribe to News Letter" subtitle = "Be the first to Know about Important Events in the Solar Energy Industry" bg={{color:'grey'}}/>
             <div className={classes.subscribe__container}>
                 <div className={classes.subscribe__wrapper}>
                     <input type="text" name ='email' placeholder = "Your Email" onChange={onChangeHandler}/>
