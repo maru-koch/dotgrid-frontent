@@ -1,0 +1,23 @@
+
+.priceForm__container{
+   background-color: black;
+   min-width: 60vw;
+   padding: 20px 0;
+   position: relative;
+}
+
+.plan__container{
+    width: 100%;
+    height:100%;
+    background-color: red;
+    margin-right: 20px;
+    top:0;
+    bottom: 0;
+}
+
+.plan__wrapper{
+    position: relative;
+}
+.plan__title{
+    font-size: 2rem;
+}

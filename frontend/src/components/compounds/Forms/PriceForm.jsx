@@ -1,31 +1,34 @@
-import {ListItem, Text, Section, SectionHeader, SectionWrapper} from '../../elements'
-import {SubscribeForm} from './subscriptionForm'
+import { ListItem, SectionWrapper } from '../../elements'
+import { SubscribeForm } from './subscriptionForm'
 import PropTypes from 'prop-types'
+import classes from './priceForm.module.css'
 
-const Plan =({plan, features}) =>{
+const Plan =({priceModel, price, features}) =>{
 
     // displays the plan selected by users and the features
 
     return (
-        <Section>
-            <Text.Heading>{plan}</Text.Heading>
-            {features.map(feature =><ListItem item={feature}/>)}
-        </Section>
+        <div className={classes.plan__container}>
+            <div className={classes.plan__wrapper}>
+                <h1 className={classes.plan__title}>{`${priceModel} Plan`}</h1>
+                {features.map(feature =><ListItem item={feature}/>)}
+                <p className={classes.plan__title}>{price}</p>
+            </div>
+        </div>
     )
 }
 
-export const PriceForm=({priceModel})=>{
+export const PriceForm=({ plan })=>{
 
     // Displays the price model and the subscription Form
 
     return (
-        <Section>
-            <SectionHeader title = "Pricing Plan"/>
-            <SectionWrapper>
-                {/* <Plan plan={priceModel.plan} features={priceModel.features}/> */}
-                <SubscribeForm btnText="Get Started"/>
+        <div className={classes.priceForm__container}>
+            <SectionWrapper bg={{height:'500px'}}>
+                <Plan price={plan.price} priceModel={plan.priceModel} features={plan.features}/>
+                <SubscribeForm btnText="Get Started" bg={{height:'500px'}}/>
             </SectionWrapper>
-        </Section>
+        </div>
     )
 }
 
