@@ -9,7 +9,7 @@ export const priceDetailsData = {
         },
         {   priceModel:'starter',
             price:  '$ 20 / year',
-            features: ['View Energy generated', 'automate energy consumptiion', '2 control devices', 'smart notification']
+            features: ['smart notification', 'control appliances remotely', 'View Energy generated', 'automate energy consumptiion', '2 control devices']
         },
 
         {
