@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 
 export const SubscribeForm =({children, title, btnText, bg})=>{
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-    }
     return (
         <div style={bg}>
             <div className ={classes.formContainer}>
             <h4>{title}</h4>
-            <form onSubmit = {onSubmitHandler}>
+            <form>
                 <input type = "text" placeholder = "Name"/>
                 <input type = "email" placeholder = "Email Address"/>
                 <input type = "phone" placeholder = "Phone"/>
