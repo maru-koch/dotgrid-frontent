@@ -1,23 +1,43 @@
 
 .priceForm__container{
-   background-color: black;
    min-width: 60vw;
    padding: 20px 0;
    position: relative;
+
+   background-color: var(--primary-color)
 }
 
 .plan__container{
     width: 100%;
     height:100%;
-    background-color: red;
     margin-right: 20px;
+    background-color: var(--accent-color);
     top:0;
     bottom: 0;
+   
 }
 
 .plan__wrapper{
     position: relative;
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
 }
 .plan__title{
     font-size: 2rem;
+}
+.plan__heading{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.plan__heading h1{
+    font-size:2rem;
+}
+
+.plan__heading p{
+    font-size: 1rem;
+    border-bottom: 4px solid var(--primary-color);
 }

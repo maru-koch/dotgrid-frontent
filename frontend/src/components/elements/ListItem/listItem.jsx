@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import classes from './listItem.module.css'
 
-export const ListItem = ({icon, item}) =>{
+export const ListItem = ({icon="fa fa-chevron-right", item}) =>{
     return (
         <li className ={classes.listItem__container}>
             <i className={icon}></i>

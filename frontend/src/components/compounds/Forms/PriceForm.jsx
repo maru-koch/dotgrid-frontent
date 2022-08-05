@@ -3,15 +3,15 @@ import { SubscribeForm } from './subscriptionForm'
 import PropTypes from 'prop-types'
 import classes from './priceForm.module.css'
 
-const Plan =({priceModel, price, features, modelType}) =>{
+const Plan =({priceModel="", price, features =[], modelType}) =>{
 
     // displays the plan selected by users and the features
 
     return (
         <div className={classes.plan__container}>
             <div className={classes.plan__wrapper}>
-                <div className="heading">
-                    <h1 className={classes.plan__title}>{`${priceModel} Plan`}</h1>
+                <div className={classes.plan__heading}>
+                    <h1 className={classes.plan__title}>{`${priceModel.toUpperCase()} PLAN`}</h1>
                     <p className={classes.plan__title}>{modelType}</p>
                 </div>
                 {features.map(feature =><ListItem item={feature}/>)}
