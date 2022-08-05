@@ -1,0 +1,15 @@
+.listItem__container{
+    display:grid;
+    grid-template-columns: 2fr 8fr;
+    place-items: center;
+}
+
+.listItem__container i{
+    font-size: 1.2rem;
+    color: var(--primary-color)
+}
+
+.listItem__container p{
+    font-size: 1.2rem; 
+    color:var(--word-color)
+}

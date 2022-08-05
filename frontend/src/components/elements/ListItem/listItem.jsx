@@ -1,12 +1,13 @@
 
-import PropTypes from 'prop-type';
+import PropTypes from 'prop-types';
+import classes from './listItem.module.css'
 
 export const ListItem = ({icon, item}) =>{
     return (
-        <main>
+        <li className ={classes.listItem__container}>
             <i className={icon}></i>
             <p>{item}</p>
-        </main>
+        </li>
     )
 }
 
