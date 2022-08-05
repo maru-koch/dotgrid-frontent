@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const Plan =({plan, features}) =>{
 
     // displays the plan selected by users and the features
-    
+
     return (
         <Section>
             <Text.Heading>{plan}</Text.Heading>
@@ -22,7 +22,7 @@ export const PriceForm=({priceModel})=>{
         <Section>
             <SectionHeader title = "Pricing Plan"/>
             <SectionWrapper>
-                <Plan plan={priceModel.plan} features={priceModel.features}/>
+                {/* <Plan plan={priceModel.plan} features={priceModel.features}/> */}
                 <SubscribeForm btnText="Get Started"/>
             </SectionWrapper>
         </Section>

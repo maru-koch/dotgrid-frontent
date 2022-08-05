@@ -1,10 +1,17 @@
 import {Section, SectionWrapper, Button} from '../../../elements'
 import classes from './priceCategories.module.css'
+import PropTypes from 'prop-types'
 
-const Category=({price, priceModel, features, updatePriceModel})=>{
+const Category=({price, priceModel, features, openModal})=>{
 
     // Display a single plan and its features
+    // the updatePriceModel funtion updates the PriceForm with the price, 
+    // priceModel and features of the selected price plan
 
+    const updateModel=()=>{
+        openModal(true)
+    }
+    
     return (
         
         <div className={classes.priceCategory__container}>
@@ -17,22 +24,22 @@ const Category=({price, priceModel, features, updatePriceModel})=>{
                     )}
                 </ul>
                 <div className={classes.priceCategory__btn}>
-                    <Button stretch text="Get Started" onClick={()=>updatePriceModel({priceModel: {priceModel}, price:{price}, features:{features}})}/>
+                    <Button stretch text="Get Started" onClick={()=>updateModel()}/>
                 </div>
             </div>
         </div>
    
     )
 }
-export const PriceCategories=({plans})=>{
+export const PriceCategories=({plans, openModal})=>{
 
     // Display a single plan and its features
-    console.log(plans)
+    
     return (
         <Section>
             <SectionWrapper bg={{gap:'20px'}}>
                 {plans.map((plan, idx)=>
-                    <Category key ={idx} price={plan.price} priceModel ={plan.priceModel} features = {plan.features}/>
+                    <Category key ={idx} price={plan.price} priceModel ={plan.priceModel} features = {plan.features} openModal={openModal}/>
                 )}
             </SectionWrapper>
         </Section>
@@ -40,3 +47,8 @@ export const PriceCategories=({plans})=>{
     )
 }
 
+
+PriceCategories.propTypes = {
+    plans: PropTypes.array,
+    openModal: PropTypes.func
+}

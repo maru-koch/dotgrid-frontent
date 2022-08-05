@@ -3,25 +3,28 @@ import { useState } from 'react'
 import {PageLayout} from '../../layout'
 import priceImage from '../../assets/images/pricing_image.jpeg'
 
-const word ={
-    title: 'Valuable Insights',
-    content :"Be empowered. with insight from your energy generation and consumption data, you can do more."
-}
+// const word ={
+//     title: 'Valuable Insights',
+//     content :"Be empowered. with insight from your energy generation and consumption data, you can do more."
+// }
+
+const initialValues =  {   
+            priceModel:'',
+            price: '',
+            features: []
+        }
+
 export const PricingPage=()=>{
 
     const [open, setOpen] = useState(false)
-    const [priceModel, setPriceModel] = useState(false)
-
-    const openModal=({priceModel})=>{
-        // opens the Modal and gets the price model to populate the form
+   
+    const openModal=()=>{
         setOpen(true)
-        setPriceModel(priceModel)
     };
 
     const closeModal=()=>{
         setOpen(false)
     }
-
 
     return (
         <PageLayout>
@@ -41,9 +44,9 @@ export const PricingPage=()=>{
                     containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
             </SectionWrapper> */}
             <Pricing openModal={openModal}/>
-            {<Modal open={open} close ={closeModal}>
-                <PriceForm openModal={openModal} priceModel={priceModel}/>
-            </Modal>}
+            <Modal open={open} close ={closeModal}>
+                <PriceForm priceModel={initialValues}/>
+            </Modal>
         </PageLayout>
     )
 }
