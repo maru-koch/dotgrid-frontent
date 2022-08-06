@@ -4,27 +4,43 @@
    padding: 20px 0;
    position: relative;
 
-   background-color: var(--primary-color)
+background-color: aliceblue;
 }
 
 .plan__container{
     width: 100%;
     height:100%;
     margin-right: 20px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     top:0;
     bottom: 0;
+    position: relative;
    
 }
 
 .plan__wrapper{
-    position: relative;
     display: flex;
     flex-direction:column;
     gap: 10px;
 }
 .plan__title{
     font-size: 2rem;
+}
+
+.plan__price{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+
 }
 .plan__heading{
     display:flex;
@@ -35,9 +51,34 @@
 
 .plan__heading h1{
     font-size:2rem;
+    color: white;
 }
 
 .plan__heading p{
     font-size: 1rem;
-    border-bottom: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--accent-color);
+    color: var(--background-color)
+}
+
+.plan__digit{
+    color:white;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.plan__slash{
+    color: var(--accent-color);
+    font-weight: 400;
+    font-size: 2rem;
+    padding: 5px;
+    text-align: bottom;
+    font-family: monospace;
+}
+
+.plan__year {
+    color: white;
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-align: bottom;
+    font-family: monospace;
 }

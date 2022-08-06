@@ -5,7 +5,7 @@ export * from './Analytics/analytics';
 export * from './DataTable';
 export * from './Modal/modal';
 export * from './Home';
-export * from './Forms';
+export {ContactForm, PriceForm, RequestDemoForm} from './Forms';
 export * from './TimeLine';
 export * from './SolarProjects/solarProjects'
 export * from './SolarAnalytic/solarAnalytic'

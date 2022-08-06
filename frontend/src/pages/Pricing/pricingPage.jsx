@@ -1,4 +1,4 @@
-import {Modal, Pricing, PriceForm} from '../../components'
+import {Modal, Pricing, PriceForm} from '../../components/compounds'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import {PageLayout} from '../../layout'

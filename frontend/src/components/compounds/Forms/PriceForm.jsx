@@ -3,7 +3,7 @@ import { SubscribeForm } from './subscriptionForm'
 import PropTypes from 'prop-types'
 import classes from './priceForm.module.css'
 
-const Plan =({priceModel="", price, features =[], modelType}) =>{
+const Plan =({priceModel="", price="", features =[], modelType}) =>{
 
     // displays the plan selected by users and the features
 
@@ -15,7 +15,11 @@ const Plan =({priceModel="", price, features =[], modelType}) =>{
                     <p className={classes.plan__title}>{modelType}</p>
                 </div>
                 {features.map(feature =><ListItem item={feature}/>)}
-                <p className={classes.plan__title}>{price}</p>
+                <p className={classes.plan__price}>
+                    <span className={classes.plan__digit}>{price.split('/')[0]}</span>
+                    {price === "free"?  " " : <span className={classes.plan__slash}>/</span> }
+                    <span className={classes.plan__year}>{price.split('/')[1]}</span>
+                </p>
             </div>
         </div>
     )
