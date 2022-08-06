@@ -9,3 +9,4 @@ export { GetStarted } from './GetStarted';
 export { SolarInstallation } from './SolarInstallation'
 export { SolarAnalytics } from './SolarAnalytics'
 export { PricingPage } from './Pricing'
+export { LearnMorePage } from './LearnMore'

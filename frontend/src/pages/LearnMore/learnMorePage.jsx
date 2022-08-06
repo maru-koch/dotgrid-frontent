@@ -1,5 +1,5 @@
 import {PageLayout} from '../../layout'
-import {LearnMore} from '../../components/compounds''
+import {LearnMore} from '../../components/compounds'
 
 export const LearnMorePage=()=>{
     return (

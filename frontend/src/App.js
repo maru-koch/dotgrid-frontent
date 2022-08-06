@@ -18,7 +18,7 @@ import {
         SolarInstallation,
         SolarAnalytics,
         ConfirmEmailPage,
-        PricingPage
+        PricingPage, LearnMorePage
         }
 
  from './pages';
@@ -78,6 +78,7 @@ const App = () => (
         <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics />} />
         <Route path= "/pricing" element = {<PricingPage />} />
+        <Route path= "/learn-more" element = {<LearnMorePage />} />
       </Route>
 
       <Route path={ROUTES.dashboard.path} element={<PrivateOutlet />}>
