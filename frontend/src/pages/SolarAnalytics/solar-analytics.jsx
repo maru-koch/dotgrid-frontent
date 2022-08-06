@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { SectionHeader } from '../../components/elements/Sections'
 import { SolarAnalytic, WhyAnalytics, ModalRequestDemo } from '../../components'
 import { PageLayout } from '../../layout'
-import { HowItWorks } from '../../components/compounds/HowItWorks/HowItWorks'
+import { HowItWorks } from '../../components/compounds/HowItWorks/howItWorks'
 
 
 

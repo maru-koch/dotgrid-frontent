@@ -1,1 +1,1 @@
-export * from './solarProjects'
+export * from './howItWorks'

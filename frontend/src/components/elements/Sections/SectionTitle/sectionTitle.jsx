@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import classes from './sectionTitle.module.css'
 
-export const SectionTitle=({image, text})=>{
+export const SectionTitle=({image, title})=>{
     return (
         <main className ={classes.sectionTitle__container} style={{backgroundImage: `url(${image})`}}>
             <section className ={classes.sectionTitle__wrapper} >
-                <h1>{text}</h1>
+                <h1>{title}</h1>
             </section>
         </main>
     )
@@ -13,5 +13,5 @@ export const SectionTitle=({image, text})=>{
 
 SectionTitle.propTypes={
     image:PropTypes.instanceOf(Image),
-    text:PropTypes.string
+    title:PropTypes.string
 }
