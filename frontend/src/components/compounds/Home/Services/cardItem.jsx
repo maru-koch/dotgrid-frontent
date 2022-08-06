@@ -16,7 +16,7 @@ export const CardItem = ({icon, title, desc, btn, url}) =>{
                 <p>{desc}</p>
             </div>
             <div className = {classes.btn_holder}>
-                <button>{btn}</button>
+                <button onClick={()=>navigate('/learn-more')}>{btn}</button>
             </div>
         </div>
     )
