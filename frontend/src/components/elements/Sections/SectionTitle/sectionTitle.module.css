@@ -12,8 +12,8 @@
     left: 0;
     right: 0;
     background-image: var(--btn-gradient);
-    opacity: .5;
-    z-index: -1;
+    opacity: .85;
+    z-index: 1;
 }
 
 .sectionTitle__wrapper > *{
@@ -29,8 +29,9 @@
 
 
 .sectionTitle__wrapper h1{
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-family: Poppins;
     font-weight: 400;
     color:white;
+    text-shadow: 2px 2px 5px rgba(0,0,0, 0.5);
 }

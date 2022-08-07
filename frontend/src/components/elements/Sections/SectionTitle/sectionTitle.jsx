@@ -12,6 +12,5 @@ export const SectionTitle=({image, title})=>{
 }
 
 SectionTitle.propTypes={
-    image:PropTypes.instanceOf(Image),
     title:PropTypes.string
 }

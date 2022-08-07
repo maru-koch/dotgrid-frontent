@@ -55,79 +55,73 @@ const analytics_content =      `
 export const learnMoreData = {
     analytics:{
         image:{analytics_img_1},
-        description:{
-            title: "Energy Analytics",
-            content: {analytics_description}
-        },
+        title: "Energy Analytics",
+        description: analytics_description,
         sections:{
-            1:{
+            1: {
                 heading:"",
-                image:{analytics_img_1},
+                image:analytics_img_1,
                 content:""
-            },
-            2:{
+               },
+            2: {
                 heading:"Why Dotgrid Analytics?",
-                image:{analytics_img_2},
-                content:{analytics_content}
-            },
-            3:{
+                image: analytics_img_2,
+                content:analytics_content
+               },
+            3: {
                 heading:"Why Dotgrid Analytics?",
-                image:{analytics_img_2},
-                content:{analytics_content}
+                image: analytics_img_2,
+                content: analytics_content
+               }
+               }
             }
         }
-    },
-    smartMeter:{
-        image: {smart_meter_img},
-        description:{
-            title: "Smart Metering",
-            content: {smart_metering_description}
-        },
-        sections:{
-            1:{
-                heading:"",
-                image:{smart_meter_img},
-                content:{analytics_content}
-                },
-            2:{
-                heading:"Performance Optimization",
-                image:{smart_meter_img},
-                content:""
-            },
-            3:{
-                heading:"Performance Optimization",
-                image:{smart_meter_img},
-                content:{analytics_content}
-            }
-        }
-    },
-    automation:{
-        image: {automation_img},
-        description:{
-            title: "Energy Automation",
-            content: {automation_description}
-        },
-
-        sections:{
-            1:{
-                heading:"",
-                image:{automation_img},
-                content:{analytics_content}
-                },
-            2:{
-                heading:"Monitoring and Reporting",
-                image:{automation_img},
-                content:{analytics_content}
-            },
-            3:{
-                heading:"Monitoring and Reporting",
-                image:{automation_img},
-                content:{analytics_content}
-            }
-        }
-    }
+    // smartMeter:{
+    //     image: smart_meter_img,
+    //     title: "Smart Metering",
+    //     description: smart_metering_description,
+    //     sections:{
+    //         1: {
+    //             heading:"",
+    //             image:smart_meter_img,
+    //             content:{analytics_content}
+    //             },
+    //         2: {
+    //             heading:"Performance Optimization",
+    //             image:{smart_meter_img},
+    //             content:""
+    //            },
+    //         3: {
+    //             heading:"Performance Optimization",
+    //             image:{smart_meter_img},
+    //             content:{analytics_content}
+    //            }
+    //         }
+    //     },
+    // automation:{
+    //     image: {automation_img},
+    //     title: "Energy Automation",
+    //     description: {automation_description},
+    //     sections: {
+    //         1: {
+    //             heading:"",
+    //             image:{automation_img},
+    //             content:{analytics_content}
+    //             },
+    //         2: {
+    //             heading:"Monitoring and Reporting",
+    //             image:{automation_img},
+    //             content:{analytics_content}
+    //            },
+    //         3: {
+    //             heading:"Monitoring and Reporting",
+    //             image:{automation_img},
+    //             content:{analytics_content}
+    //         }
+    //     }
+    // }
        
-}
+
     
    
    
