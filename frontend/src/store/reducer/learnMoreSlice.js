@@ -3,10 +3,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
         image:"",
-        description:{
-            title: "",
-            content: ""
-        },
+        title: "",
+        description: "",
         sections:{
             1:{
                 heading:"",
@@ -25,12 +23,14 @@ const initialState = {
             }
         }
     }
+
 export const learnMoreSlice = createSlice({
     name: 'learnMore',
     initialState,
     reducers:{
         updateLearMore:(state, action)=>{
             state = {...action.payload}
+            console.log("store")
         }
     }
 })

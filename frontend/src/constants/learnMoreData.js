@@ -45,13 +45,13 @@ const automation_description =`
                                 insight and optimization for the. <br> Dotgrid provides the tools and 
                                 services to harness your energy data`
 
-const analytics_content = `
+const analytics_content =      `
                                 Enjoy 24/7 power supply without the extra cost of buying fuel, the 
                                 stress of enduring long queue at the patrol station, or the noise 
                                 pol ution. Enjoy 24/7 power supply without the extra cost of buying 
                                 fuel, the stress of enduring long queue at the patrol station, or 
                                 the noise pol ution.
-`
+                               `
 export const learnMoreData = {
     analytics:{
         image:{analytics_img_1},
