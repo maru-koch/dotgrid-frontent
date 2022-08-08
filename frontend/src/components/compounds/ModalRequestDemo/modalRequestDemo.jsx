@@ -4,7 +4,7 @@ import { RequestDemoForm, Modal, PopUp } from '../../compounds';
 import { Loader } from '../../elements';
 
 export const ModalRequestDemo=({open})=>{
-    console.log("modal",open)
+    
     // simplifies the process of requesting demo
     // and prevents the repetition of logic
 

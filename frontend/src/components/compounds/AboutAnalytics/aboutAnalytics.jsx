@@ -1,4 +1,5 @@
-import {SectionHeader, Section, SectionText } from '../../elements/Sections'
+import {SectionImage, Section, SectionText, SectionWrapper } from '../../elements/Sections'
+import image from '../../../assets/images/analytics_computer.png'
 const description =`
     DotGrid Solar Solutions Optimizes Solar energy generation and consumption.
     It provides uncommon experience of a robust AI powered analytics and automation
@@ -13,7 +14,10 @@ const description =`
 export const AboutAnalytics=()=>{
     return (
         <Section bg={{width:'100%'}}>
-            <SectionText bg={{width: '100%'}}title ="Why Solar Analytics" description={description}/>
+            <SectionWrapper>
+                <SectionText bg={{width: '100%'}}title ="Why Solar Analytics" description={description}/>
+                <SectionImage image={image}/>
+            </SectionWrapper>
         </Section>
     )
 }

@@ -26,6 +26,7 @@ export { VerifyEmail } from './VerifyEmail';
 export { SolarLight } from './SolarLight';
 export { WhyAnalytics } from './WhyAnalytics';
 export { HowItWorks } from './HowItWorks';
+export { DotgridInfo } from './DotgridInfo';
 export { Pricing } from './Pricing';
 export { SolarStat } from './SolarStat';
 export { SolarStats } from './SolarStats';

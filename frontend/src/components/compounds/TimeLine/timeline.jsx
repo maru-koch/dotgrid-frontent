@@ -1,8 +1,6 @@
 import {TimeLineItem} from './timelineItem';
-import {timeLineData} from '../../../constants/timelineData'
 import classes from './timeline.module.css'
-
-export const TimeLine =()=>{
+export const TimeLine =({timeLineData})=>{
     return(
         <div className={classes.timeline__container}>
             <div className={classes.timeline__wrapper}>

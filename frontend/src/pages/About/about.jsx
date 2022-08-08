@@ -1,4 +1,4 @@
-import {AboutAnalytics, SolarStats} from '../../components/compounds'
+import {AboutAnalytics, DotgridInfo} from '../../components/compounds'
 import { PageLayout } from '../../layout'
 
 
@@ -6,7 +6,7 @@ export const AboutPage =()=>{
     return (
         <PageLayout>
             <AboutAnalytics/>
-            <SolarStats/>
+            <DotgridInfo/>
         </PageLayout>
     )
 }

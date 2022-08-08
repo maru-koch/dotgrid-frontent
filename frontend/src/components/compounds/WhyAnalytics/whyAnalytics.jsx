@@ -32,7 +32,7 @@ export const WhyAnalytics =()=>{
                     openModal={()=>openModal()}
                     btnText="Request Demo"/>
             </SectionWrapper>
-         <SectionWrapper bg ={{backgroundColor:"#e6f3f8"}}>
+         <SectionWrapper bg ={{backgroundColor:"#e6f3f8", paddingTop:'40px'}}>
             <SectionText 
                 title ={word[1].title} 
                 description ={word[1].desc}
