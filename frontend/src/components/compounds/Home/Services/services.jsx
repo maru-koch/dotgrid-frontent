@@ -2,9 +2,6 @@
 import {Section, SectionHeader, SectionWrapper} from '../../../elements/Sections'
 import classes from './services.module.css'
 import { CardItem } from './cardItem'
-import { useDispatch } from 'react-redux'
-import { LEARNMORE_ACTIONS } from '../../../../store/reducer/learnMoreSlice';
-import { learnMoreData } from '../../../../constants/learnMoreData'
 
 const steps = [
     {icon: 'fas fa-chart-line', name:'analytics', title: 'Solar Analytics', desc :'With our AI power analytics, track your Energy consumption patterns', text: "Learn More"},      
@@ -15,15 +12,7 @@ const steps = [
 
 
 export const Services =()=>{
-
-    const dispatch = useDispatch();
-
-    const dispatchLearnMore=(name)=>{
-        // dispatches the data to the redux store
-        const learnMore = learnMoreData[name]
-        dispatch(LEARNMORE_ACTIONS.updateLearMore(learnMore))
-    }
-
+  
     return(
         <section className={classes.section}>
             <SectionHeader title ="What We do" subtitle ="We make Solar Energy accessible and cheap"/>
@@ -36,7 +25,7 @@ export const Services =()=>{
                             desc = {step.desc} 
                             btn = {step.text} 
                             name ={step.name} 
-                            dispatchLearnMore={dispatchLearnMore}/>
+                           />
                     )}
                 </SectionWrapper>
             </Section>

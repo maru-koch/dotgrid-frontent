@@ -10,16 +10,18 @@ export * from './TimeLine';
 export * from './SolarProjects/solarProjects'
 export * from './SolarAnalytic/solarAnalytic'
 
-export { SignUp } from './SignUp';
+
 export { AboutAnalytics } from './AboutAnalytics';
+export { Contact } from './Contact';
+export { ConfirmEmail } from './ConfirmEmail';
 export { SignIn } from './SignIn/signin';
 export { ForgotPassword } from './ForgotPassword';
 export { ResetPassword } from './ResetPassword';
 export { LearnMore } from './LearnMore'
 export { SideBar } from './SideBar';
 export { StarterImage } from './StarterImage';
+export { SignUp } from './SignUp';
 export { SolarPanel } from './SolarPanel';
-export { ConfirmEmail } from './ConfirmEmail';
 export { VerifyEmail } from './VerifyEmail';
 export { SolarLight } from './SolarLight';
 export { WhyAnalytics } from './WhyAnalytics';

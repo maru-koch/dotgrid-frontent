@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
+import {useState, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { HowItWorks } from '../../compounds'
-import {learnMoreData} from '../../../constants/learnMoreData'
 import { Section, SectionImage, SectionWrapper, SectionText, SectionTitle, SectionContainer} from '../../elements';
 import classes from './learnMore.module.css'
 
@@ -27,9 +26,8 @@ export const initialValues ={
             }
         }
     }
-
 const SECTION_CONTAINER_STYLE ={
-        width: '700px', 
+        width: '100%', 
         height: '400px',
         zIndex:1000,
         fontSize: '1.6rem',
@@ -37,14 +35,14 @@ const SECTION_CONTAINER_STYLE ={
         display: 'flex',
         textAlign: 'center',
         color:'#fff',
+        textShadow:'1px 1px 5px rgba(0,0,0,0.2)',
         borderRadius:'20px',
         boxShadow: '2px 2px 4px rgba(0,0,0,0.5)',
         justifyContent: 'center', 
         alignItems: 'center',
         fontFamily:'Poppins',
-        backgroundColor: 'rgba(0,0,0,0.8)',
+        backgroundColor: 'var(--accent-color)',
                             }
-
 const SECTION_STYLE = {
             display: 'flex',
             justifyContent: 'center',
@@ -67,13 +65,13 @@ export const LearnMore =({details})=>{
 
     // fetches the learn more details and populates the page
 
-    const page = useSelector(state=>state.learnMore)
+    const learnmore  = useSelector(state=>state.learnMore)
     const [pageDetails, setPageDetails] = useState(initialValues)
   
-    useEffect(()=>{
-        setPageDetails(learnMoreData['analytics'])
-        console.log(learnMoreData['analytics'])
-    },[])
+    useMemo(()=>{
+        setPageDetails(learnmore)
+        console.log(learnmore)
+    },[learnmore])
 
     return (
         <Section>
@@ -88,7 +86,6 @@ export const LearnMore =({details})=>{
                     <div style={{...SECTION_CONTAINER_STYLE}}>
                         <div 
                             style ={{ ...SECTION_STYLE, 
-                            // backgroundImage: `url(${pageDetails.sections[1].image})`,
                             }}
                             >
                             <p>{pageDetails.sections[2].content}</p>
@@ -118,7 +115,6 @@ export const LearnMore =({details})=>{
                     />
                     <SectionImage image={pageDetails.sections[3].image}/>
                 </SectionWrapper>
-
             </SectionContainer>
             <HowItWorks/>
         </Section>

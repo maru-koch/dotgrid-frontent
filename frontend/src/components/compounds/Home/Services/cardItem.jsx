@@ -1,13 +1,21 @@
 import classes from './cardItem.module.css'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { LEARNMORE_ACTIONS } from '../../../../store/reducer/learnMoreSlice';
+import { learnMoreData } from '../../../../constants/learnMoreData'
 
 export const CardItem = ({icon, title, desc, btn, url, name, dispatchLearnMore}) =>{
 
     const navigate = useNavigate()
+    const { updateLearnMore} = LEARNMORE_ACTIONS
+    const dispatch = useDispatch();
 
+    
     const handleDispatch=()=>{
+        
         // dispatches an action that sends the learn more detail to store
-        dispatchLearnMore(name)
+        const payload = learnMoreData[name]
+        dispatch(updateLearnMore(payload))
         navigate('/learn-more')
     }
     

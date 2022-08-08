@@ -1,29 +1,35 @@
 
+import { useState } from 'react'
+import { whyAnalyticsData as word } from '../../../constants/whyAnalyticsData'
+import { ModalRequestDemo } from '../ModalRequestDemo'
 import { Section, SectionText, SectionWrapper, SectionImage, SectionHeader} from '../../elements'
 import analytics_phone from '../../../assets/images/smart_home.png'
 import analytics_computer from '../../../assets/images/energy_optimization.png'
 
-const word =[{
-    title:'Energy Optimization',
-    desc: `
-                Automate your energy consumption by setting when you want 
-                your devices to turn on or off. You can remotely select 
-                the time and how long you want a particular appliance to 
-                be on to save Energy and optimize performance`,
+export const WhyAnalytics =()=>{
 
-    button_text: 'Order Solar PV Panel'
-},{
-    title:'Smart Home',
-    desc: `
-               Monitor your energy consumption pattern by looking at 
-               the visualization of your energy data. Our AI driven analytics will
-               guide you in making the best decision.`,
+    // manager request demo forms and popup
+    const [open, setOpen] = useState(false)
+    const [msgSent, setMsgSent] = useState(false)
+    const [requestDemo, setRequestDemo] = useState(false)
 
-    button_text: 'Request Demo'
-}
-]
+    const openModal=()=>{
+        setOpen(true)
+    }
+    const closeModal=()=>{
+        setOpen(false)
+        setRequestDemo(false)
+    }
 
-export const WhyAnalytics =({openModal})=>{
+    const requestDemoHandler =()=>{
+         console.log('Demo requested')
+         setRequestDemo(true)
+         setTimeout(()=>{
+            setMsgSent(true)
+         }, 5000)
+    }
+
+  
     return(
         <Section>
             <SectionHeader title = "Why Dotgrid Analytics?" subtitle = ""/>
@@ -56,6 +62,14 @@ export const WhyAnalytics =({openModal})=>{
                 wrapperStyle={{height:500, width:'100%'}}
                 containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
         </SectionWrapper>
+        <ModalRequestDemo
+                open={open}
+                msgSent={msgSent}
+                closeModal={closeModal}
+                requestDemo = {requestDemo}
+                requestDemoHandler={requestDemoHandler}
+            />
+
         </Section>
        
     )

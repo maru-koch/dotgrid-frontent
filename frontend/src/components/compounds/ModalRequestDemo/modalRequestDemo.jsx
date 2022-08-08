@@ -1,16 +1,32 @@
-
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { RequestDemoForm, Modal, PopUp } from '../../compounds'
-import { Loader } from '../../elements'
+import { RequestDemoForm, Modal, PopUp } from '../../compounds';
+import { Loader } from '../../elements';
 
-export const ModalRequestDemo=({open, requestDemo, msgSent, requestDemoHandler, closeModal})=>{
+export const ModalRequestDemo=({open = false})=>{
 
     // simplifies the process of requesting demo
     // and prevents the repetition of logic
 
+    const [isOpen, setIsOpen] = useState(open)
+    const [msgSent, setMsgSent] = useState(false)
+    const [requestDemo, setRequestDemo] = useState(false)
+
+    const closeModal=()=>{
+        setIsOpen(false)
+        setRequestDemo(false)
+    }
+
+    const requestDemoHandler =()=>{
+         setRequestDemo(true)
+         setTimeout(()=>{
+            setMsgSent(true)
+         }, 5000)
+    }
+
     return (
         <div>
-            <Modal open = {open} >
+            <Modal open = {isOpen} >
             {
            msgSent?
                 <PopUp 

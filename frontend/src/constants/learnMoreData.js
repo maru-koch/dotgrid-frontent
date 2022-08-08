@@ -60,7 +60,7 @@ export const learnMoreData = {
         sections:{
             1: {
                 heading:"",
-                image:analytics_img_1,
+                image: analytics_img_1,
                 content:""
                },
             2: {
@@ -75,52 +75,52 @@ export const learnMoreData = {
                }
                }
             }
+        ,
+    smartMeter:{
+        image: {smart_meter_img},
+        title: "Smart Metering",
+        description: smart_metering_description,
+        sections:{
+            1: {
+                heading:"",
+                image:smart_meter_img,
+                content:analytics_content
+                },
+            2: {
+                heading:"Performance Optimization",
+                image:smart_meter_img,
+                content: analytics_content
+               },
+            3: {
+                heading:"Performance Optimization",
+                image: smart_meter_img,
+                content: analytics_content
+               }
+            }
+        },
+    automation:{
+        image: automation_img,
+        title: "Energy Automation",
+        description: automation_description,
+        sections: {
+            1: {
+                heading:"",
+                image:automation_img,
+                content:analytics_content
+                },
+            2: {
+                heading:"Monitoring and Reporting",
+                image: automation_img,
+                content:analytics_content
+               },
+            3: {
+                heading:"Monitoring and Reporting",
+                image: automation_img,
+                content:analytics_content
+            }
         }
-    // smartMeter:{
-    //     image: smart_meter_img,
-    //     title: "Smart Metering",
-    //     description: smart_metering_description,
-    //     sections:{
-    //         1: {
-    //             heading:"",
-    //             image:smart_meter_img,
-    //             content:{analytics_content}
-    //             },
-    //         2: {
-    //             heading:"Performance Optimization",
-    //             image:{smart_meter_img},
-    //             content:""
-    //            },
-    //         3: {
-    //             heading:"Performance Optimization",
-    //             image:{smart_meter_img},
-    //             content:{analytics_content}
-    //            }
-    //         }
-    //     },
-    // automation:{
-    //     image: {automation_img},
-    //     title: "Energy Automation",
-    //     description: {automation_description},
-    //     sections: {
-    //         1: {
-    //             heading:"",
-    //             image:{automation_img},
-    //             content:{analytics_content}
-    //             },
-    //         2: {
-    //             heading:"Monitoring and Reporting",
-    //             image:{automation_img},
-    //             content:{analytics_content}
-    //            },
-    //         3: {
-    //             heading:"Monitoring and Reporting",
-    //             image:{automation_img},
-    //             content:{analytics_content}
-    //         }
-    //     }
-    // }
-       
+    }
+}
 
     
    

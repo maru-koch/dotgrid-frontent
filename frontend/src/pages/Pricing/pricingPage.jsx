@@ -1,4 +1,4 @@
-import {Modal, Pricing, PriceForm} from '../../components/compounds'
+import {Modal, Pricing, PriceForm, HowItWorks} from '../../components/compounds'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import {PageLayout} from '../../layout'
@@ -41,6 +41,7 @@ export const PricingPage=()=>{
     return (
         <PageLayout>
             <Pricing openModal={openModal}/>
+            <HowItWorks/>
             <Modal open={open} close ={closeModal}>
                <PriceForm plan={plan}/>
             </Modal>

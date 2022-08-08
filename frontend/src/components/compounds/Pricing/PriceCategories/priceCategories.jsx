@@ -50,7 +50,7 @@ export const PriceCategories=({plans, modelType, openModal})=>{
     // Display a single plan and its features
     
     return (
-        <Section>
+        <Section bg={{margin:"40px 40px"}}>
             <SectionWrapper bg={{gap:'20px'}}>
                 {plans.map((plan, idx)=>
                     <Category key ={idx} price={plan.price} priceModel ={plan.priceModel} features = {plan.features} modelType ={modelType} openModal={openModal}/>

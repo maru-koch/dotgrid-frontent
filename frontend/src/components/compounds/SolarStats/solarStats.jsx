@@ -1,11 +1,13 @@
 
-import {SolarStat} from '../SolarStat'
-import { SectionHeader, SectionWrapper } from '../../elements/Sections'
-import classes from './solarStats.module.css'
+import { useNavigate } from 'react-router-dom';
+import {SolarStat} from '../SolarStat';
+import { SectionHeader, SectionWrapper } from '../../elements/Sections';
+import classes from './solarStats.module.css';
 
 
 
 export const SolarStats=()=>{ 
+    const navigate = useNavigate()
     return (
     <div className={classes.sectionWrapper}>
         <SectionHeader title = "" subtitle = ""/>
@@ -27,7 +29,7 @@ export const SolarStats=()=>{
                             </p>
                         </div>
                         <div className = {classes.btn_holder}>
-                            <button>Contact Us</button>
+                            <button onClick={()=>navigate("/contact")}>Contact Us</button>
                         </div>
                     </div>
                 </div>

@@ -28,9 +28,12 @@ export const learnMoreSlice = createSlice({
     name: 'learnMore',
     initialState,
     reducers:{
-        updateLearMore:(state, action)=>{
-            state = {...action.payload}
-            console.log("store")
+        updateLearnMore:(state, action)=>{
+            state.image = action.payload.image
+            state.description = action.payload.description
+            state.title = action.payload.title
+            state.sections = action.payload.sections
+            console.log('state', state)
         }
     }
 })
