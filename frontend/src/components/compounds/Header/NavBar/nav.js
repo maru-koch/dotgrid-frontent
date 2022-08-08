@@ -24,7 +24,7 @@ export default function NavLink(props){
     const [showDropDown, setShowDropDown] = useState(false)
 
     // manager request demo forms and popup
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
     const openModal=()=>{
         setOpen(true)
@@ -68,7 +68,6 @@ export default function NavLink(props){
             {showDropDown && <DropDown items ={items} closeDropDown={close}/>}
 
             <ModalRequestDemo open={open}/>
-            
         </Navbar>
     )
 }

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { RequestDemoForm, Modal, PopUp } from '../../compounds';
 import { Loader } from '../../elements';
 
-export const ModalRequestDemo=({open = false})=>{
-
+export const ModalRequestDemo=({open})=>{
+    console.log("modal",open)
     // simplifies the process of requesting demo
     // and prevents the repetition of logic
 
@@ -23,6 +23,11 @@ export const ModalRequestDemo=({open = false})=>{
             setMsgSent(true)
          }, 5000)
     }
+
+    useMemo(()=>{
+        // calls the setIsOpen function when open (bool) changes
+        setIsOpen(open)
+    },[open])
 
     return (
         <div>
