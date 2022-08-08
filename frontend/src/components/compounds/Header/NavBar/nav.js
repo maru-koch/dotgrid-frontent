@@ -25,23 +25,9 @@ export default function NavLink(props){
 
     // manager request demo forms and popup
     const [open, setOpen] = useState(false)
-    const [msgSent, setMsgSent] = useState(false)
-    const [requestDemo, setRequestDemo] = useState(false)
 
     const openModal=()=>{
         setOpen(true)
-    }
-    const closeModal=()=>{
-        setOpen(false)
-        setRequestDemo(false)
-    }
-
-    const requestDemoHandler =()=>{
-         console.log('Demo requested')
-         setRequestDemo(true)
-         setTimeout(()=>{
-            setMsgSent(true)
-         }, 5000)
     }
 
     const close=()=>{
@@ -81,14 +67,8 @@ export default function NavLink(props){
         
             {showDropDown && <DropDown items ={items} closeDropDown={close}/>}
 
-            <ModalRequestDemo
-                open={open}
-                msgSent={msgSent}
-                closeModal={closeModal}
-                requestDemo = {requestDemo}
-                requestDemoHandler={requestDemoHandler}
-            />
-
+            <ModalRequestDemo open={open}/>
+            
         </Navbar>
     )
 }

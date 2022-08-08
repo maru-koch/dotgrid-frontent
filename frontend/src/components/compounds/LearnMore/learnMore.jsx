@@ -1,6 +1,6 @@
 import {useState, useMemo } from 'react'
 import { useSelector } from 'react-redux'
-import { HowItWorks } from '../../compounds'
+import { HowItWorks, ModalRequestDemo } from '../../compounds'
 import { Section, SectionImage, SectionWrapper, SectionText, SectionTitle, SectionContainer} from '../../elements';
 import classes from './learnMore.module.css'
 
@@ -67,7 +67,13 @@ export const LearnMore =({details})=>{
 
     const learnmore  = useSelector(state=>state.learnMore)
     const [pageDetails, setPageDetails] = useState(initialValues)
-  
+
+    const [open, setOpen] = useState(false)
+ 
+    const openModal=()=>{
+        setOpen(true)
+    }
+
     useMemo(()=>{
         setPageDetails(learnmore)
         console.log(learnmore)
@@ -102,6 +108,7 @@ export const LearnMore =({details})=>{
                         description={`${pageDetails.sections[2].content}`}
                         btn={true}
                         btnText="Request Demo"
+                        openModal={openModal}
                     />
                 </SectionWrapper>
 
@@ -112,11 +119,13 @@ export const LearnMore =({details})=>{
                         description={`${pageDetails.sections[3].content}`}
                         btn={true}
                         btnText="Request Demo"
+                        openModal={openModal}
                     />
                     <SectionImage image={pageDetails.sections[3].image}/>
                 </SectionWrapper>
             </SectionContainer>
             <HowItWorks/>
+            <ModalRequestDemo open={open}/>
         </Section>
     )
 }
