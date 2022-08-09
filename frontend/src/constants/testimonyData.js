@@ -15,19 +15,18 @@ export const testimonies =[
         {
             name: 'Jasper Omelukor', 
             pic: pic_2, 
-            testimony: `Omo! it was a finger-licking experience o. after my colleague
-                        ordered a fufu and oha soup from the office that fateful day, I
-                        never seized coming back for more.`,
-            position: 'Fufu and Oha Soup Enthusiast',
-            company: 'XYZ Inc'
+            testimony: `With dotgrid, I can control my home appliances from anywhere.
+                        I can automate energy consumption by setting when an appliance goes on or off`,
+            position: 'Home Owner',
+            company: ''
 
         },
         {
             name: 'Halima Jumia', 
             pic: pic_3,
-            testimony: `No Naija food tastes as good as Rafi Meals baltic Rice. the Cat fish pepper 
-                        soup got me singing Halleluya!.`,
-            position: 'AS regualar',
-            company: 'XYZ Inc'   
+            testimony: `I can quickly analyze data and generate report I can quickly share with colleagues at work.
+                        Dotgrid dashboard is really a life saver.`,
+            position: 'Product manager',
+            company: 'Meta Inc'   
         },
     ]

@@ -10,6 +10,7 @@
     margin-left: 100px;
 }
 
+/* Vertical line */
 .timeline__container::after{
     position: absolute;
     top:0;
