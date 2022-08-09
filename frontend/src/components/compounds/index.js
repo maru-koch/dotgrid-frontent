@@ -18,6 +18,7 @@ export { SignIn } from './SignIn/signin';
 export { ForgotPassword } from './ForgotPassword';
 export { ResetPassword } from './ResetPassword';
 export { LearnMore } from './LearnMore'
+export { Testimony } from './Testimonies'
 export { SideBar } from './SideBar';
 export { StarterImage } from './StarterImage';
 export { SignUp } from './SignUp';
