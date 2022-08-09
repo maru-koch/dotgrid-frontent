@@ -24,8 +24,7 @@ export const testimonies =[
         {
             name: 'Halima Jumia', 
             pic: pic_3,
-            testimony: `I can quickly analyze data and generate report I can quickly share with colleagues at work.
-                        Dotgrid dashboard is really a life saver.`,
+            testimony: ` Dotgrid dashboard is really a life saver. Generated reports can easily be shared or exported in variety of formats.`,
             position: 'Product manager',
             company: 'Meta Inc'   
         },

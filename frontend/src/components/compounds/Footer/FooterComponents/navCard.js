@@ -8,11 +8,11 @@ const NavCard =()=>{
         <div className={classes.footerCard__wrapper}>
             <h2>Company</h2>
             <ul>
-                <li>About us</li>
-                <li>Careers</li>
-                <li onClick={()=>navigate('/contact')}>Contact Us</li>
-                <li>Blog</li>
                 <li>Our Story</li>
+                <li>Blog</li>
+                <li onClick={()=>navigate('/contact')}>Contact Us</li>
+                <li>Career</li>
+                <li>Get Started</li>
             </ul>
         </div>
     </div>

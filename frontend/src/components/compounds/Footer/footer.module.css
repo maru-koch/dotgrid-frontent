@@ -118,6 +118,7 @@
 @media(max-width:1000px){
     .footer__wrapper{
         flex-wrap: wrap;
+        flex-direction: column;
     }
     .footerCard__container {
             width: 100%;

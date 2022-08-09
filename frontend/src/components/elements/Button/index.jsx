@@ -1,4 +1,5 @@
 import React from 'react';
+import {Loader} from '../../elements'
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { ReactComponent as GoogleIcon } from './googlebtn.svg';
@@ -35,6 +36,16 @@ export const GoogleBtn = ({ text }) => (
   </div>
 );
 
+export const LoaderBtn = ({ loading, text }) => (
+  <div style={{position: 'relative'}}>
+    <Button type="submit" stretch btnType="secondary">
+      <div style={{position: 'absolute', left:0, display:'flex', justifyContent: 'center', alignItems: 'center'}}>
+        {loading? <Loader height={50} width={50}/> :" "}
+      </div>
+     {text}
+    </Button>
+  </div>
+)
 
 export const SelectPriceBtn = ({ text }) => (
   <div className="wrapper-selectPrice-btn">
@@ -46,6 +57,7 @@ export const SelectPriceBtn = ({ text }) => (
 
 Button.MainGreen = MainGreen;
 Button.GoogleBtn = GoogleBtn;
+Button.Loader = LoaderBtn;
 Button.SelectPriceBtn = SelectPriceBtn;
 
 Button.propTypes = {
@@ -61,6 +73,11 @@ Button.propTypes = {
 MainGreen.propTypes = {
   children: PropTypes.node,
   text: PropTypes.string,
+};
+
+LoaderBtn.propTypes={
+  text: PropTypes.string,
+  loading: PropTypes.bool
 };
 
 GoogleBtn.propTypes = {

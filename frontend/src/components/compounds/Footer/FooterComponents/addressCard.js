@@ -20,7 +20,7 @@ const AddressCard =()=>{
                     </div>
                     <div className ={classes.footerCard__address_box}>
                         <i className = "fa fa-envelope"></i>
-                        <p>Info@dotsolar.com</p>
+                        <p>support@dotsolar.com</p>
                     </div>
                     <div className ={classes.footerCard__address_box}>
                         <i className = "fa fa-phone"></i>

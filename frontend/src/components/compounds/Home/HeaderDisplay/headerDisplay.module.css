@@ -61,3 +61,15 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* MOBILE MAX: 450PX */
+
+@media(max-width:450px){
+    .header__section{
+        width: 100%;
+    }
+    .header__wrapper{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}

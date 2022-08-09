@@ -6,13 +6,13 @@ const MenuCard =()=>{
     return (
     <div className={classes.footerCard__container}>
         <div className={classes.footerCard__wrapper}>
-            <h2>Our Services</h2>
+            <h2>What It does</h2>
             <ul>
-                <li onClick={()=>navigate('/solar-installation')}>Solar Panel Installation</li>
-                <li>Energy Loan</li>
-                <li onClick={()=>navigate('/solar-analytics')}>Solar Analytics</li>
+                <li onClick={()=>navigate('/solar-installation')}>Solar PV Calculator</li>
+                <li>Solar Analytics</li>
+                <li onClick={()=>navigate('/solar-analytics')}>Energy Automation</li>
                 <li>Smart Metering</li>
-                <li>Solar Projects Design and Costing</li>
+                <li>Fault detection and Reporting</li>
             </ul>
         </div>
     </div>

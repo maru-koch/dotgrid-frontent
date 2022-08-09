@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import { Text, Input, Button, Loader, SectionImage } from '../../elements';
+import { Text, Input, Button, SectionImage } from '../../elements';
 import { useNavigate } from 'react-router-dom';
+
+
 import { useDispatch, useSelector } from 'react-redux';
 import { AUTH_ACTIONS } from '../../../store/reducer/auth/reducerSlice';
 import { validate } from './validation'
@@ -72,7 +74,12 @@ export const SignIn = () => {
                 <Text.RememberMe navigate ={()=>navigate('/forgot-password')}/>
             </div>
             <div className="signin-wrapper-button">
-                <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler}/>
+                {/* <Button type="submit" stretch text="Sign In" onClick={onSubmitHandler}>
+                  <Spinner/>
+                </Button> */}
+                <div>
+                <Button type="submit" stretch text="Login" />
+            </div>
             </div>
         </form>
         </div>
