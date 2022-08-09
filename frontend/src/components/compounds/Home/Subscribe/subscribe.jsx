@@ -25,7 +25,7 @@ export const Subscribe=(props)=>{
 
     return (
     <Section>
-        <SectionContainer style ={classes.section}>
+        <Section bg ={{padding: '50px'}}>
             <SectionHeader title ="Subscribe to News Letter" subtitle = "Be the first to Know about Important Events in the Solar Energy Industry" bg={{color:'grey'}}/>
             <div className={classes.subscribe__container}>
                 <div className={classes.subscribe__wrapper}>
@@ -33,7 +33,7 @@ export const Subscribe=(props)=>{
                     <button onClick={()=>onSubmitHandler()}>Sign up</button>
                 </div>
             </div>
-        </SectionContainer>
+        </Section>
     </Section>)
 }
 

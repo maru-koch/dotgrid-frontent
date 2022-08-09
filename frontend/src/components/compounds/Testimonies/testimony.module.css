@@ -1,0 +1,101 @@
+
+.testimonyContainer{
+    background-color: var(--body-color);
+    padding-bottom: 70px;  
+}
+
+.testimonyContainer h2, .testimonyContainer h4{
+    color: var(--word);
+    
+}
+
+.testimonyWrapper{
+    background-color: var(--header-color)
+}
+.progressBar{
+    height: 4px;
+    width: 100%;
+    background-color: var(--btn-border-color);
+    animation: grow 10s linear infinite;
+    transform-origin: left;
+}
+
+.card{
+    max-width: 100vh;
+    padding: 30px 80px;
+    /* background-color: rgb(149, 149, 216); */
+    background-color: var(--accent-4-color);
+    position: relative;
+}
+
+.fas{
+    position: absolute;
+    font-size: 1.8rem;
+}
+
+.testimonial{
+    color: var(--word);
+    font-family: Mulish;
+    font-weight: normal;
+    font-size: 1rem;
+    margin: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userImage{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid var(--color);
+    padding: 5px;
+}
+
+.userDetails{
+    margin-left: 20px;
+}
+.userName{
+    font-size: 1rem;
+    color: var(--background-color)
+}
+
+.user p{
+    margin:0;
+    font-size: 0.8rem;
+    color: var(--word);
+}
+@keyframes grow{
+    0% {
+        transform: scaleX(0);
+    }
+}
+
+.left i{
+    font-size: 50px;
+    position: absolute;
+    color: var(--color);
+    left: 0;
+    margin-left: 40px;
+}
+
+@media(max-width:1000px){
+    .card {
+        width: 90vw;
+        padding: 30px 30px;
+        /* background-color: rgb(149, 149, 216); */
+        background-color: var(--accent-4-color);
+        position: relative;
+    }
+    .left i {
+        font-size: 40px;
+        position: absolute;
+        color: var(--color);
+        left: 0;
+        margin-left: 20px;
+    }
+}
