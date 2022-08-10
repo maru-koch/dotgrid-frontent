@@ -6,7 +6,7 @@ export const EnergyConsumed=()=>{
         <Section>
             <EnergyHeader/>
             <Appliances/>
-            <EnergyResult>
+            <EnergyResult/>
         </Section>
     )
 }

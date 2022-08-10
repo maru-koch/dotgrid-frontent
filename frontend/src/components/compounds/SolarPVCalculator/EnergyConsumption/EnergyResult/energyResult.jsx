@@ -1,11 +1,13 @@
+import { Section, SectionWrapper } from "../../../../elements"
 
-
-export const EnergyConsumed=()=>{
+export const EnergyResult=({total})=>{
     return (
         <Section>
-            <EnergyHeader/>
-            <Appliances/>
-            <EnergyResult>
+            <SectionWrapper>
+                <p>Total Energy Consumed 'watt/per day'</p>
+                <div><i></i></div>
+                <p>{total}</p>
+            </SectionWrapper>
         </Section>
     )
 }
