@@ -3,6 +3,12 @@ import { EnergyConsumedHeader } from './EnergyConsumedHeader';
 import { EnergyResult} from './EnergyResult';
 import { Appliances } from './Appliances';
 import image from '../../../../assets/images/appliances.png'
+
+import {useMemo, useState} from 'react'
+import {useSelector} from 'react-redux'
+
+
+
 const BG ={
     marginTop:"50px",
     height: '400px',
@@ -23,12 +29,23 @@ const BlankImage=()=>{
         </SectionContainer>
     )
 }
-export const EnergyConsumed=({addItem, energy=[1]})=>{
+
+export const EnergyConsumed=({addItem})=>{
+
+    // contains all components related to energy consumption
+
+    const applianceList = useSelector(state =>state.appliance)
+    const [appliances, setAppliances] = useState([])
+
+    useMemo(()=>{
+        setAppliances(applianceList)
+    }, [applianceList])
+
     return (
         <Section>
             <EnergyConsumedHeader/>
             {
-                energy[0]? <Appliances/> : <BlankImage/>
+                appliances[0]? <Appliances appliances={appliances}/> : <BlankImage/>
             }
             <EnergyResult/>
         </Section>

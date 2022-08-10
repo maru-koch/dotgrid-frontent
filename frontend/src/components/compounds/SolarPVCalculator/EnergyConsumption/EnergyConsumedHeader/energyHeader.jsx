@@ -31,7 +31,7 @@ export const EnergyConsumedHeader=()=>{
     return (
         <Section>
             <SectionWrapper>
-                <p id={classes.energyHeader__title}>Calculate the Amount of Energy Consumed per Day</p>
+                <p id={classes.energyHeader__title}></p>
                 <Button onClick={()=>addAppliance()} color="var(--accent-color)" text="Add Appliance" />
             </SectionWrapper>
         </Section>

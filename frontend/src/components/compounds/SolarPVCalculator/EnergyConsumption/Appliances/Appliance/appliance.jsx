@@ -10,9 +10,8 @@ const ApplianceList=({getName, id})=>{
     const dispatch = useDispatch();
 
     const removeAppliance=()=>{
-        alert(id)
+        console.log(id)
         dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
-        
     }
 
     return(
@@ -29,7 +28,7 @@ const ApplianceList=({getName, id})=>{
 export const Appliance=({id, quantity, watt, hrPerDay, wattHour="0"})=>{
         return (
                 <tr>
-                    <td> <ApplianceList id= {id}/></td>
+                    <td> <ApplianceList id = {id}/></td>
                     <td><input type="text" name="watt" value={quantity}/></td>
                     <td><input type="text" name="watt" value={watt}/></td>
                     <td><input type="text" name="watt" value={hrPerDay}/></td>

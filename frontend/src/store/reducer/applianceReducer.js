@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = [{
-    id:1,
-    quantity:2, 
-    watt:12, 
-    hrPerDay:3,
-    wattHour: 0 
-    }]
+const initialState = []
 
 export const ApplianceSlice=createSlice({
     name: 'appliance',
@@ -16,7 +10,7 @@ export const ApplianceSlice=createSlice({
             state.push(action.payload);
         },
         removeAppliance:(state, action)=>{
-            state.filter((appliance)=> appliance.id === action.payload.id)
+            state.filter((appliance, idx)=> appliance.id === action.payload.id)
         }
     }
 })
