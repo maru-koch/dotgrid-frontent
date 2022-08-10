@@ -1,4 +1,5 @@
 
+import { useState} from 'react'
 import { useDispatch } from 'react-redux'
 import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer'
 
@@ -19,6 +20,7 @@ const BTN={
     height: '30px',
     width: '30px',
     padding: '20px',
+    margin: '10px',
     borderRadius: '50%', 
     fontSize: '20px',
     display: 'flex',
@@ -51,14 +53,50 @@ const TD_STYLE ={
     textAlign:'center', 
     fontSize: '1rem'
 }
-export const Appliance=({id, quantity, watt, hrPerDay, wattHour="0"})=>{
+
+const WATT_STYLE={
+    backgroundColor: 'var(--primary-color)', 
+     display: 'flex',
+    justifyContent: 'center', 
+    alignItems: 'center',
+    height: '100%', 
+    width: '100%',
+    padding: '15px 0',
+    color: 'white',
+    fontSize: '1.2rem', 
+    fontFamily:'Poppins',
+    fontWeight: 'bold',
+}
+
+const Input=({onChangeHandler, name})=>{
+    return (
+        <td><input style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
+    )
+}
+
+export const Appliance=({id})=>{
+
+        const [watt, setWatt] = useState(0)
+        const  [appliance, setAppliance] = useState({
+            quality:0,
+            watt:0,
+            hrPerDay:0,
+        })
+
+        const onChangeHandler=(e)=>{
+            appliance[e.target.name] = e.target.value
+            setAppliance(appliance)
+            const energyUsage = (appliance.hrPerDay * appliance.quality) / appliance.watt
+            setWatt(watt)
+        }
+
         return (
                 <tr>
                     <td> <ApplianceList id = {id}/></td>
-                    <td><input style={{...TD_STYLE}} type="text" name="watt" /></td>
-                    <td><input style={{...TD_STYLE}} type="text" name="watt" /></td>
-                    <td><input style={{...TD_STYLE}} type="text" name="watt" /></td>
-                    <td>{wattHour}</td>  
+                    <Input name ="quantity" onChangeHandler={onChangeHandler}/>
+                    <Input name ="watt" onChangeHandler={onChangeHandler}/>
+                    <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
+                    <td style={{...WATT_STYLE}}>{watt}</td>  
                 </tr>
         )
     }

@@ -32,7 +32,6 @@ export const Appliances=({appliances=[]})=>{
                         id={idx}
                     />)}
             </tbody>
-            <EnergyResult/>
         </table>
     )
 }
