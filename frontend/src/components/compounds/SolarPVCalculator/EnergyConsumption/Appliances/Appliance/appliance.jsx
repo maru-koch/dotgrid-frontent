@@ -1,11 +1,20 @@
-import {Section, SectionWrapper, SectionContainer} from '../../../../../elements'
-import { useState } from 'react'
-import { useEffect } from 'react'
+
+import { useDispatch } from 'react-redux'
+import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer'
 
 
 const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
 
-const ApplianceList=({getName, removeAppliance})=>{
+const ApplianceList=({getName, id})=>{
+  
+    const dispatch = useDispatch();
+
+    const removeAppliance=()=>{
+        alert(id)
+        dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
+        
+    }
+
     return(
         <main>
             <section>
@@ -17,10 +26,10 @@ const ApplianceList=({getName, removeAppliance})=>{
         </main>
     )
 }
-export const Appliance=({id, quantity, watt, hrPerDay, wattHour="0", removeAppliance})=>{
+export const Appliance=({id, quantity, watt, hrPerDay, wattHour="0"})=>{
         return (
                 <tr>
-                    <td> <ApplianceList removeAppliance={removeAppliance}/></td>
+                    <td> <ApplianceList id= {id}/></td>
                     <td><input type="text" name="watt" value={quantity}/></td>
                     <td><input type="text" name="watt" value={watt}/></td>
                     <td><input type="text" name="watt" value={hrPerDay}/></td>
