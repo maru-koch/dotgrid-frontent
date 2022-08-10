@@ -1,54 +1,31 @@
-import {Section, SectionWrapper} from '../../../../../elements'
+import {Section, SectionWrapper, SectionContainer} from '../../../../../elements'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
+const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
 
-const appliances =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
-
-const ApplianceList=()=>{
+const ApplianceList=({getName, removeAppliance})=>{
     return(
         <main>
             <section>
-                <button><i class="fa fa-remove"></i></button>
+                <button onClick={()=>removeAppliance()}><i class="fa fa-remove"></i></button>
                 <select name="appliance" id ="appliance-select">
-                    {appliances.map((appliance)=><option value={appliane}>{appliance}</option>)}
+                    {applianceList.map((appliance)=><option value={appliance}>{appliance}</option>)}
                 </select>
-                <button type="button"><i className="fa fa-chevron-down"></i></button>
             </section>
         </main>
     )
 }
-const Appliance=()=>{
-const [appliance, setAppliance] = useState({
-    name: '',
-    quantity: 0,
-    watt: 0,
-    hourPerDay: 0,
-})
-
-return (
-    <SectionWrapper>
-        <ApplianceList/>
-        <section>
-            <input type="text" name="quantity"/>
-            <input type="text" name="watt"/>
-            <input type="text" name="hourPerDay"/>
-        </section>
-        <div>
-            <p>{watt}</p>
-        </div>
-    </SectionWrapper>
-)
-}
+export const Appliance=({id, quantity, watt, hrPerDay, wattHour="0", removeAppliance})=>{
+        return (
+                <tr>
+                    <td> <ApplianceList removeAppliance={removeAppliance}/></td>
+                    <td><input type="text" name="watt" value={quantity}/></td>
+                    <td><input type="text" name="watt" value={watt}/></td>
+                    <td><input type="text" name="watt" value={hrPerDay}/></td>
+                    <td>{wattHour}</td>  
+                </tr>
+        )
+    }
 
 
-
-export const Appliances=()=>{
-    return (
-        <Section>
-            <ApplianceHeader/>
-            <SectionContainer>
-                {appliances.map(()=><Appliance/>)}
-            </SectionContainer>
-            <EnergyResult>
-        </Section>
-    )
-}

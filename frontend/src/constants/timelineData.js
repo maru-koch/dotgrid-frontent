@@ -15,11 +15,5 @@ export const timeLineData =[
         description: "Remotely monitor the amount of Energy you are generating and how ",
         url: ''
     },
-    {
-        title: 'Smart Metering',
-        description: "Remotely monitor the amount of Energy you are generating and how ",
-        url: ''
-    },
-    
       
 ]

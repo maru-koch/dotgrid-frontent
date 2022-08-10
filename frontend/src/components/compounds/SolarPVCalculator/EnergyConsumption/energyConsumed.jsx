@@ -23,7 +23,7 @@ const BlankImage=()=>{
         </SectionContainer>
     )
 }
-export const EnergyConsumed=({addItem, energy=[]})=>{
+export const EnergyConsumed=({addItem, energy=[1]})=>{
     return (
         <Section>
             <EnergyConsumedHeader addItem ={addItem} />
