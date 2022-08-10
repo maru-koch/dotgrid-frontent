@@ -1,5 +1,8 @@
 import {Section} from '../../../elements'
-import { EnergyHeader, EnergyResult, Appliances } from '../EnergyConsumption'
+import { EnergyHeader } from '../EnergyHeader';
+import { EnergyResult} from './EnergyResult';
+import { Appliances } from './Appliances';
+
 
 export const EnergyConsumed=()=>{
     return (

@@ -1,0 +1,1 @@
+export { SolarPVCalculatorPage } from './solarCalculator'

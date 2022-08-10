@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-import { ROUTES } from './constants/routes';
+import { ROUTES } from './routes/routes';
 import { AuthLayout } from './layout';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
@@ -18,7 +18,7 @@ import {
         SolarInstallation,
         SolarAnalytics,
         ConfirmEmailPage,
-        PricingPage, LearnMorePage
+        PricingPage, LearnMorePage, SolarPVCalculatorPage
         }
 
  from './pages';
@@ -74,6 +74,7 @@ const App = () => (
         <Route path= {ROUTES.contact.path} element={<ContactPage/>} />
         <Route path= "/about" element={<AboutPage/>} />
         <Route path= {ROUTES.getStarted.path} element={<GetStarted/>} />
+        <Route path= {ROUTES.solarCalculator.path} element={<SolarPVCalculatorPage />} />
         <Route path= {ROUTES.solarInstallation.path} element={<SolarInstallation />} />
         <Route path= {ROUTES.confirmEmail.path} element={<ConfirmEmailPage />} />
         <Route path= {ROUTES.solarAnalytics.path} element={<SolarAnalytics />} />

@@ -8,7 +8,7 @@ const MenuCard =()=>{
         <div className={classes.footerCard__wrapper}>
             <h2>What It does</h2>
             <ul>
-                <li onClick={()=>navigate('/solar-installation')}>Solar PV Calculator</li>
+                <li onClick={()=>navigate('/solar-calculator')}>Solar PV Calculator</li>
                 <li>Solar Analytics</li>
                 <li onClick={()=>navigate('/solar-analytics')}>Energy Automation</li>
                 <li>Smart Metering</li>

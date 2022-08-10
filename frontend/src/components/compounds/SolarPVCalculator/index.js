@@ -1,2 +1,1 @@
-export * from './EnergyConsumption'
-export * from './EnergyGeneration'
+export * from './solarPVCalculator'

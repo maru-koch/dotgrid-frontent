@@ -1,5 +1,5 @@
-
-const [appliances, setAppliances] = useState([0])
+import {Section} from '../../../../elements'
+import {useState } from 'react'
 
 const ApplianceHeader =()=>
     <main>
@@ -11,13 +11,15 @@ const ApplianceHeader =()=>
     </main>
 
 export const Appliances=()=>{
+    const [appliances, setAppliances] = useState([0])
     return (
         <Section>
-            <ApplianceHeader/>
+            {/* <ApplianceHeader/>
             <SectionContainer>
                 {appliances.map(()=><Appliance/>)}
             </SectionContainer>
-            <EnergyResult>
+            <EnergyResult> */}
+            <p>appliances</p>
         </Section>
     )
 }

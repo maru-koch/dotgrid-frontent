@@ -7,6 +7,7 @@ export { AboutPage } from './About';
 export { ContactPage } from './Contact';
 export { GetStarted } from './GetStarted';
 export { SolarInstallation } from './SolarInstallation'
+export { SolarPVCalculatorPage } from './SolarCalculator'
 export { SolarAnalytics } from './SolarAnalytics'
 export { PricingPage } from './Pricing'
 export { LearnMorePage } from './LearnMore'

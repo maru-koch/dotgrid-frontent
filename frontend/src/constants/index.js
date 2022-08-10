@@ -1,4 +1,4 @@
-export * from './routes';
+export * from '../routes/routes';
 export * from './timelineData';
 export * from './howItWorksData';
 export * from './priceDetailsData';
