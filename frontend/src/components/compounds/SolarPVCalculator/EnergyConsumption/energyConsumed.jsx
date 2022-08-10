@@ -26,7 +26,7 @@ const BlankImage=()=>{
 export const EnergyConsumed=({addItem, energy=[1]})=>{
     return (
         <Section>
-            <EnergyConsumedHeader addItem ={addItem} />
+            <EnergyConsumedHeader/>
             {
                 energy[0]? <Appliances/> : <BlankImage/>
             }

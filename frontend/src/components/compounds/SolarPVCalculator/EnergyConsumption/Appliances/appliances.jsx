@@ -1,14 +1,10 @@
-import {Section, SectionContainer} from '../../../../elements'
-import {useState } from 'react'
+
+import {useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import {Appliance} from './Appliance'
 import { EnergyResult} from '../EnergyResult'
+import { APPLIANCE_ACTION } from '../../../../../store/reducer/applianceReducer'
 
-const appliance ={
-    id:0,
-    quantity:1, 
-    watt:0, 
-    hrPerDay:0 
-    }
 
 const ApplianceHeader =()=>
         <thead>
@@ -27,17 +23,12 @@ const ApplianceHeader =()=>
 
 export const Appliances=()=>{
     // Appliance container, Displays the appliance, one row per appliance
-    
-    const applianceList =[]
-    const [appliances, setAppliances] = useState(applianceList)
+    const dispatch = useDispatch();
+    const applianceList = useSelector(state =>state.appliance)
 
-    const addAppliance = ()=>{
-        applianceList.push(appliance)
-    }
+    const [appliances, setAppliances] = useState()
 
-    const removeAppliance=(id)=>{
-        applianceList.filter((item)=>item.id ===id)
-    }
+  
     return (
         <table>
             <ApplianceHeader/>

@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = []
+const initialState = [{
+    id:1,
+    quantity:2, 
+    watt:12, 
+    hrPerDay:3,
+    wattHour: 0 
+    }]
 
 export const ApplianceSlice=createSlice({
     name: 'appliance',

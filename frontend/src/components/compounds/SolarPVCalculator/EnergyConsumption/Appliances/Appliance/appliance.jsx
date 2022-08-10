@@ -2,6 +2,7 @@ import {Section, SectionWrapper, SectionContainer} from '../../../../../elements
 import { useState } from 'react'
 import { useEffect } from 'react'
 
+
 const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
 
 const ApplianceList=({getName, removeAppliance})=>{
