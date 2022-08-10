@@ -6,11 +6,14 @@ export const ApplianceSlice=createSlice({
     name: 'appliance',
     initialState,
     reducers:{
+
         addAppliance:(state, action)=>{
             state.push(action.payload);
         },
+
         removeAppliance:(state, action)=>{
-            state.filter((appliance, idx)=> appliance.id === action.payload.id)
+            // state.filter((appliance, idx)=> appliance.id === action.payload.id)
+            state.pop(action.payload.id)
         }
     }
 })

@@ -9,9 +9,6 @@ import { APPLIANCE_ACTION } from '../../../../../store/reducer/applianceReducer'
 const ApplianceHeader =()=>
         <thead>
             <tr>
-                <th>Appliance</th>
-            </tr>
-            <tr>
                 <th>Name</th>
                 <th>Qnt</th>
                 <th>Watt</th>
@@ -24,7 +21,7 @@ const ApplianceHeader =()=>
 export const Appliances=({appliances=[]})=>{
     // Appliance container, Displays the appliance, one row per appliance
     return (
-        <table>
+        <table style ={{backgroundColor:'var(--background-color)'}}>
             <ApplianceHeader/>
             <tbody>
                 {appliances.map((appliance, idx)=>

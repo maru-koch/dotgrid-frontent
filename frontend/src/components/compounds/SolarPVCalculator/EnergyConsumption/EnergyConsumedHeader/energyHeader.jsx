@@ -30,7 +30,7 @@ export const EnergyConsumedHeader=()=>{
 
     return (
         <Section>
-            <SectionWrapper>
+            <SectionWrapper bg={{justifyContent:'flex-end'}}>
                 <p id={classes.energyHeader__title}></p>
                 <Button onClick={()=>addAppliance()} color="var(--accent-color)" text="Add Appliance" />
             </SectionWrapper>

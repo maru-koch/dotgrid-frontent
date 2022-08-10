@@ -1,0 +1,7 @@
+table{
+    background-color:var(--background-color)
+}
+
+td{
+    background-color: var(--primary-color)
+}
