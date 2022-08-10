@@ -7,7 +7,7 @@ import { PageLayout } from '../../layout'
 export const SolarPVCalculatorPage =()=>{
     return (
     <PageLayout>
-        <SectionHeader title ="Solar Calculator"/>
+        <SectionHeader title ="Solar PV Calculator"/>
         <SolarPVCalculator/>
     </PageLayout>)
 }

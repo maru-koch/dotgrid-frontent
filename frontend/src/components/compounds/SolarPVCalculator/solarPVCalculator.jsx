@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import classes from './solarPVCalculator.module.css'
 import { Section, SectionContainer, SectionWrapper, Button } from '../../elements';
 import { EnergyConsumed } from "./EnergyConsumption";
 import { EnergyHeader } from "./EnergyHeader";
@@ -7,19 +8,20 @@ import 'react-tabs/style/react-tabs.css';
 
 
 export const SolarPVCalculator =()=>{
-    const [energy, setEnergy] = useState(0)
+    const [energyIndex, setEnergyIndex] = useState(0)
+    const [energy, setEnergy] = useState([])
     return (
         
         <SectionContainer>
-            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'800px', margin:'0px', }}>
+            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'600px', margin:'0px', padding:'0px' }}>
                 <EnergyHeader/>
-                <Tabs defaultIndex={1} selectedIndex={energy} onSelect={(index) => setEnergy(index)}>
-                    <TabList>
-                        <Tab>Energy Consumed</Tab>
-                        <Tab>Energy Consumed</Tab>
+                <Tabs className={classes.tabs} defaultIndex={1} selectedIndex={energyIndex} onSelect={(index) => setEnergyIndex(index)}>
+                    <TabList className={classes.tablist}>
+                        <Tab className={classes.tab}>Energy Consumed</Tab>
+                        <Tab className={classes.tab}>Energy Consumed</Tab>
                     </TabList>
                     <TabPanel>
-                        <h1>consumed</h1>
+                        <EnergyConsumed/>
                     </TabPanel>
                     <TabPanel>
                         <h1>generated</h1>
