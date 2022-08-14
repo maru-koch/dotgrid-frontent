@@ -13,12 +13,12 @@ export const SolarPVCalculator =()=>{
     return (
         
         <SectionContainer>
-            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'600px', margin:'0px', padding:'0px' }}>
+            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'100%', margin:'0px', padding:'0px' }}>
                 <EnergyHeader/>
                 <Tabs className={classes.tabs} defaultIndex={1} selectedIndex={energyIndex} onSelect={(index) => setEnergyIndex(index)}>
                     <TabList className={classes.tablist}>
                         <Tab className={classes.tab}>Energy Consumed</Tab>
-                        <Tab className={classes.tab}>Energy Consumed</Tab>
+                        <Tab className={classes.tab}>Energy Generated</Tab>
                     </TabList>
                     <TabPanel>
                         <EnergyConsumed/>

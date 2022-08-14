@@ -56,7 +56,7 @@ const TD_STYLE ={
 
 const WATT_STYLE={
     backgroundColor: 'var(--primary-color)', 
-     display: 'flex',
+    display: 'flex',
     justifyContent: 'center', 
     alignItems: 'center',
     height: '100%', 

@@ -12,7 +12,7 @@ import {useSelector} from 'react-redux'
 const BG ={
     marginTop:"50px",
     height: '400px',
-    width: '400px'
+    minWidth: '80vw'
 }
 
 const BlankImage=()=>{
@@ -42,7 +42,7 @@ export const EnergyConsumed=({addItem})=>{
     }, [applianceList])
 
     return (
-        <Section>
+        <Section bg={{minWidth:"80vw"}}>
             <EnergyConsumedHeader/>
             {
                 appliances[0]? <Appliances appliances={appliances}/> : <BlankImage/>
