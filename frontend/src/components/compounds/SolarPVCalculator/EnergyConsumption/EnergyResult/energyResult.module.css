@@ -1,12 +1,21 @@
 
 .tableFooter{
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
+    border-top: 1px solid var(--primary-color);
     width: 100%;
     padding: 20px;
 }
 
-.tableFooter > tfoot{
+.tableFooter > tr{
     display:grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns:8fr 2fr;
 }
 
+.tableTotal__Title{
+    text-align: right;
+}
+
+.tableTotal{
+    text-align:center;
+    font-size:1.6rem; 
+}
