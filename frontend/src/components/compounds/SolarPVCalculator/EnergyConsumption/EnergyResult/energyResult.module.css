@@ -1,0 +1,12 @@
+
+.tableFooter{
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 20px;
+}
+
+.tableFooter > tfoot{
+    display:grid;
+    grid-template-columns: 6fr 4fr;
+}
+

@@ -14,6 +14,7 @@ export const SolarPVCalculator =()=>{
         
         <SectionContainer>
             <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'100%', margin:'0px', padding:'0px' }}>
+                 {/* The header shows the logo */}
                 <EnergyHeader/>
                 <Tabs className={classes.tabs} defaultIndex={1} selectedIndex={energyIndex} onSelect={(index) => setEnergyIndex(index)}>
                     <TabList className={classes.tablist}>
@@ -21,9 +22,11 @@ export const SolarPVCalculator =()=>{
                         <Tab className={classes.tab}>Energy Generated</Tab>
                     </TabList>
                     <TabPanel>
+                        {/* This panel displays the Energy consumption UI */}
                         <EnergyConsumed/>
                     </TabPanel>
                     <TabPanel>
+                         {/* This panel displays the Energy Generation UI */}
                         <h1>generated</h1>
                     </TabPanel>
                 </Tabs>
