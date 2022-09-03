@@ -23,24 +23,33 @@ const ApplianceHeader =()=>
 export const Appliances=({appliances=[]})=>{
     // Displays the appliance, one row per appliance
     // appliances is an array of all appliances
+    const [total, setTotal] = useState(0)
+
+    const estimateTotalWattHour=()=>{
+        let totalWattHour
+        for (let values of appliances){
+            totalWattHour += values.wattHour
+        }
+        setTotal(totalWattHour)
+    }
     return (
         <Section>
             <table style ={{backgroundColor:'var(--background-color)'}}>
             <ApplianceHeader/>
-            <thead>
-                {true? <ApplianceInput/>: null}
-            </thead>
+            <ApplianceInput/>
             <tbody>
-                {appliances.map((appliance, idx)=>
+                { appliances? appliances.map((appliance, idx)=>
                     <Appliance 
+                        name = {appliance.name}
                         quantity={appliance.quantity}
                         watt={appliance.watt}
                         hrPerDay={appliance.hrPerDay}
+                        wattHour ={appliance.wattHour}
                         id={idx}
-                    />)}
+                    />):null}
             </tbody>
             </table>
-        <EnergyResult/>
+        <EnergyResult total = {total}/>
         </Section>
         
     )

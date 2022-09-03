@@ -1,37 +1,12 @@
-import classes from './energyHeader.module.css'
-import { useDispatch}from 'react-redux'
+
 import {Section,Button, SectionWrapper} from '../../../../elements'
-
-import {APPLIANCE_ACTION} from '../../../../../store/reducer/applianceReducer'
-
-const BG={
-    backgroundColor:'width',
-    width:'100%',
-    padding:'40px 100px'
-}
-
-const appliance ={
-    id:0,
-    quantity:1, 
-    watt:0, 
-    hrPerDay:0, 
-    wattHour:0
-    }
-
-export const EnergyConsumedHeader=()=>{
-
-    // Holds the add appliance button 
-
-    const dispatch = useDispatch();
-
-    const addAppliance = ()=>{
-        dispatch(APPLIANCE_ACTION.addAppliance(appliance))
-    }
-
+export const EnergyConsumedHeader=(showApplianceInput)=>{
+    // Holds the add appliance button
+    // when click makes setShowAppliances equals true
     return (
         <Section bg={{width:'100%', display:'flex',justifyContent:'flex-end',}}>
             <SectionWrapper bg={{width:'100%', display:'flex',justifyContent:'flex-end', padding:'20px'}}>
-                <Button onClick={()=>addAppliance()} color="var(--accent-color)" text="Add Appliance" />
+                <Button onClick={()=>showApplianceInput(true)} color="var(--accent-color)" text="Add Appliance" />
             </SectionWrapper>
         </Section>
     )

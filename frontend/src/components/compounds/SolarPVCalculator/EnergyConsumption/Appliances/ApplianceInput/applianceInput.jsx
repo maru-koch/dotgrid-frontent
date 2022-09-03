@@ -4,47 +4,6 @@ import { useDispatch } from 'react-redux'
 import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer'
 
 
-const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
-
-const ApplianceList=({getName, id})=>{
-  
-    const dispatch = useDispatch();
-
-    const removeAppliance=()=>{
-        console.log(id)
-        dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
-    }
-const BTN={
-    backgroundColor: 'var(--primary-color)', 
-    color: 'white',
-    height: '30px',
-    width: '30px',
-    padding: '20px',
-    margin: '10px',
-    borderRadius: '50%', 
-    fontSize: '20px',
-    display: 'flex',
-    justifyContent: 'center', 
-    alignItems: 'center'
-}
-const SECTION={
-    backgroundColor: 'var(--background-color)',  
-    display: 'flex',
-    justifyContent: 'space-between', 
-    alignItems: 'center'
-}
-    return(
-        <main>
-            <section style={{...SECTION}}>
-                <button style={{...BTN}} onClick={()=>removeAppliance()}><i class="fa fa-remove"></i></button>
-                <select name="appliance" id ="appliance-select" style={{...TD_STYLE}}>
-                    {applianceList.map((appliance)=><option value={appliance}>{appliance}</option>)}
-                </select>
-            </section>
-        </main>
-    )
-}
-
 const TD_STYLE ={
     padding:'8px',
     backgroundColor: 'var(--)',
@@ -68,6 +27,47 @@ const WATT_STYLE={
     fontWeight: 'bold',
 }
 
+const BTN={
+    backgroundColor: 'var(--primary-color)', 
+    color: 'white',
+    height: '30px',
+    width: '30px',
+    padding: '20px',
+    margin: '10px',
+    borderRadius: '50%', 
+    fontSize: '20px',
+    display: 'flex',
+    justifyContent: 'center', 
+    alignItems: 'center'
+}
+const SECTION={
+    backgroundColor: 'var(--background-color)',  
+    display: 'flex',
+    justifyContent: 'space-between', 
+    alignItems: 'center'
+}
+ 
+const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
+
+const ApplianceList=({getName, id})=>{
+    // A dropdown component that displays the list of apppliances
+   const getApplianceName=(name)=>{
+        getName(name)
+   }
+   
+   return(
+        <main>
+            <section style={{...SECTION}}>
+                <select name="appliance" id ="appliance-select" style={{...TD_STYLE}} onSelect={()=>getApplianceName}>
+                    {applianceList.map((appliance)=><option value={appliance}>{appliance}</option>)}
+                </select>
+            </section>
+        </main>
+    )
+}
+
+
+
 const Input=({onChangeHandler, name})=>{
     return (
         <td><input style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
@@ -75,24 +75,35 @@ const Input=({onChangeHandler, name})=>{
 }
 
 export const ApplianceInput=({id})=>{
-
-        const [watt, setWatt] = useState(0)
+        // for input of appliances values: name, quantity, watt, watt-hour, hrperDay
+ 
+        const dispatch = useDispatch();
         const  [appliance, setAppliance] = useState({
+            name:0,
             quality:0,
             watt:0,
             hrPerDay:0,
+            wattHour:0
         })
         const addAppliance=() =>{
-            if (appliance.quality & appliance.watt & appliance.hrPerDay){
-                console.log("appliance added")
+            // adds the appliance to list of appliances in store by calling the dispatch method
+            if (appliance.quality & appliance.watt & appliance.hrPerDay){ 
+                estimateWattHour()
+                dispatch(APPLIANCE_ACTION.addAppliance(appliance))
             }
         }
     
         const onChangeHandler=(e)=>{
+            // updates the values of the appliances object whenever there is a change in the input value
             appliance[e.target.name] = e.target.value
             setAppliance(appliance)
-            const energyUsage = (appliance.hrPerDay * appliance.quality) / appliance.watt
-            setWatt(watt)
+        }
+
+        const estimateWattHour=()=>{
+            // calculates the electricy in watt consumed per hour by the appliance
+            const wattHourValue = appliance.quality * appliance.watt * appliance.hrPerDay
+            // copies the previous values of appliance and replaces the value of the wattHour key with wattHourValue
+            setAppliance({...appliance, wattHour: wattHourValue})
         }
 
         return (

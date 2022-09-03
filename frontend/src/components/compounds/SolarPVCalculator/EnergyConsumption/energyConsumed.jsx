@@ -33,7 +33,10 @@ export const EnergyConsumed=({addItem})=>{
     // contains all components related to energy consumption
 
     const applianceList = useSelector(state =>state.appliance)
+    
     const [appliances, setAppliances] = useState([])
+    
+    const [showAppliances, setShowAppliances] = useState(false)
 
     useMemo(()=>{
         setAppliances(applianceList)
@@ -41,9 +44,9 @@ export const EnergyConsumed=({addItem})=>{
 
     return (
         <Section bg={{minWidth:"80vw"}}>
-            <EnergyConsumedHeader/>
+            <EnergyConsumedHeader setShowAppliances ={setShowAppliances}/>
             {
-                appliances[0]? <Appliances appliances={appliances}/> : <BlankImage/>
+                showAppliances? <Appliances appliances={appliances}/> : <BlankImage/>
             }
         </Section>
     )
