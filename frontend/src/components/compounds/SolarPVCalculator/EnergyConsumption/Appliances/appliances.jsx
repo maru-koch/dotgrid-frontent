@@ -30,9 +30,8 @@ export const Appliances=()=>{
 
     const estimateTotalWattHour=()=>{
         let totalWattHour = 0;
-        for (let appliance of appliances){
+        for (let appliance of applianceList){
             totalWattHour += appliance.wattHour
-            console.log("total hour", totalWattHour)
         }
         setTotal(totalWattHour)
     }

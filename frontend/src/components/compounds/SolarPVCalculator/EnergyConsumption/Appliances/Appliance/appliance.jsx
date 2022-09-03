@@ -50,15 +50,13 @@ const WATT_STYLE={
 
 const ApplianceName=({name, idx})=>{
     // contains the remove button and displays the name of the appliance
-    const [id, setId]= useState(0)
+    const [id, setId]= useState(idx)
     const dispatch = useDispatch();
     const removeAppliance=()=>{
         // removes an appliance fromt he list of appliances
         dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
     }
-    useEffect(()=>{
-        setId(idx)
-    },[idx])
+   
     return(
         <main>
             <section style={{...SECTION}}>

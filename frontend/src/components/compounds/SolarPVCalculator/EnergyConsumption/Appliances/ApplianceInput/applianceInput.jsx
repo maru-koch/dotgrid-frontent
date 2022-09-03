@@ -74,14 +74,12 @@ export const ApplianceInput=({id})=>{
         const getName=(name)=>{
             // gets the name of the selected appliances from the dropdown component
             setName(name)
-            console.log("--name--",name)
             setAppliance({...appliance, name: name})
         }
 
         const addAppliance=() =>{
             // adds the appliance to list of appliances in store by calling the dispatch method
             if (appliance.quantity && appliance.watt && appliance.hrPerDay){ 
-                console.log("added an aplliance", appliance)
                 estimateWattHour()
                 dispatch(APPLIANCE_ACTION.addAppliance(appliance))
             }
@@ -89,20 +87,21 @@ export const ApplianceInput=({id})=>{
     
         const onChangeHandler=(e)=>{
             // updates the values of the appliances object whenever there is a change in the input value
-            appliance[e.target.name] = e.target.value
+            appliance[e.target.name] = parseInt(e.target.value)
             setAppliance(appliance)
+            estimateWattHour()
         }
 
         const estimateWattHour=()=>{
             // calculates the electricy in watt consumed per hour by the appliance
-            const wattHourValue = parseInt(appliance.quantity) * parseInt(appliance.watt) * parseInt(appliance.hrPerDay)
+            const wattHourValue = appliance.quantity * appliance.watt * appliance.hrPerDay
             // copies the previous values of appliance and replaces the value of the wattHour key with wattHourValue
             setAppliance({...appliance, name: name,  wattHour: wattHourValue})
         }
 
         return (
                 <tr>
-                    <td> <ApplianceList id = {''} getName={getName}/></td>
+                    <td> <ApplianceList id = {id} getName={getName}/></td>
                     <Input name ="quantity" onChangeHandler={onChangeHandler}/>
                     <Input name ="watt" onChangeHandler={onChangeHandler}/>
                     <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
