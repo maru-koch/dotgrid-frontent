@@ -28,21 +28,23 @@ const SECTION={
 
 const TD_STYLE ={
     padding:'8px',
-    backgroundColor: 'var(--)',
     borderRadius:'5px',
     textAlign:'center', 
-    fontSize: '1rem'
+    fontSize: '1rem', 
+    fontFamily:'Poppins',
+    fontWeight:300,
+
 }
 
 const WATT_STYLE={
-    backgroundColor: 'var(--primary-color)', 
+    backgroundColor: 'var(--background-color)', 
     display: 'flex',
     justifyContent: 'center', 
     alignItems: 'center',
     height: '100%', 
     width: '100%',
     padding: '15px 0',
-    color: 'white',
+    color: 'var(--primary-color)',
     fontSize: '1.2rem', 
     fontFamily:'Poppins',
     fontWeight: 'bold',
