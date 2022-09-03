@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import { useState} from 'react'
 import { useDispatch } from 'react-redux'
 import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer'
@@ -47,21 +48,23 @@ const WATT_STYLE={
     fontWeight: 'bold',
 }
 
-const ApplianceList=({applianceName, id})=>{
+const ApplianceName=({name, idx})=>{
     // contains the remove button and displays the name of the appliance
-
+    const [id, setId]= useState(0)
     const dispatch = useDispatch();
     const removeAppliance=()=>{
         // removes an appliance fromt he list of appliances
         dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
     }
-
+    useEffect(()=>{
+        setId(idx)
+    },[idx])
     return(
         <main>
             <section style={{...SECTION}}>
                 <button style={{...BTN}} onClick={()=>removeAppliance()}><i class="fa fa-remove"></i></button>
                 <h2 name="appliance" id ="appliance-select" style={{...TD_STYLE}}>
-                    {applianceName}
+                    {name}
                 </h2>
             </section>
         </main>
@@ -75,16 +78,16 @@ const Label=({value})=>{
     )
 }
 
-export const Appliance=({id, name, quantity, watt, wattHour})=>{
+export const Appliance=({id, name, quantity, watt, hrPerDay, wattHour})=>{
     // displays the name, quantity, watt, hrperDay and the watthour for each appliance
         return (
-                <tr>
-                    <td> <ApplianceList id = {id} name={name}/></td>
-                    <Label name ="quantity" value ={quantity}/>
-                    <Label name ="watt" value ={watt}/>
-                    <Label name ="hrPerDay" value ={name}/>
-                    <td style={{...WATT_STYLE}}>{wattHour}</td>  
-                </tr>
+            <tr>
+                <td> <ApplianceName id = {id} name ={name}/></td>
+                <Label name ="quantity" value ={quantity}/>
+                <Label name ="watt" value ={watt}/>
+                <Label name ="hrPerDay" value ={hrPerDay}/>
+                <td style={{...WATT_STYLE}}>{wattHour}</td>  
+            </tr>
         )
     }
 

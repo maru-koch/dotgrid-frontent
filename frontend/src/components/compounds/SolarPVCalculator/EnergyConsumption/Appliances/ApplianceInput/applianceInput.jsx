@@ -39,14 +39,10 @@ const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
 
 const ApplianceList=({getName, id})=>{
     // A dropdown component that displays the list of apppliances
-   const getApplianceName=(name)=>{
-        getName(name)
-   }
-
    return(
         <main>
             <section style={{...SECTION}}>
-                <select name="appliance" id ="appliance-select" style={{...TD_STYLE}} onSelect={()=>getApplianceName}>
+                <select name="appliance" defaultValue ={"fan"} id ="appliance-select" style={{...TD_STYLE}} onChange={(e)=>getName(e.target.value)}>
                     {applianceList.map((appliance)=><option value={appliance}>{appliance}</option>)}
                 </select>
             </section>
@@ -58,7 +54,7 @@ const ApplianceList=({getName, id})=>{
 
 const Input=({onChangeHandler, name})=>{
     return (
-        <td><input style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
+        <td><input style={{...TD_STYLE}} onChange={(e)=>onChangeHandler(e)} type="text" name={name} /></td>
     )
 }
 
@@ -69,7 +65,7 @@ export const ApplianceInput=({id})=>{
         const [name, setName] = useState('')
         const  [appliance, setAppliance] = useState({
             name:'',
-            quality:0,
+            quantity:0,
             watt:0,
             hrPerDay:0,
             wattHour:0
@@ -78,11 +74,14 @@ export const ApplianceInput=({id})=>{
         const getName=(name)=>{
             // gets the name of the selected appliances from the dropdown component
             setName(name)
+            console.log("--name--",name)
+            setAppliance({...appliance, name: name})
         }
 
         const addAppliance=() =>{
             // adds the appliance to list of appliances in store by calling the dispatch method
-            if (appliance.quality & appliance.watt & appliance.hrPerDay){ 
+            if (appliance.quantity && appliance.watt && appliance.hrPerDay){ 
+                console.log("added an aplliance", appliance)
                 estimateWattHour()
                 dispatch(APPLIANCE_ACTION.addAppliance(appliance))
             }
@@ -96,14 +95,14 @@ export const ApplianceInput=({id})=>{
 
         const estimateWattHour=()=>{
             // calculates the electricy in watt consumed per hour by the appliance
-            const wattHourValue = appliance.quality * appliance.watt * appliance.hrPerDay
+            const wattHourValue = parseInt(appliance.quantity) * parseInt(appliance.watt) * parseInt(appliance.hrPerDay)
             // copies the previous values of appliance and replaces the value of the wattHour key with wattHourValue
             setAppliance({...appliance, name: name,  wattHour: wattHourValue})
         }
 
         return (
                 <tr>
-                    <td> <ApplianceList id = {''}/></td>
+                    <td> <ApplianceList id = {''} getName={getName}/></td>
                     <Input name ="quantity" onChangeHandler={onChangeHandler}/>
                     <Input name ="watt" onChangeHandler={onChangeHandler}/>
                     <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
