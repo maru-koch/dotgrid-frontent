@@ -82,7 +82,12 @@ export const ApplianceInput=({id})=>{
             watt:0,
             hrPerDay:0,
         })
-
+        const addAppliance=() =>{
+            if (appliance.quality & appliance.watt & appliance.hrPerDay){
+                console.log("appliance added")
+            }
+        }
+    
         const onChangeHandler=(e)=>{
             appliance[e.target.name] = e.target.value
             setAppliance(appliance)
@@ -92,11 +97,11 @@ export const ApplianceInput=({id})=>{
 
         return (
                 <tr>
-                    <td> <ApplianceList id = {id}/></td>
+                    <td> <ApplianceList id = {''}/></td>
                     <Input name ="quantity" onChangeHandler={onChangeHandler}/>
                     <Input name ="watt" onChangeHandler={onChangeHandler}/>
                     <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
-                    <td style={{...WATT_STYLE}}>{watt}</td>  
+                    <td style={{...WATT_STYLE}} onClick={()=>addAppliance()}>Add</td>  
                 </tr>
         )
     }

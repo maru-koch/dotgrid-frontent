@@ -49,7 +49,6 @@ const TD_STYLE ={
     padding:'8px',
     backgroundColor: 'var(--)',
     borderRadius:'5px',
-    border:'2px solid var(--primary-color)', 
     textAlign:'center', 
     fontSize: '1rem'
 }
