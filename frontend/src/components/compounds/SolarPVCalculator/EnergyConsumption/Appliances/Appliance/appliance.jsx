@@ -5,15 +5,6 @@ import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer
 
 
 const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
-
-const ApplianceList=({getName, id})=>{
-  
-    const dispatch = useDispatch();
-
-    const removeAppliance=()=>{
-        console.log(id)
-        dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
-    }
 const BTN={
     backgroundColor: 'var(--primary-color)', 
     color: 'white',
@@ -32,17 +23,6 @@ const SECTION={
     display: 'flex',
     justifyContent: 'space-between', 
     alignItems: 'center'
-}
-    return(
-        <main>
-            <section style={{...SECTION}}>
-                <button style={{...BTN}} onClick={()=>removeAppliance()}><i class="fa fa-remove"></i></button>
-                <select name="appliance" id ="appliance-select" style={{...TD_STYLE}}>
-                    {applianceList.map((appliance)=><option value={appliance}>{appliance}</option>)}
-                </select>
-            </section>
-        </main>
-    )
 }
 
 const TD_STYLE ={
@@ -67,35 +47,43 @@ const WATT_STYLE={
     fontWeight: 'bold',
 }
 
-const Label=({onChangeHandler, name})=>{
-    return (
-        <td><p style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
+const ApplianceList=({applianceName, id})=>{
+    // contains the remove button and displays the name of the appliance
+
+    const dispatch = useDispatch();
+    const removeAppliance=()=>{
+        // removes an appliance fromt he list of appliances
+        dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
+    }
+
+    return(
+        <main>
+            <section style={{...SECTION}}>
+                <button style={{...BTN}} onClick={()=>removeAppliance()}><i class="fa fa-remove"></i></button>
+                <h2 name="appliance" id ="appliance-select" style={{...TD_STYLE}}>
+                    {applianceName}
+                </h2>
+            </section>
+        </main>
     )
 }
 
-export const Appliance=({id})=>{
 
-        const [watt, setWatt] = useState(0)
-        const  [appliance, setAppliance] = useState({
-            quality:0,
-            watt:0,
-            hrPerDay:0,
-        })
+const Label=({value})=>{
+    return (
+        <td><p style={{...TD_STYLE}}>{value}</p></td>
+    )
+}
 
-        const onChangeHandler=(e)=>{
-            appliance[e.target.name] = e.target.value
-            setAppliance(appliance)
-            const energyUsage = (appliance.hrPerDay * appliance.quality) / appliance.watt
-            setWatt(watt)
-        }
-
+export const Appliance=({id, name, quantity, watt, wattHour})=>{
+    // displays the name, quantity, watt, hrperDay and the watthour for each appliance
         return (
                 <tr>
-                    <td> <ApplianceList id = {id}/></td>
-                    <Label name ="quantity" onChangeHandler={onChangeHandler}/>
-                    <Label name ="watt" onChangeHandler={onChangeHandler}/>
-                    <Label name ="hrPerDay" onChangeHandler={onChangeHandler}/>
-                    <td style={{...WATT_STYLE}}>{watt}</td>  
+                    <td> <ApplianceList id = {id} name={name}/></td>
+                    <Label name ="quantity" value ={quantity}/>
+                    <Label name ="watt" value ={watt}/>
+                    <Label name ="hrPerDay" value ={name}/>
+                    <td style={{...WATT_STYLE}}>{wattHour}</td>  
                 </tr>
         )
     }

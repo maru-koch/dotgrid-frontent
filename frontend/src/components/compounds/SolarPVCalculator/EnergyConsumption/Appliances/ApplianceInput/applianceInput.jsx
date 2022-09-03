@@ -101,7 +101,7 @@ export const ApplianceInput=({id})=>{
                     <Input name ="quantity" onChangeHandler={onChangeHandler}/>
                     <Input name ="watt" onChangeHandler={onChangeHandler}/>
                     <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
-                    <td style={{...WATT_STYLE}} onClick={()=>addAppliance()}>Add</td>  
+                    <button style={{...WATT_STYLE}} onClick={()=>addAppliance()}>Add</button>  
                 </tr>
         )
     }
