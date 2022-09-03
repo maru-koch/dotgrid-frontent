@@ -6,6 +6,7 @@ import {Appliance} from './Appliance'
 import { ApplianceInput } from './ApplianceInput'
 import { EnergyResult} from '../EnergyResult'
 import { APPLIANCE_ACTION } from '../../../../../store/reducer/applianceReducer'
+import { useEffect } from 'react'
 
 
 const ApplianceHeader =()=>
@@ -20,18 +21,26 @@ const ApplianceHeader =()=>
         </thead>
    
 
-export const Appliances=({appliances=[]})=>{
+export const Appliances=({applianceList=[]})=>{
     // Displays the appliance, one row per appliance
     // appliances is an array of all appliances
+
     const [total, setTotal] = useState(0)
+    const [appliances, setAppliances] = useState(applianceList)
 
     const estimateTotalWattHour=()=>{
         let totalWattHour
-        for (let values of appliances){
-            totalWattHour += values.wattHour
+        for (let appliance of appliances){
+            totalWattHour += appliance.wattHour
         }
         setTotal(totalWattHour)
     }
+
+    useMemo(()=>{
+        setAppliances(applianceList)
+        estimateTotalWattHour()
+        },[applianceList])
+
     return (
         <Section>
             <table style ={{backgroundColor:'var(--background-color)'}}>
