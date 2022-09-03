@@ -27,19 +27,7 @@ const WATT_STYLE={
     fontWeight: 'bold',
 }
 
-const BTN={
-    backgroundColor: 'var(--primary-color)', 
-    color: 'white',
-    height: '30px',
-    width: '30px',
-    padding: '20px',
-    margin: '10px',
-    borderRadius: '50%', 
-    fontSize: '20px',
-    display: 'flex',
-    justifyContent: 'center', 
-    alignItems: 'center'
-}
+
 const SECTION={
     backgroundColor: 'var(--background-color)',  
     display: 'flex',
@@ -54,7 +42,7 @@ const ApplianceList=({getName, id})=>{
    const getApplianceName=(name)=>{
         getName(name)
    }
-   
+
    return(
         <main>
             <section style={{...SECTION}}>
@@ -78,13 +66,20 @@ export const ApplianceInput=({id})=>{
         // for input of appliances values: name, quantity, watt, watt-hour, hrperDay
  
         const dispatch = useDispatch();
+        const [name, setName] = useState('')
         const  [appliance, setAppliance] = useState({
-            name:0,
+            name:'',
             quality:0,
             watt:0,
             hrPerDay:0,
             wattHour:0
         })
+
+        const getName=(name)=>{
+            // gets the name of the selected appliances from the dropdown component
+            setName(name)
+        }
+
         const addAppliance=() =>{
             // adds the appliance to list of appliances in store by calling the dispatch method
             if (appliance.quality & appliance.watt & appliance.hrPerDay){ 
@@ -103,7 +98,7 @@ export const ApplianceInput=({id})=>{
             // calculates the electricy in watt consumed per hour by the appliance
             const wattHourValue = appliance.quality * appliance.watt * appliance.hrPerDay
             // copies the previous values of appliance and replaces the value of the wattHour key with wattHourValue
-            setAppliance({...appliance, wattHour: wattHourValue})
+            setAppliance({...appliance, name: name,  wattHour: wattHourValue})
         }
 
         return (

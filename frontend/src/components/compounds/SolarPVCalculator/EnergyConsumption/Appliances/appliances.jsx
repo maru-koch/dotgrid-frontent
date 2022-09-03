@@ -5,7 +5,6 @@ import { Section } from '../../../../elements'
 import {Appliance} from './Appliance'
 import { ApplianceInput } from './ApplianceInput'
 import { EnergyResult} from '../EnergyResult'
-import { APPLIANCE_ACTION } from '../../../../../store/reducer/applianceReducer'
 import { useEffect } from 'react'
 
 
@@ -21,22 +20,23 @@ const ApplianceHeader =()=>
         </thead>
    
 
-export const Appliances=({applianceList=[]})=>{
+export const Appliances=()=>{
     // Displays the appliance, one row per appliance
     // appliances is an array of all appliances
+    const applianceList = useSelector(state =>state.appliance)
 
     const [total, setTotal] = useState(0)
     const [appliances, setAppliances] = useState(applianceList)
 
     const estimateTotalWattHour=()=>{
-        let totalWattHour
+        let totalWattHour = 0;
         for (let appliance of appliances){
             totalWattHour += appliance.wattHour
         }
         setTotal(totalWattHour)
     }
 
-    useMemo(()=>{
+    useEffect(()=>{
         setAppliances(applianceList)
         estimateTotalWattHour()
         },[applianceList])
@@ -47,7 +47,7 @@ export const Appliances=({applianceList=[]})=>{
             <ApplianceHeader/>
             <ApplianceInput/>
             <tbody>
-                { appliances? appliances.map((appliance, idx)=>
+                { appliances[0]? appliances.map((appliance, idx)=>
                     <Appliance 
                         name = {appliance.name}
                         quantity={appliance.quantity}
