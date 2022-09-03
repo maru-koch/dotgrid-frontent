@@ -1,7 +1,7 @@
 import { Section, SectionWrapper } from "../../../../elements"
 import classes from "./energyResult.module.css"
 
-export const EnergyResult=({total = 2000})=>{
+export const EnergyResult=({total = 0})=>{
     // Displays the total energy consumed by the appliances
     return (
         <div className={classes.tableFooter}>

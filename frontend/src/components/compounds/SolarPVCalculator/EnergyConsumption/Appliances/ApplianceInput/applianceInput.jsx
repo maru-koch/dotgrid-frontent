@@ -68,13 +68,13 @@ const WATT_STYLE={
     fontWeight: 'bold',
 }
 
-const Label=({onChangeHandler, name})=>{
+const Input=({onChangeHandler, name})=>{
     return (
-        <td><p style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
+        <td><input style={{...TD_STYLE}} onChange={()=>onChangeHandler} type="text" name={name} /></td>
     )
 }
 
-export const Appliance=({id})=>{
+export const ApplianceInput=({id})=>{
 
         const [watt, setWatt] = useState(0)
         const  [appliance, setAppliance] = useState({
@@ -93,9 +93,9 @@ export const Appliance=({id})=>{
         return (
                 <tr>
                     <td> <ApplianceList id = {id}/></td>
-                    <Label name ="quantity" onChangeHandler={onChangeHandler}/>
-                    <Label name ="watt" onChangeHandler={onChangeHandler}/>
-                    <Label name ="hrPerDay" onChangeHandler={onChangeHandler}/>
+                    <Input name ="quantity" onChangeHandler={onChangeHandler}/>
+                    <Input name ="watt" onChangeHandler={onChangeHandler}/>
+                    <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>
                     <td style={{...WATT_STYLE}}>{watt}</td>  
                 </tr>
         )

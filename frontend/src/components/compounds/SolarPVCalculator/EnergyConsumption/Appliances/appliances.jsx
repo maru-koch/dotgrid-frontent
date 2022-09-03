@@ -3,6 +3,7 @@ import {useMemo, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { Section } from '../../../../elements'
 import {Appliance} from './Appliance'
+import { ApplianceInput } from './ApplianceInput'
 import { EnergyResult} from '../EnergyResult'
 import { APPLIANCE_ACTION } from '../../../../../store/reducer/applianceReducer'
 
@@ -20,11 +21,15 @@ const ApplianceHeader =()=>
    
 
 export const Appliances=({appliances=[]})=>{
-    // Appliance container, Displays the appliance, one row per appliance
+    // Displays the appliance, one row per appliance
+    // appliances is an array of all appliances
     return (
         <Section>
             <table style ={{backgroundColor:'var(--background-color)'}}>
             <ApplianceHeader/>
+            <thead>
+                {true? <ApplianceInput/>: null}
+            </thead>
             <tbody>
                 {appliances.map((appliance, idx)=>
                     <Appliance 
@@ -34,7 +39,7 @@ export const Appliances=({appliances=[]})=>{
                         id={idx}
                     />)}
             </tbody>
-        </table>
+            </table>
         <EnergyResult/>
         </Section>
         
