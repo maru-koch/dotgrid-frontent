@@ -11,7 +11,7 @@ const BTN={
     color: 'white',
     height: '30px',
     width: '30px',
-    padding: '20px',
+    padding: '10px',
     margin: '10px',
     borderRadius: '50%', 
     fontSize: '20px',
@@ -27,7 +27,7 @@ const SECTION={
 }
 
 const TD_STYLE ={
-    padding:'8px',
+    padding:'2px',
     borderRadius:'5px',
     textAlign:'center', 
     fontSize: '1rem', 

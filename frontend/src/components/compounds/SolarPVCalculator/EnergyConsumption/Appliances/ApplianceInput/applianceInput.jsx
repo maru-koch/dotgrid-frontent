@@ -80,6 +80,9 @@ export const ApplianceInput=({id})=>{
         const addAppliance=() =>{
             // adds the appliance to list of appliances in store by calling the dispatch method
             if (appliance.quantity && appliance.watt && appliance.hrPerDay){ 
+                if (!appliance.name){
+                    setAppliance({...appliance, name: "Fan"})
+                }
                 estimateWattHour()
                 dispatch(APPLIANCE_ACTION.addAppliance(appliance))
             }
