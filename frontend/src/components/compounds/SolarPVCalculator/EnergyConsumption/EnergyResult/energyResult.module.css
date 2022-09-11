@@ -6,10 +6,6 @@
     padding: 20px;
 }
 
-.tableFooter > tr{
-    display:grid;
-    grid-template-columns:8fr 2fr;
-}
 
 .tableTotal__Title{
     text-align: right;
@@ -18,4 +14,15 @@
 .tableTotal{
     text-align:center;
     font-size:1.6rem; 
+}
+
+.tableFooter>tr {
+    display: grid;
+    grid-template-columns: 3fr 7fr 2fr;
+}
+
+.totalFooter .numOfAppliance{
+    color: var(--accent-color);
+    text-decoration:underline;
+    border-bottom: 2px solid var(--accent-color);
 }
