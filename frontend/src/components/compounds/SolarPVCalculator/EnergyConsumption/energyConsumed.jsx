@@ -1,9 +1,10 @@
 import {Section, SectionContainer, SectionImage} from '../../../elements'
 import { EnergyConsumedHeader } from './EnergyConsumedHeader';
 import { EnergyResult} from './EnergyResult';
+import {useDispatch} from 'react-redux'
 import { Appliances } from './Appliances';
 import image from '../../../../assets/images/appliances.png'
-
+import {APPLIANCE_ACTION} from '../../../../store/reducer/applianceReducer'
 import {useMemo, useState, useEffect} from 'react'
 import {useSelector} from 'react-redux'
 
@@ -31,16 +32,24 @@ const BlankImage=()=>{
 export const EnergyConsumed=({addItem})=>{
 
     // contains all components related to energy consumption
-
+    const appliances = useSelector(state =>state.appliance)
     const [show, setShowAppliances] = useState(false)
+    const [btnTitle, setBtnTitle] = useState('Add Appliances')
+    const dispatch = useDispatch()
 
-    const showAppliance=()=>{
-        setShowAppliances(true)
+    const func=()=>{
+        if (appliances.length === 0){
+            setShowAppliances(true)
+            setBtnTitle("Clear Appliances")
+        }else{
+            dispatch(APPLIANCE_ACTION.clearAppliances())
+        } 
     }
+
 
     return (
         <Section bg={{minWidth:"80vw"}}>
-            <EnergyConsumedHeader setShowAppliances ={showAppliance}/>
+            <EnergyConsumedHeader func ={func} btnTitle={btnTitle}/>
             {
                 show? <Appliances/> : <BlankImage/>
             }
