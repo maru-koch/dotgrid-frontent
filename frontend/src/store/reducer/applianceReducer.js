@@ -8,12 +8,17 @@ export const ApplianceSlice=createSlice({
     reducers:{
 
         addAppliance:(state, action)=>{
+            // add a new appliance
             state.push(action.payload);
         },
 
         removeAppliance:(state, action)=>{
-            // state.filter((appliance, idx)=> appliance.id === action.payload.id)
+            // remove an appliance by Id
             state.pop(action.payload.id)
+        },
+        clearAppliances:(state, action)=>{
+            // removes all appliances from the list
+            state.splice(0, state.length)
         }
     }
 })

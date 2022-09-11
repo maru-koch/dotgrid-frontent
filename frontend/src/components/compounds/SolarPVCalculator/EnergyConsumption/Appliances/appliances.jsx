@@ -1,6 +1,6 @@
 
-import {useMemo, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import {useState} from 'react'
+import {useSelector} from 'react-redux'
 import { Section } from '../../../../elements'
 import {Appliance} from './Appliance'
 import { ApplianceInput } from './ApplianceInput'
@@ -58,7 +58,7 @@ export const Appliances=()=>{
                     />):null}
             </tbody>
             </table>
-        <EnergyResult total = {total}/>
+        <EnergyResult total = {total} num={appliances.length}/>
         </Section>
         
     )

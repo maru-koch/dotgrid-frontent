@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types'
 import classes from "./energyResult.module.css"
 
+const SPAN ={
+    color:'var(--accent-color)',
+    borderBottom: '2px solid var(--primary-color)',
+}
 export const EnergyResult=({total, num = 0})=>{
     /*
         This components displays the total energy consumed by all appliances components
@@ -13,7 +17,7 @@ export const EnergyResult=({total, num = 0})=>{
     return (
         <div className={classes.tableFooter}>
             <tr>
-                <td><span className={classes.numOfAppliance}>{num? `${num}`: 0}</span> {num > 1? 'Appliances' : 'Appliance'}</td>
+                <td><span style = {{...SPAN}}>{num? `${num}`: 0}</span> {num > 1? 'Appliances' : 'Appliance'}</td>
                 <td className={classes.tableTotal__Title} >Total Energy Consumed 'watt/per day'</td>
                 <td className={classes.tableTotal} >{total}</td>
             </tr>
