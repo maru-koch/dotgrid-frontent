@@ -49,12 +49,12 @@ export const Appliances=()=>{
             <tbody>
                 { appliances[0]? appliances.map((appliance, idx)=>
                     <Appliance 
+                        id = {appliance.id}
                         name = {appliance.name}
                         quantity={appliance.quantity}
                         watt={appliance.watt}
                         hrPerDay={appliance.hrPerDay}
                         wattHour ={appliance.wattHour}
-                        id={idx}
                     />):null}
             </tbody>
             </table>

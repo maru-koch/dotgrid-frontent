@@ -54,9 +54,11 @@ const ApplianceName=({name, idx})=>{
     // contains the remove button and displays the name of the appliance
     const [id, setId]= useState(idx)
     const dispatch = useDispatch();
+
     const removeAppliance=()=>{
+        console.log("appliance Id2", idx)
         // removes an appliance fromt he list of appliances
-        dispatch(APPLIANCE_ACTION.removeAppliance({id:{id}}))
+        dispatch(APPLIANCE_ACTION.removeAppliance({id}))
     }
    
     return(
@@ -82,7 +84,7 @@ export const Appliance=({id, name, quantity, watt, hrPerDay, wattHour})=>{
     // displays the name, quantity, watt, hrperDay and the watthour for each appliance
         return (
             <tr>
-                <td> <ApplianceName id = {id} name ={name}/></td>
+                <td> <ApplianceName idx = {id} name ={name}/></td>
                 <Label name ="quantity" value ={quantity}/>
                 <Label name ="watt" value ={watt}/>
                 <Label name ="hrPerDay" value ={hrPerDay}/>

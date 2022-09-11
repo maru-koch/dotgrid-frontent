@@ -1,4 +1,4 @@
-
+import {v4 as uuid} from 'uuid'
 import { useState} from 'react'
 import { useDispatch } from 'react-redux'
 import {APPLIANCE_ACTION} from '../../../../../../store/reducer/applianceReducer'
@@ -37,7 +37,7 @@ const SECTION={
  
 const applianceList =["Fan", "LED Light", "LED TV", "Sound System", "pressure"]
 
-const ApplianceList=({getName, id})=>{
+const ApplianceList=({getName})=>{
     // A dropdown component that displays the list of apppliances
    return(
         <main>
@@ -58,12 +58,17 @@ const Input=({onChangeHandler, name})=>{
     )
 }
 
-export const ApplianceInput=({id})=>{
-        // for input of appliances values: name, quantity, watt, watt-hour, hrperDay
- 
+export const ApplianceInput=()=>{
+    /*
+        adds new appliances into the appliance list
+        ----------
+            parameter
+                id: uuid -> to be used in the appliance list
+    */ 
         const dispatch = useDispatch();
         const [name, setName] = useState('')
         const  [appliance, setAppliance] = useState({
+            id: null,
             name:'',
             quantity:0,
             watt:0,
@@ -80,8 +85,10 @@ export const ApplianceInput=({id})=>{
         const addAppliance=() =>{
             // adds the appliance to list of appliances in store by calling the dispatch method
             if (appliance.quantity && appliance.watt && appliance.hrPerDay){ 
-                if (!appliance.name){
-                    setAppliance({...appliance, name: "Fan"})
+                if (appliance.name === ''){
+                    
+                    setAppliance({...appliance, name: 'No appliance'})
+                    console.log("no name-", appliance.name)
                 }
                 estimateWattHour()
                 dispatch(APPLIANCE_ACTION.addAppliance(appliance))
@@ -99,12 +106,13 @@ export const ApplianceInput=({id})=>{
             // calculates the electricy in watt consumed per hour by the appliance
             const wattHourValue = appliance.quantity * appliance.watt * appliance.hrPerDay
             // copies the previous values of appliance and replaces the value of the wattHour key with wattHourValue
-            setAppliance({...appliance, name: name,  wattHour: wattHourValue})
+            const id = uuid()
+            setAppliance({...appliance, id: id, name: name,  wattHour: wattHourValue})
         }
 
         return (
                 <tr>
-                    <td> <ApplianceList id = {id} getName={getName}/></td>
+                    <td> <ApplianceList getName={getName}/></td>
                     <Input name ="quantity" onChangeHandler={onChangeHandler}/>
                     <Input name ="watt" onChangeHandler={onChangeHandler}/>
                     <Input name ="hrPerDay" onChangeHandler={onChangeHandler}/>

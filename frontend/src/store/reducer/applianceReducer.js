@@ -14,7 +14,9 @@ export const ApplianceSlice=createSlice({
 
         removeAppliance:(state, action)=>{
             // remove an appliance by Id
-            state.pop(action.payload.id)
+            const id = action.payload.id
+            const appliances = state.filter((appliance)=>appliance.id !== id)
+            return appliances
         },
         clearAppliances:(state, action)=>{
             // removes all appliances from the list
