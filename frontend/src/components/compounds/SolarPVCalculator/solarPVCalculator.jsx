@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classes from './solarPVCalculator.module.css'
-import { Section, SectionContainer, SectionWrapper, Button } from '../../elements';
+import { Section, SectionContainer} from '../../elements';
 import { EnergyConsumed } from "./EnergyConsumption";
 import { EnergyGenerated } from "./EnergyGeneration";
 import { EnergyHeader } from "./EnergyHeader";

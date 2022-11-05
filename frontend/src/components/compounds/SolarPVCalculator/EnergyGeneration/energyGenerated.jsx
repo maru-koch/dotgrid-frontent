@@ -1,9 +1,12 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useState } from 'react'
 import {PanelDetails, WeatherInfo, EnergyForcast} from "../EnergyGeneration"
 import {SectionContainer, Section } from "../../../elements/Sections"
 import classes from "../EnergyConsumption/energyConsumed.module.css"
 
 export const EnergyGenerated =()=>{
+
+    const [energyIndex, setEnergyIndex] = useState(0)
     /*
     
     This component displays a Tab panels that shows;
