@@ -46,12 +46,11 @@ export const EnergyConsumed=({addItem})=>{
         } 
     }
 
-
     return (
         <Section bg={{minWidth:"80vw"}}>
             <EnergyConsumedHeader func ={func} btnTitle={btnTitle}/>
             {
-                show? <Appliances/> : <BlankImage/>
+                show ? <Appliances/> : <BlankImage/>
             }
         </Section>
     )

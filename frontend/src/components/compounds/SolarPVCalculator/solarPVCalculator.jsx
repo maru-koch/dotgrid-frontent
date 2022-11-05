@@ -12,7 +12,6 @@ export const SolarPVCalculator =()=>{
     const [energyIndex, setEnergyIndex] = useState(0)
     const [energy, setEnergy] = useState([])
     return (
-        
         <SectionContainer>
             <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'100%', margin:'0px', padding:'0px' }}>
                  {/* The header shows the logo */}

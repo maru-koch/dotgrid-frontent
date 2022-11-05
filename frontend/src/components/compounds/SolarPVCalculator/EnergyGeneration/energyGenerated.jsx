@@ -17,7 +17,7 @@ export const EnergyGenerated =()=>{
      */
     return (
          <SectionContainer>
-            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'100%', margin:'0px', padding:'0px' }}>
+            <Section bg={{backgroundColor:'var(--primary-color)', minWidth:'80vw', margin:'0px', padding:'0px' }}>
                  {/* The header shows the logo */}
                 <Tabs className={classes.tabs} defaultIndex={1} selectedIndex={energyIndex} onSelect={(index) => setEnergyIndex(index)}>
                     <TabList className={classes.tablist}>
