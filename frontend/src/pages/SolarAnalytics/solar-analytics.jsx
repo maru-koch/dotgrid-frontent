@@ -15,7 +15,8 @@ const PAGEHEADER_STYLE={
 
 
 export const SolarAnalytics =()=>{
-
+    
+    // MODAL REQUEST COMPONENT
     // Shows the requestDemoForm when no request is made
     // when a valid request is made by the user, it shows the loader
     // when the request is successfully sent, it shows the Pop-up

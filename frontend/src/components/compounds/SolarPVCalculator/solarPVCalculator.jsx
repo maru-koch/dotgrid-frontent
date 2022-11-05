@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classes from './solarPVCalculator.module.css'
 import { Section, SectionContainer, SectionWrapper, Button } from '../../elements';
 import { EnergyConsumed } from "./EnergyConsumption";
+import { EnergyGenerated } from "./EnergyGeneration";
 import { EnergyHeader } from "./EnergyHeader";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -27,7 +28,7 @@ export const SolarPVCalculator =()=>{
                     </TabPanel>
                     <TabPanel>
                          {/* This panel displays the Energy Generation UI */}
-                        <h1>generated</h1>
+                        <EnergyGenerated/>
                     </TabPanel>
                 </Tabs>
             </Section>

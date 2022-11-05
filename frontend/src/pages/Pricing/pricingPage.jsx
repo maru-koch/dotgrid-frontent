@@ -17,6 +17,7 @@ export const PricingPage=()=>{
     const {price, priceModel, features, modelType} = useSelector(state => state.price)
 
     console.log('modelType', modelType)
+
     const [open, setOpen] = useState(false)
     const [plan, setPlan] = useState(initialState)
 
@@ -38,6 +39,7 @@ export const PricingPage=()=>{
     },[price, priceModel, features, modelType])
 
     console.log('plan', plan)
+    
     return (
         <PageLayout>
             <Pricing openModal={openModal}/>
