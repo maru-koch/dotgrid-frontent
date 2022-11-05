@@ -4,10 +4,15 @@ import {SectionContainer, Section } from "../../../elements/Sections"
 
 export const WeatherInfo =()=>{
     /*
-    This component displays a Tab panels that shows;
-    1. Solar Panel Details - ()
-    2. Weather Info
-    3. Energy Forcast
+    Displays information about the weather
+    1. Wind and Pressure
+        - Humidity
+        - Ozone
+        - Dew Point
+        - 
+    2. Sun
+        - Intensity
+        - 
      */
     return (
          <SectionContainer>

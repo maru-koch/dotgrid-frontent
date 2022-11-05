@@ -5,10 +5,12 @@ import classes from "../EnergyConsumption/energyConsumed.module.css"
 
 export const EnergyGenerated =()=>{
     /*
+    
     This component displays a Tab panels that shows;
-    1. Solar Panel Details - ()
-    2. Weather Info
-    3. Energy Forcast
+    1. Solar Panel Details - Number of panels, power generated, inverter
+    2. Weather Info - wind and pressure, the sun intensity
+    3. Energy Forcast - daily energy generation for the next 7 days.
+
      */
     return (
          <SectionContainer>

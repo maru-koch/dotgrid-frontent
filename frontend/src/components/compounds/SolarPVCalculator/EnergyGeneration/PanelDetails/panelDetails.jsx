@@ -6,9 +6,12 @@ export const PanelDetails =()=>{
     /*
     Display the input component for user to enter the solar panel details.
     The information to be provided by the user includes;
-    1. The Number of Panel
-    2. Batteries
-    3. Inverters
+    1. Total Panel Power
+    2. Total Inverter Power
+    3. Efficiency Factor
+    4. Tilt angle
+    5. Azimuth
+    
      */
     return (
          <SectionContainer>
