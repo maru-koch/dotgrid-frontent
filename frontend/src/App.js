@@ -31,7 +31,10 @@ import { Analytics, DataTable} from './components'
 const PrivateOutlet = () => {
 
   // get isAuth value (boolean ) from state in auth reducer
+  // if isAuth is True, it redirects to the index page /
+
   const { isAuthorized: isAuth } = useSelector((state) => state.auth);
+
   const location = useLocation();
 
     if (!isAuth) {
@@ -48,6 +51,7 @@ const PrivateOutlet = () => {
 };
 
 // for auth routes - login, signup forget password ...
+// if isAuth is True, the /dashboard route is returned, if False, the AuthLayout is returned
 const ProtectedOutlet = () => {
   const {isAuthorized: isAuth } = useSelector((state) => state.auth);
   return !isAuth ? (
@@ -88,6 +92,7 @@ const App = () => (
         <Route path= {ROUTES.analytics.path} element={<Analytics />} />
         <Route index element={<Navigate to={ROUTES.overview.path} />} />
       </Route>
+
     </Routes>
 
     <ToastContainer

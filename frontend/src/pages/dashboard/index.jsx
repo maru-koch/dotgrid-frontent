@@ -10,7 +10,7 @@ export const OverviewPage = () => (
     </div>
     <div className="content">
       <div className="header">
-        <DashHeader />
+        <DashHeader/>
       </div>
       <div className="welcome">
         <Welcome />

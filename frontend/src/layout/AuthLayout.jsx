@@ -8,7 +8,7 @@ export const AuthLayout = ({ children, headerClassName, bodyClassName }) => (
   <>
     {/* <header className={clsx('nav-header', headerClassName)}>
       <Text size={24} color="white">
-        Josla Electric
+        Dotgrid Energies
       </Text>
     </header> */}
     <div className={clsx('form-container', bodyClassName)}>

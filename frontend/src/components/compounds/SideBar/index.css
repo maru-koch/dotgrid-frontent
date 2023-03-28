@@ -25,7 +25,7 @@
   border: 1px solid var(--primary-color);
 }
 
-.box {
+.box{
   height: 48px;
   padding-left: 10%;
   display: flex;
@@ -40,7 +40,7 @@
   border-left: 4px solid var(--primary-color);
 }
 
-.box1 {
+.box1{
   background-image: var(--accent-2-color);
   /* padding-left: 25px; */
 }
@@ -59,9 +59,9 @@
   background-color: green;
 } */
 
-#breathing-logo {
-  -webkit-animation: breathing 5s ease-out infinite normal;
-  animation: breathing 5s ease-out infinite normal;
+#breathing-logo{
+  /* -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal; */
   font-family: 'Lantinghei SC';
   -webkit-font-smoothing: antialiased;
 }
