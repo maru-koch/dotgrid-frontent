@@ -3,10 +3,11 @@ import { DashHeader, SideBar, Text, Welcome, DataTable, DashCardHolder} from '..
 import './index.css';
 
 
-export const OverviewPage = () => (
+export const OverviewPage = ({user}) => (
+  
   <div className="overview">
     <div className="sidebar">
-      <SideBar />
+      <SideBar user={user}/>
     </div>
     <div className="content">
       <div className="header">

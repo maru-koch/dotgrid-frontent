@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 export const HeaderDisplay=()=>{
     const navigate = useNavigate()
     return (
-        <section className ={classes.header__section}>
+        <section className ="bg-slate-400">
             <div className ={classes.header__wrapper}>
                 <div className={classes.header__panel}>
                     <div className={classes.header__panel_left}>

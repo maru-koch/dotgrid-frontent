@@ -6,6 +6,9 @@ import store from './store';
 import { Provider } from 'react-redux';
 import App from './App';
 
+// store: handles the global access to data using redux
+// various reducers are created in the store
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

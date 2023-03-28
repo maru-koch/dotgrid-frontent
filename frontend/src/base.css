@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600;800&family=Open+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,400&display=swap');
+@import url('http://fonts.cdnfonts.com/css/circular-std');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+body{
+  background-color: var(--background-color);
+}
+
+:root{
+  --orange-color: #EC6640;
+  --accent-color: #F19753;
+  --accent-2-color: #EC6333;
+  --accent-2-color: #f4e7e6;
+  --background-2-color:#e3ecff;
+  --panel-color:#EBF3FA;
+  --word-color: #424242;
+  --text-color:grey;;
+  --secondary-color:#104883;
+  --main-color: #211551;
+  --main-2-color:#462576;
+  --yellow-color:#F6BB33;
+  --header-color:#DEE3F7;
+  --nav-color: #737a95;
+  --background-color: #F7F7FF;
+  --primary-color: #4C3FCF;
+  --secondary-color: #B480ED;
+  --tertiary-color: #70E0CD;
+  --btn-gradient:linear-gradient(120deg,#4238af, #9c48f5);
+}

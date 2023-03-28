@@ -13,6 +13,25 @@ import logo from './images/josla_logo.png';
 
 
 // '../store/reducer/auth/authSlice'
+
+// SIDE BAR ITEMS
+
+/*
+
+-   The Items displayed on the SideBar will depend on the type of User (Admin, Consumer, and Interprise)
+-   for the Admin User:
+      Users:
+        - displays the list of all users.
+        - can be sorted by country, region, state
+        - can be sorted by discos
+        - can be sorted by energy usage
+
+      Blogs:
+        - The list of published blog posts
+        - 
+*/
+
+
 const Num =({num})=>{
   return(
     <div 
@@ -27,6 +46,7 @@ const Num =({num})=>{
     </div>
   )
 }
+
 
 export const SideBar = () => {
 
