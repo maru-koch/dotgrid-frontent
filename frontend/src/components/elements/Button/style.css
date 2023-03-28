@@ -10,9 +10,11 @@
   cursor: pointer;
   outline: none;
 }
+
 .button-base:focus{
   outline: none;
 }
+
 .button-base:active {
   transform: scale(0.98);
   outline: none;
