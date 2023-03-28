@@ -6,7 +6,9 @@ import { PageLayout } from '../../layout'
 export const Home=()=>{
     // home page
     return(
+       
         <PageLayout>
+             <p className='text-2xl bg-slate-600'></p>
             <HeaderDisplay />
             <Services />
             <WhyAnalytics/>

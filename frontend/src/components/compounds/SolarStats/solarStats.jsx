@@ -28,8 +28,8 @@ export const SolarStats=()=>{
                                 Dotgrid provides a dedicated dashboard to manage energy data and provides insight for analysis and reporting.
                             </p>
                         </div>
-                        <div className = {classes.btn_holder}>
-                            <button onClick={()=>navigate("/contact")}>Contact Us</button>
+                        <div className = "flex justify-center">
+                            <button className="bg-yellow-600" onClick={()=>navigate("/contact")}>Contact Us</button>
                         </div>
                     </div>
                 </div>
