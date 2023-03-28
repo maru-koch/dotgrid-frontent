@@ -5,7 +5,7 @@ import classes from './header.module.css'
 
 export const Header = (props)=>{
     return (
-    <main className = {classes.header} class="bg-slate-500">
+    <main className = {classes.header}>
         <Nav showModal = {props.showModal}/>
     </main>)
 }

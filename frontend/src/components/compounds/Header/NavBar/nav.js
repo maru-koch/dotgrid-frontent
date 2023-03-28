@@ -44,7 +44,6 @@ export default function NavLink(props){
             <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
                 <Nav className="nav">
                     <Nav className = "navLinks">
-                        <Nav.Link className = "link nav"  href = "/"><p>HOME</p></Nav.Link>
                         <Nav.Link 
                             className =  "link" 
                             onMouseEnter={()=>setShowDropDown(true)}
