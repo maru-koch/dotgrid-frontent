@@ -5,12 +5,12 @@ import  classes from './section-text.module.css'
 
 export const SectionText = ({btn, bg, title, description, btnText, openModal})=>{
     return (
-    <div className="bg-green-500 w-full md:1/2">
-        <div className={classes.sectionText__wrapper}>
-            <div className = {classes.sectionText__content}>
-                <h2>{title}</h2>
-                <p>{description}</p>
-                <div className={classes.btn__container}>
+    <div className="bg-green-500 w-full md:w-1/2">
+        <div className="flex justify-center items-center m-5 md:m-10">
+            <div className ="text-center md:text-left">
+                <h2 className="text-2xl text-poppins font-bold ">{title}</h2>
+                <p className="text-xl text-mulish mt-5">{description}</p>
+                <div className="flex justify-end items-center">
                     {btn && <Button text={btnText} onClick={()=>openModal()}/>}
                 </div>
             </div>

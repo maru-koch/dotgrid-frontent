@@ -2,7 +2,7 @@
 
 export const SectionContainer = (props)=>{
     return (
-        <section className="container mx-auto">
+        <section className="md:mx-20">
             {props.children}
         </section>
     )

@@ -1,11 +1,9 @@
 
-import  classes from './section-header.module.css'
-
 export const SectionHeader = ({bg, title, subtitle})=>{
     return (
-    <div className = {`${classes.sectionHeader}`} style={bg}>
-        <h2>{title}</h2>
-        <h4>{subtitle}</h4>
+    <div className = "text-center p-10">
+        <h2 className="text-titleColor text-4xl font-openSans font-bold">{title}</h2>
+        <h4 className="texl-2xl font-poppins font-light">{subtitle}</h4>
     </div>
     )
 }

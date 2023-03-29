@@ -6,7 +6,7 @@ export const SectionWrapper = ({children, bg}) =>{
     // ensures responsiveness
 
     return (
-    <section className = "bg-red-700 flex flex-wrap flex-col justify-center w-full md:justify-between md:flex-row">
+    <section className = "bg-red-700 flex flex-col items-center justify-center w-full md:justify-between md:flex-row">
         {children}
     </section>
     )

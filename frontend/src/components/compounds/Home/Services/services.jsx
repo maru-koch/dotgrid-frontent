@@ -1,5 +1,5 @@
 
-import {Section, SectionHeader, SectionWrapper} from '../../../elements/Sections'
+import {Section, SectionContainer, SectionHeader, SectionWrapper} from '../../../elements/Sections'
 import classes from './services.module.css'
 import { CardItem } from './cardItem'
 
@@ -17,17 +17,20 @@ export const Services =()=>{
         <section className={classes.section}>
             <SectionHeader title ="What We do" subtitle ="We make Solar Energy accessible and cheap"/>
             <Section>
-                <SectionWrapper bg = {{gap: '50px', padding: '50px 0'}}>
-                    {steps.map((step, idx)=>
-                        <CardItem key={idx} 
-                            icon = {step.icon} 
-                            title = {step.title} 
-                            desc = {step.desc} 
-                            btn = {step.text} 
-                            name ={step.name} 
-                           />
-                    )}
-                </SectionWrapper>
+                <SectionContainer>
+                     <SectionWrapper>
+                        {steps.map((step, idx)=>
+                            <CardItem key={idx} 
+                                icon = {step.icon} 
+                                title = {step.title} 
+                                desc = {step.desc} 
+                                btn = {step.text} 
+                                name ={step.name} 
+                            />
+                        )}
+                    </SectionWrapper>
+                </SectionContainer>
+               
             </Section>
         </section>
     )
