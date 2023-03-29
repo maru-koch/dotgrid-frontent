@@ -9,7 +9,7 @@ export const SectionText = ({btn, bg, title, description, btnText, openModal})=>
         <div className="flex justify-center items-center m-5 md:m-10">
             <div className ="text-center md:text-left">
                 <h2 className="text-2xl text-poppins font-bold ">{title}</h2>
-                <p className="text-xl text-mulish mt-5">{description}</p>
+                <p className="text-md text-mulish mt-5">{description}</p>
                 <div className="flex justify-end items-center">
                     {btn && <Button text={btnText} onClick={()=>openModal()}/>}
                 </div>

@@ -3,6 +3,7 @@ import classes from './dropDown.module.css'
 import { useNavigate } from 'react-router-dom'
 
 const DropDownItem=({icon, title, description, closeDropDown, url})=>{
+    // Displays the item of the drop down i.e smart metering, energy analytics or energy sharing
     // menu drop down component
     const navigate = useNavigate()
 
@@ -31,11 +32,11 @@ const DropDownItem=({icon, title, description, closeDropDown, url})=>{
 export const  DropDown=(items)=>{
 
     // Go through the items, and output a drop down item for each
+    // Parent container for the three drop-down items -> Smart Metering, Energy Analytics, and Energy Sharing
 
     return (
         <main className={classes.dropdown__container} onMouseLeave={()=>items.closeDropDown()}>
             <section className={classes.dropdown__wrapper}>
-                
                 <DropDownItem 
                         key ={1} 
                         id = {1}

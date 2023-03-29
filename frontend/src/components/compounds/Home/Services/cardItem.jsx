@@ -20,12 +20,12 @@ export const CardItem = ({icon, title, desc, btn, url, name, dispatchLearnMore})
     }
     
     return (
-        <div className={classes.card} onClick={()=>navigate(url)}>
-            <div>
-                <i className={icon}></i>
+        <div className="h-45 grid grid-rows-3 rounded-md border-2 md:w-full m-10 sm:w-full" onClick={()=>navigate(url)}>
+            <div class="flex justify-center items-center">
+                <i className="text-4xl text-primaryColor font-bold" class={icon}></i>
             </div>
             <div className ={classes.info_holder}>
-                <h3>{title}</h3>
+                <h3 className='text-2xl font-poppins'>{title}</h3>
                 <p>{desc}</p>
             </div>
             <div className = {classes.btn_holder}>

@@ -1,4 +1,4 @@
-import './section-wrapper.css'
+
 import PropTypes from 'prop-types'
 export const SectionWrapper = ({children, bg}) =>{
 
@@ -6,7 +6,7 @@ export const SectionWrapper = ({children, bg}) =>{
     // ensures responsiveness
 
     return (
-    <section className = "bg-red-700 flex flex-col items-center justify-center w-full md:justify-between md:flex-row">
+    <section className = "flex flex-col items-center justify-center w-full md:justify-between md:flex-row">
         {children}
     </section>
     )

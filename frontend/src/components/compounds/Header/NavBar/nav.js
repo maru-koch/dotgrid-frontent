@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import {DropDown} from '../DropDown'
-import {Nav, Navbar } from "react-bootstrap";
+import {DropDown, Menu} from '../../Header'
 import {ModalRequestDemo} from '../../ModalRequestDemo'
 import logo from '../../../../assets/images/dotgrid_logo.png'
 import './nav.css'
@@ -23,7 +22,10 @@ export default function NavLink(props){
     // show drop down if true
     const [showDropDown, setShowDropDown] = useState(false)
 
-    // manager request demo forms and popup
+    // Shows the menu on Mobile Screen
+    const [showMenu, setShowMenu] = useState(false)
+
+    // request demo forms and popup
     const [open, setOpen] = useState(false);
 
     const openModal=()=>{
@@ -34,40 +36,50 @@ export default function NavLink(props){
         setShowDropDown(false)
     }
 
+   
 
+    const openMenu=()=>{
+        // sets the value of the showMenu to either true or false
+
+        if (!showMenu){
+            setShowMenu(true)
+        }else{
+            setShowMenu(false)
+        }
+    }
+
+    // Different style when the menu is expanded and when on mobile
+    // apply style 'expanded' to the unordered list from medium screen upward, and mobile on mobile screen
+
+    const style ={expanded:'hidden md:flex flex-row space-x-5 justify-end w-full', mobile:"bg-slate-100 absolute text-md text-textColor text-poppins text-left mt-80 w-full flex-col p-2" }
     return (
-        <Navbar collapseOnSelect expand="lg" className ="navHeader">
-            <Navbar.Brand href="/" className ="logo">
+        <nav className="relative flex justify-between items-center w-full list-none bg-slate-100">
+            <div href="/" className ="logo">
                 <img src={logo} alt="logo"/>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav" className = "rightNav">
-                <Nav className="nav">
-                    <Nav className = "navLinks">
-                        <Nav.Link 
-                            className =  "link" 
-                            onMouseEnter={()=>setShowDropDown(true)}
-                            href = "#"><p>TECHNOLOGIES</p></Nav.Link>
-                        <Nav.Link className = "link nav"  href = "/pricing"><p>PRICING</p></Nav.Link>
-                        <Nav.Link className = "link nav"  href = "/about"><p>ABOUT</p></Nav.Link>
-                        <Nav.Link className = "link nav"  href = "/contact"><p>CONTACT</p></Nav.Link>
+            </div>
+            {/* Give different stylying to the menu depanding on if it is mobile or not */}
+            <ul className={`${showMenu? style.mobile: style.expanded}`}>
+                    <li className = "p-2" onMouseEnter={()=>setShowDropDown(true)} href = "#">TECHNOLOGIES</li>
+                    <li className = "p-2"  href = "/pricing"><p>PRICING</p></li>
+                    <li className = "p-2" href = "#" onClick={()=>openModal()}>BOOK A DEMO</li>
+                    <li className = "p-2"  href = "/signin">Log in</li>
+            </ul>
+            {/* 
+            
+                Menu button below only displayed on mobile screen
+             */}
 
-                        <Nav className ="navAuth">
-                            <Nav.Link 
-                                className = "link demo" 
-                                href = "#"
-                                onClick={()=>openModal()}>BOOK A DEMO</Nav.Link>
-                            <Nav.Link className = "link login"  href = "/signin">Log in</Nav.Link>
-                        </Nav>
+            <div className="cursor-pointer w-10 h-10 mt-5 absolute top-0 right-0 block md:hidden" onClick={()=>openMenu()}>
+                <div>
+                    <div class="h-2 bg-black mt-1"></div>
+                    <div class="h-2 bg-black mt-1"></div>
+                    <div class="h-2 bg-black mt-1"></div>
+                </div>
+            </div>
 
-                    </Nav>
-                </Nav>     
-            </Navbar.Collapse>
-        
             {showDropDown && <DropDown items ={items} closeDropDown={close}/>}
-
             <ModalRequestDemo open={open}/>
-        </Navbar>
+        </nav>
     )
 }
 
