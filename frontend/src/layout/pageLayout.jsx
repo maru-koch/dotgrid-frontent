@@ -7,6 +7,12 @@ import { Footer } from '../components/compounds/Footer';
 
 
 export const PageLayout = ({ children, bodyClassName }) => (
+
+  // Layout is the wrapper component for every page
+  // it contains the header, main and footer
+  
+  // LAYOUT WIDTH - 100%
+
   <div className ="w-full">
       <Header/>
           <div className="">
@@ -14,6 +20,7 @@ export const PageLayout = ({ children, bodyClassName }) => (
           </div>
       <Footer/>
   </div>
+  
 );
 
 PageLayout.propTypes = {

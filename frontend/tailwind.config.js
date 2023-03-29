@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+       fontFamily:{
+        'poppins':['Poppins', 'San serif'],
+        'mulish':['Mulish', 'San serif'],
+        'open-sans':['Open Sans', 'San serif']
+      },
     extend: {
       colors:{
       'orange-color': '#EC6640',

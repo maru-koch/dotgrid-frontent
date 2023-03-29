@@ -18,13 +18,14 @@ export const WhyAnalytics =()=>{
     return(
         <Section>
             <SectionHeader title = "Why Dotgrid Analytics?" subtitle = ""/>
-            <SectionWrapper>
+
+             {/* SECTION 1 */}
+
+            <SectionWrapper bg="flex flex-wrap flex-col justify-center md:justify-evenly md:flex-row">
                 <SectionImage 
                     image={analytics_computer} 
                     height={'100%'} 
-                    width={'100%'}
-                    wrapperStyle={{height:600, width: 500}}
-                    containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
+                    width={'100%'}/>
                 <SectionText 
                     title ={word[0].title} 
                     description ={word[0].desc}
@@ -32,22 +33,24 @@ export const WhyAnalytics =()=>{
                     openModal={()=>openModal()}
                     btnText="Request Demo"/>
             </SectionWrapper>
-         <SectionWrapper bg ={{backgroundColor:"#e6f3f8", paddingTop:'40px'}}>
-            <SectionText 
-                title ={word[1].title} 
-                description ={word[1].desc}
-                btn={true}
-                openModal={()=>openModal()}
-                btnText="Request Demo"/>
 
-            <SectionImage 
-                image={analytics_phone} 
-                height={'100%'} 
-                width={'70%'}
-                wrapperStyle={{height:500, width:'100%'}}
-                containerStyle={{display:'flex', justifyContent: 'center', alignItems: 'center'}}/>
-        </SectionWrapper>
+            {/* SECTION 2 */}
 
+            <SectionWrapper>
+                <SectionText 
+                    title ={word[1].title} 
+                    description ={word[1].desc}
+                    btn={true}
+                    openModal={()=>openModal()}
+                    btnText="Request Demo"/>
+
+                <SectionImage 
+                    image={analytics_phone} 
+                    height={'100%'} 
+                    width={'70%'}
+                    />
+                    
+            </SectionWrapper>
             <ModalRequestDemo open={open}/>
 
         </Section>

@@ -2,9 +2,10 @@ import PropTypes from 'prop-types'
 import { Button } from '../../../elements'
 import  classes from './section-text.module.css'
 
+
 export const SectionText = ({btn, bg, title, description, btnText, openModal})=>{
     return (
-    <div className={`${classes.sectionText__container}`} style ={bg}>
+    <div className="bg-green-500 w-full md:1/2">
         <div className={classes.sectionText__wrapper}>
             <div className = {classes.sectionText__content}>
                 <h2>{title}</h2>

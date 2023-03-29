@@ -12,13 +12,11 @@ import classes from './footer.module.css'
 export const Footer =()=>{
     return (
         <Section>
-            <div className = "px-5">
-                <SectionWrapper>
-                    <AddressCard/>
-                    <NavCard/>
-                    <MenuCard/>
-                </SectionWrapper>
-            </div>
+            <SectionWrapper>
+                <AddressCard/>
+                <NavCard/>
+                <MenuCard/>
+            </SectionWrapper>
             <SocialMedia/>
             <CopyRight/>
         </Section>

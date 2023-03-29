@@ -9,7 +9,7 @@ export const SectionImage=({btn, btnText, image, height, width, wrapperStyle, co
     // only displays the button if btn is true
 
     return(
-        <div className ={classes.starter__container} style={containerStyle}>
+        <div className ="w-full md:1/2">
             <div className ={classes.starter__wrapper} style={wrapperStyle}>
                 <img src={image} alt="Starter pack" height ={height} width={width} style={imageStyle}/>
                 <div className ={classes.starter__btn_wrapper}>
