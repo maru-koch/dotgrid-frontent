@@ -29,7 +29,6 @@ export { WhyAnalytics } from './WhyAnalytics';
 export { HowItWorks } from './HowItWorks';
 export { DotgridInfo } from './DotgridInfo';
 export { Pricing } from './Pricing';
-export { SolarStat } from './SolarStat';
 export { SolarStats } from './SolarStats';
 export { SolarPVCalculator } from './SolarPVCalculator';
 export { ModalRequestDemo } from './ModalRequestDemo';
